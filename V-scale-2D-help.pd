@@ -1,0 +1,100 @@
+#N canvas 282 75 897 703 10;
+#X obj 54 43 cnv 15 400 500 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 712 486 Derek Holzer;
+#X text 712 510 Berlin July 2017;
+#X text 712 535 macumbista@gmail.com;
+#X obj 61 433 cnv 15 100 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 67 177 phasor~;
+#X obj 67 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 2000 256;
+#X obj 129 134 sig~;
+#X obj 129 91 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 89 112 sig~;
+#X obj 89 88 / 100;
+#X obj 89 67 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
+10 -4034 -1 -1 100 256;
+#X obj 189 232 sig~;
+#X obj 189 209 / 100;
+#X obj 189 190 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hscale 60 8 0
+10 -4034 -1 -1 20 256;
+#X obj 265 492 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 265 520 switch~;
+#X obj 67 513 dac~ 1 2 3;
+#X obj 67 228 V-circle;
+#X obj 169 160 sig~;
+#X obj 169 135 / 100;
+#X obj 169 115 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 60
+8 0 10 -4034 -1 -1 100 256;
+#X obj 129 112 / 360;
+#X obj 229 254 sig~;
+#X obj 229 231 / 100;
+#X obj 229 212 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vscale 60 8 0
+10 -4034 -1 -1 20 256;
+#X obj 278 302 phasor~;
+#X obj 278 258 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 1005 256;
+#X obj 278 350 *~;
+#X obj 332 326 sig~;
+#X obj 332 302 / 100;
+#X obj 332 281 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 20 256;
+#X obj 278 393 *~;
+#X obj 381 305 tgl 15 1 empty empty mod_on_off 17 7 0 10 -4034 -1 -1
+0 1;
+#X obj 67 453 V-scale-2D;
+#X text 481 49 [V-scale-2D] allows scaling (size change) of the horizontal
+and vertical dimensions of a 2D vector figure. Brightness values are
+passed through.;
+#X text 481 198 Simple scaling is done via static \, DC audio signals.
+;
+#X text 482 269 Automated scaling is done via any sort of changing
+audio signal \, i.e. from [phasor~] or from the [V-operator] abstractions.
+;
+#X text 484 320 INLETS;
+#X text 510 350 Horizontal signal;
+#X text 510 370 Vertical signal;
+#X text 510 390 Brightness signal;
+#X text 510 410 Horizontal scaling signal;
+#X text 510 430 Vertical scaling signal;
+#X text 510 490 Horizontal signal;
+#X text 510 510 Vertical signal;
+#X text 510 530 Brightness signal;
+#X text 484 460 OUTLETS;
+#X text 481 230 NOTE: negative scaling values invert the shape horizontally
+;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 2;
+#X connect 8 0 22 0;
+#X connect 9 0 18 1;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 34 3;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 18 0 34 0;
+#X connect 18 1 34 1;
+#X connect 19 0 34 2;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 22 0 7 0;
+#X connect 23 0 34 4;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
+#X connect 26 0 28 0;
+#X connect 27 0 26 0;
+#X connect 28 0 32 0;
+#X connect 29 0 28 1;
+#X connect 30 0 29 0;
+#X connect 31 0 30 0;
+#X connect 32 0 34 3;
+#X connect 32 0 34 4;
+#X connect 33 0 32 1;
+#X connect 34 0 17 0;
+#X connect 34 1 17 1;
+#X connect 34 2 17 2;

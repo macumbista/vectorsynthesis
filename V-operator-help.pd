@@ -1,0 +1,60 @@
+#N canvas 128 73 901 701 10;
+#X obj 131 18 cnv 15 175 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 141 281 V-operator;
+#X obj 169 122 V-waveselect;
+#X obj 172 148 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 0 1;
+#X obj 169 97 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10 0
+10 -4034 -1 -1 0;
+#X text 334 89 -1;
+#X text 358 89 saw;
+#X text 342 149 1;
+#X text 359 149 square;
+#X text 322 109 -0.3;
+#X text 354 109 sine;
+#X text 330 129 0.3;
+#X text 360 129 tri;
+#X text 311 69 SHAPE:;
+#X obj 141 30 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 60 8 0 10
+-4034 -1 -1 200 256;
+#X obj 141 59 phasor~;
+#X obj 169 167 sig~;
+#X obj 198 198 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 198 250 sig~;
+#X obj 198 226 / 100;
+#X text 39 283 Bipolar output;
+#X text 209 282 Unipolar output;
+#X floatatom 227 168 5 0 0 0 - - -, f 5;
+#X obj 22 427 V-seeme~;
+#X obj 282 427 V-seeme~;
+#X text 659 450 Derek Holzer;
+#X text 659 472 Berlin July 2017;
+#X text 660 492 macumbista@gmail.com;
+#X text 436 150 The shape of the waveform is continuously controllable
+by an audio signal \, or you can use the [V-waveselect] abstraction
+to jump to preset waveforms of saw \, sine \, triangle \, and square.
+;
+#X text 436 280 It features two outputs \, one bipolar which goes through
+zero into the positive and negative domains \, and the other unipolar
+which remains in the positive domain. Each is useful for different
+types of modulation or figure generation.;
+#X text 436 16 [V-operator] is a function generator with variable shape
+and amplitude which is driven by the ramp input of a [phasor~] object.
+It can be used for generating Lissajous figures \, or as an LFO/modulator
+for any of the audio-controllable parameters in the Vector Synthesis
+library. Please note that it is *not* bandwidth-limited \, and aliasing
+can occur when any harmonic goes over the Nyquist frequency.;
+#X connect 1 0 23 0;
+#X connect 1 1 24 0;
+#X connect 2 0 3 0;
+#X connect 3 0 16 0;
+#X connect 3 0 22 0;
+#X connect 4 0 2 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 16 0 1 1;
+#X connect 17 0 19 0;
+#X connect 18 0 1 2;
+#X connect 19 0 18 0;

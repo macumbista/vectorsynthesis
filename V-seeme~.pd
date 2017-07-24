@@ -1,0 +1,32 @@
+#N canvas 687 76 577 674 10;
+#X obj 1 15 cnv 15 250 180 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 22 450 300 graph1 0;
+#X array \$0-sum 882 float 0;
+#X coords 0 1.02 881 -1.02 200 130 1;
+#X restore 3 26 graph;
+#X text 9 164 ---- 0.02 seconds ----;
+#X obj 147 381 tabwrite~ \$0-sum;
+#X obj 158 354 metro 193;
+#X obj 119 287 inlet~;
+#X obj 181 308 loadbang;
+#X msg 176 331 1;
+#X obj 208 28 vu 15 120 empty empty -1 -8 0 8 -66577 -1 1 0;
+#X obj 87 328 env~;
+#X obj 87 348 - 100;
+#X obj 103 429 dac~;
+#X obj 185 172 tgl 15 0 empty empty hearme 20 8 0 12 -258436 -1 -1
+0 1;
+#X obj 103 395 *~;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X connect 5 0 9 0;
+#X connect 5 0 13 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 12 0 13 1;
+#X connect 13 0 11 0;
+#X connect 13 0 11 1;
+#X coords 0 -1 1 1 252 196 1 0 0;

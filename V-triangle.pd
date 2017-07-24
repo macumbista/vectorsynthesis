@@ -1,0 +1,69 @@
+#N canvas 83 62 802 610 10;
+#X obj 38 -174 inlet~ phasor;
+#X obj 38 275 outlet~ H;
+#X obj 258 275 outlet~ V;
+#X obj 258 39 *~ -1;
+#X obj 258 68 +~ 1;
+#X obj 258 98 min~;
+#X obj 258 127 *~ -4;
+#X obj 258 155 +~ 1;
+#X obj 38 39 *~ -1;
+#X obj 38 68 +~ 1;
+#X obj 38 98 min~;
+#X obj 94 39 *~;
+#X obj 109 -8 sig~;
+#X obj 38 154 -~ 1;
+#X obj 109 -39 / 100;
+#X obj 38 127 *~ 2.2;
+#X obj 258 183 -~ 0.5;
+#X obj 258 211 clip~ -1 1;
+#X obj 273 -73 sig~;
+#X obj 273 -104 / 100;
+#X obj 273 -129 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0
+10 -262144 -1 -1 39.5 256;
+#X obj 109 -73 nbx 5 14 -1e+37 1e+37 0 1 empty empty slope 60 8 0 10
+-262144 -1 -1 344 256;
+#X text 360 281 macumbista@gmail.com;
+#X text 360 240 Derek Holzer;
+#X text 360 260 Ljubljana June 2017;
+#X obj 38 -8 wrap~;
+#X obj 258 -8 wrap~;
+#X text 362 -75 Defaults:;
+#X text 382 -57 Phase = 39.5;
+#X text 381 -38 Slope = 344;
+#X text 361 64 "The triangle poses an interesting challenge to signal
+requirements. Both deflection waveforms are basically triangles \,
+however they have been modified. The triangle creating the vertical
+motion is flattened at the bottom peak. The triangle producing the
+horizontal motion must be non-symmetrical with time (faster positive
+slope than negative slope). The two triangles are related in phase."
+;
+#X text 360 179 From: “Applications of OEI 3D Display Modules”
+(1975);
+#X obj 258 -39 +~;
+#X connect 0 0 25 0;
+#X connect 0 0 32 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 16 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 15 0;
+#X connect 11 0 10 1;
+#X connect 12 0 11 1;
+#X connect 13 0 1 0;
+#X connect 14 0 12 0;
+#X connect 15 0 13 0;
+#X connect 16 0 17 0;
+#X connect 17 0 2 0;
+#X connect 18 0 32 1;
+#X connect 19 0 18 0;
+#X connect 20 0 19 0;
+#X connect 21 0 14 0;
+#X connect 25 0 8 0;
+#X connect 25 0 11 0;
+#X connect 26 0 3 0;
+#X connect 26 0 5 1;
+#X connect 32 0 26 0;

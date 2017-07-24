@@ -1,0 +1,179 @@
+#N canvas 381 24 1219 658 10;
+#X obj 47 71 cnv 15 250 550 empty empty MULTIPLEX_CHANNEL_ONE 20 12
+0 14 -233017 -66577 0;
+#X obj 313 72 cnv 15 250 550 empty empty MULTIPLEX_CHANNEL_TWO 20 12
+0 14 -233017 -66577 0;
+#X obj 588 72 cnv 15 200 250 empty empty OUTPUT_SECTION 20 12 0 14
+-233017 -66577 0;
+#X obj 607 173 V-masterclock helpfile;
+#X obj 607 106 nbx 5 14 -1e+37 1e+37 0 1 empty empty SWITCHING_FREQUENCY
+60 8 0 10 -4034 -1 -1 50 256;
+#X obj 623 126 nbx 5 14 -1e+37 1e+37 0 1 empty empty NUM_CHANNELS 60
+8 0 10 -4034 -1 -1 2 256;
+#X obj 607 279 V-output helpfile;
+#X obj 607 214 nbx 5 14 -1e+37 1e+37 0 1 empty empty audio_vol 60 8
+0 10 -4034 -1 -1 20 256;
+#X obj 64 596 V-multiplex helpfile 1;
+#X obj 607 235 / 100;
+#X obj 607 256 sig~;
+#X obj 67 227 phasor~;
+#X obj 67 98 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 2000 256;
+#X obj 134 184 sig~;
+#X obj 134 141 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 89 162 sig~;
+#X obj 89 138 / 100;
+#X obj 89 117 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
+10 -4034 -1 -1 100 256;
+#X obj 67 278 V-circle;
+#X obj 134 162 / 360;
+#X obj 144 278 phasor~;
+#X obj 144 231 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 147 256;
+#X obj 144 326 *~;
+#X obj 198 302 sig~;
+#X obj 198 278 / 100;
+#X obj 198 257 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 10 256;
+#X obj 67 463 V-scale-2D;
+#X text 1042 556 Derek Holzer;
+#X text 1042 580 Berlin July 2017;
+#X text 1042 605 macumbista@gmail.com;
+#X obj 727 251 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 727 279 switch~;
+#X obj 144 354 +~ 0.1;
+#X obj 334 227 phasor~;
+#X obj 334 98 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency
+60 8 0 10 -4034 -1 -1 2000 256;
+#X obj 411 231 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 202 256;
+#X obj 411 326 *~;
+#X obj 465 302 sig~;
+#X obj 465 278 / 100;
+#X obj 465 257 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 18 256;
+#X obj 334 463 V-scale-2D;
+#X obj 411 354 +~ 0.1;
+#X obj 331 596 V-multiplex helpfile 2;
+#X obj 403 507 sig~;
+#X obj 403 484 / 100;
+#X obj 403 465 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 22 256;
+#X obj 444 529 sig~;
+#X obj 444 506 / 100;
+#X obj 444 487 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 7 256;
+#X obj 136 507 sig~;
+#X obj 136 484 / 100;
+#X obj 136 465 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 -29 256;
+#X obj 177 529 sig~;
+#X obj 177 506 / 100;
+#X obj 177 487 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 0 256;
+#X obj 64 568 V-translate-2D;
+#X obj 334 278 V-triangle;
+#X obj 690 146 tgl 15 1 empty empty BLANKING 17 7 0 10 -4034 -1 -1
+1 1;
+#X text 825 211 OUTPUT CHANNELS to the [dac~] object;
+#X text 884 240 Horizontal;
+#X text 884 257 Vertical;
+#X text 884 274 Brightness;
+#X text 884 292 Audio Left (Horizontal * Brightness);
+#X text 884 311 Audio Right (Vertical * Brightness);
+#X text 686 405 [V-masterclock];
+#X text 686 426 [V-output];
+#X text 686 449 [V-multiplex];
+#X text 588 356 [V-multiplex] allows more than one vector object to
+be displayed at the same time by rapidly switching between the two.
+It uses the following objects:;
+#X obj 50 12 hsl 510 25 0 127 0 1 empty empty CROSSFADE 230 12 0 10
+-4034 -1 -1 25100 1;
+#X text 596 479 You will need one [V-multiplex] for each object you
+wish to display. All of these objects must be given the same first
+creation argument. Additionally \, the second creation argument of
+[V-multiplex] is the multiplex channel it occupies.;
+#X obj 199 46 V-brightness-crossfade;
+#X obj 130 44 sig~;
+#X obj 78 44 / 127;
+#X obj 331 568 V-translate-2D;
+#X text 813 94 SWITCHING_FREQUENCY is the "framerate" \, or speed at
+which the images switch from one to the other.;
+#X text 814 126 NUM_CHANNELS is the number of [V-multiplex] channels
+to display.;
+#X text 818 159 When activated \, BLANKING turns off the brightness
+for a short time each cycle to elimate the traces between the objects.
+;
+#X text 597 571 TIP: to allow the Vectrex to display a slow-moving
+vector shape \, multiplex a second \, "invisible" high frequency object
+with zero brightness \, and it should keep the beam from shutting down.
+;
+#X obj 411 278 phasor~;
+#X connect 4 0 3 0;
+#X connect 5 0 3 1;
+#X connect 7 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 2;
+#X connect 14 0 19 0;
+#X connect 15 0 18 1;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 26 0;
+#X connect 18 1 26 1;
+#X connect 19 0 13 0;
+#X connect 20 0 22 0;
+#X connect 21 0 20 0;
+#X connect 22 0 32 0;
+#X connect 23 0 22 1;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
+#X connect 26 0 55 0;
+#X connect 26 1 55 1;
+#X connect 26 2 55 2;
+#X connect 30 0 31 0;
+#X connect 32 0 26 3;
+#X connect 32 0 26 4;
+#X connect 33 0 56 0;
+#X connect 34 0 33 0;
+#X connect 35 0 78 0;
+#X connect 36 0 41 0;
+#X connect 37 0 36 1;
+#X connect 38 0 37 0;
+#X connect 39 0 38 0;
+#X connect 40 0 73 0;
+#X connect 40 1 73 1;
+#X connect 40 2 73 2;
+#X connect 41 0 40 3;
+#X connect 41 0 40 4;
+#X connect 43 0 73 3;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X connect 46 0 73 4;
+#X connect 47 0 46 0;
+#X connect 48 0 47 0;
+#X connect 49 0 55 3;
+#X connect 50 0 49 0;
+#X connect 51 0 50 0;
+#X connect 52 0 55 4;
+#X connect 53 0 52 0;
+#X connect 54 0 53 0;
+#X connect 55 0 8 0;
+#X connect 55 1 8 1;
+#X connect 55 2 8 2;
+#X connect 56 0 40 0;
+#X connect 56 1 40 1;
+#X connect 57 0 3 2;
+#X connect 68 0 72 0;
+#X connect 70 0 26 2;
+#X connect 70 1 40 2;
+#X connect 71 0 70 0;
+#X connect 72 0 71 0;
+#X connect 73 0 42 0;
+#X connect 73 1 42 1;
+#X connect 73 2 42 2;
+#X connect 78 0 36 0;
