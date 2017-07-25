@@ -25,6 +25,8 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	-or-
 	Oscilloscope software with X/Y/Z inputs plus audio loopback application
+	
+	NOTE: the Z axis should control the brightness of the beam, not 3D depth
 
 
 *GENERAL NOTES*
