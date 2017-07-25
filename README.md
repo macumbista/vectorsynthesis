@@ -2,7 +2,7 @@
 
 ::::::::::VECTOR SYNTHESIS LIBRARY ::::::::::
 
-This library allows the creation and manipulation of vector shapes using audio signals sent directly to oscilloscopes, hacked CRT monitors, Vectrex game consoles, ILDA laser displays, or oscilloscope emulation softwares using the Pure Data programming environment. 
+The Vector Synthesis library allows the creation and manipulation of 2D and 3D vector shapes, Lissajous figures, and scan processed image and video inputs using audio signals sent directly to oscilloscopes, hacked CRT monitors, Vectrex game consoles, ILDA laser displays, or oscilloscope emulation softwares using the Pure Data programming environment. 
 
 Audio waveforms control the vertical and horizontal movements as well as the brightness of a single beam of light, tracing shapes, points and curves with a direct relationship between sound and image.
 
