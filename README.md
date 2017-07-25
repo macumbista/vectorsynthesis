@@ -95,7 +95,7 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
-	[V-rotate-3D] : project three signals to 3D and rotate
+	[V-rotate-3D] : project shapes to 3D and rotate
 
 —-UTILITIES
 
