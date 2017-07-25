@@ -1,0 +1,251 @@
+#N canvas 171 23 1149 751 10;
+#X declare -lib Gem;
+#X obj 219 207 cnv 15 300 150 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X text 510 129 Requirements:;
+#X obj 132 710 dac~ 1 2 3;
+#X text 854 502 Derek Holzer;
+#X text 853 530 July 2017;
+#X text 855 558 macumbista@gmail.com;
+#X obj 110 174 declare -lib Gem;
+#X obj 110 269 pix_draw;
+#X obj 222 233 nbx 5 14 0 1e+37 0 1 empty empty FRAMES/sec 0 -8 0 10
+-257985 -1 -1 25 256;
+#X obj 296 233 nbx 5 14 0 1e+37 0 1 empty empty LINES/frame 0 -8 0
+10 -257985 -1 -1 59.03 256;
+#X obj 145 352 sig~;
+#X obj 158 373 sig~;
+#X obj 185 467 sig~;
+#X obj 171 421 sig~;
+#X obj 296 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vsize 0 -8 0 10
+-4034 -1 -1 75 256;
+#X obj 221 271 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hsize 0 -8 0 10
+-4034 -1 -1 75 256;
+#X obj 224 478 sig~;
+#X obj 372 233 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hdeflect 0 -8
+0 10 -4034 -1 -1 6 256;
+#X obj 372 271 nbx 5 14 0 1e+37 0 1 empty empty Brightness 0 -8 0 10
+-4034 -1 -1 290 256;
+#X obj 251 433 sig~;
+#X obj 211 432 sig~;
+#X obj 199 383 sig~;
+#X obj 296 312 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vpos 0 -8 0 10
+-4034 -1 -1 -35 256;
+#X obj 221 312 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hpos 0 -8 0 10
+-4034 -1 -1 -44 256;
+#X obj 238 383 sig~;
+#X obj 451 233 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vdeflect 0 -8
+0 10 -4034 -1 -1 6 256;
+#X obj 372 298 tgl 30 0 empty empty on.off 35 15 0 10 -258113 -1 -1
+0 1;
+#X obj 251 410 / 100;
+#X obj 211 410 / 100;
+#X obj 171 399 / 100;
+#X obj 238 362 / 100;
+#X obj 199 362 / 100;
+#X obj 224 456 / 100;
+#X obj 185 445 / 100;
+#X text 410 399 Values in green are divided by 100 for percentages
+;
+#X obj 110 15 cnv 15 300 150 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 22 450 300 gemwin 0;
+#X obj 132 136 gemwin;
+#X obj 67 89 outlet;
+#X obj 67 10 inlet;
+#X obj 67 41 route create;
+#X msg 67 70 set destroy;
+#X msg 142 68 set create;
+#X msg 198 112 destroy;
+#X msg 132 112 create \, 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 3 1 5 0;
+#X connect 3 1 6 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 132 44 pd gemwin;
+#X msg 132 25 create;
+#X obj 166 85 bng 15 250 50 0 empty empty open_image_file 17 7 0 10
+-262144 -1 -1;
+#X obj 183 110 vradio 15 1 1 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 149 65 bng 15 250 50 0 empty empty open_video_file 17 7 0 10
+-262144 -1 -1;
+#X text 201 110 camera source;
+#X text 202 124 video source;
+#X text 202 139 image source;
+#N canvas 416 132 765 458 source 0;
+#X obj 143 423 outlet gemlist;
+#X obj 43 333 spigot;
+#X obj 143 333 spigot;
+#X obj 243 333 spigot;
+#X obj 76 309 == 0;
+#X obj 176 309 == 1;
+#X obj 276 309 == 2;
+#X obj 343 42 inlet switcher;
+#X obj 43 42 inlet gemlist;
+#X obj 243 239 pix_image;
+#X obj 243 143 openpanel;
+#X msg 243 166 open \$1;
+#X obj 43 239 pix_video;
+#X obj 143 143 openpanel;
+#X msg 143 166 open \$1;
+#X obj 143 239 pix_film;
+#X msg 167 209 auto \$1;
+#X obj 167 191 tgl 15 1 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+1;
+#X msg 214 239 0;
+#X obj 143 42 inlet videoopen;
+#X obj 243 42 inlet pixopen;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 1;
+#X connect 5 0 2 1;
+#X connect 6 0 3 1;
+#X connect 7 0 6 0;
+#X connect 7 0 5 0;
+#X connect 7 0 4 0;
+#X connect 8 0 12 0;
+#X connect 8 0 15 0;
+#X connect 8 0 9 0;
+#X connect 9 0 3 0;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 2 0;
+#X connect 15 2 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 15 1;
+#X connect 19 0 13 0;
+#X connect 20 0 10 0;
+#X restore 132 232 pd source;
+#X text 190 25 CREATE GEMWIN FIRST!;
+#X obj 347 450 adc~ 1 2;
+#X obj 451 258 tgl 30 1 empty empty FlipH 35 15 0 10 -203904 -1 -1
+0 1;
+#X obj 451 298 tgl 30 1 empty empty FlipV 35 15 0 10 -203904 -1 -1
+0 1;
+#X text 410 359 All inlets are audio signals except first \, which
+is gemlist \, and last three which are 0/1 switches;
+#X text 574 278 with Horizontal \, Vertical and Brightness inputs;
+#X text 793 662 Ouput 1: Horizontal (X);
+#X text 793 685 Ouput 2: Vertical (Y);
+#X text 793 707 Ouput 3: Brightness (Z on some hardware);
+#X text 547 235 * DC coupled soundcard for best results;
+#X text 547 259 * Oscilloscope \, vector monitor \, or Vectrex;
+#X text 410 450 Send audio to 1st two inputs of Pd to modulate H or
+V;
+#X text 436 14 This patch aims to emulate the famous Rutt-Etra scan
+processor by plotting digital video or images into audio signals sent
+to an X/Y analog monitor with brightness control \, and draws inspiration
+from a similar MaxMSP patch by Ivan Marusic Klif.;
+#X obj 110 198 gemhead;
+#X text 546 212 * Gem (Help->Find externals "Gem");
+#X text 546 168 * Pd 0.45 or newer \, 32 bit version only;
+#X text 567 188 (Pd Extended and 64 bit won't work!);
+#X text 548 307 For a completely digital version of the Rutt-Etra scan
+processor without these hardware requirements \, please visit this
+site: http://v002.info/plugins/v002-rutt-etra/;
+#X obj 132 510 V-scanprocessor \$0-helpfile;
+#X obj 414 558 nbx 5 14 -1e+37 1e+37 0 1 empty empty Xrotation 0 -8
+0 10 -4034 -1 -1 -42 256;
+#X obj 414 597 sig~;
+#X obj 513 558 nbx 5 14 -1e+37 1e+37 0 1 empty empty Yrotation 0 -8
+0 10 -4034 -1 -1 29 256;
+#X obj 513 598 sig~;
+#X obj 603 557 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zrotation 0 -8
+0 10 -4034 -1 -1 16 256;
+#X obj 603 597 sig~;
+#X obj 132 556 V-rotate-3D;
+#X obj 414 576 / 360;
+#X obj 513 576 / 360;
+#X obj 603 576 / 360;
+#X obj 326 623 *~;
+#X obj 341 558 nbx 5 14 -1e+37 1e+37 0 1 empty empty luma-to-z 0 -8
+0 10 -4034 -1 -1 2 256;
+#X obj 341 598 sig~;
+#X obj 341 576 / 100;
+#X obj 371 673 sig~;
+#X obj 371 650 / 100;
+#X obj 371 631 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 9 256;
+#X obj 411 695 sig~;
+#X obj 411 672 / 100;
+#X obj 411 653 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 -7 256;
+#X obj 132 686 V-translate-2D;
+#X connect 8 0 10 0;
+#X connect 9 0 11 0;
+#X connect 10 0 63 1;
+#X connect 11 0 63 2;
+#X connect 12 0 63 4;
+#X connect 13 0 63 3;
+#X connect 14 0 33 0;
+#X connect 15 0 29 0;
+#X connect 16 0 63 7;
+#X connect 17 0 32 0;
+#X connect 18 0 27 0;
+#X connect 19 0 63 9;
+#X connect 20 0 63 6;
+#X connect 21 0 63 5;
+#X connect 22 0 28 0;
+#X connect 23 0 31 0;
+#X connect 24 0 63 8;
+#X connect 25 0 30 0;
+#X connect 26 0 63 10;
+#X connect 27 0 19 0;
+#X connect 28 0 20 0;
+#X connect 29 0 13 0;
+#X connect 30 0 24 0;
+#X connect 31 0 21 0;
+#X connect 32 0 16 0;
+#X connect 33 0 12 0;
+#X connect 36 0 37 0;
+#X connect 37 0 36 0;
+#X connect 38 0 44 2;
+#X connect 39 0 44 3;
+#X connect 40 0 44 1;
+#X connect 44 0 7 0;
+#X connect 44 0 63 0;
+#X connect 46 0 63 3;
+#X connect 46 1 63 4;
+#X connect 47 0 63 11;
+#X connect 48 0 63 12;
+#X connect 58 0 44 0;
+#X connect 63 0 70 0;
+#X connect 63 1 70 1;
+#X connect 63 2 70 3;
+#X connect 63 2 74 0;
+#X connect 64 0 71 0;
+#X connect 65 0 70 4;
+#X connect 66 0 72 0;
+#X connect 67 0 70 5;
+#X connect 68 0 73 0;
+#X connect 69 0 70 6;
+#X connect 70 0 84 0;
+#X connect 70 1 84 1;
+#X connect 70 2 84 2;
+#X connect 71 0 65 0;
+#X connect 72 0 67 0;
+#X connect 73 0 69 0;
+#X connect 74 0 70 2;
+#X connect 75 0 77 0;
+#X connect 76 0 74 1;
+#X connect 77 0 76 0;
+#X connect 78 0 84 3;
+#X connect 79 0 78 0;
+#X connect 80 0 79 0;
+#X connect 81 0 84 4;
+#X connect 82 0 81 0;
+#X connect 83 0 82 0;
+#X connect 84 0 2 0;
+#X connect 84 1 2 1;
+#X connect 84 2 2 2;
