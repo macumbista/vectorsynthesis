@@ -23,7 +23,7 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 	—or—
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	-or-
-	Osciloscope software plus audio loopback application
+	Oscilloscope software with X/Y/Z inputs plus audio loopback application
 
 
 *GENERAL NOTES*
