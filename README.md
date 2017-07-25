@@ -16,6 +16,7 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 	Pure Data 32 bit, version 0.45 or newer
 	Gem 0.93.3 (OPTIONAL, used in scan processor only. Installed via deken, Pd’s externals manager)
+	
 	DC-coupled audio interface with minimum 3 output channels (5 recommended)
 	
 	Oscilloscope with X/Y/Z inputs (all DC-coupled)
