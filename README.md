@@ -63,7 +63,11 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 *LIST OF OBJECTS*
 
+—-FUNCTION GENERATORS
 
+	[phasor~] : native Pure Data ramp generator, used extensively here
+	[V-operator]: function generator with variable waveshaping and scaling
+	
 ——2D SHAPE GENERATORS
 
 	[V-basic-lissajous] : create a simple Lissajous figure
@@ -73,11 +77,6 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 	[V-diamond] : create a diamond/square
 	[V-poly-2D] : to do
 	[V-raster] : to do
-
-—-FUNCTION GENERATORS
-
-	[phasor~] : native Pure Data ramp generator, used extensively here
-	[V-operator]: function generator with variable waveshaping and scaling
 
 —-2D VECTOR TRANSFORMATIONS
 
