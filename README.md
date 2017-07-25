@@ -127,6 +127,7 @@ The author also wishes to thank the following people and institutions for their 
 	Andy Farnell
 	Ivan Marusic Klif
 	Dave Jones
+	Nathan Thompson
 	Roland Lioni/Akira’s Rebirth
 	Lee Montgomery 
 
