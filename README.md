@@ -22,6 +22,8 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 	Vectrex game console modified for X/Y/Z input (all DC-coupled)
 	—or—
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
+	-or-
+	Osciloscope software plus audio loopback application
 
 
 *GENERAL NOTES*
