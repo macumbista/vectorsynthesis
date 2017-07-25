@@ -111,14 +111,14 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 —-MULTIPLEXING (see V-multiplex-help.pd for details)
 
-	[V-masterclock] : sets multiplexing frequency and number of multiplexed shapes
+	[V-masterclock] : sets multiplexing frequency and number of multiplexed channels
 	[V-output] : collects multiplexed channels and sends them to the audio interface
 	[V-multiplex] : assigns a vector shape to one multiplexing channel
 	[V-brightness-crossfade] : crossfades the brightness of two multiplexed channels
 
 —-SCAN PROCESSING (requires GEM external library!)
 
-	[V-scanprocessor] : scan a camera input, image or video and apply it to a raster
+	[V-scanprocessor] : scan a camera input, image, or video and apply it to a raster
 
 —-ILDA LASER DISPLAY OUTPUT ::::: TO DO :::::
 
