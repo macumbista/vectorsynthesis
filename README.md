@@ -48,14 +48,16 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 	Tested at 44.1K, 96K, 192K
 
 	Stereo output is also usable, however there will be no brightness control.
+	
+	An AC-coupled soundcard or display will show noticeable distortions in the shape
+	and screen location of the vector shapes (they will always appear in the center).
 
 	DC-coupling is also necessary for brightness control.
 
 	Brightness control is essential for multiplexing, scan processing, and a
 	number of other interesting visual effects.
 
-	An AC-coupled soundcard or display will show noticeable distortions in the shape
-	and screen location of the vector shapes (they will always appear in the center).
+
 
 
 
@@ -94,7 +96,7 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
-	[V-rotate-3D] : map a 2D shape to 3D and rotate
+	[V-rotate-3D] : project three signals to 3D and rotate
 
 —-UTILITIES
 
