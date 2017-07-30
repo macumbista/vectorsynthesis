@@ -46,7 +46,6 @@
 #X obj 546 192 / 100;
 #X obj 456 192 / 100;
 #X obj 356 192 / 100;
-#X obj 46 301 V-cube \$0;
 #X text 653 409 [V-rotate-3D] is required to map this 3D object into
 2D space.;
 #X text 900 234 X (horizontal);
@@ -61,9 +60,10 @@
 #X text 651 36 [V-cube] creates a 3D vector cube with brightness blanking
 to remove the flyback line. It requires a \$0 creation argument to
 create unique tables inside to hold the vertice information.;
+#X obj 46 301 V-pyramid \$0;
 #X connect 3 0 18 0;
 #X connect 4 0 11 4;
-#X connect 5 0 35 2;
+#X connect 5 0 46 2;
 #X connect 6 0 17 0;
 #X connect 7 0 19 0;
 #X connect 8 0 11 5;
@@ -74,9 +74,9 @@ create unique tables inside to hold the vertice information.;
 #X connect 11 2 2 2;
 #X connect 12 0 14 0;
 #X connect 13 0 16 0;
-#X connect 14 0 35 1;
+#X connect 14 0 46 1;
 #X connect 15 0 12 0;
-#X connect 16 0 35 0;
+#X connect 16 0 46 0;
 #X connect 17 0 5 0;
 #X connect 18 0 4 0;
 #X connect 19 0 8 0;
@@ -91,7 +91,7 @@ create unique tables inside to hold the vertice information.;
 #X connect 32 0 26 0;
 #X connect 33 0 24 0;
 #X connect 34 0 22 0;
-#X connect 35 0 11 0;
-#X connect 35 1 11 1;
-#X connect 35 2 11 2;
-#X connect 35 3 11 3;
+#X connect 46 0 11 0;
+#X connect 46 1 11 1;
+#X connect 46 2 11 2;
+#X connect 46 3 11 3;
