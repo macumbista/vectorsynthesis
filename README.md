@@ -99,7 +99,7 @@ And you can see a two hour video presentation of this library here:
 —-3D SHAPE GENERATORS ::::: TO DO ::::: 
 
 	[V-sphere]
-	[V-pyramid]
+	[V-pyramid] : creates a 3D pyramid
 	[V-cube] : creates a 3D cube
 	[V-poly-3D]
 
