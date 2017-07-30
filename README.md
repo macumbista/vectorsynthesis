@@ -10,7 +10,11 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
-You can see a video presentation of this library here: 
+You can see a demo video of the scan processing and 3D rotation functions here:
+
+	https://www.facebook.com/macumbista/videos/795648800609817/
+
+And you can see a two hour video presentation of this library here: 
 	
 	https://www.facebook.com/macumbista/posts/791705604337470
  
