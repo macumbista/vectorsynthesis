@@ -67,10 +67,14 @@ You can see a video presentation of this library here:
 
 *LIST OF OBJECTS*
 
+—-NATIVE PD OBJECTS of NOTE
+
+	[phasor~] : sawtooth ramp generator
+	[wrap~] : remainder of a division operation, used here to generate phase-locked harmonics of [phasor~]
+
 —-FUNCTION GENERATORS
 
-	[phasor~] : native Pure Data ramp generator, used extensively here
-	[V-operator]: function generator with variable waveshaping and scaling
+	[V-operator]: function generator with variable waveshaping, scaling, and uni- and bi-polar outputs
 	
 ——2D SHAPE GENERATORS
 
