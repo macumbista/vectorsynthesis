@@ -95,20 +95,25 @@ And you can see a two hour video presentation of this library here:
 	[V-scale-2D] : scale (resize) a 2D vector shape
 	[V-translate-2D] : translate (move) a 2D vector shape
 	[V-rotate-2D] : rotate a 2D vector shape
+	[V-shear-2D] : to do
+	[V-mirror-2D] : to do
 
-—-3D SHAPE GENERATORS ::::: TO DO ::::: 
+—-3D SHAPE GENERATORS
 
 	NOTE: all require [V-rotate-3D] to project onto 2D vector space
-	[V-sphere]
-	[V-pyramid] : creates a 3D pyramid
-	[V-cube] : creates a 3D cube
-	[V-poly-3D]
+	[V-sphere] : to do
+	[V-pyramid] : create a 3D pyramid
+	[V-cube] : create a 3D cube
+	[V-icosahedron] : create a 3D icosahedron
 
 —-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
+	[V-shear-3D] : to do
+	[V-mirror-3D] : to do
 	[V-rotate-3D] : project shapes to 3D and rotate
+	[V-perspective-3D] : to do
 
 —-UTILITIES
 
@@ -120,7 +125,7 @@ And you can see a two hour video presentation of this library here:
 	[V-invert-bipolar] : invert a signal with a (-1 - 1) range
 	[V-crossfade] : morph between two 2D vector shapes
 	[V-clip] : to do
-	[V-mirror] : to do
+
 
 —-MULTIPLEXING (see V-multiplex-help.pd for details)
 
