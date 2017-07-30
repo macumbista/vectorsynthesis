@@ -45,8 +45,8 @@ You can see a video presentation of this library here:
 	Audio Interface Output 1 : Horizontal
 	Audio Interface Output 2 : Vertical
 	Audio Interface Output 3 : Brightness
-	Audio Interface Output 4 : Audio Left (Horizontal * Brightness)
-	Audio Interface Output 5 : Audio Right (Vertical * Brightness)
+	Audio Interface Output 4 : Audio Left (Horizontal * Brightness, w/ multiplexing system patches)
+	Audio Interface Output 5 : Audio Right (Vertical * Brightness, w/ multiplexing system patches)
 
 	Higher sampling rate = higher resolution/fewer errors in the vector shapes
 	Tested at 44.1K, 96K, 192K
