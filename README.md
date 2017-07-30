@@ -98,6 +98,7 @@ And you can see a two hour video presentation of this library here:
 
 —-3D SHAPE GENERATORS ::::: TO DO ::::: 
 
+	NOTE: all require [V-rotate-3D] to project onto 2D vector space
 	[V-sphere]
 	[V-pyramid] : creates a 3D pyramid
 	[V-cube] : creates a 3D cube
