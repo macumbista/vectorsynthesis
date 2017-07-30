@@ -100,7 +100,7 @@ And you can see a two hour video presentation of this library here:
 
 	[V-sphere]
 	[V-pyramid]
-	[V-cube]
+	[V-cube] : creates a 3D cube
 	[V-poly-3D]
 
 —-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
