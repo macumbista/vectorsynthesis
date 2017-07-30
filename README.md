@@ -114,6 +114,7 @@ And you can see a two hour video presentation of this library here:
 	[V-mirror-3D] : to do
 	[V-rotate-3D] : project shapes to 3D and rotate
 	[V-perspective-3D] : to do
+	[V-lighting-3D] : to do
 
 —-UTILITIES
 
