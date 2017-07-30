@@ -1,5 +1,5 @@
 #N canvas 126 127 1100 733 10;
-#X obj 19 35 cnv 15 300 500 empty empty 3D_CUBE 20 12 0 14 -233017
+#X obj 19 35 cnv 15 300 500 empty empty 3D_PYRAMID 20 12 0 14 -233017
 -66577 0;
 #X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_MODULATION
 20 12 0 14 -233017 -66577 0;
