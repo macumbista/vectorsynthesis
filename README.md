@@ -106,6 +106,7 @@ And you can see a two hour video presentation of this library here:
 	[V-pyramid] : create a 3D pyramid
 	[V-cube] : create a 3D cube
 	[V-icosahedron] : create a 3D icosahedron
+	[V-octahedron] : create a 3D octahedron
 	[V-dodecahedron] : create a 3D dodecahedron
 
 —-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
