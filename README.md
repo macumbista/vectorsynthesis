@@ -100,11 +100,13 @@ And you can see a two hour video presentation of this library here:
 
 —-3D SHAPE GENERATORS
 
-	NOTE: all require [V-rotate-3D] to project onto 2D vector space
+	*NOTE: all require [V-rotate-3D] to project onto 2D vector space*
+	
 	[V-sphere] : create a 3D sphere of triangular faces
 	[V-pyramid] : create a 3D pyramid
 	[V-cube] : create a 3D cube
 	[V-icosahedron] : create a 3D icosahedron
+	[V-dodecahedron] : create a 3D dodecahedron
 
 —-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
 
