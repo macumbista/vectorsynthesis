@@ -1,6 +1,6 @@
-#N canvas 119 49 1100 733 10;
-#X obj 19 35 cnv 15 300 500 empty empty 3D_DODECAHEDRON 20 12 0 14
--233017 -66577 0;
+#N canvas 162 74 1100 733 10;
+#X obj 19 35 cnv 15 300 500 empty empty 3D_OCTAHEDRON 20 12 0 14 -233017
+-66577 0;
 #X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_MODULATION
 20 12 0 14 -233017 -66577 0;
 #X obj 46 502 dac~ 1 2 3;
@@ -19,10 +19,10 @@
 #X obj 46 470 V-rotate-3D;
 #X obj 142 109 / 100;
 #X obj 46 89 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 0 -8 0 10 -4034
--1 -1 200 256;
+-1 -1 300 256;
 #X obj 141 134 sig~;
 #X obj 142 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 0 -8 0 10
--4034 -1 -1 25 256;
+-4034 -1 -1 40 256;
 #X obj 46 109 phasor~;
 #X obj 242 109 / 100;
 #X obj 357 108 / 360;
@@ -57,8 +57,8 @@
 #X text 690 234 Signal from [phasor~];
 #X text 690 254 Scale (signal 0-1);
 #X text 690 274 Brightness (signal 0-1);
-#X obj 46 301 V-dodecahedron \$0;
-#X text 651 36 [V-cube] creates a 3D vector dodecahedron \, with brightness
+#X obj 46 301 V-octahedron \$0;
+#X text 651 36 [V-cube] creates a 3D vector octahedron \, with brightness
 blanking to remove the flyback line. It requires a \$0 creation argument
 to create unique tables inside to hold the vertice information.;
 #X connect 3 0 18 0;
