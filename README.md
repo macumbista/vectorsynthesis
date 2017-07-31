@@ -103,11 +103,12 @@ And you can see a two hour video presentation of this library here:
 	*NOTE: all require [V-rotate-3D] to project onto 2D vector space*
 	
 	[V-sphere] : create a 3D sphere of triangular faces
-	[V-pyramid] : create a 3D pyramid
+	[V-pyramid] : create a 3D pyramid with square base
 	[V-cube] : create a 3D cube
-	[V-icosahedron] : create a 3D icosahedron
+	[V-tetrahedron] : create a 3D tetrahedron
 	[V-octahedron] : create a 3D octahedron
 	[V-dodecahedron] : create a 3D dodecahedron
+	[V-icosahedron] : create a 3D icosahedron
 
 —-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
 
