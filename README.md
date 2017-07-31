@@ -98,9 +98,7 @@ And you can see a two hour video presentation of this library here:
 	[V-shear-2D] : to do
 	[V-mirror-2D] : to do
 
-—-3D SHAPE GENERATORS
-
-	*NOTE: all require [V-rotate-3D] to project onto 2D vector space*
+—-3D SHAPE GENERATORS (require [V-rotate-3D] to project onto 2D vector space)
 	
 	[V-sphere] : create a 3D sphere of triangular faces
 	[V-pyramid] : create a 3D pyramid with square base
@@ -110,13 +108,13 @@ And you can see a two hour video presentation of this library here:
 	[V-dodecahedron] : create a 3D dodecahedron
 	[V-icosahedron] : create a 3D icosahedron
 
-—-3D VECTOR TRANSFORMATIONS ::::: TO DO ::::: 
+—-3D VECTOR TRANSFORMATIONS
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
+	[V-rotate-3D] : project shapes to 3D and rotate
 	[V-shear-3D] : to do
 	[V-mirror-3D] : to do
-	[V-rotate-3D] : project shapes to 3D and rotate
 	[V-perspective-3D] : to do
 	[V-lighting-3D] : to do
 
@@ -143,9 +141,9 @@ And you can see a two hour video presentation of this library here:
 
 	[V-scanprocessor] : scan a camera input, image, or video and apply it to a raster
 
-—-ILDA LASER DISPLAY OUTPUT ::::: TO DO :::::
+—-ILDA LASER DISPLAY OUTPUT
 
-	[V-ilda]
+	[V-ilda] : to do
 
 
 *ACKNOWLEDGEMENTS*
