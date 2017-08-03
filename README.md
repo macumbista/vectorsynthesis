@@ -41,6 +41,9 @@ And you can see a two hour video presentation of this library here:
 	Oscilloscope software with X/Y/Z inputs plus audio loopback application
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
+	
+	Current development is on a MacBookPro/OSX 10.12.6, however one target platform would be the BELA board
+	Scan processing with a webcam on the Raspberry Pi is also being investigated
 
 
 *GENERAL NOTES*
