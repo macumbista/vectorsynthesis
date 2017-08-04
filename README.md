@@ -77,7 +77,7 @@ And you can see a two hour video presentation of this library here:
 
 —-NATIVE PD OBJECTS of NOTE
 
-	[phasor~] : sawtooth ramp generator
+	[phasor~] : sawtooth ramp generator which goes from value 0 to value 1
 	[wrap~] : remainder of a division operation, used here to generate phase-locked harmonics of [phasor~].
 		Adding an offset before [wrap~] changes the phase, and inserting a multiplication before [wrap~]
 		changes the harmonic, since the object "wraps" any incoming signal over 1 back to 
