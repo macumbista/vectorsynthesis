@@ -79,10 +79,11 @@ And you can see a two hour video presentation of this library here:
 
 	[phasor~] : sawtooth ramp generator
 	[wrap~] : remainder of a division operation, used here to generate phase-locked harmonics of [phasor~].
-		Adding an offset before [wrap~] changes the phase, and adding a multiplication before [wrap~]
-		changes the harmonic, since the object "wraps" any incoming signal over 1 back to phase = 0 degrees.
+		Adding an offset before [wrap~] changes the phase, and inserting a multiplication before [wrap~]
+		changes the harmonic, since the object "wraps" any incoming signal over 1 back to 
+		phase = 0 degrees.
 	[cos~] : transforms the signal from [phasor~] to a cosine wave. Adding an offset before [cos~] 
-		changes the phase, and adding a multiplication before [cos~] changes the harmonic, since the 
+		changes the phase, and inserting a multiplication before [cos~] changes the harmonic, since the 
 		objects "wraps" any incoming signal over 1 back to phase = 0 degrees.
 
 —-FUNCTION GENERATORS
