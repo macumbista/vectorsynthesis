@@ -38,7 +38,10 @@ And you can see a two hour video presentation of this library here:
 	—or—
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	-or-
-	Oscilloscope software with X/Y/Z inputs plus audio loopback application
+	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
+	(Note: "Oscilloscope!" currently lacks brightness input)
+	plus audio loopback application such as SoundFlower or Virtual Audio Cable
+	
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
 	
