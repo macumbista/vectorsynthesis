@@ -37,7 +37,7 @@ And you can see a two hour video presentation of this library here:
 	Vectrex game console modified for X/Y/Z input (all DC-coupled)
 	—or—
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
-	-or-
+	—or—
 	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
 	(Note: "Oscilloscope!" currently lacks brightness input)
 	plus audio loopback application such as SoundFlower or Virtual Audio Cable
@@ -70,7 +70,8 @@ And you can see a two hour video presentation of this library here:
 	DC-coupling is also necessary for brightness control.
 
 	Brightness control is essential for multiplexing, scan processing, and a
-	number of other interesting visual effects.
+	number of other interesting visual effects, however you can still use this 
+	library for many things without it.
 
 
 
