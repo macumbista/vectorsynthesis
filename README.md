@@ -176,6 +176,8 @@ The author also wishes to thank the following people and institutions for their 
 	Dave Jones
 	Nathan Thompson
 	Roland Lioni/Akira’s Rebirth
+	Hansi Raber
+	Jerobeam Fenderson
 	Lee Montgomery 
 
 
