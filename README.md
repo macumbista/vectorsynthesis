@@ -62,6 +62,7 @@ And you can see a two hour video presentation of this library here:
 
 	The files with "help" in their name are very good examples to start with. 
 	The files without "help" in their name are the abstractions themselves, without any controls.
+	The files with ".txt" extension are backup data for the various 3D shapes.
 
 	Audio Interface Output 1 : Horizontal
 	Audio Interface Output 2 : Vertical
