@@ -137,7 +137,7 @@ And you can see a two hour video presentation of this library here:
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
-	[V-rotate-3D] : project shapes to 3D and rotate
+	[V-rotate-3D] : project and rotate 3D shapes into 2D vector space
 	[V-shear-3D] : to do
 	[V-mirror-3D] : to do
 	[V-perspective-3D] : to do
