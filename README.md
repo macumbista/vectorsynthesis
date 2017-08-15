@@ -10,9 +10,17 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
+Tutorials, announcements, and testing here:
+
+	https://www.facebook.com/groups/vectorsynthesis/
+
 You can see a demo video of the scan processing and 3D rotation functions here:
 
 	https://www.facebook.com/macumbista/videos/795648800609817/
+	
+Here is a 3D OBJ file displayed on a vintage oscilloscope using Pure Data audio signals for the X and Y axes:
+	
+	https://www.facebook.com/macumbista/videos/801733136668050/
 
 And you can see a two hour video presentation of this library here: 
 	
@@ -52,6 +60,9 @@ And you can see a two hour video presentation of this library here:
 
 *GENERAL NOTES*
 
+	The files with "help" in their name are very good examples to start with. 
+	The files without "help" in their name are the abstractions themselves, without any controls.
+	The files with ".txt" extension are backup data for the various 3D shapes.
 
 	Audio Interface Output 1 : Horizontal
 	Audio Interface Output 2 : Vertical
@@ -126,7 +137,7 @@ And you can see a two hour video presentation of this library here:
 
 	[V-scale-3D] : to do
 	[V-translate-3D] : to do
-	[V-rotate-3D] : project shapes to 3D and rotate
+	[V-rotate-3D] : project and rotate 3D shapes into 2D vector space
 	[V-shear-3D] : to do
 	[V-mirror-3D] : to do
 	[V-perspective-3D] : to do
@@ -176,6 +187,8 @@ The author also wishes to thank the following people and institutions for their 
 	Dave Jones
 	Nathan Thompson
 	Roland Lioni/Akira’s Rebirth
+	Hansi Raber
+	Jerobeam Fenderson
 	Lee Montgomery 
 
 
