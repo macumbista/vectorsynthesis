@@ -39,3 +39,5 @@ to run the script:
 1 Navigate to the script directory.
 2 type "python vs_line_parse.py"
 3 this script was written in python 2.7 not sure if it will work under python 3.0
+
+SCRIPT by LEE MONTGOMERY
