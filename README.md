@@ -47,6 +47,7 @@ And you can see a two hour video presentation of this library here:
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	—or—
 	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
+	https://asdfg.me/osci/
 	(Note: "Oscilloscope!" currently lacks brightness input)
 	plus audio loopback application such as SoundFlower or Virtual Audio Cable
 	
