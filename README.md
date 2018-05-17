@@ -24,7 +24,7 @@ Here is a 3D OBJ file displayed on a vintage oscilloscope using Pure Data audio 
 
 And you can see a two hour video presentation of this library here: 
 	
-	https://www.facebook.com/macumbista/posts/791705604337470
+	https://www.facebook.com/montse.torredamarti/videos/10155631922443413
  
 
 *REQUIREMENTS*
