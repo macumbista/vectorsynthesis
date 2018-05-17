@@ -16,7 +16,7 @@ Tutorials, announcements, and testing here:
 
 You can see a demo video of the scan processing and 3D rotation functions here:
 
-	https://www.facebook.com/macumbista/videos/795648800609817/
+	https://vimeo.com/268395033
 	
 Here is a 3D OBJ file displayed on a vintage oscilloscope using Pure Data audio signals for the X and Y axes:
 	
