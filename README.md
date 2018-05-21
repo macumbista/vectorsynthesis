@@ -18,24 +18,17 @@ Tutorials, announcements, and testing here:
 
 	https://www.facebook.com/groups/vectorsynthesis/
 
-You can see a demo video of the scan processing and 3D rotation functions here:
+Demo videos here:
 
-	https://vimeo.com/268395033
-	
-Here is a 3D OBJ file displayed on a vintage oscilloscope using Pure Data audio signals for the X and Y axes:
-	
-	https://vimeo.com/270419481
+	https://vimeo.com/macumbista
 
-And you can see a two hour video presentation of this library here: 
-	
-	https://www.facebook.com/montse.torredamarti/videos/10155631922443413
  
 
 *REQUIREMENTS*
 
 ——SOFTWARE
 	
-	Pure Data 32 bit, version 0.45 or newer
+	Pure Data, version 0.45 or newer. Install 32 bit version if you wish to use GEM.
 	Gem 0.93.3 (OPTIONAL, used in scan processor only. Installed via deken, Pd’s externals manager)
 	
 	NOTE: Gem does not run on 64 bit Pure Data, and Pd-Extended is too old for some features of this library.
