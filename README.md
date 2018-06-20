@@ -10,10 +10,6 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
-UPCOMING HELSINKI WORKSHOP 16-17 JUNE 2018:
-
-	https://kuusipalaa.fi/events/vector-synthesis
-
 Tutorials, announcements, and testing here:
 
 	https://www.facebook.com/groups/vectorsynthesis/
@@ -44,8 +40,8 @@ Demo videos here:
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	—or—
 	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
-	https://asdfg.me/osci/
-	(Note: "Oscilloscope!" currently lacks brightness input)
+	https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
+	(Hold SHIFT key when selecting input for third channel brightness control)
 	plus audio loopback application such as SoundFlower or Virtual Audio Cable
 	
 	
@@ -98,98 +94,100 @@ Demo videos here:
 
 —-FUNCTION GENERATORS
 
-	[V-operator]: function generator with variable waveshaping, scaling, and uni- and bi-polar outputs
+	[V-operator]: function generator with variable waveshaping, scaling, phase, and uni- and bi-polar outputs
 	
 ——2D SHAPE GENERATORS
 
-	[V-basic-lissajous] : create a simple Lissajous figure
-	[V-lissagen] : create a Lissajous figure with wave shaping and scaling options
-	[V-circle] : create a circle
-	[V-triangle] : create a triangle
-	[V-diamond] : create a diamond/square
-	[V-poly-2D] : to do
-	[V-raster] : to do
+	[VS-basic-lissajous] : create a simple Lissajous figure
+	[VS-sine-circle] : create a circle
+	[VS-triangle] : create a triangle
+	[VS-diamond] : create a diamond/square
+	[VS-poly] : create an n-sided polygon
+	[VS-raster] : create a horizontal, vertical, or grid raster
 
-—-2D VECTOR TRANSFORMATIONS
+—-VECTOR TRANSFORMATIONS
 
-	[V-scale-2D] : scale (resize) a 2D vector shape
-	[V-translate-2D] : translate (move) a 2D vector shape
-	[V-rotate-2D] : rotate a 2D vector shape
-	[V-shear-2D] : to do
-	[V-mirror-2D] : to do
-
-—-3D SHAPE GENERATORS (require [V-rotate-3D] to project onto 2D vector space)
+	[VS-scale] : scale (resize) a 2D or 3D vector shape
+	[VS-translate] : translate (move) a 2D or 3D vector shape
+	[VS-rotate] : rotate a 2D or 3D vector shape
+	[V-projector] : project 3D shapes into 2D vector space with perspective and shadow
+	[VS-morph] : morph between two 2D vector shapes
+	[VS-decimate] : reduce the number of points used to draw a vector shape, with or without smoothing
 	
-	[V-sphere] : create a 3D sphere of triangular faces
-	[V-pyramid] : create a 3D pyramid with square base
-	[V-cube] : create a 3D cube
-	[V-tetrahedron] : create a 3D tetrahedron
-	[V-octahedron] : create a 3D octahedron
-	[V-dodecahedron] : create a 3D dodecahedron
-	[V-icosahedron] : create a 3D icosahedron
-
-—-3D VECTOR TRANSFORMATIONS
-
-	[V-scale-3D] : to do
-	[V-translate-3D] : to do
-	[V-rotate-3D] : project and rotate 3D shapes into 2D vector space
-	[V-shear-3D] : to do
-	[V-mirror-3D] : to do
-	[V-perspective-3D] : to do
-	[V-lighting-3D] : to do
+—-3D SHAPE GENERATORS
+	
+	[VS-sphere] : create a 3D sphere of triangular faces
+	[VS-pyramid] : create a 3D pyramid with square base
+	[VS-cube] : create a 3D cube
+	[VS-tetrahedron] : create a 3D tetrahedron
+	[VS-octahedron] : create a 3D octahedron
+	[VS-dodecahedron] : create a 3D dodecahedron
+	[VS-icosahedron] : create a 3D icosahedron
+	[VS-hand] : create a 3D hand shape
 
 —-UTILITIES
 
-	[V-seeme~] : plot a signal onto a visual array
-	[V-tabreadlin~] : read a table with linear interpolation (for reading 3D objects)
-	[V-waveselect] : preset waveshapes for [V-operator]
-	[V-gamma] : apply gamma correction to the brightness signal
-	[V-invert-unipolar] : invert a signal with a (0 - 1) range
-	[V-invert-bipolar] : invert a signal with a (-1 - 1) range
-	[V-crossfade] : morph between two 2D vector shapes
-	[V-clip] : to do
+	[VS-seeme] : plot three signals (X, Y, and brightness, for example) onto visual arrays
+	[VS-tabreadlin~] : read a table with linear interpolation (for reading 3D objects)
+	[VS-waveselect] : preset waveshapes for [VS-operator]
+	[VS-gamma] : apply gamma correction to the brightness signal
+	[VS-invert-unipolar] : invert a signal with a (0 - 1) range
+	[VS-invert-bipolar] : invert a signal with a (-1 - 1) range
+	[VS-blanking] : control the brightness of an object in relation to the phase of its signal
+	[VS-tri2ramp] : transform an input triangle wave (from an analog synth for example) to a ramp
+
 
 
 —-MULTIPLEXING (see V-multiplex-help.pd for details)
 
-	[V-masterclock] : sets multiplexing frequency and number of multiplexed channels
-	[V-output] : collects multiplexed channels and sends them to the audio interface
-	[V-multiplex] : assigns a vector shape to one multiplexing channel
-	[V-brightness-crossfade] : crossfades the brightness of two multiplexed channels
+	[VS-masterclock] : sets multiplexing frequency and number of multiplexed channels
+	[VS-output] : collects multiplexed channels and sends them to the audio interface
+	[VS-multiplex] : assigns a vector shape to one multiplexing channel
+	[VS-brightness-crossfade] : crossfades the brightness of two multiplexed channels
 
 —-SCAN PROCESSING (requires GEM external library!)
 
-	[V-scanprocessor] : scan a camera input, image, or video and apply it to a raster
+	[VS-scanprocessor] : scan a camera input, image, or video with an input raster or other vectors
 
 —-ILDA LASER DISPLAY OUTPUT
 
-	[V-ilda] : to do
+	[VS-ilda] : to do
 
 
 *ACKNOWLEDGEMENTS*
 
 
-The author also wishes to thank the following people and institutions for their support of the project:
+I would like to thank the following people and institutions for their support and encouragement of the project: 
 
-	Aalto University Media Lab (Helsinki FI)
-	Marianne Decoster-Taivalkoski/CMT Sibelius Academy (Helsinki FI)
+	Antti Ikonen/Aalto University Media Lab (Helsinki FI)
+	Marianne Decoster-Taivalkoski/Centre for Music & Technology of the Sibelius Academy (Helsinki FI)
 	Jason and Debora Bernagozzi/Signal Culture (Owego NY USA)
 	Borut Savski/Cirkulacija2 (Ljubljana SI)
 	Lars Larsen/LZX Industries (Portland OR USA)
-	Spektrum (Berlin DE)
+	Gisle Frøysland/Piksel (Bergen NO)
+	Alfredo Ciannameo and Lieke Ploeger/Spektrum (Berlin DE)
+	Svetlana Maras/Radio Belgrade Electronic Studio (Belgrade SRB)
+	Tapio “Tassu” Takala/Aalto University Department of Computer Science (Helsinki FI)
+	Joseph Hyde/Seeing Sound/Bath Spa University (Bath UK)
+	Jeff Chippewa & Nicolas Bernier/Canadian Electroacoustic Community (Montreal CA)
+	Kari Yli-Annala/AAVE Festival (Helsinki FI)
 	Andy Farnell
-	Ivan Marusic Klif
+	Ivan Marušić Klif
 	Dave Jones
 	Nathan Thompson
 	Roland Lioni/Akira’s Rebirth
 	Hansi Raber
-	Jerobeam Fenderson
-	Lee Montgomery 
-	IOhannes Zmölnig
+	Christian Ludwig/Jerobeam Fenderson
+	Lee Montgomery
+	Andrew Duff
+	Marco Donnarumma
+	Robert Henke
+	Chris King
+	and finally the Video Circuits online community, without whom I never would have started down this crazy road...
 
 
 Derek Holzer
-Berlin July 2017
+Berlin June 2018
 http://macumbista.net
 macumbista@gmail.com
 
