@@ -1,0 +1,78 @@
+#N canvas 128 73 901 701 10;
+#X obj 131 18 cnv 15 175 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 191 243 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 4445 1;
+#X obj 188 192 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10
+0 10 -4034 -1 -1 1;
+#X text 334 184 -1;
+#X text 358 184 saw;
+#X text 342 244 1;
+#X text 359 244 square;
+#X text 322 204 -0.3;
+#X text 354 204 sine;
+#X text 330 224 0.3;
+#X text 360 224 tri;
+#X text 311 164 SHAPE:;
+#X obj 141 30 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 60 8 0 10
+-4034 -1 -1 200 256;
+#X obj 141 59 phasor~;
+#X obj 188 262 sig~;
+#X obj 204 293 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 204 345 sig~;
+#X obj 204 321 / 100;
+#X text 39 373 Bipolar output;
+#X text 214 372 Unipolar output;
+#X floatatom 227 263 5 0 0 0 - - -, f 5;
+#X text 659 450 Derek Holzer;
+#X text 659 472 Berlin July 2017;
+#X text 660 492 macumbista@gmail.com;
+#X text 436 280 It features two outputs \, one bipolar which goes through
+zero into the positive and negative domains \, and the other unipolar
+which remains in the positive domain. Each is useful for different
+types of modulation or figure generation.;
+#X obj 141 371 VS-operator;
+#X obj 188 217 VS-waveselect;
+#X text 436 16 [VS-operator] is a function generator with variable
+shape and amplitude which is driven by the ramp input of a [phasor~]
+object. It can be used for generating Lissajous figures \, or as an
+LFO/modulator for any of the audio-controllable parameters in the Vector
+Synthesis library. Please note that it is *not* bandwidth-limited \,
+and aliasing can occur when any harmonic goes over the Nyquist frequency.
+;
+#X text 436 200 The shape of the waveform is continuously controllable
+by an audio signal \, or you can use the [VS-waveselect] abstraction
+to jump to preset waveforms of saw \, sine \, triangle \, and square.
+;
+#X obj 196 59 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 196 111 sig~;
+#X obj 196 87 / 100;
+#X obj 236 88 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 236 140 sig~;
+#X obj 236 116 / 360;
+#X text 440 136 The harmonic multiple in percent \, as well as the
+phase degree of the signal \, can be controlled in relation to the
+[phasor~] driving it.;
+#X obj 22 427 VS-seeme;
+#X obj 282 427 VS-seeme;
+#X connect 1 0 14 0;
+#X connect 1 0 20 0;
+#X connect 2 0 26 0;
+#X connect 12 0 13 0;
+#X connect 13 0 25 0;
+#X connect 14 0 25 3;
+#X connect 15 0 17 0;
+#X connect 16 0 25 4;
+#X connect 17 0 16 0;
+#X connect 25 0 36 0;
+#X connect 25 1 37 0;
+#X connect 26 0 1 0;
+#X connect 29 0 31 0;
+#X connect 30 0 25 1;
+#X connect 31 0 30 0;
+#X connect 32 0 34 0;
+#X connect 33 0 25 2;
+#X connect 34 0 33 0;

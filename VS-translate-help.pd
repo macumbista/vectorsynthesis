@@ -1,0 +1,116 @@
+#N canvas 118 75 928 617 10;
+#X obj 54 43 cnv 15 400 500 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 763 479 Derek Holzer;
+#X text 763 528 macumbista@gmail.com;
+#X obj 61 433 cnv 15 100 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 67 177 phasor~;
+#X obj 67 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 1000 256;
+#X obj 129 134 sig~;
+#X obj 129 91 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 89 112 sig~;
+#X obj 89 88 / 100;
+#X obj 89 67 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
+10 -4034 -1 -1 100 256;
+#X obj 189 272 sig~;
+#X obj 189 249 / 100;
+#X obj 189 230 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 -15 256;
+#X obj 265 492 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 265 520 switch~;
+#X obj 67 513 dac~ 1 2 3;
+#X obj 209 179 sig~;
+#X obj 209 154 / 100;
+#X obj 209 134 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 60
+8 0 10 -4034 -1 -1 100 256;
+#X obj 129 112 / 360;
+#X obj 229 294 sig~;
+#X obj 229 271 / 100;
+#X obj 229 252 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 -15 256;
+#X obj 278 332 phasor~;
+#X obj 278 288 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 10 256;
+#X obj 278 380 *~;
+#X obj 332 356 sig~;
+#X obj 332 332 / 100;
+#X obj 332 311 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 35 256;
+#X obj 278 423 *~;
+#X obj 381 335 tgl 15 1 empty empty mod_on_off 17 7 0 10 -4034 -1 -1
+1 1;
+#X text 481 95 Simple position translation is done via static \, DC
+audio signals.;
+#X text 484 294 INLETS;
+#X text 487 454 OUTLETS;
+#X text 485 128 Htranslate: negative values move the object left \,
+positive values move the object right.;
+#X text 485 158 Vtranslate: negative values move the object up \, positive
+values move the object down.;
+#X obj 67 453 VS-translate;
+#X obj 67 228 VS-sine-circle;
+#X obj 169 155 sig~;
+#X obj 169 112 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 30 256;
+#X obj 169 133 / 360;
+#X text 482 242 Automated translation is done via any sort of changing
+audio signal \, i.e. from [phasor~] or from the [VS-operator] abstractions.
+;
+#X text 481 41 [VS-translate] allows translation (movement) of the
+horizontal \, vertical \, and depth dimensions of a 2D or 3D vector
+figure. Brightness values are passed through.;
+#X text 485 188 Ztranslate: negative values move the object back \,
+positive values move the object forward. This requires the [VS-projector]
+abstraction to function.;
+#X text 763 503 Helsinki June 2018;
+#X text 499 530 Brightness signal;
+#X text 499 474 X axis signal;
+#X text 499 494 Y axis signal;
+#X text 499 512 Z axis signal (ignore for 2D projection);
+#X text 498 370 Brightness signal;
+#X text 498 314 X axis signal;
+#X text 498 334 Y axis signal;
+#X text 498 352 Z axis signal (ignore for 2D vectors);
+#X text 498 390 X translation signal;
+#X text 498 410 Y translation signal;
+#X text 498 430 Z translation signal;
+#X connect 4 0 38 0;
+#X connect 5 0 4 0;
+#X connect 6 0 38 2;
+#X connect 7 0 20 0;
+#X connect 8 0 38 1;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 37 4;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 15 0;
+#X connect 17 0 38 4;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 20 0 6 0;
+#X connect 21 0 37 5;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
+#X connect 24 0 26 0;
+#X connect 25 0 24 0;
+#X connect 26 0 30 0;
+#X connect 27 0 26 1;
+#X connect 28 0 27 0;
+#X connect 29 0 28 0;
+#X connect 30 0 37 4;
+#X connect 30 0 37 5;
+#X connect 31 0 30 1;
+#X connect 37 0 16 0;
+#X connect 37 1 16 1;
+#X connect 37 3 16 2;
+#X connect 38 0 37 0;
+#X connect 38 1 37 1;
+#X connect 38 2 37 3;
+#X connect 39 0 38 3;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;

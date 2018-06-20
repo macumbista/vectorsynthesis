@@ -1,0 +1,80 @@
+#N canvas 110 23 1104 579 10;
+#X obj 19 35 cnv 15 300 250 empty empty 3D_DODECAHEDRON 20 12 0 14
+-233017 -66577 0;
+#X obj 333 36 cnv 15 300 250 empty empty XYZ_ROTATION 20 12 0 14 -233017
+-66577 0;
+#X obj 46 262 dac~ 1 2 3;
+#X obj 242 131 sig~;
+#X obj 242 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 0 -8
+0 10 -4034 -1 -1 100 256;
+#X obj 142 109 / 100;
+#X obj 46 89 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 0 -8 0 10 -4034
+-1 -1 225 256;
+#X obj 141 134 sig~;
+#X obj 142 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 0 -8 0 10
+-4034 -1 -1 25 256;
+#X obj 46 109 phasor~;
+#X obj 242 109 / 100;
+#X obj 356 88 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8 0
+10 -4034 -1 -1 10 256;
+#X obj 356 142 phasor~;
+#X obj 456 88 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8 0
+10 -4034 -1 -1 10 256;
+#X obj 456 142 phasor~;
+#X obj 546 88 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8 0
+10 -4034 -1 -1 10 256;
+#X obj 546 142 phasor~;
+#X text 882 466 Derek Holzer;
+#X text 882 515 macumbista@gmail.com;
+#X obj 574 229 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 574 257 switch~;
+#X obj 546 112 / 100;
+#X obj 456 112 / 100;
+#X obj 356 112 / 100;
+#X text 394 351 INLETS;
+#X obj 46 220 VS-rotate;
+#X obj 46 171 VS-dodecahedron;
+#X text 411 380 1st signal to be viewed;
+#X text 411 400 2nd signal to be viewed;
+#X text 411 420 3rd signal to be viewed;
+#X text 882 490 Helsinki June 2018;
+#X text 651 126 The amount of samples displayed is fixed at 1000 \,
+however the amount of time displayed depends entirely on the current
+sampling rate: (1000 samples/sampling rate)*1000 = time in miliseconds.
+The view refreshes every 200 miliseconds \, so any frequency multiple
+of 100 Hz or whole fraction thereof will appear "stationary" in the
+viewing table.;
+#X obj 108 294 VS-seeme;
+#X text 651 36 [VS-seeme] provides a simultaneous \, linear view of
+three different signals \, such as the X \, Y \, and brightness outputs
+of a Vector Synthesis abstraction \, allowing you to compare their
+frequencies \, waveforms \, amplitudes \, offsets \, and phases.;
+#X connect 3 0 26 2;
+#X connect 4 0 10 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 26 1;
+#X connect 8 0 5 0;
+#X connect 9 0 26 0;
+#X connect 10 0 3 0;
+#X connect 11 0 23 0;
+#X connect 12 0 25 4;
+#X connect 13 0 22 0;
+#X connect 14 0 25 5;
+#X connect 15 0 21 0;
+#X connect 16 0 25 6;
+#X connect 19 0 20 0;
+#X connect 21 0 16 0;
+#X connect 22 0 14 0;
+#X connect 23 0 12 0;
+#X connect 25 0 2 0;
+#X connect 25 0 32 0;
+#X connect 25 1 2 1;
+#X connect 25 1 32 1;
+#X connect 25 3 2 2;
+#X connect 25 3 32 2;
+#X connect 26 0 25 0;
+#X connect 26 1 25 1;
+#X connect 26 2 25 2;
+#X connect 26 3 25 3;

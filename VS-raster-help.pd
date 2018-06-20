@@ -1,0 +1,137 @@
+#N canvas 55 50 1051 608 10;
+#X text 900 372 Derek Holzer;
+#X text 900 421 macumbista@gmail.com;
+#X obj 653 387 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 653 415 switch~;
+#X obj 450 33 cnv 15 190 400 empty empty BRIGHTNESS_MODULATION 10 12
+0 14 -233017 -66577 0;
+#X obj 27 33 cnv 15 190 400 empty empty RASTER 10 12 0 14 -233017 -66577
+0;
+#X obj 236 32 cnv 15 190 400 empty empty SIZE_+_POSITION_CONTROL 5
+12 0 14 -233017 -66577 0;
+#X text 664 171 Interesting effects can be achieved by directly modulating
+the brightness of the raster \, as seen in this patch. Experiment with
+different modulation frequencies \, phase degree \, waveshapes \, and
+scaling factors sent to the [VS-operator] abstraction. The [VS-operator]
+can also be replaced by an external signal from the soundcard via [adc~]
+\, for example.;
+#X text 664 276 There are only certain combinations of vertical frequency
+and horizontal lines which work with minimal errors. Set the brightness
+to a constant value and adjust either vertical or horizontal parameters
+to see this in effect. Jagged edges of the raster indicate errors due
+to aliasing and syncronization issues.;
+#X text 663 30 [VS-raster] is designed to produce a rectangular raster
+field for the [VS-scanprocessor] patch \, or for direct brightness
+modulation video synthesis. It takes a vertical scan ramp from [phasor~]
+\, a number of lines \, and a brightness factor. It outputs the vertical
+ramp and a number of horizontal ramps phase locked to the vertical
+ramp \, as well as a blanked brightness to eliminate the "flyback"
+lines. The line number is multiplied by the vertical frequency \, so
+you will reach the Nyquist aliasing frequenecy of a 44.1K sampling
+rate very quickly!;
+#X obj 273 213 vradio 15 1 1 3 empty empty empty 0 -8 0 10 -4034 -1
+-1 2;
+#X text 303 230 VERT;
+#X text 302 215 HORZ;
+#X text 302 246 GRID;
+#X obj 510 238 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 8255 1;
+#X obj 507 187 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10
+0 10 -4034 -1 -1 2;
+#X obj 507 257 sig~;
+#X obj 523 288 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 150 256;
+#X obj 523 340 sig~;
+#X obj 523 316 / 100;
+#X text 533 367 Unipolar output;
+#X floatatom 546 258 5 0 0 0 - - -, f 5;
+#X obj 460 366 VS-operator;
+#X obj 507 212 VS-waveselect;
+#X obj 511 74 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 511 126 sig~;
+#X obj 511 102 / 100;
+#X obj 551 103 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 551 155 sig~;
+#X obj 551 131 / 360;
+#X obj 42 383 dac~ 1 2 3;
+#X obj 42 70 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vertical_frequency
+0 -8 0 10 -4034 -1 -1 25 256;
+#X obj 93 143 sig~;
+#X obj 93 120 nbx 5 14 -1e+37 1e+37 0 1 empty empty Horizontal_lines
+0 -8 0 10 -4034 -1 -1 160 256;
+#X obj 42 120 sig~;
+#X obj 42 143 phasor~;
+#X obj 523 391 s~ \$0-brightmod;
+#X obj 76 270 r~ \$0-brightmod;
+#X obj 460 73 phasor~;
+#X obj 460 51 nbx 5 14 -1e+37 1e+37 0 1 empty empty frequency 60 8
+0 10 -4034 -1 -1 202 256;
+#X obj 252 129 sig~;
+#X obj 252 106 / 100;
+#X obj 252 87 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hblanking 60 8
+0 10 -4034 -1 -1 23 256;
+#X obj 305 151 sig~;
+#X obj 305 128 / 100;
+#X obj 305 109 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vblanking 60 8
+0 10 -4034 -1 -1 21 256;
+#X obj 133 186 sig~;
+#X obj 133 163 / 100;
+#X obj 133 144 nbx 5 14 -1e+37 1e+37 0 1 empty empty Brightness 60
+8 0 10 -4034 -1 -1 60 256;
+#X text 24 448 INLETS;
+#X text 45 492 2 Number of lines;
+#X text 45 512 3 Brightness;
+#X text 45 532 4 HORZ blanking;
+#X text 45 552 5 VERT blanking;
+#X text 45 572 6 Orientation (0 = HORZ \, 1 = VERT \, 2 = GRID);
+#X text 324 448 OUTLETS;
+#X text 345 532 4 Y (unipolar \, for scan processing inputs);
+#X text 345 512 3 X (unipolar \, for scan processing inputs);
+#X text 345 492 2 Y (bipolar \, for centered vector output);
+#X text 345 472 1 X (bipolar \, for centered vector output);
+#X text 345 552 5 Brightness;
+#X text 900 396 Helsinki June 2018;
+#X obj 42 93 * 0.5;
+#X text 45 472 1 Ramp at framerate / 2;
+#X obj 42 318 VS-raster, f 15;
+#X connect 2 0 3 0;
+#X connect 10 0 64 5;
+#X connect 14 0 16 0;
+#X connect 14 0 21 0;
+#X connect 15 0 23 0;
+#X connect 16 0 22 3;
+#X connect 17 0 19 0;
+#X connect 18 0 22 4;
+#X connect 19 0 18 0;
+#X connect 22 1 36 0;
+#X connect 23 0 14 0;
+#X connect 24 0 26 0;
+#X connect 25 0 22 1;
+#X connect 26 0 25 0;
+#X connect 27 0 29 0;
+#X connect 28 0 22 2;
+#X connect 29 0 28 0;
+#X connect 31 0 62 0;
+#X connect 32 0 64 1;
+#X connect 33 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 64 0;
+#X connect 37 0 64 2;
+#X connect 38 0 22 0;
+#X connect 39 0 38 0;
+#X connect 40 0 64 3;
+#X connect 41 0 40 0;
+#X connect 42 0 41 0;
+#X connect 43 0 64 4;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X connect 46 0 64 2;
+#X connect 47 0 46 0;
+#X connect 48 0 47 0;
+#X connect 62 0 34 0;
+#X connect 64 0 30 0;
+#X connect 64 1 30 1;
+#X connect 64 4 30 2;

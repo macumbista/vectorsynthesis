@@ -1,0 +1,55 @@
+#N canvas 246 23 897 703 10;
+#X obj 44 43 cnv 15 300 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 650 386 Derek Holzer;
+#X text 650 410 Berlin July 2017;
+#X text 650 435 macumbista@gmail.com;
+#X text 404 163 The [V-rotate-2D] abstraction can be used to rotate
+the diamond 45 degrees to show a square.;
+#X text 401 264 "The diamond shaped image is really a square tilted
+45 degrees. The two triangles waves required must be 90 degrees out
+of phase with each other. They are applied to any two axes desired
+to get a flat \, 2-dimensional image.";
+#X text 444 328 From: “Applications of OEI 3D Display Modules”
+(1975);
+#X obj 57 210 cnv 15 100 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 67 177 phasor~;
+#X obj 67 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 2000 256;
+#X obj 118 113 sig~;
+#X obj 118 70 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 158 136 sig~;
+#X obj 158 113 / 100;
+#X obj 158 94 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 25 256;
+#X obj 365 398 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 365 426 switch~;
+#X obj 67 373 dac~ 1 2 3;
+#X obj 198 136 / 100;
+#X obj 198 116 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 60
+8 0 10 -4034 -1 -1 100 256;
+#X obj 118 91 / 360;
+#X text 402 121 Phase of 90 degrees (= 0.25) creates perfect diamond
+shape. Phase modulation creates a pseudo-3D "rotation" effect.;
+#X obj 67 228 VS-diamond;
+#X obj 198 164 sig~;
+#X text 401 49 [V-diamond] is a simple \, [phasor~] driven shape generator
+with phase modulation.;
+#X connect 8 0 22 0;
+#X connect 9 0 8 0;
+#X connect 10 0 22 1;
+#X connect 11 0 20 0;
+#X connect 12 0 22 2;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 16 0;
+#X connect 18 0 23 0;
+#X connect 19 0 18 0;
+#X connect 20 0 10 0;
+#X connect 22 0 17 0;
+#X connect 22 1 17 1;
+#X connect 22 2 17 2;
+#X connect 23 0 22 3;
