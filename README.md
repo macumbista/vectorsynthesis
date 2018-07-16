@@ -104,13 +104,14 @@ Demo videos here:
 	[VS-diamond] : create a diamond/square
 	[VS-poly] : create an n-sided polygon
 	[VS-raster] : create a horizontal, vertical, or grid raster
+	[VS-object_2d] : read X and Y points from a textfile and draw them
 
 —-VECTOR TRANSFORMATIONS
 
 	[VS-scale] : scale (resize) a 2D or 3D vector shape
 	[VS-translate] : translate (move) a 2D or 3D vector shape
 	[VS-rotate] : rotate a 2D or 3D vector shape
-	[V-projector] : project 3D shapes into 2D vector space with perspective and shadow
+	[VS-projector] : project 3D shapes into 2D vector space with perspective and shadow
 	[VS-morph] : morph between two 2D vector shapes
 	[VS-decimate] : reduce the number of points used to draw a vector shape, with or without smoothing
 	
