@@ -1,4 +1,4 @@
-#N canvas 210 149 1100 733 10;
+#N canvas 88 90 1100 733 10;
 #X obj 19 35 cnv 15 300 500 empty empty 3D_ICOSAHEDRON 20 12 0 14 -233017
 -66577 0;
 #X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_PERSPECTIVE
@@ -39,15 +39,12 @@
 #X text 883 265 OUTLETS;
 #X text 663 265 INLETS;
 #X obj 46 260 VS-rotate;
-#X obj 46 191 VS-icosahedron;
 #X text 353 76 X ROTATION;
 #X text 453 76 Y ROTATION;
 #X text 543 76 Z ROTATION;
-#X obj 46 405 VS-projector, f 16;
 #X obj 537 350 sig~;
-#X obj 537 321 / 100;
 #X obj 537 301 nbx 5 14 -1e+37 1e+37 0 1 empty empty shadow 0 -8 0
-10 -4034 -1 -1 100 256;
+10 -4034 -1 -1 75 256;
 #X obj 418 310 sig~;
 #X obj 418 261 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_angle_X 0
 -8 0 10 -4034 -1 -1 0 256;
@@ -72,11 +69,6 @@ and projects it into 3D space by applying a perspective transformation
 as well as a brightness modulation to simulate depth.;
 #X text 660 204 The shadow threshold determines at what point on the
 Z axis the lines begin to fade.;
-#X obj 46 464 clip~ -1 1;
-#X obj 116 464 clip~ -1 1;
-#X obj 186 464 clip~ 0 1;
-#X text 237 433 Extreme settings can produce very high values!;
-#X text 262 467 Use of clip~ objects is recommended;
 #X text 882 490 Helsinki June 2018;
 #X text 660 105 Viewing distance affects the perspective illusion.
 Smaller values increase the perspective effect. Extreme settings will
@@ -84,13 +76,20 @@ cause noticeable distortion and high output values.;
 #X text 659 152 The viewing angle settings can simulate seeing the
 object from the side \, top \, or bottom. Extreme settings will cause
 noticeable distortion and high output values.;
-#X connect 3 0 31 2;
+#X obj 46 405 VS-projector, f 16;
+#X obj 537 321 / 100;
+#X obj 178 322 sig~;
+#X obj 178 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty Z_distance 0 -8
+0 10 -4034 -1 -1 0 256;
+#X obj 178 290 / 100;
+#X obj 46 191 VS-icosahedron;
+#X connect 3 0 62 2;
 #X connect 4 0 10 0;
 #X connect 5 0 7 0;
 #X connect 6 0 9 0;
-#X connect 7 0 31 1;
+#X connect 7 0 62 1;
 #X connect 8 0 5 0;
-#X connect 9 0 31 0;
+#X connect 9 0 62 0;
 #X connect 10 0 3 0;
 #X connect 11 0 23 0;
 #X connect 12 0 30 4;
@@ -102,29 +101,29 @@ noticeable distortion and high output values.;
 #X connect 21 0 16 0;
 #X connect 22 0 14 0;
 #X connect 23 0 12 0;
-#X connect 30 0 35 0;
-#X connect 30 1 35 1;
-#X connect 30 2 35 2;
-#X connect 30 3 35 3;
-#X connect 31 0 30 0;
-#X connect 31 1 30 1;
-#X connect 31 2 30 2;
-#X connect 31 3 30 3;
-#X connect 35 0 57 0;
-#X connect 35 1 58 0;
-#X connect 35 2 59 0;
-#X connect 36 0 35 7;
-#X connect 37 0 36 0;
-#X connect 38 0 37 0;
-#X connect 39 0 35 5;
-#X connect 40 0 43 0;
-#X connect 41 0 35 6;
-#X connect 42 0 44 0;
-#X connect 43 0 39 0;
-#X connect 44 0 41 0;
-#X connect 45 0 35 4;
-#X connect 46 0 47 0;
-#X connect 47 0 45 0;
+#X connect 30 0 57 0;
+#X connect 30 1 57 1;
+#X connect 30 2 57 2;
+#X connect 30 3 57 3;
+#X connect 34 0 57 7;
+#X connect 35 0 58 0;
+#X connect 36 0 57 5;
+#X connect 37 0 40 0;
+#X connect 38 0 57 6;
+#X connect 39 0 41 0;
+#X connect 40 0 36 0;
+#X connect 41 0 38 0;
+#X connect 42 0 57 4;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
 #X connect 57 0 2 0;
-#X connect 58 0 2 1;
-#X connect 59 0 2 2;
+#X connect 57 1 2 1;
+#X connect 57 2 2 2;
+#X connect 58 0 34 0;
+#X connect 59 0 57 2;
+#X connect 60 0 61 0;
+#X connect 61 0 59 0;
+#X connect 62 0 30 0;
+#X connect 62 1 30 1;
+#X connect 62 2 30 2;
+#X connect 62 3 30 3;
