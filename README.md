@@ -136,6 +136,7 @@ Demo videos here:
 	[VS-invert-bipolar] : invert a signal with a (-1 - 1) range
 	[VS-blanking] : control the brightness of an object in relation to the phase of its signal
 	[VS-tri2ramp] : transform an input triangle wave (from an analog synth for example) to a ramp
+	[VS-gemhead-master] : simple controls for Gem portion of scan processing patches
 
 
 
@@ -148,7 +149,7 @@ Demo videos here:
 
 —-SCAN PROCESSING (requires GEM external library!)
 
-	[VS-scanprocessor] : scan a camera input, image, or video with an input raster or other vectors
+	[VS-scanprocessor] : scan a camera input, image, or video with a raster or other vectors
 
 —-ILDA LASER DISPLAY OUTPUT
 
@@ -188,7 +189,7 @@ I would like to thank the following people and institutions for their support an
 
 
 Derek Holzer
-Berlin June 2018
+Helsinki September 2018
 http://macumbista.net
 macumbista@gmail.com
 
