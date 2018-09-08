@@ -1,4 +1,4 @@
-#N canvas 88 90 1100 733 10;
+#N canvas 209 59 1100 733 10;
 #X obj 19 35 cnv 15 300 500 empty empty 3D_ICOSAHEDRON 20 12 0 14 -233017
 -66577 0;
 #X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_PERSPECTIVE
@@ -6,7 +6,7 @@
 #X obj 46 502 dac~ 1 2 3;
 #X obj 242 131 sig~;
 #X obj 242 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 0 -8
-0 10 -4034 -1 -1 100 256;
+0 10 -4034 -1 -1 300 256;
 #X obj 142 109 / 100;
 #X obj 46 89 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 0 -8 0 10 -4034
 -1 -1 50 256;
@@ -32,12 +32,12 @@
 #X obj 546 132 / 100;
 #X obj 456 132 / 100;
 #X obj 356 132 / 100;
-#X text 680 294 X (horizontal);
-#X text 680 314 Y (vertical);
-#X text 680 334 Z (depth);
-#X text 680 354 Brightness;
-#X text 883 265 OUTLETS;
-#X text 663 265 INLETS;
+#X text 680 334 X (horizontal);
+#X text 680 354 Y (vertical);
+#X text 680 374 Z (depth);
+#X text 680 394 Brightness;
+#X text 883 305 OUTLETS;
+#X text 663 305 INLETS;
 #X obj 46 260 VS-rotate;
 #X text 353 76 X ROTATION;
 #X text 453 76 Y ROTATION;
@@ -57,13 +57,13 @@
 #X obj 358 241 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_distance
 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 358 261 / 100;
-#X text 900 294 X (horizontal);
-#X text 900 314 Y (vertical);
-#X text 900 334 Brightness;
-#X text 680 374 Viewing Distance;
-#X text 681 394 Viewing Angle X;
-#X text 681 414 Viewing Angle Y;
-#X text 681 434 Shadow Threshold;
+#X text 900 334 X (horizontal);
+#X text 900 354 Y (vertical);
+#X text 900 374 Brightness;
+#X text 680 414 Viewing Distance;
+#X text 681 434 Viewing Angle X;
+#X text 681 454 Viewing Angle Y;
+#X text 681 474 Shadow Threshold;
 #X text 659 44 [VS-projector] takes a 2D or 3D input vector shape \,
 and projects it into 3D space by applying a perspective transformation
 as well as a brightness modulation to simulate depth.;
@@ -83,6 +83,9 @@ noticeable distortion and high output values.;
 0 10 -4034 -1 -1 0 256;
 #X obj 178 290 / 100;
 #X obj 46 191 VS-icosahedron;
+#X text 660 238 Because of the tanh "soft clipping" function applied
+to brightness \, intial brightness values should be much higher (250-500).
+Output brightness will never exceed 1;
 #X connect 3 0 62 2;
 #X connect 4 0 10 0;
 #X connect 5 0 7 0;
