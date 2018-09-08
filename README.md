@@ -137,6 +137,7 @@ Demo videos here:
 	[VS-blanking] : control the brightness of an object in relation to the phase of its signal
 	[VS-tri2ramp] : transform an input triangle wave (from an analog synth for example) to a ramp
 	[VS-gemhead-master] : simple controls for Gem portion of scan processing patches
+	[VS-sig2float] : method for reading an audio signal as a samplerate stream of floats
 
 
 
