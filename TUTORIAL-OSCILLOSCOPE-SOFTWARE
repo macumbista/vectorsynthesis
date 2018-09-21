@@ -1,0 +1,22 @@
+TUTORIAL: USING HANSI RABER'S OSCILLOSCOPE to PREVIEW VECTOR SYNTHESIS on MacOS
+
+OSCILLOSCOPE app: https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
+
+REQUIRES SoundFlower: https://github.com/mattingalls/Soundflower/releases/download/2.0b2/Soundflower-2.0b2.dmg
+
+![Alt text] (images/software-oscilloscope.png?raw=true "Software Oscilloscope")
+
+
+Instructions:
+
+1) Start Pd and choose "Soundflower (64 chan)" as output. Open a patch which uses brightness modulation ("V-multiplex-help.pd" for example) and turn on audio DSP in Pd
+
+2) Start Oscilloscope! and choose "Built In Output" as output. (You will not hear the audio of Pd passed through, but the app will crash if you select the same device for both input and output.) Make sure your sample rate in this app matches the sample rate of Pd for best results.
+
+3) Click "Start!" button in Oscilloscope. In the next screen, click the microphone icon. Then SHIFT+click the "Soundflower (64 chan)" as input.
+
+4) Once you have done that, you will see a little "half-moon" icon which toggles the brightness modulation on and off. (If it does not appear, it's because you did not hold SHIFT while selecting the SoundFlower 64 channel input.)
+
+5)  TIP: on OSX you can create an "aggregate device" in your Audio/MIDI settings which sends the output of Pd both to the oscilloscope software and to your soundcard. That way you can see and hear the vector shapes at the same time! 
+
+Please do not bug Hansi with bug reports on this application, it is a pre-release specifically for us to to play around with. It may crash.
