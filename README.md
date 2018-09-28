@@ -105,6 +105,7 @@ Demo videos here:
 	[VS-poly] : create an n-sided polygon
 	[VS-raster] : create a horizontal, vertical, or grid raster
 	[VS-object_2d] : read X and Y points from a textfile and draw them
+	[VS-syntheshape] : complex oscilloscope art generator based on Mitchell Waite's 1974 "Syntheshape"
 
 —-VECTOR TRANSFORMATIONS
 
