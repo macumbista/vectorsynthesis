@@ -1,4 +1,4 @@
-#N canvas 0 22 850 663 10;
+#N canvas 0 23 850 663 10;
 #X obj 74 122 phasor~;
 #X obj 74 165 +~;
 #X obj 74 200 cos~;
@@ -54,24 +54,24 @@
 #X obj 629 410 +~;
 #X obj 74 440 dac~ 1;
 #X obj 629 440 dac~ 2;
-#X obj 357 316 sig~;
-#X obj 357 273 nbx 5 14 -1e+37 1e+37 0 1 empty empty SCALE_XY 0 -8
+#X obj 357 396 sig~;
+#X obj 357 353 nbx 5 14 -1e+37 1e+37 0 1 empty empty SCALE_XY 0 -8
 0 10 -228856 -1 -1 20 256;
-#X obj 357 293 / 100;
-#X obj 297 316 sig~;
-#X obj 297 273 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_X 0 -8 0 10
+#X obj 357 373 / 100;
+#X obj 297 396 sig~;
+#X obj 297 353 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_X 0 -8 0 10
 -203904 -1 -1 0 256;
-#X obj 297 293 / 100;
-#X obj 417 316 sig~;
-#X obj 417 273 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_Y 0 -8 0 10
+#X obj 297 373 / 100;
+#X obj 417 396 sig~;
+#X obj 417 353 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_Y 0 -8 0 10
 -232576 -1 -1 0 256;
-#X obj 417 293 / 100;
+#X obj 417 373 / 100;
 #X obj 311 464 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
 1 1;
 #X obj 311 492 switch~;
 #X obj 312 572 dac~ 3;
 #X obj 312 547 sig~;
-#X obj 312 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 312 525 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 587 72 * -1;
 #X text 665 549 Derek Holzer;
@@ -83,6 +83,14 @@
 #X text 453 486 Based on Syntheshape - Oscilloscope Art Generator \,
 "Projects in Sight \, Sound and Sensation" \, Mitchell Waite \, 1974
 ;
+#X obj 297 316 sig~;
+#X obj 297 273 nbx 5 14 -1e+37 1e+37 0 1 empty empty BAL_X 0 -8 0 10
+-203904 -1 -1 0 256;
+#X obj 297 293 / 100;
+#X obj 417 316 sig~;
+#X obj 417 273 nbx 5 14 -1e+37 1e+37 0 1 empty empty BAL_Y 0 -8 0 10
+-232576 -1 -1 0 256;
+#X obj 417 293 / 100;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 39 0;
@@ -147,3 +155,9 @@
 #X connect 61 0 38 0;
 #X connect 66 0 39 1;
 #X connect 67 0 40 1;
+#X connect 69 0 20 0;
+#X connect 70 0 71 0;
+#X connect 71 0 69 0;
+#X connect 72 0 21 0;
+#X connect 73 0 74 0;
+#X connect 74 0 72 0;
