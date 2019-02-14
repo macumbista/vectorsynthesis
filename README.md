@@ -18,7 +18,9 @@ Demo videos here:
 
 	https://vimeo.com/macumbista
 
+ If this library has been useful, please consider making a donation towards the development:
  
+ [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](SPHWJSJWH92GG)
 
 *REQUIREMENTS*
 
