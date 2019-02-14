@@ -190,13 +190,13 @@ I would like to thank the following people and institutions for their support an
 	Marco Donnarumma
 	Robert Henke
 	Chris King
-	and finally the Video Circuits online community, without whom I never would have started down this crazy road...
+	and finally the Video Circuits online community, without whom I never would have started down this crazy road
 
 
 Derek Holzer
 Helsinki September 2018
 http://macumbista.net
-macumbista@gmail.com
+macumbista AT THE DOMAIN gmail DOT com
 
 
 
