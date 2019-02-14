@@ -20,7 +20,8 @@ Demo videos here:
 
  If this library has been useful, please consider making a donation towards the development:
  
- [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](SPHWJSJWH92GG)
+ [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPHWJSJWH92GG&source=url)
+ 
 
 *REQUIREMENTS*
 
