@@ -1,0 +1,235 @@
+#N canvas 148 23 851 725 10;
+#X obj 517 656 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+1 1;
+#X obj 517 684 switch~;
+#X obj 20 622 vs-ilda, f 55;
+#X obj 32 474 nbx 5 14 -100 100 0 1 empty empty Scale_X 60 8 0 10 -4034
+-1 -1 100 256;
+#X obj 42 500 nbx 5 14 -100 100 0 1 empty empty Scale_Y 60 8 0 10 -4034
+-1 -1 100 256;
+#X obj 142 474 nbx 5 14 -100 100 0 1 empty empty Offset_X 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 152 500 nbx 5 14 -100 100 0 1 empty empty Offset_Y 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 256 474 nbx 5 14 -100 100 0 1 empty empty Clip_X 60 8 0 10 -4034
+-1 -1 100 256;
+#X obj 266 500 nbx 5 14 -100 100 0 1 empty empty Clip_Y 60 8 0 10 -4034
+-1 -1 100 256;
+#X obj 356 474 nbx 5 14 -360 360 0 1 empty empty Rot_X 60 8 0 10 -4034
+-1 -1 0 256;
+#X obj 366 500 nbx 5 14 -360 360 0 1 empty empty Rot_Y 60 8 0 10 -4034
+-1 -1 0 256;
+#X obj 456 474 nbx 5 14 -360 360 0 1 empty empty Rot_Z 60 8 0 10 -4034
+-1 -1 0 256;
+#X obj 21 527 hsl 128 15 0 127 0 1 empty empty Cutoff_Frq 135 8 0 10
+-4034 -1 -1 10900 1;
+#X obj 225 567 mtof;
+#X obj 20 447 nbx 5 14 0 160 0 1 empty empty Audio_Volume_(dB) 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 218 527 nbx 8 14 -1e+37 1e+37 0 0 empty empty Hz 83 8 0 10 -228856
+-1 -1 4434.92 256;
+#X obj 20 375 vs-ilda-throw;
+#X text 609 649 Derek Holzer;
+#X text 609 687 macumbista@gmail.com;
+#X text 609 668 Santa Barbara MAR 2019;
+#X obj 290 261 sig~;
+#X obj 293 211 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 290 235 / 127;
+#X floatatom 334 235 5 0 0 0 - - -;
+#X obj 20 132 phasor~;
+#X obj 20 3 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 50 256;
+#X obj 82 89 sig~;
+#X obj 82 46 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 42 45 sig~;
+#X obj 42 22 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
+10 -4034 -1 -1 1 256;
+#X obj 122 112 sig~;
+#X obj 122 89 / 100;
+#X obj 122 70 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 20 256;
+#X obj 162 112 / 100;
+#X obj 162 92 nbx 5 14 0 100 0 1 empty empty brightness 60 8 0 10 -4034
+-1 -1 35 256;
+#X obj 82 67 / 360;
+#X obj 20 183 VS-sine-circle;
+#X obj 162 132 sig~;
+#X obj 125 232 *~;
+#X text 343 144 Green;
+#X obj 140 208 nbx 5 14 -1e+37 1e+37 0 1 empty empty Harmonic 60 8
+0 10 -4034 -1 -1 1 256;
+#X obj 515 531 nbx 5 14 0 100 0 1 empty empty GREENmin 60 8 0 10 -4034
+-1 -1 4 256;
+#X obj 515 559 nbx 5 14 0 100 0 1 empty empty BLUEmin 60 8 0 10 -4032
+-1 -1 4 256;
+#X obj 515 502 nbx 5 14 0 100 0 1 empty empty REDmin 60 8 0 10 -250961
+-1 -1 4 256;
+#X obj 638 502 hsl 128 15 0.01 1 1 1 empty empty Red_Curve -2 -6 0
+8 -254346 -1 -1 8100 0;
+#X obj 638 530 hsl 128 15 0.01 1 1 1 empty empty Green_Curve -2 -6
+0 8 -4034 -1 -1 8500 0;
+#X obj 638 558 hsl 128 15 0.01 1 1 1 empty empty Blue_Curve -2 -6 0
+8 -4032 -1 -1 8000 0;
+#X floatatom 772 502 5 0 0 0 - - -;
+#X floatatom 775 530 5 0 0 0 - - -;
+#X floatatom 773 558 5 0 0 0 - - -;
+#N canvas 0 23 450 300 switch 0;
+#X obj 90 47 inlet~;
+#X obj 160 47 inlet~;
+#X obj 253 46 inlet;
+#X obj 253 79 sig~;
+#X obj 253 115 expr~ ($v1 * -1) +1;
+#X obj 90 206 outlet~;
+#X obj 90 159 *~;
+#X obj 160 159 *~;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 6 1;
+#X connect 4 0 7 1;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X restore 125 334 pd switch;
+#X obj 290 290 vradio 25 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X text 327 319 Synced RGB;
+#X text 327 294 Solid RGB;
+#X text 286 95 Solid RGB;
+#X text 136 186 Synced RGB;
+#N canvas 0 23 450 300 HARDWARE 0;
+#X text 19 26 Requires DC coupled \, 8 channel \, balanced audio interface
+such as MOTU. For channel converter info see:;
+#X text 18 60 https://github.com/ffd8/dac_ilda/raw/master/dac_ilda_adaptor.pdf
+;
+#X text 20 97 Or see "ilda-connections.png" in this library;
+#X restore 501 241 pd HARDWARE REQUIREMENTS;
+#N canvas 0 23 450 300 RGB 0;
+#X text 39 68 RGB minimums and curves help you calibrate the brightness
+of your laser to adjust point where diode turns on as well as avoid
+total "whiteout" saturation.;
+#X text 40 24 NOTE: this set of patches was tested on a KVANT Clubmax
+2000 \, the given RGB values may be different on your laser!;
+#X text 38 136 You can adjust the phase of modulating signals where
+the colors come in \, by looking at the [vs-ilda-rgb] object inside
+[vs-ilda-throw].;
+#X restore 501 316 pd RGB CALIBRATION;
+#X text 427 20 INSTRUCTIONS FOR USE:;
+#X msg 290 121 0;
+#X text 325 122 Red;
+#X msg 310 143 45;
+#X msg 330 162 76;
+#X text 363 162 Blue;
+#X text 385 184 Red;
+#X msg 350 183 127;
+#X obj 151 275 sig~;
+#X obj 151 232 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 151 253 / 360;
+#X obj 125 307 +~;
+#X text 457 46 Put one [vs-ilda-throw] inside any patch you want to
+send to your ILDA RGB laser. It will send the X \, Y \, brightness
+\, and RGB values to the [vs-ilda] abstraction. You can then switch
+on and off those patches as needed.;
+#N canvas 0 23 450 300 IMAGE 0;
+#X text 41 151 Use Rotation X Y Z controls to keystone \, flip \, and
+align the laser image. Numbers are 0-360 degrees.;
+#X text 41 21 Use Scale X Y controls to adjust the horizontal and vertical
+size of the laser image. Numbers are in percent.;
+#X text 41 61 Use Offset X Y controls to adjust the horizontal and
+vertical position of the laser image. Numbers are in percent.;
+#X text 41 114 Use Clip X Y controls to adjust the horizontal and vertical
+limits of the laser image. Numbers are in percent.;
+#X text 41 191 Use Cutoff Frequency control to apply filter to the
+X Y signals before they are sent to the laser. This can offer some
+basic protection for your laser galvos against sudden changes. A good
+starting value would be 2K to 4K Hz \, dependong on your galvo speed
+(20-40 kpps). Numbers are in Herz.;
+#X restore 501 341 pd IMAGE CALIBRATION;
+#N canvas 0 23 450 300 AUDIO 0;
+#X text 31 51 Channels 7 and 8 of your audio interface give a stereo
+mixdown of the X and Y channels \, amplitude modulated by the brightness
+signal \, with a lowpass filter on the speed of the amplitude modulation
+set by the Cutoff Frequency. The Audio Volume control adjusts the level
+of this signal \, with numbers given in dB.;
+#X restore 501 365 pd AUDIO OUTPUT;
+#X text 456 212 READ THESE FOR MORE INFO:;
+#N canvas 672 148 450 300 [VS-ILDA-THROW] 0;
+#X text 58 65 2) Y;
+#X text 58 85 3) Brightness (0-1);
+#X text 27 21 [vs-ilda-throw] signal inputs:;
+#X text 58 45 1) X;
+#X text 58 105 4) RGB value (0-1);
+#X restore 501 267 pd [VS-ILDA-THROW] INPUTS;
+#N canvas 0 23 450 300 [VS-ILDA] 0;
+#X text 58 45 1) X;
+#X text 58 65 2) Y;
+#X text 58 105 4) Red;
+#X text 58 125 5) Green;
+#X text 58 145 6) Blue;
+#X text 58 165 7) Left Audio;
+#X text 58 185 8) Right Audio;
+#X text 58 85 3) Brightness;
+#X text 27 21 Vector Synthesis ILDA channels:;
+#X restore 501 292 pd [VS-ILDA] OUTPUT CHANNELS;
+#X text 456 105 A single [vs-ilda] is required to communicate with
+your audio interface and from there to your laser. Put it in your master
+patch.;
+#X connect 0 0 1 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 2;
+#X connect 5 0 2 3;
+#X connect 6 0 2 4;
+#X connect 7 0 2 5;
+#X connect 8 0 2 6;
+#X connect 9 0 2 7;
+#X connect 10 0 2 8;
+#X connect 11 0 2 9;
+#X connect 12 0 13 0;
+#X connect 13 0 2 10;
+#X connect 13 0 15 0;
+#X connect 14 0 2 0;
+#X connect 20 0 50 1;
+#X connect 21 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 20 0;
+#X connect 24 0 36 0;
+#X connect 24 0 38 0;
+#X connect 25 0 24 0;
+#X connect 26 0 36 2;
+#X connect 27 0 35 0;
+#X connect 28 0 36 1;
+#X connect 29 0 28 0;
+#X connect 30 0 36 3;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 0;
+#X connect 35 0 26 0;
+#X connect 36 0 16 0;
+#X connect 36 1 16 1;
+#X connect 36 2 16 2;
+#X connect 37 0 36 4;
+#X connect 38 0 69 0;
+#X connect 40 0 38 1;
+#X connect 41 0 2 12;
+#X connect 42 0 2 13;
+#X connect 43 0 2 11;
+#X connect 44 0 47 0;
+#X connect 44 0 2 14;
+#X connect 45 0 48 0;
+#X connect 45 0 2 15;
+#X connect 46 0 49 0;
+#X connect 46 0 2 16;
+#X connect 50 0 16 3;
+#X connect 51 0 50 2;
+#X connect 59 0 21 0;
+#X connect 61 0 21 0;
+#X connect 62 0 21 0;
+#X connect 65 0 21 0;
+#X connect 66 0 69 1;
+#X connect 67 0 68 0;
+#X connect 68 0 66 0;
+#X connect 69 0 50 0;
