@@ -1,6 +1,6 @@
-#N canvas 148 23 851 725 10;
+#N canvas 115 23 851 725 10;
 #X obj 517 656 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
-1 1;
+0 1;
 #X obj 517 684 switch~;
 #X obj 20 622 vs-ilda, f 55;
 #X obj 32 474 nbx 5 14 -100 100 0 1 empty empty Scale_X 60 8 0 10 -4034
@@ -94,7 +94,7 @@
 #X connect 7 0 5 0;
 #X restore 125 334 pd switch;
 #X obj 290 290 vradio 25 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
+-1 -1 1;
 #X text 327 319 Synced RGB;
 #X text 327 294 Solid RGB;
 #X text 286 95 Solid RGB;
@@ -112,9 +112,15 @@ of your laser to adjust point where diode turns on as well as avoid
 total "whiteout" saturation.;
 #X text 40 24 NOTE: this set of patches was tested on a KVANT Clubmax
 2000 \, the given RGB values may be different on your laser!;
-#X text 38 136 You can adjust the phase of modulating signals where
+#X text 38 126 You can adjust the phase of modulating signals where
 the colors come in \, by looking at the [vs-ilda-rgb] object inside
 [vs-ilda-throw].;
+#X text 36 181 The [vs-ilda] abstraction conatains a "scan-fail" subpatch
+\, which analyzes the combined level of the X and Y axes. If that level
+falls under a certain threshold in dB \, within the window size in
+samples (compare with current sample rate to find time in ms) \, then
+the RGB chanels are all shut off to prevent an unmoving laser beam
+from posing a safety hazard.;
 #X restore 501 316 pd RGB CALIBRATION;
 #X text 427 20 INSTRUCTIONS FOR USE:;
 #X msg 290 121 0;
