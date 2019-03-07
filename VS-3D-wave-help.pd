@@ -1,4 +1,4 @@
-#N canvas 119 41 1100 733 10;
+#N canvas 118 87 1100 751 10;
 #X obj 19 35 cnv 15 300 500 empty empty 3D_WAV_FILE_OBJECT 20 12 0
 14 -233017 -66577 0;
 #X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_MODULATION
@@ -68,17 +68,19 @@ in same directory if you don't have any of your own.;
 #X text 654 138 To create usable files \, import a .obj file into the
 OsciStudio application (version 0.6.0 or greater) \, wait for the conversion
 \, and then do the following:;
-#X text 666 204 * Right or Control click the top of a group \, where
+#X text 666 184 * Right or Control click the top of a group \, where
 you would select a 3D model;
-#X text 666 243 * This opens a menu \, at the bottom it says "Export
+#X text 666 223 * This opens a menu \, at the bottom it says "Export
 Wavetable";
-#X text 666 284 * The wavetable will contain exactly one wave at the
+#X text 666 264 * The wavetable will contain exactly one wave at the
 current frequency (you get a one second file if you set OsciStudio
 to 1hz). Sample rate will always be 192KHz.;
-#X text 666 331 * All your settings in rotate/trace/etc. will be part
+#X text 666 311 * All your settings in rotate/trace/etc. will be part
 of the result;
-#X text 658 377 Many thanks to Hansi Raber for implemented that feature
+#X text 658 385 Many thanks to Hansi Raber for implemented that feature
 in OsciStudio!;
+#X text 666 346 * You can also convert .svg files in this way for 2D
+graphics;
 #X connect 3 0 17 0;
 #X connect 4 0 42 4;
 #X connect 5 0 44 2;
