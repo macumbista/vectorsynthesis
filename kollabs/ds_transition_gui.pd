@@ -1,0 +1,245 @@
+#N canvas 700 22 578 549 10;
+#X obj 101 115 cnv 15 178 45 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X msg 70 388 vis 1;
+#X text 300 55 for help: see [ds-help];
+#X obj 179 121 bng 15 250 50 0 /ds/\$1/reg/dialog /ds/\$1/reg/dialog
+register_list 17 7 0 10 -159808 -1 -1;
+#X obj 179 141 bng 15 250 50 0 /ds/\$1/reg/settings/buffer /ds/\$1/reg/settings/buffer
+buffer 17 7 0 10 -257985 -1 -1;
+#X text 106 120 Individual:;
+#X text 124 140 General:;
+#X obj 70 336 r /ds/\$1/transition/advanced/vis;
+#X obj 70 410 s pd-\$0-transition-advanced;
+#N canvas 428 60 217 199 \$0-transition-advanced 0;
+#X obj 6 -401 cnv 15 200 180 empty empty Transition_Settings 5 10 0
+14 -228856 -66577 0;
+#X obj 17 -379 tgl 15 0 /ds/\$1/transition/state /ds/\$1/transition/state
+state 17 7 0 10 -258113 -1 -1 1 1;
+#X obj 17 -279 tgl 15 0 /ds/\$1/morph /ds/\$1/morph morph 17 7 0 10
+-4034 -1 -1 1 1;
+#X obj 137 -299 tgl 15 0 /ds/\$1/occupy /ds/\$1/occupy occupy 17 7
+0 10 -260097 -1 -1 1 1;
+#X obj 17 -299 tgl 15 0 /ds/\$1/occupy/override /ds/\$1/occupy/override
+occupy_override: 17 7 0 10 -260097 -1 -1 0 1;
+#X obj 17 -239 tgl 15 0 /ds/\$1/slave /ds/\$1/slave slave 17 7 0 10
+-203904 -1 -1 1 1;
+#X obj 17 -259 tgl 15 0 /ds/\$1/delay /ds/\$1/delay delay 17 7 0 10
+-204800 -1 -1 1 1;
+#X obj 17 -349 tgl 15 0 /ds/\$1/recall/settings/state /ds/\$1/recall/settings/state
+recall 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 17 -329 tgl 15 0 /ds/\$1/store/settings/state /ds/\$1/store/settings/state
+store 17 7 0 10 -262144 -1 -1 1 1;
+#X coords 0 199 1 198 85 60 0;
+#X restore 70 436 pd \$0-transition-advanced;
+#X msg 317 399 vis 1;
+#X obj 317 335 r /ds/\$1/reg/settings/buffer;
+#N canvas 167 374 347 278 \$0-transition-buffer 0;
+#X obj 173 34 cnv 15 158 65 empty empty empty 20 12 0 14 -261234 -66577
+0;
+#X obj 233 59 bng 30 250 50 0 /ds/\$1/reg/settings/buffer/paste/all
+/ds/\$1/reg/settings/buffer/paste/all send_to_all_registers -45 -10
+0 10 -258113 -1 -1;
+#X obj 10 10 cnv 15 321 20 empty empty Transition_Settings_Buffer_for_"\$1"
+5 10 0 12 -228856 -1 0;
+#X obj 10 34 cnv 15 158 65 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 20 44 tgl 15 0 /ds/\$1/reg/settings/buffer/slave /ds/\$1/reg/settings/buffer/slave
+slave 17 7 0 10 -203904 -1 -1 0 1;
+#X obj 20 70 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/delay
+/ds/\$1/reg/settings/buffer/delay delay/s 47 7 0 10 -204800 -1 -1 0
+256;
+#X obj 10 103 cnv 15 321 118 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 159 113 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/time
+/ds/\$1/reg/settings/buffer/morph/time time/s: -45 7 0 10 -4034 -1
+-1 12 256;
+#X obj 20 113 tgl 15 0 /ds/\$1/reg/settings/buffer/morph /ds/\$1/reg/settings/buffer/morph
+morph 17 7 0 10 -258113 -1 -1 1 1;
+#X obj 159 139 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/curve/shape
+/ds/\$1/reg/settings/buffer/morph/curve/shape empty 47 7 0 10 -4034
+-1 -1 0 256;
+#X obj 20 197 nbx 4 14 10 10000 0 0 /ds/\$1/reg/settings/buffer/morph/curve/resolution
+/ds/\$1/reg/settings/buffer/morph/curve/resolution resolution 0 -8
+0 10 -204786 -1 -1 128 256;
+#X obj 233 197 hradio 15 1 0 3 /ds/\$1/reg/settings/buffer/morph/curve/quality
+/ds/\$1/reg/settings/buffer/morph/curve/quality quality 0 -8 0 10 -204786
+-1 -1 0;
+#X obj 233 139 bng 20 250 50 0 /ds/\$1/reg/settings/buffer/morph/curve/vis
+/ds/\$1/reg/settings/buffer/morph/curve/vis show 23 10 0 10 -4034 -1
+-1;
+#X obj 108 197 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/timegrain
+/ds/\$1/reg/settings/buffer/morph/timegrain time-grain/ms 0 -8 0 10
+-204786 -1 -1 20 256;
+#X obj 23 160 hsl 128 15 0 1 0 0 /ds/\$1/reg/settings/buffer/morph/curve/weight
+/ds/\$1/reg/settings/buffer/morph/curve/weight weight 5 8 0 10 -4034
+-1 -1 0 1;
+#X obj 23 139 hsl 128 15 -10 10 0 0 /ds/\$1/reg/settings/buffer/morph/curve/shape
+/ds/\$1/reg/settings/buffer/morph/curve/shape shape 5 8 0 10 -4034
+-1 -1 6350 1;
+#X obj 159 160 nbx 4 14 -1e+37 1e+37 0 0 /ds/\$1/reg/settings/buffer/morph/curve/weight
+/ds/\$1/reg/settings/buffer/morph/curve/weight empty 47 7 0 10 -4034
+-1 -1 0 256;
+#X obj 10 225 cnv 15 321 35 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 20 235 tgl 15 0 /ds/\$1/reg/settings/buffer/occupy /ds/\$1/reg/settings/buffer/occupy
+occupy 17 7 0 10 -260097 -1 -1 0 1;
+#X restore 317 448 pd \$0-transition-buffer;
+#X obj 317 422 s pd-\$0-transition-buffer;
+#X obj 70 361 anyonce /ds/\$1/transition/advanced/vis;
+#X obj 317 365 anyonce /ds/\$1/transition/buffer/vis;
+#X text 91 40 ds_transition_gui <domain>;
+#X text 108 278 (c)2013 Marian Weger;
+#X obj 101 162 cnv 15 178 23 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 179 166 bng 15 250 50 0 /ds/\$1/transition/advanced/vis /ds/\$1/transition/advanced/vis
+advanced 17 7 0 10 -262144 -1 -1;
+#X obj 113 166 bng 15 250 50 0 /ds/\$1/transition/stop /ds/\$1/transition/stop
+|| 2 8 0 10 -24198 -1 -1;
+#X obj 134 166 bng 15 250 50 0 /ds/\$1/transition/resume /ds/\$1/transition/resume
+> 6 7 0 10 -262144 -1 -1;
+#N canvas 136 22 936 665 register-list-loader 0;
+#X obj 451 443 + 1;
+#X obj 389 477 * 20;
+#X msg 652 425 clear;
+#X obj 389 443 f 0;
+#X msg 451 400 0;
+#X obj 389 530 list append;
+#X msg 44 346 vis 1;
+#X obj 308 61 r /ds/\$1/reg/dialog;
+#X obj 327 273 t b b b b b;
+#X obj 510 232 t b b b;
+#X obj 515 470 list append \$1;
+#X msg 478 588 obj 30 \$1 bng 15 250 50 0 /ds/\$3\$2/dialog /ds/\$3\$2/dialog
+\$2 20 7 0 10 -262144 -1 -1;
+#X msg 515 494 obj 30 20 cnv 15 300 20 empty empty Register_list_for_"\$1"
+5 10 0 14 -1 -262144 0;
+#X obj 389 499 + 46;
+#X obj 44 323 del 0;
+#X obj 308 93 anyonce /ds/\$1/reg/dialog;
+#X obj 124 498 f \$0;
+#X msg 124 520 \$1-reg-names;
+#X obj 124 559 s;
+#X obj 213 498 list prepend \$1;
+#X msg 213 520 symbol /ds/\$1/name/route;
+#X obj 124 464 t b b;
+#X obj 389 366 r \$0-reg-names;
+#X obj 652 675 s pd-\$0-register-list;
+#X obj 44 368 s pd-\$0-register-list;
+#X obj 553 781 s pd-\$0-register-list-guis;
+#X obj 389 400 t b a;
+#X obj 386 597 t b a a a;
+#X obj 389 552 list append \$1 \$0;
+#X obj 380 781 s;
+#X msg 392 747 symbol pd-\$4-\$2;
+#X msg 582 737 obj 30 \$1 pd \$4-\$2;
+#X obj 539 859 s pd-\$0-register-list-control;
+#X msg 568 821 obj 30 \$1 ds_reg_gui_slot \$3 \$2 \$4;
+#X msg 285 684 obj 5 5 ds_reg_gui \$3 \$2 \, vis 0 \, relocate 333x362+1+1
+1x1+100+100 \, loadbang;
+#X obj 491 93 loadbang;
+#X obj 491 125 t b b b;
+#X obj 308 137 t b b b;
+#X msg 397 178 0;
+#X msg 348 178 1;
+#X obj 397 211 s /ds/\$1/dsp;
+#X connect 0 0 3 1;
+#X connect 1 0 13 0;
+#X connect 2 0 23 0;
+#X connect 2 0 25 0;
+#X connect 2 0 32 0;
+#X connect 3 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 28 0;
+#X connect 6 0 24 0;
+#X connect 7 0 15 0;
+#X connect 8 0 14 0;
+#X connect 8 1 21 0;
+#X connect 8 2 4 0;
+#X connect 8 3 10 0;
+#X connect 8 4 2 0;
+#X connect 9 0 4 0;
+#X connect 9 1 10 0;
+#X connect 9 2 2 0;
+#X connect 10 0 12 0;
+#X connect 11 0 23 0;
+#X connect 12 0 23 0;
+#X connect 13 0 5 0;
+#X connect 14 0 6 0;
+#X connect 15 0 37 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 1;
+#X connect 21 0 16 0;
+#X connect 21 1 19 0;
+#X connect 22 0 26 0;
+#X connect 26 0 3 0;
+#X connect 26 1 5 1;
+#X connect 27 2 34 0;
+#X connect 27 3 31 0;
+#X connect 27 3 30 0;
+#X connect 27 3 33 0;
+#X connect 28 0 11 0;
+#X connect 28 0 27 0;
+#X connect 30 0 29 1;
+#X connect 31 0 25 0;
+#X connect 33 0 32 0;
+#X connect 34 0 29 0;
+#X connect 35 0 36 0;
+#X connect 36 0 39 0;
+#X connect 36 1 9 0;
+#X connect 36 2 38 0;
+#X connect 37 0 39 0;
+#X connect 37 1 8 0;
+#X connect 37 2 38 0;
+#X connect 38 0 40 0;
+#X connect 39 0 40 0;
+#X restore 327 126 pd register-list-loader;
+#N canvas 565 93 402 401 \$0-register-list 0;
+#X obj 30 20 cnv 15 300 20 empty empty Register_list_for_"domain" 5
+10 0 14 -1 -262144 0;
+#X restore 327 146 pd \$0-register-list;
+#N canvas 637 22 392 393 \$0-register-list-guis 0;
+#X restore 327 166 pd \$0-register-list-guis;
+#N canvas 637 22 392 393 \$0-register-list-control 0;
+#X restore 327 186 pd \$0-register-list-control;
+#N canvas 153 223 540 344 COLOR_stop_resume 1;
+#X obj 197 282 outlet;
+#X obj 197 52 r /ds/\$1/transition/busy;
+#X obj 197 154 sel 0 1;
+#X obj 315 282 outlet;
+#X msg 167 232 color 0 22 22;
+#X msg 285 232 color 0 22 22;
+#X msg 29 170 color 14 22 22;
+#X msg 197 253 color 16 22 22;
+#X msg 315 253 color 13 22 22;
+#X obj 29 52 r /ds/\$1/transition/paused;
+#X obj 29 74 sel 0 1;
+#X obj 197 124 f;
+#X connect 1 0 11 0;
+#X connect 2 0 7 0;
+#X connect 2 0 5 0;
+#X connect 2 1 4 0;
+#X connect 2 1 8 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 8 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 6 0;
+#X connect 10 1 5 0;
+#X connect 11 0 2 0;
+#X restore 100 74 pd COLOR_stop_resume;
+#X connect 1 0 8 0;
+#X connect 7 0 14 0;
+#X connect 10 0 13 0;
+#X connect 11 0 15 0;
+#X connect 14 0 1 0;
+#X connect 15 0 10 0;
+#X connect 26 0 20 0;
+#X connect 26 1 21 0;
+#X coords 0 -1 1 1 180 86 1 100 100;

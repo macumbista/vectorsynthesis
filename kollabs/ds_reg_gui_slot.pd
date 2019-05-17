@@ -1,0 +1,12 @@
+#N canvas 370 349 450 300 10;
+#X text 26 22 ds_reg_gui_slot <domain> <name> <\$0>;
+#X obj 118 96 b;
+#X msg 118 139 vis 1;
+#X obj 118 161 s pd-\$3-\$2;
+#X text 142 218 (c)2013 Marian Weger;
+#X obj 118 118 anyonce /ds/\$1\$2/dialog;
+#X obj 118 74 r /ds/\$1\$2/dialog;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 1 0;

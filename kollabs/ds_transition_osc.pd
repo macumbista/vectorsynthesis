@@ -1,0 +1,13 @@
+#N canvas 740 22 344 339 10;
+#X text 25 301 (c)2013 Marian Weger;
+#X text 11 10 ds_transition_osc <domain> <osc-domain>;
+#X obj 34 75 osc_bi \$2 /ds/\$1/transition/stop;
+#X obj 34 95 osc_bi \$2 /ds/\$1/transition/resume;
+#X obj 34 125 osc_bi \$2 /ds/\$1/transition/state;
+#X obj 34 145 osc_bi \$2 /ds/\$1/recall/settings/state;
+#X obj 34 165 osc_bi \$2 /ds/\$1/store/settings/state;
+#X obj 34 185 osc_bi \$2 /ds/\$1/occupy/override;
+#X obj 34 205 osc_bi \$2 /ds/\$1/occupy;
+#X obj 34 225 osc_bi \$2 /ds/\$1/morph;
+#X obj 34 245 osc_bi \$2 /ds/\$1/delay;
+#X obj 34 265 osc_bi \$2 /ds/\$1/slave;

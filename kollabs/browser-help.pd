@@ -1,0 +1,13 @@
+#N canvas 194 80 691 565 10;
+#X text 162 385 (c)2013 Marian Weger;
+#X obj 75 298 r /browser/<name>/selected;
+#X obj 75 320 print;
+#X msg 54 176 browser.txt;
+#X text 63 274 output selected:;
+#X text 44 153 load new textfile:;
+#X obj 54 198 s /browser/<name>/table/filename;
+#X obj 69 66 browser <name> 100 browser.txt;
+#X obj 346 18 browser_gui <name>;
+#X connect 1 0 2 0;
+#X connect 3 0 6 0;
+#X coords 0 565 1 564 241 185 0;

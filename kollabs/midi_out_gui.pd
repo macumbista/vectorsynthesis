@@ -1,0 +1,18 @@
+#N canvas 270 207 657 487 10;
+#X obj 101 115 cnv 15 198 34 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X text 312 340 (c)2011 \, Marian Weger;
+#X obj 106 125 tgl 15 0 /midi/\$1/out/print /midi/\$1/out/print print
+17 7 0 10 -262144 -1 -1 0 1;
+#X obj 243 125 tgl 15 0 /midi/\$1/out/active /midi/\$1/out/active active
+17 7 0 10 -4034 -1 -1 1 1;
+#X text 173 25 midi_out_gui: <domain>;
+#N canvas 755 69 371 260 init 0;
+#X obj 123 75 loadbang;
+#X obj 123 97 list prepend \$1;
+#X msg 123 119 \; /midi/\$1/out/active 1 \; /midi/\$1/out/print 0 \;
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 193 218 pd init;
+#X coords 0 -1 1 1 200 50 1 100 100;

@@ -1,0 +1,6 @@
+#N canvas 777 186 258 268 10;
+#X text 26 195 (c)2013 Marian Weger;
+#X text 11 10 ds_logic_simple <domain> <\$0>;
+#X obj 55 56 r \$2-datastream;
+#X obj 55 98 osc2send;
+#X connect 2 0 3 0;

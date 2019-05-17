@@ -1,0 +1,247 @@
+#N canvas 0 23 875 708 10;
+#X obj 101 118 cnv 15 300 60 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 108 612 outlet~ X;
+#X obj 178 612 outlet~ Y;
+#X obj 246 612 outlet~ B;
+#X obj 246 160 nbx 5 14 0 360 0 0 \$2/phase \$2/phase phase 0 -8 0
+10 -4034 -1 -1 0 256;
+#X obj 157 320 / 360;
+#X obj 110 159 nbx 5 14 -1e+37 1e+37 0 0 \$2/harmonic \$2/harmonic
+harmonic 0 -8 0 10 -4034 -1 -1 0 256;
+#X obj 114 406 sig~;
+#X obj 180 160 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
+0 -8 0 10 -4034 -1 -1 0 256;
+#X obj 232 270 / 100;
+#X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
+brightness 0 -8 0 10 -4034 -1 -1 0 256;
+#X obj 297 321 / 100;
+#X obj 399 386 kollabs/ds_reg \$1 \$2/frequency;
+#X obj 399 446 kollabs/ds_reg \$1 \$2/harmonic;
+#X obj 399 466 kollabs/ds_reg \$1 \$2/scale;
+#X obj 399 486 kollabs/ds_reg \$1 \$2/phase;
+#X obj 399 506 kollabs/ds_reg \$1 \$2/brightness;
+#X obj 190 17 inlet~ phase;
+#X obj 102 17 inlet~ phasor;
+#X obj 108 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
+frequency 0 -8 0 10 -257985 -1 -1 0 256;
+#X obj 168 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
+freq/100 0 -8 0 10 -257985 -1 -1 0 256;
+#X obj 227 130 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
+-1 -1;
+#X obj 99 316 phasor~;
+#X obj 129 251 / 100;
+#X msg 165 275 0, f 4;
+#N canvas 0 23 634 533 selector 0;
+#X obj 139 36 inlet~;
+#X obj 210 36 inlet~;
+#X obj 380 36 inlet;
+#X msg 142 112 0;
+#X msg 154 135 1;
+#X msg 214 112 0;
+#X msg 225 135 1;
+#X obj 139 239 *~;
+#X obj 210 239 *~;
+#X obj 163 267 outlet~;
+#X obj 152 81 select 0 1 2;
+#X msg 280 112 0;
+#X msg 292 135 1;
+#X obj 277 239 *~;
+#X obj 277 36 r~ \$1-master;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 8 1;
+#X connect 3 0 13 1;
+#X connect 4 0 7 1;
+#X connect 5 0 7 1;
+#X connect 5 0 13 1;
+#X connect 6 0 8 1;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 10 0 3 0;
+#X connect 10 0 4 0;
+#X connect 10 1 5 0;
+#X connect 10 1 6 0;
+#X connect 10 2 11 0;
+#X connect 10 2 12 0;
+#X connect 11 0 8 1;
+#X connect 11 0 7 1;
+#X connect 12 0 13 1;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;
+#X restore 99 346 pd selector;
+#X obj 323 52 r \$1-reset-phase;
+#X obj 318 130 hradio 15 1 0 3 \$2/source \$2/source Int.Ext.Master
+-12 -8 0 10 -257985 -1 -1 0;
+#X obj 273 17 inlet~ scale;
+#X obj 421 93 savestate;
+#X obj 472 137 f;
+#X obj 487 157 f;
+#X obj 503 177 f;
+#X obj 523 198 f;
+#X obj 543 218 f;
+#X obj 563 238 f;
+#X obj 583 258 f;
+#X obj 399 406 kollabs/ds_reg \$1 \$2/frequency-100;
+#X obj 399 426 kollabs/ds_reg \$1 \$2/source;
+#X text 621 465 Derek Holzer;
+#X text 621 514 macumbista@gmail.com;
+#X text 621 489 Helsinki May 2019;
+#X obj 353 17 inlet~ brightness;
+#X obj 99 435 *~;
+#X obj 98 484 vs-sine-circle, f 26;
+#X obj 128 377 sig~ 1;
+#X obj 377 129 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X obj 320 269 s pd-\$2-help;
+#X msg 320 247 vis 1;
+#N canvas 0 23 945 551 \$2-help 1;
+#X obj 296 18 cnv 15 300 220 empty empty HELP:vs-circle-gui 20 12 0
+14 -4034 -66577 0;
+#X text 303 43 INLETS:;
+#X text 303 153 OUTLETS:;
+#X text 329 86 2) Phase signal (0-1);
+#X text 329 106 3) Scale signal (0-1);
+#X text 329 126 4) Brightness signal (0-1);
+#X text 329 176 1) X signal;
+#X text 329 196 2) Y signal;
+#X text 329 216 3) Brightness signal (0-1);
+#X text 329 66 1) Ramp signal (i.e. from [phasor~]) (0-1);
+#X text 17 240 [vs-circle-gui] is a simple \, ramp driven shape generator
+with phase modulation \, and with the option of increasing the hramonic
+relationship between the two function generators to create a Lissajous
+figure.;
+#X text 20 340 The source of the ramp driving this abstraction is selected
+from three options:;
+#X text 31 431 EXT: ramp is taken from left-most inlet in the abstraction
+;
+#X text 32 455 MASTER: ramp is taken from the MASTER bus \, which could
+be a [vs-phasor-gui] set to MASTER \, or the master clock of the [vs-multiplex-gui]
+set to MASTER.;
+#X text 490 244 Other controls:;
+#X text 512 353 PHASE adjusts the phase of the output waveform.;
+#X text 511 328 SCALE adjusts the amplitude of the output waveform.
+;
+#X text 511 279 HARMONIC sets the output waveform to a harmonic multiple
+of the driving ramp. It also determines the number of STEP or RANDOM
+steps per cycle of the driving ramp.;
+#X text 31 385 INT: internal ramp generator with rough and fine tune
+(freq/100) plus RESET button for phase. Set SMOOTH to ON if using MIDI
+CC to control frequency.;
+#X text 512 373 BRIGHTNESS sets the brightness value of this vector
+figure.;
+#X text 753 418 Derek Holzer;
+#X text 753 467 macumbista@gmail.com;
+#X text 753 442 Helsinki May 2019;
+#X text 18 294 Phase modulation creates a pseudo-3D "rotation" effect.
+;
+#X restore 320 299 pd \$2-help;
+#X obj 222 55 loadbang;
+#X obj 257 130 hradio 15 1 0 2 \$2/smooth \$2/smooth ON 35 8 0 10 -257985
+-1 -1 0;
+#X text 256 115 Smooth;
+#X obj 398 528 kollabs/ds_reg \$1 \$2/smooth;
+#X obj 603 278 f;
+#X obj 65 224 pack 0 0;
+#X obj 129 224 pack 0 0;
+#X obj 174 346 pack 0 20;
+#X obj 238 346 pack 0 20;
+#X obj 298 346 pack 0 20;
+#X obj 175 200 * 20;
+#X obj 472 115 t b b b b b b b b;
+#X obj 472 290 pack 0 0 0 0 0 0 0 0;
+#X obj 421 311 unpack 0 0 0 0 0 0 0 0;
+#X obj 65 275 line~;
+#X obj 129 275 line~;
+#X obj 157 456 line~;
+#X obj 232 406 line~;
+#X obj 287 457 line~;
+#X obj 188 377 sig~ 0.25;
+#X connect 4 0 33 1;
+#X connect 4 0 5 0;
+#X connect 5 0 57 0;
+#X connect 6 0 7 0;
+#X connect 6 0 34 1;
+#X connect 7 0 43 1;
+#X connect 8 0 9 0;
+#X connect 8 0 35 1;
+#X connect 9 0 58 0;
+#X connect 10 0 11 0;
+#X connect 10 0 36 1;
+#X connect 11 0 59 0;
+#X connect 17 0 44 2;
+#X connect 18 0 25 1;
+#X connect 19 0 30 1;
+#X connect 19 0 55 0;
+#X connect 20 0 31 1;
+#X connect 20 0 56 0;
+#X connect 21 0 24 0;
+#X connect 22 0 25 0;
+#X connect 23 0 65 0;
+#X connect 24 0 22 1;
+#X connect 25 0 43 0;
+#X connect 26 0 21 0;
+#X connect 27 0 25 2;
+#X connect 27 0 32 1;
+#X connect 28 0 44 3;
+#X connect 29 0 63 0;
+#X connect 29 1 61 0;
+#X connect 30 0 62 0;
+#X connect 31 0 62 1;
+#X connect 32 0 62 2;
+#X connect 33 0 62 3;
+#X connect 34 0 62 4;
+#X connect 35 0 62 5;
+#X connect 36 0 62 6;
+#X connect 42 0 44 4;
+#X connect 43 0 44 0;
+#X connect 44 0 1 0;
+#X connect 44 1 2 0;
+#X connect 44 2 3 0;
+#X connect 45 0 44 1;
+#X connect 46 0 48 0;
+#X connect 48 0 47 0;
+#X connect 50 0 27 0;
+#X connect 50 0 21 0;
+#X connect 50 0 20 0;
+#X connect 50 0 19 0;
+#X connect 50 0 10 0;
+#X connect 50 0 8 0;
+#X connect 50 0 6 0;
+#X connect 50 0 4 0;
+#X connect 50 0 51 0;
+#X connect 51 0 60 0;
+#X connect 51 0 54 1;
+#X connect 54 0 62 7;
+#X connect 55 0 64 0;
+#X connect 56 0 23 0;
+#X connect 57 0 66 0;
+#X connect 58 0 67 0;
+#X connect 59 0 68 0;
+#X connect 60 0 56 1;
+#X connect 60 0 55 1;
+#X connect 61 0 30 0;
+#X connect 61 1 31 0;
+#X connect 61 2 32 0;
+#X connect 61 3 33 0;
+#X connect 61 4 34 0;
+#X connect 61 5 35 0;
+#X connect 61 6 36 0;
+#X connect 61 7 54 0;
+#X connect 62 0 29 0;
+#X connect 63 0 19 0;
+#X connect 63 1 20 0;
+#X connect 63 2 27 0;
+#X connect 63 3 4 0;
+#X connect 63 4 6 0;
+#X connect 63 5 8 0;
+#X connect 63 6 10 0;
+#X connect 63 7 51 0;
+#X connect 64 0 22 0;
+#X connect 65 0 22 0;
+#X connect 66 0 44 2;
+#X connect 67 0 44 3;
+#X connect 68 0 44 4;
+#X connect 69 0 44 2;
+#X coords 0 -1 1 1 302 80 1 100 100;

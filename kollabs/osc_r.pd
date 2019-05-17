@@ -1,0 +1,12 @@
+#N canvas 744 216 298 206 10;
+#X obj 43 97 spigot 1;
+#X text 141 140 (c)2011 Marian Weger;
+#X obj 129 55 inlet status_switch;
+#X obj 43 128 route \$2;
+#X obj 43 152 s \$2;
+#X text 33 14 osc_r <domain> <name>;
+#X obj 43 55 r /osc/\$1/in;
+#X connect 0 0 3 0;
+#X connect 2 0 0 1;
+#X connect 3 0 4 0;
+#X connect 6 0 0 0;

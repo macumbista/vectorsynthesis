@@ -1,0 +1,15 @@
+#N canvas 488 200 403 328 10;
+#X text 164 111 non zero: 2nd inlet to outlet;
+#X text 164 91 0: 1st inlet to outlet;
+#X text 214 250 (c)2012 Marian Weger;
+#X text 49 39 kmux2;
+#X obj 163 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 56 114 5 0 0 0 - - -;
+#X obj 83 183 kmux2;
+#X floatatom 96 114 5 0 0 0 - - -;
+#X floatatom 83 235 5 0 0 0 - - -;
+#X connect 4 0 6 2;
+#X connect 5 0 6 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;

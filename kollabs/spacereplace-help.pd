@@ -1,0 +1,22 @@
+#N canvas 224 144 637 475 10;
+#X text 442 405 (c)2013 Marian Weger;
+#X text 28 14 spacereplace <replacement>;
+#X text 63 65 Convert a list to a symbol. The spaces in between get
+replaced by a settable symbol.;
+#X msg 89 204 list 1 2 3 four five six #*&& %%%%;
+#X symbolatom 352 371 40 0 0 0 - - -;
+#X text 14 202 Click here:;
+#X msg 354 182 5 4 7 buaf f98h2f hu2if;
+#X msg 425 247 symbol _-_;
+#X symbolatom 425 269 10 0 0 0 - - -;
+#X text 493 269 type something in!;
+#X text 412 226 set new replacement:;
+#X obj 102 327 spacereplace;
+#X symbolatom 102 389 30 0 0 0 - - -;
+#X obj 352 309 spacereplace +++;
+#X connect 3 0 11 0;
+#X connect 6 0 13 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 1;
+#X connect 11 0 12 0;
+#X connect 13 0 4 0;

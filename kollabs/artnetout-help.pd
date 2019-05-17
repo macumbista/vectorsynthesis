@@ -1,0 +1,55 @@
+#N canvas 338 63 679 661 10;
+#X text 20 32 (c) 2015 Marian Weger;
+#X obj 91 67 bng 15 250 50 0 empty empty send 17 7 0 10 -262144 -1
+-1;
+#X msg 286 678 disconnect;
+#X obj 91 758 tgl 15 0 empty empty connected 20 7 0 8 -24198 -241291
+-1 0 1;
+#X msg 287 587 connect 10.7.105.115;
+#X obj 91 725 artnetout;
+#X obj 113 110 nbx 5 14 0 255 0 0 empty empty send_value_for_all_512_channels
+0 -8 0 10 -262144 -1 -1 0 256;
+#X obj 178 204 hsl 128 15 0 255 0 0 empty empty fader_for_dmx_channel_2
+-2 -8 0 10 -262144 -1 -1 6400 1;
+#X msg 175 224 2 \$1;
+#X text 204 151 send specific value "255" to dmx channel 1;
+#X msg 156 151 80 255;
+#X text 301 270 set number of dmx channels (default=512);
+#X text 301 284 (should be an even number in the range of 2-512);
+#X msg 346 422 print;
+#X msg 357 457 printdmx;
+#X text 432 458 print the DMX data;
+#X text 397 424 print the whole Art-Net message;
+#X msg 209 268 length 512;
+#X msg 367 485 printheader;
+#X text 462 485 print the header;
+#X text 98 593 Art-Net message;
+#X text 454 584 connect to Art-Net Node;
+#X text 373 679 disconnect;
+#X text 170 759 Status Info;
+#X text 20 12 artnetout;
+#X text 289 611 use broeadcast IP \, if unknown (i.e. 10.255.255.255)
+;
+#X text 339 377 set universe to '1';
+#X text 298 350 set sub-net to '5';
+#X msg 230 350 subnet 5;
+#X msg 247 376 universe 1;
+#X msg 216 326 net 3;
+#X obj 91 541 makeartdmx 0 0 1 512;
+#X text 267 326 set net to '3';
+#X connect 1 0 31 0;
+#X connect 2 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 31 0;
+#X connect 7 0 8 0;
+#X connect 8 0 31 0;
+#X connect 10 0 31 0;
+#X connect 13 0 31 0;
+#X connect 14 0 31 0;
+#X connect 17 0 31 0;
+#X connect 18 0 31 0;
+#X connect 28 0 31 0;
+#X connect 29 0 31 0;
+#X connect 30 0 31 0;
+#X connect 31 0 5 0;

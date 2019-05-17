@@ -1,0 +1,81 @@
+#N canvas 341 22 804 756 10;
+#X obj 14 14 cnv 15 750 30 empty empty OSC_communication_system_for_KOLLABS
+20 12 0 14 -233017 -66577 0;
+#X obj 14 56 cnv 15 750 200 empty empty Registering_variables 20 12
+0 14 -204800 -66577 0;
+#X text 22 124 There are three types:;
+#X text 22 172 [osc_bi] registers a variable for BIDIRECTIONAL osc.
+;
+#X text 75 186 It also includes feedback prevention.;
+#X text 22 144 [osc_r] registers a variable to RECEIVE osc;
+#X text 22 158 [osc_s] registers a variable to SEND osc;
+#X obj 14 261 cnv 15 750 200 empty empty Example 20 12 0 14 -204800
+-66577 0;
+#X obj 612 355 hsl 128 15 0 127 0 0 /i/send/data /i/send/data /i/send/data
+-2 -8 0 10 -262144 -1 -1 2900 1;
+#X obj 620 303 nbx 5 14 -1e+37 1e+37 0 0 /i/receive/data /i/receive/data
+/i/receive/data 0 -8 0 10 -262144 -1 -1 42 256;
+#X obj 14 472 cnv 15 750 180 empty empty OSC_Output 20 12 0 14 -204786
+-66577 0;
+#X obj 150 575 spigot 1;
+#X obj 195 550 tgl 15 0 empty empty print_osc_output 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 14 661 cnv 15 750 220 empty empty OSC_Input 20 12 0 14 -204786
+-66577 0;
+#X obj 20 698 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 42 256;
+#X msg 20 717 /i/receive/data \$1;
+#X msg 144 717 /i/do/both \$1;
+#X obj 147 697 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 233 788 <-- put your OSC input in here. Like this:;
+#X obj 612 425 hsl 128 15 0 127 0 0 /i/do/both /i/do/both /i/do/both
+-2 -8 0 10 -262144 -1 -1 2100 1;
+#X text 160 520 Connect this to your OSC externals \, i.e. mrpeach
+or iemnet:;
+#X text 21 621 Play around with the patch on top of the page \, and
+see what's going to be printed...;
+#X text 598 19 (c)2011-2012 Marian Weger;
+#X text 21 89 New variables can be registered to an OSC-domain by using
+the [osc_...] modules.;
+#X text 23 208 SYNTAX: [osc_xx <domain> <variable_name>] \, where <domain>
+is the name of the storage you want to register to \, and <variable_name>
+is the complete name of your variable.;
+#X text 123 667 The OSC input must be sent to "/osc/<domain>/out";
+#X text 127 477 The OSC output can be accessed und under "/osc/<domain>/out"
+;
+#X obj 538 554 packOSC;
+#X obj 538 521 r /osc/help/out;
+#X obj 150 499 r /osc/help/out;
+#X obj 150 599 print /osc/help/out;
+#X obj 144 790 s /osc/help/in;
+#X obj 31 363 osc_s help /i/send/data;
+#X obj 34 420 osc_bi help /i/do/both;
+#X obj 27 301 osc_r help /i/receive/data;
+#X text 185 419 This registers "/i/do/both" for bidirectional OSC communication
+with domain "help";
+#X text 180 357 This registers "/i/send/data" to send OSC from domain
+"help";
+#X text 188 300 This registers "/i/receive/data" to receive OSC from
+domain "help";
+#X obj 537 757 udpreceive 6666;
+#X obj 537 789 unpackOSC;
+#X obj 537 821 s /osc/help/in;
+#X obj 538 606 udpsend;
+#X obj 610 552 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 610 572 connect 127.0.0.1 6666;
+#X connect 11 0 30 0;
+#X connect 12 0 11 1;
+#X connect 14 0 15 0;
+#X connect 15 0 31 0;
+#X connect 16 0 31 0;
+#X connect 17 0 16 0;
+#X connect 27 0 41 0;
+#X connect 28 0 27 0;
+#X connect 29 0 11 0;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 42 0 43 0;
+#X connect 43 0 41 0;
+#X coords 0 756 1 755 85 60 0;

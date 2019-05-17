@@ -1,0 +1,16 @@
+#N canvas 578 25 480 371 10;
+#X text 309 275 (c)2011 \, Marian Weger;
+#X text 39 31 prev_next <variable name> <lower border> <upper border>
+<step size>;
+#X obj 126 199 prev-next \$0-counter 0 100 1;
+#X obj 125 149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 187 252 r \$0-counter;
+#X floatatom 187 274 5 0 0 0 - - -;
+#X obj 290 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 110 125 step down;
+#X text 273 126 step up;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 6 0 2 1;

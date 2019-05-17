@@ -1,4 +1,4 @@
-#N canvas 271 48 963 662 10;
+#N canvas 103 78 963 662 10;
 #X obj 79 50 inlet~ X;
 #X obj 149 50 inlet~ Y;
 #X obj 227 49 inlet~ Z;
@@ -51,7 +51,7 @@
 #X text 36 408 Extreme settings create high amplitude signals. Clipping
 for safety here recommended!;
 #X obj 536 434 *~;
-#N canvas 0 22 845 393 offscreen 0;
+#N canvas 0 23 845 393 offscreen 0;
 #X obj 152 85 inlet~;
 #X obj 497 85 inlet~;
 #X obj 152 202 outlet~;
@@ -69,11 +69,12 @@ for safety here recommended!;
 #X text 582 409 Brightness gamma curve modification: tanh function
 applies "soft clipping" so input can be scaled by factor of 2-5 or
 so without exceeding 1 at output.;
+#X obj 551 311 *~ 2;
 #X connect 0 0 13 0;
 #X connect 1 0 10 0;
 #X connect 2 0 8 0;
 #X connect 2 0 32 0;
-#X connect 3 0 41 1;
+#X connect 3 0 52 0;
 #X connect 8 0 10 1;
 #X connect 8 0 13 1;
 #X connect 9 0 10 2;
@@ -93,3 +94,4 @@ so without exceeding 1 at output.;
 #X connect 48 0 4 0;
 #X connect 49 0 48 1;
 #X connect 50 0 48 0;
+#X connect 52 0 41 1;

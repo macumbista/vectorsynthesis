@@ -1,0 +1,10 @@
+#N canvas 658 316 377 184 10;
+#X text 495 104 (c)2011-2012 \, Marian Weger;
+#X obj 61 110 cnv 15 250 30 empty empty see_[osc-help]_for_help 20
+12 0 14 -261234 -1 0;
+#X text 24 43 registers parameter for osc sending;
+#X obj 18 61 cnv 15 350 37 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 27 71 OSC output stream is routed to /<domain>/osc/out;
+#X text 221 16 e.g. "main /foo/bar";
+#X text 33 14 osc_s <domain> <name>;

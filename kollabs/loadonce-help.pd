@@ -1,0 +1,35 @@
+#N canvas 186 196 708 437 10;
+#X text 64 386 (c)2013 Marian Weger;
+#X text 42 55 loadonce <name>;
+#X obj 161 304 print B;
+#X obj 74 307 print A;
+#X obj 74 240 loadonce myname;
+#X obj 311 304 print B;
+#X obj 224 327 print A;
+#X obj 74 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 85 287 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 175 285 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 239 299 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 329 280 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 224 240 loadonce myname;
+#X obj 311 208 bng 15 250 50 0 empty empty reset 17 7 0 10 -262144
+-1 -1;
+#X text 138 109 [loadonce] will pass a message only once. If there
+are multiple instances with the same name \, only one of them will
+pass the message.;
+#X connect 4 0 3 0;
+#X connect 4 0 8 0;
+#X connect 4 1 2 0;
+#X connect 4 1 9 0;
+#X connect 7 0 4 0;
+#X connect 7 0 12 0;
+#X connect 12 0 6 0;
+#X connect 12 0 10 0;
+#X connect 12 1 5 0;
+#X connect 12 1 11 0;
+#X connect 13 0 12 1;
