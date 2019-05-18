@@ -1,6 +1,0 @@
-#N canvas 384 47 1186 721 10;
-#X obj 355 261 vs-ilda-gui \$0 \$0-ilda-one;
-#A saved 100 0 100 0 100 0 100 0 70 0 0 4 0.188621 4 0.188621 4 0.188621
-95;
-#X obj 355 523 vs-ilda-throw-gui \$0 ilda-throw-one;
-#A saved 1 0 0 0 0 0 0;
