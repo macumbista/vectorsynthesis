@@ -1,0 +1,10 @@
+#N canvas 627 69 896 569 10;
+#X text 581 393 Derek Holzer;
+#X text 581 442 macumbista@gmail.com;
+#X text 581 417 Santa Cruz de Tenerife May 2019;
+#X obj 131 85 vs-ilda-gui \$0 \$0-lasermaster;
+#A saved 25 0 100 0 25 0 100 0 72 1 0 3 0.281073 3 0.281073 3 0.281073
+108;
+#X obj 130 349 vs-ilda-throw-gui \$0 \$0-laserone;
+#A saved 1 0 1 0 1 0 0;
+#X text 270 479 ADD RGB bright control to ilda-throw-gui;

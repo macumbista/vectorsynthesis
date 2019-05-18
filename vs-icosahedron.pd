@@ -1,0 +1,126 @@
+#N canvas 84 31 646 567 10;
+#N canvas 566 47 714 727 tables 0;
+#N canvas 0 23 450 278 (subpatch) 0;
+#X array \$0-shapeX 61 float 3;
+#A 0 0 0.850651 0.850651 0.525731 0.850651 0.525731 0.850651 0.525731
+-0.525731 -0.850651 -0.525731 0.525731 0 -0.850651 -0.525731 -0.850651
+0 0.850651 0 -0.850651 0 -0.525731 0 0.525731 0 0.850651 0.525731 0.850651
+0 0 -0.525731 -0.850651 -0.850651 -0.850651 -0.525731 0 -0.850651 -0.525731
+0.525731 -0.525731 0 0 0.850651 0.850651 0 -0.525731 -0.850651 0 0.525731
+0.850651 0 -0.850651 0 0.525731 0 0.525731 0 -0.525731 0 0 0;
+#X coords 0 1 61 -1 200 140 1 0 0;
+#X restore 361 88 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-shapeY 61 float 3;
+#A 0 -0.525731 0 0 0.850651 0 -0.850651 0 0.850651 0.850651 0 0.850651
+0.850651 0.525731 0 -0.850651 0 -0.525731 0 -0.525731 0 0.525731 0.850651
+0.525731 0.850651 0.525731 0 -0.850651 0 0.525731 -0.525731 -0.850651
+0 0 0 0.850651 0.525731 0 -0.850651 -0.850651 -0.850651 -0.525731 0.525731
+0 0 0.525731 0.850651 0 0.525731 0.850651 0 -0.525731 0 -0.525731 -0.850651
+-0.525731 -0.850651 -0.525731 -0.850651 -0.525731 0.525731 -0.525731
+;
+#X coords 0 1 61 -1 200 140 1 0 0;
+#X restore 361 248 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array \$0-shapeZ 61 float 3;
+#A 0 0.850651 0.525731 -0.525731 0 -0.525731 0 0.525731 0 0 -0.525731
+0 0 -0.850651 -0.525731 0 -0.525731 -0.850651 -0.525731 -0.850651 -0.525731
+-0.850651 0 -0.850651 0 0.850651 0.525731 0 -0.525731 -0.850651 -0.850651
+0 0.525731 -0.525731 0.525731 0 0.850651 0.525731 0 0 0 -0.850651 -0.850651
+-0.525731 0.525731 0.850651 0 0.525731 0.850651 0 0.525731 0.850651
+0.525731 0.850651 0 -0.850651 0 0.850651 0 0.850651 0.850651 0.850651
+;
+#X coords 0 1 61 -1 200 140 1 0 0;
+#X restore 361 408 graph;
+#X obj 77 93 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 239 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 399 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 77 122 f \$0;
+#X obj 77 262 f \$0;
+#X obj 77 422 f \$0;
+#X msg 77 147 \; \$1-shapeX read 01.tables/icosahedronX.txt;
+#X msg 77 287 \; \$1-shapeY read 01.tables/icosahedronY.txt;
+#X msg 77 447 \; \$1-shapeZ read 01.tables/icosahedronZ.txt;
+#X connect 3 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 10 0;
+#X connect 8 0 11 0;
+#X restore 394 244 pd tables;
+#X obj 36 430 *~;
+#X obj 129 430 *~;
+#X obj 199 429 *~;
+#X obj 36 457 outlet~ X;
+#X obj 129 457 outlet~ Y;
+#X obj 199 457 outlet~ Z;
+#X obj 269 457 outlet~ brightness;
+#X obj 36 77 inlet~ phasor;
+#X obj 124 77 inlet~ scale;
+#X obj 269 77 inlet~ brightness;
+#N canvas 0 22 450 300 blanking 0;
+#X obj 66 60 inlet~ brightness;
+#X obj 186 60 inlet~ Hramp;
+#X obj 66 200 outlet~ brightness;
+#X obj 66 149 *~;
+#X obj 81 109 expr~ ($v1>0.02)&($v1<0.98);
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X restore 269 296 pd blanking;
+#X obj 419 77 inlet interpolation;
+#X obj 419 102 sig~;
+#X obj 419 140 expr~ ($v1 * -1) + 1;
+#X obj 36 390 *~;
+#X obj 129 390 *~;
+#X obj 199 389 *~;
+#X obj 56 189 VS-tabreadlin~ \$0-shapeX;
+#X obj 219 359 VS-tabreadlin~ \$0-shapeZ;
+#X obj 46 410 *~;
+#X obj 152 409 *~;
+#X obj 209 409 *~;
+#X obj 36 156 tabread~ \$0-shapeX;
+#X obj 129 236 tabread~ \$0-shapeY;
+#X obj 199 326 tabread~ \$0-shapeZ;
+#X obj 152 267 VS-tabreadlin~ \$0-shapeY;
+#X obj 36 125 *~ 61;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 8 0 11 1;
+#X connect 8 0 27 0;
+#X connect 9 0 1 1;
+#X connect 9 0 2 1;
+#X connect 9 0 3 1;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 13 0 20 1;
+#X connect 13 0 21 1;
+#X connect 13 0 22 1;
+#X connect 14 0 15 1;
+#X connect 14 0 16 1;
+#X connect 14 0 17 1;
+#X connect 15 0 1 0;
+#X connect 16 0 2 0;
+#X connect 17 0 3 0;
+#X connect 18 0 20 0;
+#X connect 19 0 22 0;
+#X connect 20 0 1 0;
+#X connect 21 0 2 0;
+#X connect 22 0 3 0;
+#X connect 23 0 15 0;
+#X connect 24 0 16 0;
+#X connect 25 0 17 0;
+#X connect 26 0 21 0;
+#X connect 27 0 23 0;
+#X connect 27 0 24 0;
+#X connect 27 0 25 0;
+#X connect 27 0 18 0;
+#X connect 27 0 19 0;
+#X connect 27 0 26 0;

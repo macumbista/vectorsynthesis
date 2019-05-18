@@ -1,0 +1,29 @@
+#N canvas 0 22 680 496 10;
+#X text 499 320 Derek Holzer;
+#X text 499 342 Berlin July 2017;
+#X text 500 362 macumbista@gmail.com;
+#X obj 92 198 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 0 1;
+#X floatatom 89 228 5 0 0 0 - - -, f 5;
+#X text 293 179 -1;
+#X text 317 179 saw;
+#X text 301 239 1;
+#X text 318 239 square;
+#X text 281 199 -0.3;
+#X text 313 199 sine;
+#X text 289 219 0.3;
+#X text 319 219 tri;
+#X text 270 159 SHAPE:;
+#X text 267 282 Please see the V-operator-help.pd patch for usage example.
+;
+#X text 270 62 [V-waveselect] is a number-processing abstraction to
+be used with the [V-operator] and [V-lissagen] abstractions. It translates
+the numbers 0-3 from a radio button array to vales corresponding to
+the waveshapes used in the [V-operator] and [V-lissagen] abstractions
+as follows:;
+#X obj 89 137 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10 0
+10 -4034 -1 -1 0;
+#X obj 89 172 VS-waveselect;
+#X connect 3 0 4 0;
+#X connect 16 0 17 0;
+#X connect 17 0 3 0;

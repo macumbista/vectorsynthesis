@@ -1,0 +1,28 @@
+#N canvas 118 206 895 568 10;
+#X obj 443 89 tgl 30 0 empty empty invert 35 13 0 10 -4034 -1 -1 0
+1;
+#X obj 443 128 sig~;
+#X text 689 345 Derek Holzer;
+#X text 689 394 macumbista@gmail.com;
+#X obj 261 89 tgl 30 0 empty empty invert 35 13 0 10 -4034 -1 -1 0
+1;
+#X obj 261 128 sig~;
+#X obj 162 38 osc~ 10;
+#X obj 338 38 phasor~ 10;
+#X text 433 36 INVERT A UNIPOLAR SIGNAL;
+#X text 3 36 INVERT A BIPOLAR SIGNAL;
+#X text -10 477 For example \, to flip a vector shape on one axis;
+#X obj 162 161 VS-invert-bipolar;
+#X obj 338 161 VS-invert-unipolar;
+#X text 335 477 For example \, to reverse the direction of rotation
+with [VS-rotate-2D];
+#X obj 162 210 VS-seeme;
+#X text 689 369 Helsinki June 2018;
+#X connect 0 0 1 0;
+#X connect 1 0 12 1;
+#X connect 4 0 5 0;
+#X connect 5 0 11 1;
+#X connect 6 0 11 0;
+#X connect 7 0 12 0;
+#X connect 11 0 14 0;
+#X connect 12 0 14 1;

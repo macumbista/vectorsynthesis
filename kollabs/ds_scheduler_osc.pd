@@ -1,0 +1,9 @@
+#N canvas 803 22 304 320 10;
+#X text 42 258 (c)2013 Marian Weger;
+#X text 11 10 ds_scheduler_osc <domain> <osc-domain>;
+#X obj 34 75 osc_bi \$2 /ds/\$1/play;
+#X obj 34 95 osc_bi \$2 /ds/\$1/pause;
+#X obj 34 115 osc_bi \$2 /ds/\$1/forward;
+#X obj 34 135 osc_bi \$2 /ds/\$1/backward;
+#X obj 34 165 osc_bi \$2 /ds/\$1/resolution;
+#X obj 34 185 osc_bi \$2 /ds/\$1/timebase;

@@ -1,0 +1,374 @@
+#N canvas 179 22 847 756 10;
+#X obj 5 78 cnv 15 820 200 empty empty MIDI_Input 20 12 0 14 -204786
+-66577 0;
+#X obj 5 284 cnv 15 820 180 empty empty MIDI_Output 20 12 0 14 -204786
+-66577 0;
+#X text 98 113 (logic);
+#X text 57 148 (Graphical User Interface);
+#X text 103 339 (logic);
+#X text 62 382 (Graphical User Interface);
+#X obj 5 472 cnv 15 820 230 empty empty MIDI_Message_Generator 20 12
+0 14 -204786 -66577 0;
+#X text 98 503 (logic);
+#X text 241 517 (Graphical User Interface);
+#X obj 5 1398 cnv 15 820 90 empty empty 1st:_register_variable_for_OSC
+20 12 0 14 -204800 -66577 0;
+#X obj 15 167 midi_in_gui \$0;
+#X obj 15 113 midi_in \$0;
+#X obj 15 339 midi_out \$0;
+#X obj 15 401 midi_out_gui \$0;
+#X obj 13 504 midi_gen \$0;
+#X obj 13 536 midi_gen_gui \$0;
+#X obj 5 1494 cnv 15 820 280 empty empty 2nd:_map_OSC_to_MIDI 20 12
+0 14 -204800 -66577 0;
+#X text 173 1675 |;
+#X text 173 1695 |;
+#X text 173 1705 |;
+#X text 203 1695 |;
+#X text 203 1705 |;
+#X text 173 1685 |;
+#X text 203 1685 osc-name;
+#X text 304 1605 |;
+#X text 304 1625 |;
+#X text 304 1635 |;
+#X text 327 1625 |;
+#X text 327 1635 |;
+#X text 304 1615 |;
+#X text 304 1645 |;
+#X text 304 1655 |;
+#X text 327 1645 |;
+#X text 327 1655 |;
+#X text 304 1665 |;
+#X text 304 1675 |;
+#X text 327 1665 |;
+#X text 327 1675 |;
+#X text 327 1615 midi cc#/prg#/note#/etc.;
+#X text 342 1645 |;
+#X text 342 1655 |;
+#X text 342 1665 |;
+#X text 342 1675 |;
+#X text 342 1635 midi channel;
+#X text 356 1665 |;
+#X text 356 1675 |;
+#X text 304 1685 |;
+#X text 304 1695 |;
+#X text 327 1685 |;
+#X text 327 1695 |;
+#X text 342 1685 |;
+#X text 342 1695 |;
+#X text 356 1685 |;
+#X text 356 1695 |;
+#X text 367 1685 |;
+#X text 367 1695 |;
+#X text 304 1705 |;
+#X text 327 1705 |;
+#X text 342 1705 |;
+#X text 356 1705 |;
+#X text 367 1705 |;
+#X text 382 1705 |;
+#X obj 5 48 cnv 15 820 25 empty empty General_MIDI_Modules 20 12 0
+14 -4034 -66577 0;
+#X text 173 1665 domain;
+#X text 273 82 [midi_in] provides MIDI input for the given domain (1st
+creation argument). It supports most midi message formats \, like control
+change \, note \, pitchbend \, etc. All the incoming midi messages
+are routed to "/<domain>/midi/in" and to the 1st outlet.;
+#X text 273 153 The graphical user interface provides debugging controls:
+;
+#X text 273 173 If "info" is switched on \, all incoming message information
+will be dsplayed.;
+#X text 273 203 "print" will print all incoming messages to the Pd
+window.;
+#X text 273 223 "raw" turns on raw midi input (deactivating all other
+input);
+#X text 273 380 The graphical user interface provides debugging controls:
+;
+#X text 273 410 "print" will print all outgoing midi messages.;
+#X text 273 430 "active" turns midi-out functionality on/off.;
+#X text 273 243 "active" turns midi-in functionality on/off.;
+#X obj 5 17 cnv 15 820 25 empty empty The_KOLLABS_MIDI_abstraction_family
+20 12 0 14 -191407 -1 0;
+#X text 646 23 (c)2012 Marian Weger;
+#X obj 5 708 cnv 15 820 25 empty empty Registering_variables_directly_to_MIDI
+20 12 0 14 -257985 -66577 0;
+#X text 173 1715 |;
+#X text 173 1725 |;
+#X text 203 1715 |;
+#X text 203 1725 |;
+#X text 304 1715 |;
+#X text 327 1715 |;
+#X text 342 1715 |;
+#X text 356 1715 |;
+#X text 367 1715 |;
+#X text 304 1725 |;
+#X text 327 1725 |;
+#X text 342 1725 |;
+#X text 356 1725 |;
+#X text 367 1725 |;
+#X text 382 1725 |;
+#X text 382 1715 |;
+#X text 399 1725 |;
+#X text 304 1595 midi-message-type (ctl \, note \, bend \, etc.);
+#X text 356 1655 value scaling (optional. default=1);
+#X text 367 1675 value offset (optional. default=0);
+#X text 382 1695 interpolation time /ms (optional. default=0);
+#X text 399 1715 interpolation grain rate /ms (optional. default=20)
+;
+#X obj 5 738 cnv 15 820 200 empty empty Send_MIDI 20 12 0 14 -262130
+-66577 0;
+#X obj 530 903 hsl 128 15 1 105 0 0 /i/send/midi /i/send/midi /i/send/midi
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 667 904 nbx 5 14 -1e+37 1e+37 0 0 /i/send/midi /i/send/midi
+/i/send/midi 0 -8 0 10 -262144 -1 -1 0 256;
+#X text 60 861 |;
+#X text 60 881 |;
+#X text 60 891 |;
+#X text 90 881 |;
+#X text 90 891 |;
+#X text 60 871 |;
+#X text 158 791 |;
+#X text 158 811 |;
+#X text 158 821 |;
+#X text 179 811 |;
+#X text 179 821 |;
+#X text 158 801 |;
+#X text 158 831 |;
+#X text 158 841 |;
+#X text 179 831 |;
+#X text 179 841 |;
+#X text 158 851 |;
+#X text 158 861 |;
+#X text 179 851 |;
+#X text 179 861 |;
+#X text 179 801 midi cc#/prg#/note#/etc.;
+#X text 194 831 |;
+#X text 194 841 |;
+#X text 194 851 |;
+#X text 194 861 |;
+#X text 208 851 |;
+#X text 208 861 |;
+#X text 158 871 |;
+#X text 158 881 |;
+#X text 179 871 |;
+#X text 179 881 |;
+#X text 194 871 |;
+#X text 194 881 |;
+#X text 208 871 |;
+#X text 208 881 |;
+#X text 229 871 |;
+#X text 229 881 |;
+#X text 158 891 |;
+#X text 179 891 |;
+#X text 194 891 |;
+#X text 208 891 |;
+#X text 229 891 |;
+#X text 60 851 domain;
+#X text 90 871 name;
+#X text 158 781 midi-message-type (ctl \, note \, bend \, etc.);
+#X text 208 841 value scaling (optional. default=1);
+#X text 229 861 value offset (optional. default=0);
+#X text 465 753 This registers the variable "/i/send/midi" for midi
+output via domain "\$0".;
+#X text 442 510 [midi_gen] is a versatile midi message generator for
+generating debugging signals. It can send its output to either the
+input channel ("/<domain>/midi/in") \, output channel ("/<domain>/midi/out")
+\, or an independent generator channel ("/<domain>/midi/gen"). Additionally
+\, all output is also sent to the first outlet.;
+#X obj 5 944 cnv 15 820 200 empty empty Receive_MIDI 20 12 0 14 -262130
+-66577 0;
+#X text 60 1051 |;
+#X text 60 1071 |;
+#X text 60 1081 |;
+#X text 90 1071 |;
+#X text 90 1081 |;
+#X text 60 1061 |;
+#X text 172 981 |;
+#X text 172 1001 |;
+#X text 172 1011 |;
+#X text 193 1001 |;
+#X text 193 1011 |;
+#X text 172 991 |;
+#X text 172 1021 |;
+#X text 172 1031 |;
+#X text 193 1021 |;
+#X text 193 1031 |;
+#X text 172 1041 |;
+#X text 172 1051 |;
+#X text 193 1041 |;
+#X text 193 1051 |;
+#X text 193 991 midi cc#/prg#/note#/etc.;
+#X text 208 1021 |;
+#X text 208 1031 |;
+#X text 208 1041 |;
+#X text 208 1051 |;
+#X text 227 1041 |;
+#X text 227 1051 |;
+#X text 172 1061 |;
+#X text 172 1071 |;
+#X text 193 1061 |;
+#X text 193 1071 |;
+#X text 208 1061 |;
+#X text 208 1071 |;
+#X text 227 1061 |;
+#X text 227 1071 |;
+#X text 245 1061 |;
+#X text 245 1071 |;
+#X text 172 1081 |;
+#X text 193 1081 |;
+#X text 208 1081 |;
+#X text 227 1081 |;
+#X text 245 1081 |;
+#X text 60 1041 domain;
+#X text 90 1061 name;
+#X text 172 971 midi-message-type (ctl \, note \, bend \, etc.);
+#X text 60 1091 |;
+#X text 60 1101 |;
+#X text 90 1091 |;
+#X text 90 1101 |;
+#X text 172 1091 |;
+#X text 193 1091 |;
+#X text 208 1091 |;
+#X text 227 1091 |;
+#X text 245 1091 |;
+#X text 172 1101 |;
+#X text 193 1101 |;
+#X text 208 1101 |;
+#X text 227 1101 |;
+#X text 245 1101 |;
+#X text 259 1081 |;
+#X text 259 1091 |;
+#X text 259 1101 |;
+#X text 279 1101 |;
+#X text 245 1051 value offset (optional. default=0);
+#X text 227 1031 value scaling (optional. default=1);
+#X text 279 1091 interpolation grain rate /ms (optional. default=20)
+;
+#X text 259 1071 interpolation time /ms (optional. default=0);
+#X obj 586 1038 hsl 128 15 5 130 0 0 /i/receive/midi /i/receive/midi
+/i/receive/midi -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 723 1039 nbx 5 14 -1e+37 1e+37 0 0 /i/receive/midi /i/receive/midi
+/i/receive/midi 0 -8 0 10 -262144 -1 -1 0 256;
+#X text 465 863 Turn on "print" in [midi_out_gui] above and play with
+this slider:;
+#X text 469 983 Turn on "print" in [midi_in_gui] and try to generate
+a suitable test signal wit [midi_gen] above \, to control this slider:
+;
+#X obj 13 907 midi_s \$0 /i/send/midi ctl 11 1 104 1;
+#X text 465 783 The value is sent as control-change message 11 on channel
+1 As the slider is scaled from 1 to 105 \, the scaling parameter needs
+to be set to 104 and the offset to 1 It will then output a MIDI-value
+between 0 and 127;
+#X text 208 1011 midi channel (default=1);
+#X text 194 821 midi channel (default=1);
+#X obj 5 1154 cnv 15 820 200 empty empty Bidirectional_MIDI 20 12 0
+14 -262130 -66577 0;
+#X text 64 1261 |;
+#X text 64 1281 |;
+#X text 64 1291 |;
+#X text 94 1281 |;
+#X text 94 1291 |;
+#X text 64 1271 |;
+#X text 146 1191 |;
+#X text 146 1211 |;
+#X text 146 1221 |;
+#X text 167 1211 |;
+#X text 167 1221 |;
+#X text 146 1201 |;
+#X text 146 1231 |;
+#X text 146 1241 |;
+#X text 167 1231 |;
+#X text 167 1241 |;
+#X text 146 1251 |;
+#X text 146 1261 |;
+#X text 167 1251 |;
+#X text 167 1261 |;
+#X text 167 1201 midi cc#/prg#/note#/etc.;
+#X text 184 1231 |;
+#X text 184 1241 |;
+#X text 184 1251 |;
+#X text 184 1261 |;
+#X text 202 1251 |;
+#X text 202 1261 |;
+#X text 146 1271 |;
+#X text 146 1281 |;
+#X text 167 1271 |;
+#X text 167 1281 |;
+#X text 184 1271 |;
+#X text 184 1281 |;
+#X text 202 1271 |;
+#X text 202 1281 |;
+#X text 227 1271 |;
+#X text 227 1281 |;
+#X text 146 1291 |;
+#X text 167 1291 |;
+#X text 184 1291 |;
+#X text 202 1291 |;
+#X text 227 1291 |;
+#X text 64 1251 domain;
+#X text 94 1271 name;
+#X text 146 1181 midi-message-type (ctl \, note \, bend \, etc.);
+#X text 64 1301 |;
+#X text 64 1311 |;
+#X text 94 1301 |;
+#X text 94 1311 |;
+#X text 146 1301 |;
+#X text 167 1301 |;
+#X text 184 1301 |;
+#X text 202 1301 |;
+#X text 227 1301 |;
+#X text 146 1311 |;
+#X text 167 1311 |;
+#X text 184 1311 |;
+#X text 202 1311 |;
+#X text 227 1311 |;
+#X text 247 1291 |;
+#X text 247 1301 |;
+#X text 247 1311 |;
+#X text 265 1311 |;
+#X text 202 1241 value scaling (optional. default=1);
+#X text 227 1261 value offset (optional. default=0));
+#X text 265 1301 interpolation grain rate /ms (optional. default=20)
+;
+#X text 247 1281 interpolation time /ms (optional. default=0);
+#X text 184 1221 midi channel (default=1);
+#X obj 600 1249 hsl 128 15 -50 50 0 0 /i/do/both /i/do/both /i/do/both
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 737 1250 nbx 5 14 -1e+37 1e+37 0 0 /i/do/both /i/do/both /i/do/both
+0 -8 0 10 -262144 -1 -1 0 256;
+#X text 505 1176 Combination of [midi_s] and [midi_r] with feedback
+prevention.;
+#X text 468 956 Works just like [midi_s] \, but in opposite direction.
+;
+#X obj 11 1119 midi_r \$0 /i/receive/midi ctl 12 1 125 5 50 20;
+#X text 424 1454 For more information on how to register variables
+to OSC \, see [osc-help].;
+#X text 20 1528 [osc2midi] connects a variable \, that is already registered
+for OSC control to a given MIDI-message. The message is connected uni-
+or bidirectional \, according to the OSC settings.;
+#X obj 5 1366 cnv 15 820 25 empty empty Map_OSC-messages_to_MIDI-messages
+20 12 0 14 -4032 -66577 0;
+#X obj 430 1419 hsl 128 15 3 10 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
+/i/map/osc/to/midi -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 567 1420 nbx 5 14 -1e+37 1e+37 0 0 /i/map/osc/to/midi /i/map/osc/to/midi
+/i/map/osc/to/midi 0 -8 0 10 -262144 -1 -1 0 256;
+#X text 297 1120 1st inlet: turn module on(1)/off(0);
+#X text 286 1349 comment;
+#X text 286 1329 1st inlet: midi-out on(1)/off(0) \,;
+#X text 488 1329 2nd inlet: midi-in on(1)/off(0).;
+#X text 247 911 1st inlet: turn module on(1)/off(0);
+#X obj 10 1329 midi_bi \$0 /i/do/both ctl 13 1 100 -50 50 40;
+#X text 421 1743 1st inlet: midi-out on(1)/off(0) \,;
+#X text 623 1743 2nd inlet: midi-in on(1)/off(0).;
+#X obj 114 1742 osc2midi \$0 /i/map/osc/to/midi ctl 14 1 7 3 50 50
+;
+#X obj 39 1441 osc_bi \$0 /i/map/osc/to/midi;
+#X text 634 1420 (3...10);
+#X text 658 1269 (-50...50);
+#X text 621 1058 (5...130);
+#X text 561 919 (1...105);
+#X text 273 300 [midi_out] provides MIDI output for the given domain
+(1st creation argument). It supports most midi message formats \, like
+control change \, note \, pitchbend \, etc. "/<domain>/midi/out" or
+the first inlet takes midi messages and routes them to the right midi
+output.;
+#X coords 0 756 1 755 85 60 0;

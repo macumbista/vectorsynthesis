@@ -1,0 +1,208 @@
+#N canvas 162 69 1219 658 10;
+#X obj 47 71 cnv 15 250 550 empty empty MULTIPLEX_CHANNEL_ONE 20 12
+0 14 -233017 -66577 0;
+#X obj 313 72 cnv 15 250 550 empty empty MULTIPLEX_CHANNEL_TWO 20 12
+0 14 -233017 -66577 0;
+#X obj 588 72 cnv 15 200 250 empty empty OUTPUT_SECTION 20 12 0 14
+-233017 -66577 0;
+#X obj 607 106 nbx 5 14 -1e+37 1e+37 0 1 empty empty SWITCHING_FREQUENCY
+60 8 0 10 -4034 -1 -1 25 256;
+#X obj 623 126 nbx 5 14 -1e+37 1e+37 0 1 empty empty NUM_CHANNELS 60
+8 0 10 -4034 -1 -1 2 256;
+#X obj 607 214 nbx 5 14 -1e+37 1e+37 0 1 empty empty audio_vol 60 8
+0 10 -4034 -1 -1 25 256;
+#X obj 607 235 / 100;
+#X obj 607 256 sig~;
+#X obj 67 227 phasor~;
+#X obj 67 98 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 1000 256;
+#X obj 134 184 sig~;
+#X obj 134 141 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 90 256;
+#X obj 89 162 sig~;
+#X obj 89 138 / 100;
+#X obj 89 117 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
+10 -4034 -1 -1 100 256;
+#X obj 134 162 / 360;
+#X obj 164 278 phasor~;
+#X obj 164 231 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 147 256;
+#X obj 164 326 *~;
+#X obj 218 302 sig~;
+#X obj 218 278 / 100;
+#X obj 218 257 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 18 256;
+#X text 986 556 Derek Holzer;
+#X text 986 605 macumbista@gmail.com;
+#X obj 727 251 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 727 279 switch~;
+#X obj 164 354 +~ 0.1;
+#X obj 334 227 phasor~;
+#X obj 334 98 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency
+60 8 0 10 -4034 -1 -1 1000 256;
+#X obj 411 231 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_freq 60 8
+0 10 -4034 -1 -1 202 256;
+#X obj 411 326 *~;
+#X obj 465 302 sig~;
+#X obj 465 278 / 100;
+#X obj 465 257 nbx 5 14 -1e+37 1e+37 0 1 empty empty mod_amt 60 8 0
+10 -4034 -1 -1 18 256;
+#X obj 411 354 +~ 0.1;
+#X obj 403 507 sig~;
+#X obj 403 484 / 100;
+#X obj 403 465 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 19 256;
+#X obj 444 529 sig~;
+#X obj 444 506 / 100;
+#X obj 444 487 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 7 256;
+#X obj 136 507 sig~;
+#X obj 136 484 / 100;
+#X obj 136 465 nbx 5 14 -1e+37 1e+37 0 1 empty empty Htranslate 60
+8 0 10 -4034 -1 -1 -19 256;
+#X obj 177 529 sig~;
+#X obj 177 506 / 100;
+#X obj 177 487 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vtranslate 60
+8 0 10 -4034 -1 -1 7 256;
+#X text 643 438 Horizontal;
+#X text 643 455 Vertical;
+#X text 643 472 Brightness;
+#X text 643 510 Audio Left (Horizontal * Brightness);
+#X text 643 529 Audio Right (Vertical * Brightness);
+#X obj 50 12 hsl 510 25 0 127 0 1 empty empty CROSSFADE 230 12 0 10
+-4034 -1 -1 25100 1;
+#X obj 130 44 sig~;
+#X obj 78 44 / 127;
+#X text 813 254 SWITCHING_FREQUENCY is the "framerate" \, or speed
+at which the images switch from one to the other.;
+#X obj 411 278 phasor~;
+#X obj 199 46 VS-brightness-crossfade;
+#X text 897 116 [VS-masterclock];
+#X text 897 137 [VS-output];
+#X text 897 160 [VS-multiplex];
+#X text 814 296 NUM_CHANNELS is the number of [VS-multiplex] channels
+to display.;
+#X obj 368 157 sig~;
+#X obj 368 134 / 100;
+#X obj 368 115 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 25 256;
+#X obj 200 197 sig~;
+#X obj 200 174 / 100;
+#X obj 200 155 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 25 256;
+#X text 355 48 send outputs to brightness controls of vector shapes
+;
+#X obj 607 302 dac~ 1 2 3 4 5 6;
+#X text 986 580 Helsinki May 2019;
+#X obj 663 146 nbx 5 14 0 100 0 1 empty empty BLANKING 60 8 0 10 -4034
+-1 -1 1 256;
+#X obj 684 167 / 100;
+#X text 1044 435 Horizontal;
+#X text 1044 452 Vertical;
+#X text 1044 469 Brightness;
+#X text 1044 489 RGB (used for ILDA);
+#X text 985 408 INPUT CHANNELS to [vs-multiplex]:;
+#X text 642 491 RGB (used for ILDA);
+#X text 813 337 BLANKING turns off the brightness for a short time
+(with the amount of time determined by BLANKING number value) each
+cycle to elimate the traces between the objects.;
+#X obj 607 279 vs-output \$0;
+#X obj 607 193 vs-masterclock \$0;
+#X text 813 69 [vs-multiplex] allows more than one vector object to
+be displayed at the same time by rapidly switching between the two.
+It uses the following objects:;
+#X text 814 182 You will need one [vs-multiplex] for each object you
+wish to display. All of these objects must be given the same first
+creation argument. Additionally \, the second creation argument of
+[vs-multiplex] is the multiplex channel it occupies.;
+#X obj 331 596 vs-multiplex \$0 2;
+#X obj 64 596 vs-multiplex \$0 1;
+#X obj 64 568 vs-translate;
+#X obj 331 568 vs-translate;
+#X obj 334 463 vs-scale, f 10;
+#X obj 67 463 vs-scale, f 10;
+#X obj 67 278 vs-sine-circle;
+#X obj 334 278 vs-triangle;
+#X text 585 409 OUTPUT CHANNELS from [vs-output] to connect to the
+[dac~] or the [vs-ilda] object;
+#X connect 3 0 81 0;
+#X connect 4 0 81 1;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 80 0;
+#X connect 8 0 90 0;
+#X connect 9 0 8 0;
+#X connect 10 0 90 2;
+#X connect 11 0 15 0;
+#X connect 12 0 90 1;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 15 0 10 0;
+#X connect 16 0 18 0;
+#X connect 17 0 16 0;
+#X connect 18 0 26 0;
+#X connect 19 0 18 1;
+#X connect 20 0 19 0;
+#X connect 21 0 20 0;
+#X connect 24 0 25 0;
+#X connect 26 0 89 5;
+#X connect 26 0 89 4;
+#X connect 27 0 91 0;
+#X connect 28 0 27 0;
+#X connect 29 0 56 0;
+#X connect 30 0 34 0;
+#X connect 31 0 30 1;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 88 4;
+#X connect 34 0 88 5;
+#X connect 35 0 87 4;
+#X connect 36 0 35 0;
+#X connect 37 0 36 0;
+#X connect 38 0 87 5;
+#X connect 39 0 38 0;
+#X connect 40 0 39 0;
+#X connect 41 0 86 4;
+#X connect 42 0 41 0;
+#X connect 43 0 42 0;
+#X connect 44 0 86 5;
+#X connect 45 0 44 0;
+#X connect 46 0 45 0;
+#X connect 52 0 54 0;
+#X connect 53 0 57 0;
+#X connect 54 0 53 0;
+#X connect 56 0 30 0;
+#X connect 57 0 90 4;
+#X connect 57 1 91 2;
+#X connect 62 0 91 1;
+#X connect 63 0 62 0;
+#X connect 64 0 63 0;
+#X connect 65 0 90 3;
+#X connect 66 0 65 0;
+#X connect 67 0 66 0;
+#X connect 71 0 72 0;
+#X connect 72 0 81 2;
+#X connect 80 0 69 0;
+#X connect 80 1 69 1;
+#X connect 80 2 69 2;
+#X connect 80 4 69 4;
+#X connect 80 5 69 5;
+#X connect 86 0 85 0;
+#X connect 86 1 85 1;
+#X connect 86 3 85 2;
+#X connect 87 0 84 0;
+#X connect 87 1 84 1;
+#X connect 87 3 84 2;
+#X connect 88 0 87 0;
+#X connect 88 1 87 1;
+#X connect 88 3 87 3;
+#X connect 89 0 86 0;
+#X connect 89 1 86 1;
+#X connect 89 3 86 3;
+#X connect 90 0 89 0;
+#X connect 90 1 89 1;
+#X connect 90 2 89 3;
+#X connect 91 0 88 0;
+#X connect 91 1 88 1;
+#X connect 91 2 88 3;

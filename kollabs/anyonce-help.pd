@@ -1,0 +1,18 @@
+#N canvas 197 145 566 427 10;
+#X text 78 326 (c)2013 Marian Weger;
+#X text 42 55 anyonce <name>;
+#X obj 137 189 anyonce \$0-a;
+#X floatatom 47 124 5 0 0 0 - - -;
+#X obj 47 211 print A;
+#X obj 137 211 print B;
+#X obj 227 189 anyonce \$0-a;
+#X obj 227 211 print C;
+#X obj 47 189 anyonce \$0-a;
+#X text 51 253 Only one of the instances with the same name will pass
+the message.;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 3 0 6 0;
+#X connect 3 0 8 0;
+#X connect 6 0 7 0;
+#X connect 8 0 4 0;

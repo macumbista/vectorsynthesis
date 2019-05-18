@@ -1,0 +1,248 @@
+#N canvas -16 71 873 683 10;
+#X obj 218 377 *~;
+#X obj 473 377 *~;
+#X obj 28 424 +~;
+#X obj 579 424 +~;
+#X obj 28 484 *~;
+#X obj 579 484 *~;
+#X obj 28 514 +~;
+#X obj 579 514 +~;
+#X obj 28 544 dac~ 1;
+#X obj 579 544 dac~ 2;
+#X obj 336 534 sig~;
+#X obj 336 491 nbx 5 14 -1e+37 1e+37 0 1 empty empty SCALE_XY 0 -8
+0 10 -228856 -1 -1 20 256;
+#X obj 336 511 / 100;
+#X obj 266 534 sig~;
+#X obj 266 491 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_X 0 -8 0 10
+-203904 -1 -1 0 256;
+#X obj 266 511 / 100;
+#X obj 406 534 sig~;
+#X obj 406 491 nbx 5 14 -1e+37 1e+37 0 1 empty empty POS_Y 0 -8 0 10
+-232576 -1 -1 0 256;
+#X obj 406 511 / 100;
+#X obj 696 519 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+1 1;
+#X obj 696 547 switch~;
+#X text 634 424 Derek Holzer;
+#X text 634 462 macumbista@gmail.com;
+#X text 634 443 Helsinki SEP 2018;
+#X obj 60 377 adc~ 1;
+#X obj 616 377 adc~ 2;
+#X text 401 599 Based on Syntheshape - Oscilloscope Art Generator \,
+"Projects in Sight \, Sound and Sensation" \, Mitchell Waite \, 1974
+;
+#X obj 18 12 cnv 15 175 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 54 143 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 4445 1;
+#X obj 85 102 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10 0
+10 -4034 -1 -1 1;
+#X obj 28 24 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 60 8 0 10 -4034
+-1 -1 50 256;
+#X obj 28 175 phasor~;
+#X obj 75 226 sig~;
+#X obj 91 170 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 91 309 sig~;
+#X obj 91 285 / 100;
+#X obj 28 335 VS-operator;
+#X obj 85 121 VS-waveselect;
+#X obj 43 46 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 43 226 sig~;
+#X obj 43 202 / 100;
+#X obj 59 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 59 284 sig~;
+#X obj 59 260 / 360;
+#X obj 208 12 cnv 15 175 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 244 143 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 4445 1;
+#X obj 275 102 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10
+0 10 -4034 -1 -1 1;
+#X obj 265 226 sig~;
+#X obj 281 170 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 281 309 sig~;
+#X obj 281 285 / 100;
+#X obj 218 335 VS-operator;
+#X obj 275 121 VS-waveselect;
+#X obj 233 46 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 233 226 sig~;
+#X obj 233 202 / 100;
+#X obj 249 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 180 256;
+#X obj 249 284 sig~;
+#X obj 298 335 VS-operator;
+#X obj 584 13 cnv 15 175 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 620 144 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 12700 1;
+#X obj 651 103 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10
+0 10 -4034 -1 -1 3;
+#X obj 641 227 sig~;
+#X obj 657 171 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 657 310 sig~;
+#X obj 657 286 / 100;
+#X obj 594 336 VS-operator;
+#X obj 651 122 VS-waveselect;
+#X obj 609 47 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 100 256;
+#X obj 609 227 sig~;
+#X obj 609 203 / 100;
+#X obj 625 69 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 0 256;
+#X obj 625 285 sig~;
+#X obj 625 261 / 360;
+#X obj 329 284 sig~;
+#X obj 329 260 / 360;
+#X obj 398 12 cnv 15 175 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 434 143 hsl 128 15 -1 1 0 0 empty empty empty 135 8 0 10 -4034
+-1 -1 4445 1;
+#X obj 465 102 hradio 15 1 1 4 empty empty saw.sin.tri.sqr -13 -10
+0 10 -4034 -1 -1 1;
+#X obj 455 226 sig~;
+#X obj 471 170 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 100 256;
+#X obj 471 309 sig~;
+#X obj 471 285 / 100;
+#X obj 408 335 VS-operator;
+#X obj 465 121 VS-waveselect;
+#X obj 423 46 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic_% 60 8
+0 10 -4034 -1 -1 5000 256;
+#X obj 423 226 sig~;
+#X obj 423 202 / 100;
+#X obj 439 68 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-4034 -1 -1 45 256;
+#X obj 439 284 sig~;
+#X obj 488 335 VS-operator;
+#X obj 519 284 sig~;
+#X obj 519 260 / 360;
+#X msg 249 260 0;
+#X obj 519 237 * -1;
+#X obj 439 260 / 360;
+#X obj 337 457 dac~ 3;
+#X obj 337 432 sig~;
+#X obj 337 389 nbx 5 14 -1e+37 1e+37 0 1 empty empty BRIGHTNESS 0 -8
+0 10 -228856 -1 -1 100 256;
+#X obj 337 409 / 100;
+#X obj 266 432 sig~;
+#X obj 266 389 nbx 5 14 -1e+37 1e+37 0 1 empty empty BAL_X 0 -8 0 10
+-203904 -1 -1 0 256;
+#X obj 266 409 / 100;
+#X obj 406 432 sig~;
+#X obj 406 389 nbx 5 14 -1e+37 1e+37 0 1 empty empty BAL_Y 0 -8 0 10
+-232576 -1 -1 0 256;
+#X obj 406 409 / 100;
+#X connect 0 0 2 1;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 10 0 4 1;
+#X connect 10 0 5 1;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 13 0 6 1;
+#X connect 14 0 15 0;
+#X connect 15 0 13 0;
+#X connect 16 0 7 1;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 19 0 20 0;
+#X connect 24 0 2 1;
+#X connect 25 0 3 1;
+#X connect 28 0 32 0;
+#X connect 29 0 37 0;
+#X connect 30 0 31 0;
+#X connect 31 0 36 0;
+#X connect 31 0 51 0;
+#X connect 31 0 58 0;
+#X connect 31 0 83 0;
+#X connect 31 0 90 0;
+#X connect 31 0 66 0;
+#X connect 32 0 36 3;
+#X connect 33 0 35 0;
+#X connect 34 0 36 4;
+#X connect 35 0 34 0;
+#X connect 36 0 2 0;
+#X connect 37 0 28 0;
+#X connect 38 0 40 0;
+#X connect 39 0 36 1;
+#X connect 40 0 39 0;
+#X connect 41 0 43 0;
+#X connect 42 0 36 2;
+#X connect 43 0 42 0;
+#X connect 45 0 47 0;
+#X connect 46 0 52 0;
+#X connect 47 0 51 3;
+#X connect 47 0 58 3;
+#X connect 48 0 50 0;
+#X connect 49 0 51 4;
+#X connect 49 0 58 4;
+#X connect 50 0 49 0;
+#X connect 51 0 0 0;
+#X connect 52 0 45 0;
+#X connect 53 0 55 0;
+#X connect 54 0 51 1;
+#X connect 54 0 58 1;
+#X connect 55 0 54 0;
+#X connect 56 0 75 0;
+#X connect 57 0 51 2;
+#X connect 58 0 1 0;
+#X connect 60 0 62 0;
+#X connect 61 0 67 0;
+#X connect 62 0 66 3;
+#X connect 63 0 65 0;
+#X connect 64 0 66 4;
+#X connect 65 0 64 0;
+#X connect 66 0 3 1;
+#X connect 67 0 60 0;
+#X connect 68 0 70 0;
+#X connect 69 0 66 1;
+#X connect 70 0 69 0;
+#X connect 71 0 73 0;
+#X connect 72 0 66 2;
+#X connect 73 0 72 0;
+#X connect 74 0 58 2;
+#X connect 75 0 74 0;
+#X connect 77 0 79 0;
+#X connect 78 0 84 0;
+#X connect 79 0 83 3;
+#X connect 79 0 90 3;
+#X connect 80 0 82 0;
+#X connect 81 0 83 4;
+#X connect 81 0 90 4;
+#X connect 82 0 81 0;
+#X connect 83 0 0 1;
+#X connect 84 0 77 0;
+#X connect 85 0 87 0;
+#X connect 86 0 83 1;
+#X connect 86 0 90 1;
+#X connect 87 0 86 0;
+#X connect 88 0 95 0;
+#X connect 88 0 94 0;
+#X connect 89 0 83 2;
+#X connect 90 0 1 1;
+#X connect 91 0 90 2;
+#X connect 92 0 91 0;
+#X connect 93 0 57 0;
+#X connect 94 0 92 0;
+#X connect 95 0 89 0;
+#X connect 97 0 96 0;
+#X connect 98 0 99 0;
+#X connect 99 0 97 0;
+#X connect 100 0 0 0;
+#X connect 101 0 102 0;
+#X connect 102 0 100 0;
+#X connect 103 0 1 0;
+#X connect 104 0 105 0;
+#X connect 105 0 103 0;

@@ -1,0 +1,81 @@
+#N canvas 478 164 802 610 10;
+#X obj 38 16 inlet~ phasor;
+#X obj 258 229 *~ -1;
+#X obj 258 258 +~ 1;
+#X obj 258 288 min~;
+#X obj 258 317 *~ -4;
+#X obj 258 345 +~ 1;
+#X obj 38 229 *~ -1;
+#X obj 38 258 +~ 1;
+#X obj 38 288 min~;
+#X obj 94 229 *~;
+#X obj 109 182 sig~;
+#X obj 38 344 -~ 1;
+#X obj 109 151 / 100;
+#X obj 38 317 *~ 2.2;
+#X obj 258 373 -~ 0.5;
+#X obj 258 401 clip~ -1 1;
+#X obj 273 117 sig~;
+#X obj 273 86 / 100;
+#X obj 273 61 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
+-262144 -1 -1 39.5 256;
+#X obj 109 117 nbx 5 14 -1e+37 1e+37 0 1 empty empty slope 60 8 0 10
+-262144 -1 -1 344 256;
+#X text 440 471 macumbista@gmail.com;
+#X text 440 430 Derek Holzer;
+#X text 440 450 Ljubljana June 2017;
+#X obj 38 182 wrap~;
+#X obj 258 182 wrap~;
+#X text 442 115 Defaults:;
+#X text 462 133 Phase = 39.5;
+#X text 461 152 Slope = 344;
+#X text 441 254 "The triangle poses an interesting challenge to signal
+requirements. Both deflection waveforms are basically triangles \,
+however they have been modified. The triangle creating the vertical
+motion is flattened at the bottom peak. The triangle producing the
+horizontal motion must be non-symmetrical with time (faster positive
+slope than negative slope). The two triangles are related in phase."
+;
+#X text 440 369 From: “Applications of OEI 3D Display Modules”
+(1975);
+#X obj 258 151 +~;
+#X obj 178 16 inlet~ scale;
+#X obj 368 16 inlet~ brightness;
+#X obj 38 465 outlet~ X;
+#X obj 258 465 outlet~ Y;
+#X obj 368 465 outlet~ B;
+#X obj 258 434 *~;
+#X obj 38 434 *~;
+#X obj 260 16 inlet~ phase;
+#X connect 0 0 23 0;
+#X connect 0 0 30 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 14 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 13 0;
+#X connect 9 0 8 1;
+#X connect 10 0 9 1;
+#X connect 11 0 37 0;
+#X connect 12 0 10 0;
+#X connect 13 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 36 0;
+#X connect 16 0 30 1;
+#X connect 17 0 16 0;
+#X connect 18 0 17 0;
+#X connect 19 0 12 0;
+#X connect 23 0 6 0;
+#X connect 23 0 9 0;
+#X connect 24 0 1 0;
+#X connect 24 0 3 1;
+#X connect 30 0 24 0;
+#X connect 31 0 36 1;
+#X connect 31 0 37 1;
+#X connect 32 0 35 0;
+#X connect 36 0 34 0;
+#X connect 37 0 33 0;
+#X connect 38 0 30 1;

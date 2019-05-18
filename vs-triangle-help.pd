@@ -1,0 +1,47 @@
+#N canvas 282 108 897 703 10;
+#X obj 44 43 cnv 15 300 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 650 386 Derek Holzer;
+#X text 650 410 Berlin July 2017;
+#X text 650 435 macumbista@gmail.com;
+#X obj 57 210 cnv 15 100 60 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 67 177 phasor~;
+#X obj 67 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
+8 0 10 -4034 -1 -1 2000 256;
+#X obj 98 117 sig~;
+#X obj 98 94 / 100;
+#X obj 98 75 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 60 8 0 10
+-4034 -1 -1 25 256;
+#X obj 365 398 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 365 426 switch~;
+#X obj 67 373 dac~ 1 2 3;
+#X obj 130 137 / 100;
+#X obj 130 117 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 60
+8 0 10 -4034 -1 -1 100 256;
+#X text 401 174 "The triangle poses an interesting challenge to signal
+requirements. Both deflection waveforms are basically triangles \,
+however they have been modified. The triangle creating the vertical
+motion is flattened at the bottom peak. The triangle producing the
+horizontal motion must be non-symmetrical with time (faster positive
+slope than negative slope). The two triangles are related in phase."
+;
+#X text 400 289 From: “Applications of OEI 3D Display Modules”
+(1975);
+#X obj 67 228 VS-triangle;
+#X obj 130 157 sig~;
+#X text 401 49 [VS-triangle] is a simple \, [phasor~] driven shape
+generator.;
+#X connect 5 0 17 0;
+#X connect 6 0 5 0;
+#X connect 7 0 17 1;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 17 0 12 0;
+#X connect 17 1 12 1;
+#X connect 17 2 12 2;
+#X connect 18 0 17 2;

@@ -1,0 +1,237 @@
+#N canvas 148 23 759 649 10;
+#X text 500 537 Derek Holzer;
+#X text 500 586 macumbista@gmail.com;
+#X text 500 561 Helsinki MAY 2019;
+#X obj 101 118 cnv 15 300 100 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#X obj 99 552 outlet~ X;
+#X obj 169 552 outlet~ Y;
+#X obj 307 552 outlet~ B;
+#X obj 178 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
+0 -8 0 10 -4034 -1 -1 25 256;
+#X obj 156 400 / 100;
+#X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
+brightness 0 -8 0 10 -4034 -1 -1 100 256;
+#X obj 195 401 / 100;
+#X obj 377 366 kollabs/ds_reg \$1 \$2/frequency;
+#X obj 377 426 kollabs/ds_reg \$1 \$2/harmonic;
+#X obj 377 446 kollabs/ds_reg \$1 \$2/scale;
+#X obj 377 466 kollabs/ds_reg \$1 \$2/phase;
+#X obj 377 486 kollabs/ds_reg \$1 \$2/brightness;
+#X obj 102 17 inlet~ phasor;
+#X obj 108 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
+frequency 0 -8 0 10 -257985 -1 -1 50 256;
+#X obj 168 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
+freq/100 0 -8 0 10 -257985 -1 -1 0 256;
+#X obj 227 130 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
+-1 -1;
+#X obj 99 336 phasor~;
+#X obj 129 242 / 100;
+#X msg 165 295 0, f 4;
+#N canvas 0 23 634 533 selector 0;
+#X obj 139 36 inlet~;
+#X obj 210 36 inlet~;
+#X obj 380 36 inlet;
+#X msg 142 112 0;
+#X msg 154 135 1;
+#X msg 214 112 0;
+#X msg 225 135 1;
+#X obj 139 239 *~;
+#X obj 210 239 *~;
+#X obj 163 267 outlet~;
+#X obj 152 81 select 0 1 2;
+#X msg 280 112 0;
+#X msg 292 135 1;
+#X obj 277 239 *~;
+#X obj 277 36 r~ \$1-master;
+#X connect 0 0 7 0;
+#X connect 1 0 8 0;
+#X connect 2 0 10 0;
+#X connect 3 0 8 1;
+#X connect 3 0 13 1;
+#X connect 4 0 7 1;
+#X connect 5 0 7 1;
+#X connect 5 0 13 1;
+#X connect 6 0 8 1;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 10 0 3 0;
+#X connect 10 0 4 0;
+#X connect 10 1 5 0;
+#X connect 10 1 6 0;
+#X connect 10 2 11 0;
+#X connect 10 2 12 0;
+#X connect 11 0 8 1;
+#X connect 11 0 7 1;
+#X connect 12 0 13 1;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;
+#X restore 99 366 pd selector;
+#X obj 323 52 r \$1-reset-phase;
+#X obj 318 130 hradio 15 1 0 3 \$2/source \$2/source Int.Ext.Master
+-12 -8 0 10 -257985 -1 -1 0;
+#X obj 273 17 inlet~ scale;
+#X obj 421 93 savestate;
+#X obj 472 137 f;
+#X obj 487 157 f;
+#X obj 503 177 f;
+#X obj 523 198 f;
+#X obj 543 218 f;
+#X obj 190 39 loadbang;
+#X obj 563 238 f;
+#X obj 583 258 f;
+#X obj 377 386 kollabs/ds_reg \$1 \$2/frequency-100;
+#X obj 377 406 kollabs/ds_reg \$1 \$2/source;
+#X obj 353 17 inlet~ brightness;
+#X obj 108 161 nbx 5 14 0 360 0 0 \$2/harmonic \$2/harmonic harmonic
+0 -8 0 10 -4034 -1 -1 1 256;
+#X obj 99 399 *~;
+#X obj 99 426 wrap~;
+#X obj 109 194 bng 15 250 50 0 empty empty LOAD_3D_WAV_TABLES 20 8
+0 10 -4034 -1 -1;
+#X obj 239 552 outlet~ Z;
+#X obj 99 504 vs-3D-wav;
+#X obj 370 195 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X obj 329 278 s pd-\$2-help;
+#X msg 329 256 vis 1;
+#N canvas 0 23 975 698 \$2-help 0;
+#X obj 234 12 cnv 15 300 220 empty empty HELP:vs-3D-wav-gui 20 12 0
+14 -4034 -66577 0;
+#X text 241 37 INLETS:;
+#X text 241 127 OUTLETS:;
+#X text 267 150 1) X signal;
+#X text 267 170 2) Y signal;
+#X text 267 210 3) Brightness signal (0-1);
+#X text 267 60 1) Ramp signal (i.e. from [phasor~]) (0-1);
+#X text 267 190 3) Z signal;
+#X text 267 80 2) Scale signal (0-1);
+#X text 267 100 3) Brightness signal (0-1);
+#X text 11 340 To create usable files \, import a .obj file into the
+OsciStudio application (version 0.6.0 or greater) \, wait for the conversion
+\, and then do the following:;
+#X text 48 386 * Right or Control click the top of a group \, where
+you would select a 3D model;
+#X text 48 425 * This opens a menu \, at the bottom it says "Export
+Wavetable";
+#X text 48 466 * The wavetable will contain exactly one wave at the
+current frequency (you get a one second file if you set OsciStudio
+to 1hz). Sample rate will always be 192KHz.;
+#X text 48 513 * All your settings in rotate/trace/etc. will be part
+of the result;
+#X text 14 587 Many thanks to Hansi Raber for implemented that feature
+in OsciStudio!;
+#X text 48 548 * You can also convert .svg files in this way for 2D
+graphics;
+#X text 12 285 Click the geen LOAD object to load a file. Try icosahedron.wav
+in same directory if you don't have any of your own.;
+#X text 452 235 Other controls:;
+#X text 473 309 SCALE adjusts the amplitude of the output waveform.
+;
+#X text 474 334 BRIGHTNESS sets the brightness value of this vector
+figure.;
+#X text 685 423 Derek Holzer;
+#X text 685 472 macumbista@gmail.com;
+#X text 685 447 Helsinki May 2019;
+#X text 473 270 HARMONIC sets the output waveform to a harmonic multiple
+of the driving ramp.;
+#X text 13 238 [vs-3D-wav-gui] renders a three channel audio file into
+a 3D vector shape \, with brightness blanking to remove the flyback
+line.;
+#X restore 329 308 pd \$2-help;
+#X obj 379 508 kollabs/ds_reg \$1 \$2/smooth;
+#X obj 174 242 * 20;
+#X obj 607 277 f;
+#X obj 258 129 hradio 15 1 0 2 \$2/smooth \$2/smooth ON 35 8 0 10 -257985
+-1 -1 0;
+#X text 257 114 Smooth;
+#X obj 225 441 pack 0 20;
+#X obj 156 441 pack 0 20;
+#X obj 472 115 t b b b b b b b b;
+#X obj 472 320 pack 0 0 0 0 0 0 0 0;
+#X obj 421 341 unpack 0 0 0 0 0 0 0 0;
+#X obj 195 477 line~;
+#X obj 156 476 line~;
+#X obj 49 272 pack 0 0;
+#X obj 129 272 pack 0 0;
+#X obj 49 295 line~;
+#X obj 129 295 line~;
+#X connect 7 0 8 0;
+#X connect 7 0 34 1;
+#X connect 8 0 55 0;
+#X connect 9 0 10 0;
+#X connect 9 0 35 1;
+#X connect 10 0 54 0;
+#X connect 16 0 23 1;
+#X connect 17 0 28 1;
+#X connect 17 0 61 0;
+#X connect 18 0 21 0;
+#X connect 18 0 29 1;
+#X connect 19 0 22 0;
+#X connect 20 0 23 0;
+#X connect 21 0 62 0;
+#X connect 22 0 20 1;
+#X connect 23 0 40 0;
+#X connect 24 0 19 0;
+#X connect 25 0 23 2;
+#X connect 25 0 30 1;
+#X connect 26 0 44 1;
+#X connect 27 0 58 0;
+#X connect 27 1 56 0;
+#X connect 28 0 57 0;
+#X connect 29 0 57 1;
+#X connect 30 0 57 2;
+#X connect 31 0 57 3;
+#X connect 32 0 57 4;
+#X connect 33 0 18 0;
+#X connect 33 0 17 0;
+#X connect 33 0 25 0;
+#X connect 33 0 19 0;
+#X connect 33 0 9 0;
+#X connect 33 0 7 0;
+#X connect 33 0 39 0;
+#X connect 33 0 52 0;
+#X connect 34 0 57 5;
+#X connect 35 0 57 6;
+#X connect 38 0 44 2;
+#X connect 39 0 40 1;
+#X connect 39 0 32 1;
+#X connect 40 0 41 0;
+#X connect 41 0 44 0;
+#X connect 42 0 44 3;
+#X connect 44 0 4 0;
+#X connect 44 1 5 0;
+#X connect 44 2 43 0;
+#X connect 44 3 6 0;
+#X connect 45 0 47 0;
+#X connect 47 0 46 0;
+#X connect 50 0 62 1;
+#X connect 50 0 61 1;
+#X connect 51 0 57 7;
+#X connect 52 0 50 0;
+#X connect 52 0 51 1;
+#X connect 54 0 59 0;
+#X connect 55 0 60 0;
+#X connect 56 0 28 0;
+#X connect 56 1 29 0;
+#X connect 56 2 30 0;
+#X connect 56 3 31 0;
+#X connect 56 4 32 0;
+#X connect 56 5 34 0;
+#X connect 56 6 35 0;
+#X connect 56 7 51 0;
+#X connect 57 0 27 0;
+#X connect 58 0 17 0;
+#X connect 58 1 18 0;
+#X connect 58 2 25 0;
+#X connect 58 4 39 0;
+#X connect 58 5 7 0;
+#X connect 58 6 9 0;
+#X connect 58 7 52 0;
+#X connect 59 0 44 2;
+#X connect 60 0 44 1;
+#X connect 61 0 63 0;
+#X connect 62 0 64 0;
+#X connect 63 0 20 0;
+#X connect 64 0 20 0;
+#X coords 0 -1 1 1 302 120 1 100 100;

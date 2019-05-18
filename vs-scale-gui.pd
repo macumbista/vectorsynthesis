@@ -1,0 +1,115 @@
+#N canvas 365 71 570 619 10;
+#X obj 101 118 cnv 15 300 40 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 362 503 Derek Holzer;
+#X text 362 552 macumbista@gmail.com;
+#X obj 173 249 / 100;
+#X obj 120 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/xscale \$2/xscale Xscale
+0 -8 0 10 -4034 -1 -1 100 256;
+#X obj 219 275 / 100;
+#X obj 212 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/yscale \$2/yscale Yscale
+0 -8 0 10 -4034 -1 -1 100 256;
+#X obj 67 453 VS-scale, f 18;
+#X obj 6 9 inlet~ X;
+#X obj 61 9 inlet~ Y;
+#X obj 116 9 inlet~ Z;
+#X obj 171 9 inlet~ B;
+#X obj 226 9 inlet~ Xscale;
+#X obj 311 9 inlet~ Yscale;
+#X obj 396 9 inlet~ Zscale;
+#X obj 269 280 / 100;
+#X obj 304 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/zscale \$2/zscale Zscale
+0 -8 0 10 -4034 -1 -1 100 256;
+#X text 362 527 Helsinki May 2019;
+#X obj 36 509 outlet~ X;
+#X obj 106 509 outlet~ Y;
+#X obj 176 509 outlet~ Z;
+#X obj 246 509 outlet~ B;
+#X obj 265 437 kollabs/ds_reg \$1 \$2/xscale;
+#X obj 265 457 kollabs/ds_reg \$1 \$2/yscale;
+#X obj 265 477 kollabs/ds_reg \$1 \$2/zscale;
+#X obj 316 182 savestate;
+#X obj 367 236 f;
+#X obj 395 256 f;
+#X obj 424 276 f;
+#X obj 367 204 t b b b;
+#X obj 367 299 pack 0 0 0;
+#X obj 316 320 unpack 0 0 0;
+#X obj 92 64 loadbang;
+#X obj 376 134 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X obj 409 154 s pd-\$2-help;
+#X msg 409 132 vis 1;
+#N canvas 0 23 488 627 \$2-help 0;
+#X obj 33 11 cnv 15 300 300 empty empty HELP:vs-scale-gui 20 12 0 14
+-4034 -66577 0;
+#X text 67 58 1) X axis signal;
+#X text 67 78 2) Y axis signal;
+#X text 67 96 3) Z axis signal (ignore for 2D vectors);
+#X text 67 232 1) X axis signal;
+#X text 67 252 2) Y axis signal;
+#X text 67 270 3) Z axis signal (ignore for 2D projection);
+#X text 67 288 4) Brightness signal;
+#X text 67 114 4) Brightness signal (0-1);
+#X text 43 39 INLETS;
+#X text 42 202 OUTLETS;
+#X text 67 135 5) X scaling (0-1);
+#X text 67 155 6) Y scaling (0-1);
+#X text 67 175 7) Z scaling (0-1);
+#X text 44 329 [vs-scale-gui] allows scaling (size change) of the horizontal
+\, vertical and depth dimensions of a 2D or 3D vector figure. Brightness
+values are passed through.;
+#X text 45 378 Automated scaling is done via any sort of changing audio
+signal \, i.e. from [phasor~] or from the [vs-operator-gui] abstractions.
+;
+#X restore 409 184 pd \$2-help;
+#X obj 171 308 pack 0 20;
+#X obj 213 331 pack 0 20;
+#X obj 261 348 pack 0 20;
+#X obj 173 342 line~;
+#X obj 213 364 line~;
+#X obj 263 384 line~;
+#X connect 3 0 37 0;
+#X connect 4 0 3 0;
+#X connect 4 0 26 1;
+#X connect 5 0 38 0;
+#X connect 6 0 5 0;
+#X connect 6 0 27 1;
+#X connect 7 0 18 0;
+#X connect 7 1 19 0;
+#X connect 7 2 20 0;
+#X connect 7 3 21 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 1;
+#X connect 10 0 7 2;
+#X connect 11 0 7 3;
+#X connect 12 0 7 4;
+#X connect 13 0 7 5;
+#X connect 14 0 7 6;
+#X connect 15 0 39 0;
+#X connect 16 0 15 0;
+#X connect 16 0 28 1;
+#X connect 25 0 31 0;
+#X connect 25 1 29 0;
+#X connect 26 0 30 0;
+#X connect 27 0 30 1;
+#X connect 28 0 30 2;
+#X connect 29 0 26 0;
+#X connect 29 1 27 0;
+#X connect 29 2 28 0;
+#X connect 30 0 25 0;
+#X connect 31 0 4 0;
+#X connect 31 1 6 0;
+#X connect 31 2 16 0;
+#X connect 32 0 4 0;
+#X connect 32 0 16 0;
+#X connect 32 0 6 0;
+#X connect 33 0 35 0;
+#X connect 35 0 34 0;
+#X connect 37 0 40 0;
+#X connect 38 0 41 0;
+#X connect 39 0 42 0;
+#X connect 40 0 7 4;
+#X connect 41 0 7 5;
+#X connect 42 0 7 6;
+#X coords 0 -1 1 1 302 60 1 100 100;

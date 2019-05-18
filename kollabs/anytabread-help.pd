@@ -1,0 +1,6 @@
+#N canvas 460 154 438 420 10;
+#X text 103 289 (c)2013 Marian Weger;
+#X text 39 52 anytabread <table_name>;
+#X obj 123 200 anytable \$0-array;
+#X text 45 146 Works like [tabread] \, but for [anytable]. See [anytable-help]
+(right-click --> Help):;

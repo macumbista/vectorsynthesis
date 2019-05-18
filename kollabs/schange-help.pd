@@ -1,0 +1,16 @@
+#N canvas 563 102 444 332 10;
+#X text 39 26 schange <init value>;
+#X text 252 25 [change] for symbols;
+#X text 262 279 (c)2012 Marian Weger;
+#X msg 103 88 symbol dog;
+#X msg 123 118 symbol cow;
+#X msg 143 148 symbol pig;
+#X obj 110 197 schange dog;
+#X symbolatom 110 249 10 0 0 0 - - -;
+#X obj 82 248 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;

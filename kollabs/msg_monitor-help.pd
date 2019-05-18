@@ -1,0 +1,15 @@
+#N canvas 461 109 311 368 10;
+#X text 31 51 "prints" any message to a message box;
+#X text 82 185 <-- connect message box here;
+#X text 81 147 <-- put data stream here;
+#X msg 39 105 bla blub 3 2 1;
+#X obj 39 167 msg_monitor;
+#X msg 39 209 ---;
+#X msg 139 105 7 6 ??? ### *blip* 3;
+#X text 26 16 msg_monitor <reset time>;
+#X text 38 259 creation argument (optional):;
+#X text 38 279 sets reset time in ms (default=5000);
+#X text 74 324 (c)2011 Marian Weger;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 4 0;

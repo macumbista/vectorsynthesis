@@ -1,0 +1,132 @@
+#N canvas 209 59 1100 733 10;
+#X obj 19 35 cnv 15 300 500 empty empty 3D_ICOSAHEDRON 20 12 0 14 -233017
+-66577 0;
+#X obj 333 36 cnv 15 300 500 empty empty XYZ_ROTATION_+_PERSPECTIVE
+20 12 0 14 -233017 -66577 0;
+#X obj 46 502 dac~ 1 2 3;
+#X obj 242 131 sig~;
+#X obj 242 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty brightness 0 -8
+0 10 -4034 -1 -1 300 256;
+#X obj 142 109 / 100;
+#X obj 46 89 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq 0 -8 0 10 -4034
+-1 -1 50 256;
+#X obj 141 134 sig~;
+#X obj 142 90 nbx 5 14 -1e+37 1e+37 0 1 empty empty scale 0 -8 0 10
+-4034 -1 -1 30 256;
+#X obj 46 109 phasor~;
+#X obj 242 109 / 100;
+#X obj 356 108 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8
+0 10 -4034 -1 -1 10 256;
+#X obj 356 162 phasor~;
+#X obj 456 108 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8
+0 10 -4034 -1 -1 10 256;
+#X obj 456 162 phasor~;
+#X obj 546 108 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8
+0 10 -4034 -1 -1 10 256;
+#X obj 546 162 phasor~;
+#X text 882 466 Derek Holzer;
+#X text 882 515 macumbista@gmail.com;
+#X obj 565 468 tgl 15 1 empty empty ON_OFF 17 7 0 10 -258113 -1 -1
+0 1;
+#X obj 565 496 switch~;
+#X obj 546 132 / 100;
+#X obj 456 132 / 100;
+#X obj 356 132 / 100;
+#X text 680 334 X (horizontal);
+#X text 680 354 Y (vertical);
+#X text 680 374 Z (depth);
+#X text 680 394 Brightness;
+#X text 883 305 OUTLETS;
+#X text 663 305 INLETS;
+#X obj 46 260 VS-rotate;
+#X text 353 76 X ROTATION;
+#X text 453 76 Y ROTATION;
+#X text 543 76 Z ROTATION;
+#X obj 537 350 sig~;
+#X obj 537 301 nbx 5 14 -1e+37 1e+37 0 1 empty empty shadow 0 -8 0
+10 -4034 -1 -1 75 256;
+#X obj 418 310 sig~;
+#X obj 418 261 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_angle_X 0
+-8 0 10 -4034 -1 -1 0 256;
+#X obj 477 330 sig~;
+#X obj 477 281 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_angle_Y 0
+-8 0 10 -4034 -1 -1 0 256;
+#X obj 418 281 / 360;
+#X obj 477 301 / 360;
+#X obj 358 290 sig~;
+#X obj 358 241 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_distance
+0 -8 0 10 -4034 -1 -1 100 256;
+#X obj 358 261 / 100;
+#X text 900 334 X (horizontal);
+#X text 900 354 Y (vertical);
+#X text 900 374 Brightness;
+#X text 680 414 Viewing Distance;
+#X text 681 434 Viewing Angle X;
+#X text 681 454 Viewing Angle Y;
+#X text 681 474 Shadow Threshold;
+#X text 659 44 [VS-projector] takes a 2D or 3D input vector shape \,
+and projects it into 3D space by applying a perspective transformation
+as well as a brightness modulation to simulate depth.;
+#X text 660 204 The shadow threshold determines at what point on the
+Z axis the lines begin to fade.;
+#X text 882 490 Helsinki June 2018;
+#X text 660 105 Viewing distance affects the perspective illusion.
+Smaller values increase the perspective effect. Extreme settings will
+cause noticeable distortion and high output values.;
+#X text 659 152 The viewing angle settings can simulate seeing the
+object from the side \, top \, or bottom. Extreme settings will cause
+noticeable distortion and high output values.;
+#X obj 46 405 VS-projector, f 16;
+#X obj 537 321 / 100;
+#X obj 178 322 sig~;
+#X obj 178 270 nbx 5 14 -1e+37 1e+37 0 1 empty empty Z_distance 0 -8
+0 10 -4034 -1 -1 0 256;
+#X obj 178 290 / 100;
+#X obj 46 191 VS-icosahedron;
+#X text 660 238 Because of the tanh "soft clipping" function applied
+to brightness \, intial brightness values should be much higher (250-500).
+Output brightness will never exceed 1;
+#X connect 3 0 62 2;
+#X connect 4 0 10 0;
+#X connect 5 0 7 0;
+#X connect 6 0 9 0;
+#X connect 7 0 62 1;
+#X connect 8 0 5 0;
+#X connect 9 0 62 0;
+#X connect 10 0 3 0;
+#X connect 11 0 23 0;
+#X connect 12 0 30 4;
+#X connect 13 0 22 0;
+#X connect 14 0 30 5;
+#X connect 15 0 21 0;
+#X connect 16 0 30 6;
+#X connect 19 0 20 0;
+#X connect 21 0 16 0;
+#X connect 22 0 14 0;
+#X connect 23 0 12 0;
+#X connect 30 0 57 0;
+#X connect 30 1 57 1;
+#X connect 30 2 57 2;
+#X connect 30 3 57 3;
+#X connect 34 0 57 7;
+#X connect 35 0 58 0;
+#X connect 36 0 57 5;
+#X connect 37 0 40 0;
+#X connect 38 0 57 6;
+#X connect 39 0 41 0;
+#X connect 40 0 36 0;
+#X connect 41 0 38 0;
+#X connect 42 0 57 4;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 57 0 2 0;
+#X connect 57 1 2 1;
+#X connect 57 2 2 2;
+#X connect 58 0 34 0;
+#X connect 59 0 57 2;
+#X connect 60 0 61 0;
+#X connect 61 0 59 0;
+#X connect 62 0 30 0;
+#X connect 62 1 30 1;
+#X connect 62 2 30 2;
+#X connect 62 3 30 3;

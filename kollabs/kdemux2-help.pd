@@ -1,0 +1,16 @@
+#N canvas 488 200 443 341 10;
+#X text 247 207 (c)2012 Marian Weger;
+#X obj 124 106 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 56 84 5 0 0 0 - - -;
+#X floatatom 83 205 5 0 0 0 - - -;
+#X obj 83 153 kdemux2;
+#X floatatom 126 201 5 0 0 0 - - -;
+#X text 154 103 0: left inlet to left outlet;
+#X text 154 123 non zero: left inlet to right outlet;
+#X text 27 28 kdemux2 <init value>;
+#X text 94 259 optional arg sets the initial state (0 by default);
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 4 1 5 0;
