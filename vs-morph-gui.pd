@@ -83,7 +83,7 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 126 477 pack 0 50;
 #X obj 126 505 line~;
 #X obj 145 77 loadbang;
-#X obj 329 132 hradio 15 1 0 2 \$2/internal \$2/internal Ext.Int -5
+#X obj 329 132 hradio 15 1 0 2 \$2/internal \$2/internal Int.Ext -5
 -8 0 10 -257985 -1 -1 1;
 #X obj 376 132 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
 ;

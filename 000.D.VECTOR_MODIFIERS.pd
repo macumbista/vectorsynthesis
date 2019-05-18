@@ -1,4 +1,4 @@
-#N canvas -49 28 1132 712 10;
+#N canvas 0 28 1132 712 10;
 #X text 887 576 Derek Holzer;
 #X text 887 625 macumbista@gmail.com;
 #X obj 60 337 vs-translate-gui \$0 \$0-translate-one;
