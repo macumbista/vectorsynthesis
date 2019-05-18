@@ -73,6 +73,9 @@
 #X obj 36 185 *~ 24;
 #X connect 5 0 8 1;
 #X connect 5 0 27 0;
+#X connect 6 0 9 1;
+#X connect 6 0 11 1;
+#X connect 6 0 10 1;
 #X connect 7 0 8 0;
 #X connect 8 0 4 0;
 #X connect 9 0 1 0;

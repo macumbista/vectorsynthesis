@@ -5,10 +5,10 @@
 #X obj 169 552 outlet~ Y;
 #X obj 307 552 outlet~ B;
 #X obj 178 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 25 256;
+0 -8 0 10 -4034 -1 -1 24 256;
 #X obj 156 400 / 100;
 #X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
-brightness 0 -8 0 10 -4034 -1 -1 100 256;
+brightness 0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 195 401 / 100;
 #X obj 377 366 kollabs/ds_reg \$1 \$2/frequency;
 #X obj 377 426 kollabs/ds_reg \$1 \$2/harmonic;
@@ -85,12 +85,12 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 99 399 *~;
 #X obj 99 426 wrap~;
 #X obj 239 552 outlet~ Z;
-#X obj 99 504 vs-cube;
+#X obj 99 504 vs-cube, f 19;
 #X text 501 556 Derek Holzer;
 #X text 501 605 macumbista@gmail.com;
 #X text 501 580 Helsinki May 2019;
 #X obj 245 181 hradio 15 1 0 2 \$2/interpolation \$2/interpolation
-Off.On 0 -8 0 10 -4034 -1 -1 1;
+Off.On 0 -8 0 10 -4034 -1 -1 0;
 #X text 281 180 INTERPOLATION;
 #X obj 376 181 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
 ;

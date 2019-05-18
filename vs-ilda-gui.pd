@@ -3,9 +3,9 @@
 -66577 0;
 #X obj 34 422 vs-ilda, f 55;
 #X obj 106 143 nbx 5 14 -100 100 0 0 \$2/scalex \$2/scalex Scale_X
-0 -8 0 10 -4034 -1 -1 100 256;
+0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 107 174 nbx 5 14 -100 100 0 0 \$2/scaley \$2/scaley Scale_Y
-0 -8 0 10 -4034 -1 -1 100 256;
+0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 177 143 nbx 5 14 -100 100 0 0 \$2/offsetx \$2/offsetx Offset_X
 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 179 174 nbx 5 14 -100 100 0 0 \$2/offsety \$2/offsety Offset_Y
@@ -24,7 +24,7 @@
 -2 -6 0 8 -4034 -1 -1 9400 1;
 #X obj 239 367 mtof;
 #X obj 107 205 nbx 5 14 0 160 0 0 \$2/audiovol \$2/audiovol Vol.dB
-0 -8 0 10 -4034 -1 -1 0 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 301 327 nbx 8 14 -1e+37 1e+37 0 0 empty empty Hz 83 8 0 10 -228856
 -1 -1 1864.66 256;
 #X text 639 649 Derek Holzer;
@@ -87,7 +87,7 @@ Green_Curve -2 -6 0 8 -4034 -1 -1 9200 0;
 #X obj 212 590 kollabs/ds_reg \$1 \$2/bluecurve;
 #X obj 212 610 kollabs/ds_reg \$1 \$2/cutoff;
 #X obj 180 205 hradio 15 1 0 2 \$2/onoff \$2/onoff Off.On -5 -8 0 10
--258113 -1 -1 0;
+-258113 -1 -1 1;
 #X obj 92 50 loadbang;
 #X obj 378 141 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
 ;
