@@ -27,10 +27,10 @@ Demo videos here:
 
 ——SOFTWARE
 	
-	Pure Data, version 0.45 or newer. Install 32 bit version if you wish to use GEM.
+	Pure Data, version 0.49 or newer. 
 	Gem 0.93.3 (OPTIONAL, used in scan processor only. Installed via deken, Pd’s externals manager)
 	
-	NOTE: Gem does not run on 64 bit Pure Data, and Pd-Extended is too old for some features of this library.
+	NOTE: Pd-Extended is too old for some features of this library.
 	
 ——HARDWARE
 
