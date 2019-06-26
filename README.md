@@ -54,8 +54,15 @@ Demo videos here:
 
 *GENERAL NOTES*
 
-	The files with "gui" in their name are a designed to be patched together much like an audio or video modular synth.
-	The files with "help" in their name are also very good examples to start with. 
+	Start with the first files in the library, they are the tutorials:
+		000.A.VECTOR_GENERATORS.pd
+		000.B.2D_VECTORS.pd
+		000.C.3D_VECTORS.pd
+		000.D.VECTOR_MODIFIERS.pd
+		000.G.VECTOR_MULTIPLEXING.pd
+		000.I.PRESET_SYSTEM.pd
+	The files with "gui" in their name are a designed to be patched together much like a modular synth.
+	The files with "help" in their name are also very good examples to start with to learn more code. 
 	The files without "help" in their name are the abstractions themselves, without any controls.
 	The files with ".txt" extension are backup data for the various 3D shapes.
 
