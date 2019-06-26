@@ -1,9 +1,9 @@
-#N canvas 315 177 896 569 10;
+#N canvas 119 148 896 569 10;
 #X text 581 393 Derek Holzer;
 #X text 581 442 macumbista@gmail.com;
 #X text 581 417 Santa Cruz de Tenerife May 2019;
 #X obj 133 78 vs-ilda-gui \$0 \$0-lasermaster;
-#A saved 75 0 100 0 75 0 100 0 82 1 0 3 0.281073 3 0.281073 3 0.281073
+#A saved 50 0 100 0 50 0 29 0 84 1 0 3 0.281073 3 0.281073 3 0.281073
 109;
 #X obj 130 349 vs-ilda-throw-gui \$0 \$0-laserone;
 #A saved 1 0 1 0 1 0 0;
