@@ -54,7 +54,8 @@ Demo videos here:
 
 *GENERAL NOTES*
 
-	The files with "help" in their name are very good examples to start with. 
+	The files with "gui" in their name are a designed to be patched together much like an audio or video modular synth.
+	The files with "help" in their name are also very good examples to start with. 
 	The files without "help" in their name are the abstractions themselves, without any controls.
 	The files with ".txt" extension are backup data for the various 3D shapes.
 
@@ -158,7 +159,7 @@ Demo videos here:
 
 —-ILDA LASER DISPLAY OUTPUT
 
-	[VS-ilda] : to do
+	[VS-ilda] : output to an ILDA laser display projector
 
 
 *ACKNOWLEDGEMENTS*
@@ -184,7 +185,7 @@ I would like to thank the following people and institutions for their support an
 	Nathan Thompson
 	Roland Lioni/Akira’s Rebirth
 	Hansi Raber
-	Christian Ludwig/Jerobeam Fenderson
+	Jerobeam Fenderson
 	Lee Montgomery
 	Andrew Duff
 	Marco Donnarumma
@@ -194,7 +195,7 @@ I would like to thank the following people and institutions for their support an
 
 
 Derek Holzer
-Helsinki September 2018
+Helsinki June 2019
 http://macumbista.net
 macumbista AT THE DOMAIN gmail DOT com
 
