@@ -1,44 +1,78 @@
-#N canvas 174 73 929 538 10;
-#X obj 168 318 vs-multiplex \$0 1;
-#X obj 51 317 vs-multiplex \$0 2;
-#X text 686 399 Derek Holzer;
-#X text 686 448 macumbista@gmail.com;
-#X text 686 423 Helsinki May 2019;
-#X obj 658 10 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
+#N canvas 79 71 1184 651 10;
+#X obj 11 325 vs-multiplex \$0 1;
+#X obj 331 337 vs-multiplex \$0 2;
+#X text 959 508 Derek Holzer;
+#X text 959 557 macumbista@gmail.com;
+#X text 959 532 Helsinki May 2019;
+#X obj 958 19 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 656 193 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 956 193 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 50 348 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 90 448 cnv 15 200 150 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X text 659 196 INLETS;
-#X text 663 11 OUTPUT CHANNELS;
-#X text 56 351 INPUT CHANNELS:;
-#X text 82 376 1) X axis signal;
-#X text 82 396 2) Y axis signal;
-#X text 82 415 3) Brightness signal;
-#X text 82 434 4) RGB (used for ILDA);
-#X text 682 29 1) X axis signal;
-#X text 682 49 2) Y axis signal;
-#X text 682 68 3) Brightness signal;
-#X text 682 87 4) RGB (used for ILDA);
-#X text 682 107 5) Audio Left;
-#X text 682 127 6) Audio Right;
-#X text 682 215 1) X axis signal;
-#X text 682 235 2) Y axis signal;
-#X text 682 254 3) Brightness signal;
-#X text 682 275 4) Audio Left;
-#X text 682 293 5) Audio Right;
-#X text 282 358 USAGE:;
-#X text 297 385 Create one [vs-multiplex-gui \$0 <unique-name>] for
+#X text 959 196 INLETS;
+#X text 963 20 OUTPUT CHANNELS;
+#X text 96 451 INPUT CHANNELS:;
+#X text 122 476 1) X axis signal;
+#X text 122 496 2) Y axis signal;
+#X text 122 515 3) Brightness signal;
+#X text 122 534 4) RGB (used for ILDA);
+#X text 982 38 1) X axis signal;
+#X text 982 58 2) Y axis signal;
+#X text 982 77 3) Brightness signal;
+#X text 982 96 4) RGB (used for ILDA);
+#X text 982 116 5) Audio Left;
+#X text 982 136 6) Audio Right;
+#X text 982 215 1) X axis signal;
+#X text 982 235 2) Y axis signal;
+#X text 982 254 3) Brightness signal;
+#X text 982 275 4) Audio Left;
+#X text 982 293 5) Audio Right;
+#X text 19 357 USAGE:;
+#X text 34 384 Create one [vs-multiplex-gui \$0 <unique-name>] for
 your patch.;
-#X text 297 415 Create one [vs-audiodac-gui \$0 <unique-name>] for
-your patch.;
-#X obj 327 192 vs-audiodac-gui \$0 dac-one;
-#A saved 75 0 0 1;
-#X obj 329 11 vs-multiplex-gui \$0 multiplex-one;
-#A saved 25 2 0 1;
+#X text 34 414 Create one [vs-audiodac-gui \$0 <unique-name>] for your
+patch.;
+#X obj 627 192 vs-audiodac-gui \$0 dac-one;
+#A saved 85 1 5 6 1 1 40 0 0;
+#X obj 629 20 vs-multiplex-gui \$0 multiplex-one;
+#A saved 25 2 1 1;
+#X obj 317 21 vs-icosahedron-gui \$0 \$0-ico-one;
+#A saved 50 0 2 0 2 20 100 1 0;
+#X obj 7 20 vs-cube-gui \$0 \$0-cube-one;
+#A saved 50 0 2 0 2 30 100 1 0;
+#X obj 7 126 vs-rotate-gui \$0 \$0-rotate-one;
+#A saved 0 45 120 0 0 0 1 42 0 0;
+#X obj 317 252 vs-translate-gui \$0 \$0-translate-two;
+#A saved -65 0 0;
+#X obj 11 251 vs-translate-gui \$0 \$0-translate-one;
+#A saved 25 0 0;
+#X obj 317 126 vs-rotate-gui \$0 \$0-rotate-two;
+#A saved 0 0 0 0 0 0 1 8 -8 0;
 #X connect 30 0 29 0;
 #X connect 30 1 29 1;
 #X connect 30 2 29 2;
 #X connect 30 4 29 3;
 #X connect 30 5 29 4;
+#X connect 31 0 36 0;
+#X connect 31 1 36 1;
+#X connect 31 2 36 2;
+#X connect 31 3 36 3;
+#X connect 32 0 33 0;
+#X connect 32 1 33 1;
+#X connect 32 2 33 2;
+#X connect 32 3 33 3;
+#X connect 33 0 35 0;
+#X connect 33 1 35 1;
+#X connect 33 2 35 2;
+#X connect 33 3 35 3;
+#X connect 34 0 1 0;
+#X connect 34 1 1 1;
+#X connect 34 3 1 2;
+#X connect 35 0 0 0;
+#X connect 35 1 0 1;
+#X connect 35 3 0 2;
+#X connect 36 0 34 0;
+#X connect 36 1 34 1;
+#X connect 36 2 34 2;
+#X connect 36 3 34 3;
