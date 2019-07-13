@@ -4,8 +4,8 @@ This Python script assembles the lines and vertices of a 3D OBJ file into three 
 
 PREPROCESSING:
 
-1) You will need to import your OBJ file into Hansi Raber’s Oscilloscope application:
-https://github.com/kritzikratzi/Oscilloscope
+1) You will need to import your OBJ file into Hansi Raber’s OsciStudio application:
+https://oscilloscopemusic.com/oscistudio.php
 
 2) Save the file you have imported the OBJ file into and open it in a text editor. 
 
