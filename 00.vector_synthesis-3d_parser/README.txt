@@ -1,4 +1,4 @@
-READ ME FOR THE VECTOR SYNTHESIS PARSER
+READ ME FOR THE VECTOR SYNTHESIS PARSER *
 
 This Python script assembles the lines and vertices of a 3D OBJ file into three tables which can be used by the Pure Data Vector Synthesis library to render 3D shapes as audio signals sent to an XY oscilloscope or other vector display.
 
