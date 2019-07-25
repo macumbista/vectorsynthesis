@@ -5,10 +5,10 @@
 #X obj 169 552 outlet~ Y;
 #X obj 307 552 outlet~ B;
 #X obj 178 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 24 256;
+0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 156 400 / 100;
 #X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
-brightness 0 -8 0 10 -4034 -1 -1 25 256;
+brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 195 401 / 100;
 #X obj 377 366 kollabs/ds_reg \$1 \$2/frequency;
 #X obj 377 426 kollabs/ds_reg \$1 \$2/harmonic;
@@ -85,12 +85,12 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 99 399 *~;
 #X obj 99 426 wrap~;
 #X obj 239 552 outlet~ Z;
-#X obj 99 504 vs-cube, f 19;
+#X obj 99 504 vs-cube;
 #X text 501 556 Derek Holzer;
 #X text 501 605 macumbista@gmail.com;
 #X text 501 580 Helsinki May 2019;
 #X obj 245 181 hradio 15 1 0 2 \$2/interpolation \$2/interpolation
-Off.On 0 -8 0 10 -4034 -1 -1 0;
+Off.On 0 -8 0 10 -4034 -1 -1 1;
 #X text 281 180 INTERPOLATION;
 #X obj 376 181 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
 ;
@@ -153,6 +153,9 @@ points of the 3D figure ON or OFF. Use interpolation for CRT displays
 #X obj 421 341 unpack 0 0 0 0 0 0 0 0 0;
 #X obj 49 295 line~;
 #X obj 129 295 line~;
+#X obj 250 335 r \$2/smooth;
+#X obj 250 362 r \$2/source;
+#X obj 250 386 r \$2/interpolation;
 #X connect 4 0 5 0;
 #X connect 4 0 31 1;
 #X connect 5 0 58 0;
@@ -170,8 +173,6 @@ points of the 3D figure ON or OFF. Use interpolation for CRT displays
 #X connect 19 0 17 1;
 #X connect 20 0 37 0;
 #X connect 21 0 16 0;
-#X connect 22 0 20 2;
-#X connect 22 0 27 1;
 #X connect 23 0 40 1;
 #X connect 24 0 65 0;
 #X connect 24 1 63 0;
@@ -200,16 +201,12 @@ points of the 3D figure ON or OFF. Use interpolation for CRT displays
 #X connect 40 1 2 0;
 #X connect 40 2 39 0;
 #X connect 40 3 3 0;
-#X connect 44 0 48 1;
-#X connect 44 0 40 3;
 #X connect 46 0 50 0;
 #X connect 48 0 64 7;
 #X connect 50 0 49 0;
 #X connect 53 0 60 1;
 #X connect 53 0 59 1;
 #X connect 54 0 64 8;
-#X connect 55 0 53 0;
-#X connect 55 0 54 1;
 #X connect 57 0 62 0;
 #X connect 58 0 61 0;
 #X connect 59 0 66 0;
@@ -236,4 +233,10 @@ points of the 3D figure ON or OFF. Use interpolation for CRT displays
 #X connect 65 8 55 0;
 #X connect 66 0 17 0;
 #X connect 67 0 17 0;
+#X connect 68 0 53 0;
+#X connect 68 0 54 1;
+#X connect 69 0 20 2;
+#X connect 69 0 27 1;
+#X connect 70 0 40 3;
+#X connect 70 0 48 1;
 #X coords 0 -1 1 1 302 100 1 100 100;

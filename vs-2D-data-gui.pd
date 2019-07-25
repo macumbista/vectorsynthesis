@@ -8,7 +8,7 @@
 #X obj 169 552 outlet~ Y;
 #X obj 307 552 outlet~ B;
 #X obj 178 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 25 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 156 400 / 100;
 #X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
 brightness 0 -8 0 10 -4034 -1 -1 100 256;
@@ -20,7 +20,7 @@ brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 377 486 kollabs/ds_reg \$1 \$2/brightness;
 #X obj 102 17 inlet~ phasor;
 #X obj 108 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
-frequency 0 -8 0 10 -257985 -1 -1 25 256;
+frequency 0 -8 0 10 -257985 -1 -1 50 256;
 #X obj 168 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
 freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 227 130 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
@@ -91,7 +91,7 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 109 194 bng 15 250 50 0 empty empty LOAD_2D_DATA_TABLES 20 8
 0 10 -4034 -1 -1;
 #X obj 261 194 hradio 15 1 0 2 \$2/interpolation \$2/interpolation
-On.Off 0 -8 0 10 -4034 -1 -1 1;
+On.Off 0 -8 0 10 -4034 -1 -1 0;
 #X obj 377 506 kollabs/ds_reg \$1 \$2/interpolation;
 #X text 297 193 INTERPOLATION;
 #X obj 99 504 vs-2D-data;
@@ -169,6 +169,9 @@ figure.;
 #X obj 257 130 hradio 15 1 0 2 \$2/smooth \$2/smooth ON 35 8 0 10 -257985
 -1 -1 0;
 #X text 256 115 Smooth;
+#X obj 284 401 r \$2/source;
+#X obj 197 220 r \$2/smooth;
+#X obj 256 359 r \$2/interpolation;
 #X connect 7 0 8 0;
 #X connect 7 0 35 1;
 #X connect 8 0 57 0;
@@ -188,8 +191,6 @@ figure.;
 #X connect 24 0 20 1;
 #X connect 25 0 41 0;
 #X connect 26 0 19 0;
-#X connect 27 0 25 2;
-#X connect 27 0 32 1;
 #X connect 28 0 47 1;
 #X connect 29 0 66 0;
 #X connect 29 1 64 0;
@@ -206,8 +207,6 @@ figure.;
 #X connect 41 0 42 0;
 #X connect 42 0 47 0;
 #X connect 43 0 47 4;
-#X connect 44 0 33 1;
-#X connect 44 0 47 3;
 #X connect 47 0 4 0;
 #X connect 47 1 5 0;
 #X connect 47 2 6 0;
@@ -256,6 +255,10 @@ figure.;
 #X connect 66 8 62 0;
 #X connect 67 0 68 0;
 #X connect 68 0 42 0;
-#X connect 69 0 54 0;
-#X connect 69 0 53 1;
+#X connect 71 0 25 2;
+#X connect 71 0 32 1;
+#X connect 72 0 54 0;
+#X connect 72 0 53 1;
+#X connect 73 0 47 3;
+#X connect 73 0 33 1;
 #X coords 0 -1 1 1 302 120 1 100 100;

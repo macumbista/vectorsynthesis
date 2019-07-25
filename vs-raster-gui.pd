@@ -4,15 +4,15 @@
 #X obj 101 118 cnv 15 300 120 empty empty empty 10 12 0 14 -233017
 -66577 0;
 #X obj 108 137 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
-Vert.Freq 0 -8 0 10 -4034 -1 -1 50 256;
+Vert.Freq 0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 184 137 nbx 5 14 -1e+37 1e+37 0 0 \$2/lines \$2/lines Horz.Lines
 0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 128 249 / 100;
 #X obj 184 168 nbx 5 14 -1e+37 1e+37 0 0 \$2/hblank \$2/hblank Horz.Blank
-0 -8 0 10 -4034 -1 -1 10 256;
+0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 176 223 / 100;
 #X obj 109 168 nbx 5 14 -1e+37 1e+37 0 0 \$2/vblank \$2/vblank Vert.Blank
-0 -8 0 10 -4034 -1 -1 10 256;
+0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 130 317 / 100;
 #X obj 257 137 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
 Brightness 0 -8 0 10 -4034 -1 -1 100 256;
@@ -34,7 +34,7 @@ Brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 176 508 outlet~ Y;
 #X obj 236 508 outlet~ B;
 #X obj 346 137 hradio 15 1 0 2 \$2/bipolar \$2/bipolar UniPol.BiPol
--22 -8 0 10 -4034 -1 -1 1;
+-22 -8 0 10 -4034 -1 -1 0;
 #X obj 436 393 kollabs/ds_reg \$1 \$2/frequency;
 #X obj 437 452 kollabs/ds_reg \$1 \$2/bipolar;
 #X obj 471 115 savestate;
@@ -86,8 +86,8 @@ Brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X connect 15 0 5 1;
 #X connect 15 0 4 1;
 #X restore 116 453 pd switch;
-#X obj 207 206 hradio 20 1 0 3 empty empty HORZ.VERT.GRID -12 -8 0
-10 -4034 -1 -1 2;
+#X obj 207 206 hradio 20 1 0 3 \$2/orientation \$2/orientation HORZ.VERT.GRID
+-12 -8 0 10 -4034 -1 -1 2;
 #X obj 436 413 kollabs/ds_reg \$1 \$2/lines;
 #X obj 436 433 kollabs/ds_reg \$1 \$2/brightness;
 #X obj 436 473 kollabs/ds_reg \$1 \$2/hblank;
@@ -95,7 +95,7 @@ Brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 437 534 kollabs/ds_reg \$1 \$2/hoff;
 #X obj 436 513 kollabs/ds_reg \$1 \$2/voff;
 #X obj 112 208 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale Scale
-0 -8 0 10 -4034 -1 -1 25 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 437 554 kollabs/ds_reg \$1 \$2/scale;
 #X obj 522 154 t b b b b b b b b b b;
 #X obj 522 319 pack 0 0 0 0 0 0 0 0 0 0;
@@ -133,7 +133,7 @@ rate very quickly!;
 #X text 69 99 3) Brightness signal (0-1);
 #X text 69 59 1) Frequency signal (1 \, 2 \, 3...);
 #X text 69 79 2) Lines signal (1 \, 2 \, 3...);
-#X restore 320 299 pd \$2-help;
+#X restore 320 296 pd \$2-help;
 #X obj 130 335 pack 0 20;
 #X obj 130 356 line~;
 #X obj 128 270 pack 0 20;
@@ -147,6 +147,9 @@ rate very quickly!;
 #X obj 298 456 line~;
 #X obj 238 456 line~;
 #X obj 411 114 loadbang;
+#X obj 257 318 r \$2/bipolar;
+#X obj 437 577 kollabs/ds_reg \$1 \$2/orientation;
+#X obj 214 296 r \$2/orientation;
 #X connect 3 0 17 0;
 #X connect 3 0 30 1;
 #X connect 4 0 18 0;
@@ -177,8 +180,6 @@ rate very quickly!;
 #X connect 20 0 11 0;
 #X connect 21 0 11 1;
 #X connect 22 0 11 2;
-#X connect 26 0 39 4;
-#X connect 26 0 33 1;
 #X connect 29 0 51 0;
 #X connect 29 1 49 0;
 #X connect 30 0 50 0;
@@ -192,8 +193,6 @@ rate very quickly!;
 #X connect 38 0 50 8;
 #X connect 39 0 53 0;
 #X connect 39 1 54 0;
-#X connect 40 0 11 7;
-#X connect 40 0 38 1;
 #X connect 47 0 52 1;
 #X connect 47 0 55 0;
 #X connect 47 0 56 0;
@@ -247,4 +246,8 @@ rate very quickly!;
 #X connect 73 0 6 0;
 #X connect 73 0 4 0;
 #X connect 73 0 3 0;
+#X connect 74 0 39 4;
+#X connect 74 0 33 1;
+#X connect 76 0 11 7;
+#X connect 76 0 38 1;
 #X coords 0 -1 1 1 302 140 1 100 100;

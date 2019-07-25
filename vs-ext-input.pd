@@ -1,4 +1,4 @@
-#N canvas 265 23 1168 751 10;
+#N canvas 112 23 1168 751 10;
 #X obj 101 118 cnv 15 300 220 empty empty empty 20 12 0 14 -228856
 -66577 0;
 #X obj 93 29 inlet~ ext;
@@ -630,6 +630,20 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 901 135 f;
 #X obj 589 164 pack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X obj 279 72 r \$1-reset-phase;
+#X obj 958 302 r \$2/internal;
+#X obj 960 356 r \$2/lopassoffon;
+#X obj 964 382 r \$2/envfol;
+#X obj 966 427 r \$2/invertoffon;
+#X obj 971 469 r \$2/rawbipol;
+#X obj 987 510 r \$2/trigger;
+#X obj 1002 548 r \$2/tri2saw;
+#X obj 990 574 r \$2/samphold;
+#X obj 981 628 r \$2/cookedbipol;
+#X obj 989 599 r \$2/invtrig;
+#X obj 976 654 r \$2/offon;
+#X obj 964 682 r \$2/source;
+#X obj 968 710 r \$2/cookedoffon;
+#X text 966 230 WARNNG PRESETS NOT ACTIVE YET;
 #X connect 1 0 3 0;
 #X connect 2 0 114 0;
 #X connect 3 0 13 0;

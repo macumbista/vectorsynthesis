@@ -8,13 +8,13 @@
 10 -4034 -1 -1 0 256;
 #X obj 157 320 / 360;
 #X obj 110 159 nbx 5 14 -1e+37 1e+37 0 0 \$2/harmonic \$2/harmonic
-harmonic 0 -8 0 10 -4034 -1 -1 0 256;
+harmonic 0 -8 0 10 -4034 -1 -1 1 256;
 #X obj 114 406 sig~;
 #X obj 180 160 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 0 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 232 270 / 100;
 #X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
-brightness 0 -8 0 10 -4034 -1 -1 0 256;
+brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 297 321 / 100;
 #X obj 399 386 kollabs/ds_reg \$1 \$2/frequency;
 #X obj 399 446 kollabs/ds_reg \$1 \$2/harmonic;
@@ -24,7 +24,7 @@ brightness 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 190 17 inlet~ phase;
 #X obj 102 17 inlet~ phasor;
 #X obj 108 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
-frequency 0 -8 0 10 -257985 -1 -1 0 256;
+frequency 0 -8 0 10 -257985 -1 -1 50 256;
 #X obj 168 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
 freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 227 130 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
@@ -96,7 +96,7 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 ;
 #X obj 320 269 s pd-\$2-help;
 #X msg 320 247 vis 1;
-#N canvas 0 23 945 551 \$2-help 1;
+#N canvas 0 23 945 551 \$2-help 0;
 #X obj 296 18 cnv 15 300 220 empty empty HELP:vs-circle-gui 20 12 0
 14 -4034 -66577 0;
 #X text 303 43 INLETS:;
@@ -158,6 +158,8 @@ figure.;
 #X obj 232 406 line~;
 #X obj 287 457 line~;
 #X obj 188 377 sig~ 0.25;
+#X obj 240 214 r \$2/smooth;
+#X obj 228 240 r \$2/source;
 #X connect 4 0 33 1;
 #X connect 4 0 5 0;
 #X connect 5 0 57 0;
@@ -182,8 +184,6 @@ figure.;
 #X connect 24 0 22 1;
 #X connect 25 0 43 0;
 #X connect 26 0 21 0;
-#X connect 27 0 25 2;
-#X connect 27 0 32 1;
 #X connect 28 0 44 3;
 #X connect 29 0 63 0;
 #X connect 29 1 61 0;
@@ -211,8 +211,6 @@ figure.;
 #X connect 50 0 6 0;
 #X connect 50 0 4 0;
 #X connect 50 0 51 0;
-#X connect 51 0 60 0;
-#X connect 51 0 54 1;
 #X connect 54 0 62 7;
 #X connect 55 0 64 0;
 #X connect 56 0 23 0;
@@ -244,4 +242,8 @@ figure.;
 #X connect 67 0 44 3;
 #X connect 68 0 44 4;
 #X connect 69 0 44 2;
+#X connect 70 0 60 0;
+#X connect 70 0 54 1;
+#X connect 71 0 25 2;
+#X connect 71 0 32 1;
 #X coords 0 -1 1 1 302 80 1 100 100;

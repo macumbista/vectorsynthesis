@@ -1,4 +1,4 @@
-#N canvas 68 42 1056 639 10;
+#N canvas 47 135 1056 639 10;
 #X obj 349 271 vs-lissajous-gui \$0 \$0-lissajous-one;
 #A saved 50 0 0 0 1 100 100 2 0;
 #X obj 349 7 vs-circle-gui \$0 \$0-circle-one;
@@ -11,7 +11,7 @@
 #X text 534 585 macumbista@gmail.com;
 #X text 534 560 Helsinki May 2019;
 #X obj 19 6 vs-poly-gui \$0 \$0-poly-one;
-#A saved 50 0 0 0 1 100 100 5 100 0;
+#A saved 50 0 0 0 1 100 100 3 1 0 0;
 #X obj 19 268 vs-2D-data-gui \$0 \$0-2d-data-one;
 #A saved 50 0 0 0 1 100 100 0 0;
 #X obj 19 398 vs-2D-wav-gui \$0 \$0-2d-data-wav;
@@ -21,7 +21,7 @@
 #X obj 340 368 cnv 15 320 150 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 349 398 vs-audiodac-gui \$0 \$0-dac-2dvectors;
-#A saved 75 0 1 2 1 1 25 0 0;
+#A saved 75 0 5 6 1 1 25 0 0;
 #X obj 684 45 vs-operator-gui \$0 \$0-operator-one;
 #A saved 1 0 0 8 0 100 0 5 1 0 0;
 #X text 687 193 Try connecting the left outlet of [vs-operator-gui]
@@ -51,7 +51,9 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X text 700 474 Please see help for [vs-poly-gui] and [vs-raster-gui]
 ;
 #X text 702 494 for details on their inlets.;
+#X obj 349 533 switch~;
 #X connect 0 0 12 0;
 #X connect 0 1 12 1;
 #X connect 0 2 12 2;
+#X connect 12 0 35 0;
 #X connect 13 0 0 1;

@@ -8,7 +8,7 @@
 #X obj 169 552 outlet~ Y;
 #X obj 307 552 outlet~ B;
 #X obj 178 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 25 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 156 456 sig~;
 #X obj 156 400 / 100;
 #X obj 319 161 nbx 5 14 -1e+37 1e+37 0 0 \$2/brightness \$2/brightness
@@ -22,7 +22,7 @@ brightness 0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 377 486 kollabs/ds_reg \$1 \$2/brightness;
 #X obj 102 17 inlet~ phasor;
 #X obj 108 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
-frequency 0 -8 0 10 -257985 -1 -1 25 256;
+frequency 0 -8 0 10 -257985 -1 -1 50 256;
 #X obj 168 130 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
 freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 227 130 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
@@ -172,6 +172,8 @@ figure.;
 #X obj 257 129 hradio 15 1 0 2 \$2/smooth \$2/smooth ON 35 8 0 10 -257985
 -1 -1 0;
 #X text 256 114 Smooth;
+#X obj 203 268 r \$2/source;
+#X obj 197 224 r \$2/smooth;
 #X connect 7 0 9 0;
 #X connect 7 0 37 1;
 #X connect 8 0 46 1;
@@ -193,8 +195,6 @@ figure.;
 #X connect 26 0 22 1;
 #X connect 27 0 43 0;
 #X connect 28 0 21 0;
-#X connect 29 0 27 2;
-#X connect 29 0 34 1;
 #X connect 30 0 46 1;
 #X connect 31 0 65 0;
 #X connect 31 1 63 0;
@@ -255,6 +255,8 @@ figure.;
 #X connect 65 6 10 0;
 #X connect 65 7 66 0;
 #X connect 65 8 59 0;
-#X connect 66 0 53 0;
-#X connect 66 0 52 1;
+#X connect 68 0 27 2;
+#X connect 68 0 34 1;
+#X connect 69 0 53 0;
+#X connect 69 0 52 1;
 #X coords 0 -1 1 1 302 120 1 100 100;

@@ -34,7 +34,7 @@ your patch.;
 #X text 34 414 Create one [vs-audiodac-gui \$0 <unique-name>] for your
 patch.;
 #X obj 627 192 vs-audiodac-gui \$0 dac-one;
-#A saved 85 1 5 6 1 1 40 0 0;
+#A saved 85 0 5 6 0 1 40 0 0;
 #X obj 629 20 vs-multiplex-gui \$0 multiplex-one;
 #A saved 25 2 1 1;
 #X obj 317 21 vs-icosahedron-gui \$0 \$0-ico-one;

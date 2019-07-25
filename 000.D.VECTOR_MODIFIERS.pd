@@ -10,7 +10,7 @@
 #X obj 388 14 vs-morph-gui \$0 \$0-morph-one;
 #A saved 0 1 0 1;
 #X obj 388 82 vs-decimate-gui \$0 \$0-decimate-one;
-#A saved 1 0 0 45 1 0 50 0;
+#A saved 1 0 0 52 1 0 50 0;
 #X obj 60 416 vs-projector-gui \$0 \$0-projector-one;
 #A saved 100 0 0 90;
 #X text 733 438 CAUTION: make sure to rename "\$0-<objectname>-one"
@@ -58,6 +58,7 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X text 393 374 or of [vs-ext-input] if you have an external signal
 \,;
 #X text 887 600 Santa Cruz de Tenerife May 2019;
+#X text 511 663 WARNNG PRESETS NOT ACTIVE YET;
 #X connect 2 0 7 0;
 #X connect 2 1 7 1;
 #X connect 2 2 7 2;
