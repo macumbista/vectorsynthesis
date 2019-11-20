@@ -4,13 +4,13 @@
 #X obj 81 447 vs-ilda-throw;
 #X obj 156 365 sig~;
 #X obj 174 181 hsl 128 15 0 127 0 0 \$2/solid \$2/solid RGB_solid -2
--8 0 10 -4034 -1 -1 0 1;
+-8 0 10 -4034 -1 -1 400 1;
 #X obj 156 339 / 127;
 #X obj 168 305 phasor~;
 #X obj 105 133 nbx 5 14 -1e+37 1e+37 0 0 \$2/freq \$2/freq IntFreq
-0 -8 0 10 -257985 -1 -1 1 256;
+0 -8 0 10 -257985 -1 -1 500 256;
 #X obj 280 132 nbx 5 14 -1e+37 1e+37 0 0 \$2/harmonic \$2/harmonic
-Harmonic 0 -8 0 10 -4034 -1 -1 0 256;
+Harmonic 0 -8 0 10 -4034 -1 -1 1 256;
 #X msg 216 211 0;
 #X msg 246 211 45;
 #X msg 276 211 76;
@@ -40,9 +40,9 @@ Harmonic 0 -8 0 10 -4034 -1 -1 0 256;
 -1 -1;
 #X msg 207 283 0, f 4;
 #X obj 208 151 hradio 15 1 0 4 \$2/source \$2/source Solid.Int.Ext.Master
-65 8 0 10 -4034 -1 -1 0;
+65 8 0 10 -4034 -1 -1 1;
 #X obj 170 131 nbx 5 14 -1e+37 1e+37 0 0 \$2/freq-100 \$2/freq-100
-IntFreq/100 0 -8 0 10 -257985 -1 -1 0 256;
+IntFreq/100 0 -8 0 10 -257985 -1 -1 25 256;
 #X obj 168 242 sig~;
 #X obj 177 282 sig~;
 #X obj 177 261 / 100;
@@ -128,7 +128,7 @@ IntFreq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 258 410 kollabs/ds_reg \$1 \$2/source;
 #X obj 258 430 kollabs/ds_reg \$1 \$2/solid;
 #X obj 339 179 hradio 15 1 0 2 \$2/offon \$2/offon Off.On -5 -8 0 10
--258113 -1 -1 0;
+-258113 -1 -1 1;
 #X obj 258 450 kollabs/ds_reg \$1 \$2/offon;
 #X obj 490 48 t b b b b b b b;
 #X obj 490 163 pack 0 0 0 0 0 0 0;
@@ -146,8 +146,8 @@ IntFreq/100 0 -8 0 10 -257985 -1 -1 0 256;
 ;
 #X obj 378 277 s pd-\$2-help;
 #X msg 378 255 vis 1;
-#N canvas 262 23 665 726 \$2-help 0;
-#X obj 36 18 cnv 15 300 200 empty empty HELP:vs-ilda-gui 20 12 0 14
+#N canvas 262 23 685 670 \$2-help 0;
+#X obj 37 28 cnv 15 300 130 empty empty HELP:vs-ilda-gui 20 12 0 14
 -4034 -66577 0;
 #N canvas 0 23 450 300 HARDWARE 0;
 #X text 19 26 Requires DC coupled \, 8 channel \, balanced audio interface
@@ -155,7 +155,7 @@ such as MOTU. For channel converter info see:;
 #X text 18 60 https://github.com/ffd8/dac_ilda/raw/master/dac_ilda_adaptor.pdf
 ;
 #X text 20 97 Or see "ilda-connections.png" in this library;
-#X restore 158 545 pd HARDWARE REQUIREMENTS;
+#X restore 158 495 pd HARDWARE REQUIREMENTS;
 #N canvas 0 23 450 300 RGB 0;
 #X text 39 68 RGB minimums and curves help you calibrate the brightness
 of your laser to adjust point where diode turns on as well as avoid
@@ -171,7 +171,7 @@ falls under a certain threshold in dB \, within the window size in
 samples (compare with current sample rate to find time in ms) \, then
 the RGB chanels are all shut off to prevent an unmoving laser beam
 from posing a safety hazard.;
-#X restore 158 590 pd RGB CALIBRATION;
+#X restore 158 540 pd RGB CALIBRATION;
 #N canvas 0 23 450 300 IMAGE 0;
 #X text 41 151 Use Rotation X Y Z controls to keystone \, flip \, and
 align the laser image. Numbers are 0-360 degrees.;
@@ -186,15 +186,15 @@ X Y signals before they are sent to the laser. This can offer some
 basic protection for your laser galvos against sudden changes. A good
 starting value would be 2K to 4K Hz \, dependong on your galvo speed
 (20-40 kpps). Numbers are in Herz.;
-#X restore 158 615 pd IMAGE CALIBRATION;
+#X restore 158 565 pd IMAGE CALIBRATION;
 #N canvas 0 23 450 300 AUDIO 0;
 #X text 31 51 Channels 7 and 8 of your audio interface give a stereo
 mixdown of the X and Y channels \, amplitude modulated by the brightness
 signal \, with a lowpass filter on the speed of the amplitude modulation
 set by the Cutoff Frequency. The Audio Volume control adjusts the level
 of this signal \, with numbers given in dB.;
-#X restore 158 639 pd AUDIO OUTPUT;
-#X text 113 516 READ THESE FOR MORE INFO:;
+#X restore 158 589 pd AUDIO OUTPUT;
+#X text 113 466 READ THESE FOR MORE INFO:;
 #N canvas 0 23 450 300 [VS-ILDA] 0;
 #X text 58 45 1) X;
 #X text 58 65 2) Y;
@@ -205,33 +205,29 @@ of this signal \, with numbers given in dB.;
 #X text 58 185 8) Right Audio;
 #X text 27 21 Vector Synthesis ILDA channels:;
 #X text 58 85 3) Brightness (not normally used);
-#X restore 158 566 pd [VS-ILDA] OUTPUT CHANNELS;
-#X text 44 227 INSTRUCTIONS FOR USE:;
-#X text 74 253 Put one [vs-ilda-throw-gui] inside any patch you want
+#X restore 158 516 pd [VS-ILDA] OUTPUT CHANNELS;
+#X text 44 177 INSTRUCTIONS FOR USE:;
+#X text 74 203 Put one [vs-ilda-throw-gui] inside any patch you want
 to send to your ILDA RGB laser. It will send the X \, Y \, brightness
 \, and RGB values to the [vs-ilda-gui] abstraction. You can then switch
 on and off those patches as needed.;
-#X text 73 312 A single [vs-ilda-gui] is required to communicate with
+#X text 73 262 A single [vs-ilda-gui] is required to communicate with
 your audio interface and from there to your laser. Put it in your master
 patch. Use the same first creation argument to match up the [vs-ilda-throw-gui]
 objects and the [vs-ilda-gui].;
-#X text 77 378 EXAMPLE:;
-#X text 110 404 [vs-ilda-throw-gui \$0 \$0-laserone];
-#X text 110 424 [vs-ilda-throw-gui \$0 \$0-lasertwo];
-#X text 110 444 [vs-ilda-throw-gui \$0 \$0-laserthree];
-#X text 110 474 [vs-ilda-gui \$0 \$0-lasermaster];
-#X text 57 45 INLETS:;
-#X text 81 60 1) X;
-#X text 81 80 2) Y;
-#X text 81 120 4) Red;
-#X text 81 140 5) Green;
-#X text 81 160 6) Blue;
-#X text 81 180 7) Left Audio;
-#X text 81 200 8) Right Audio;
-#X text 81 100 3) Brightness (not normally used);
-#X text 375 582 Derek Holzer;
-#X text 375 631 macumbista@gmail.com;
-#X text 375 606 Santa Cruz de Tenerife May 2019;
+#X text 77 328 EXAMPLE:;
+#X text 110 354 [vs-ilda-throw-gui \$0 \$0-laserone];
+#X text 110 374 [vs-ilda-throw-gui \$0 \$0-lasertwo];
+#X text 110 394 [vs-ilda-throw-gui \$0 \$0-laserthree];
+#X text 110 424 [vs-ilda-gui \$0 \$0-lasermaster];
+#X text 57 55 INLETS:;
+#X text 81 70 1) X;
+#X text 81 90 2) Y;
+#X text 375 532 Derek Holzer;
+#X text 375 581 macumbista@gmail.com;
+#X text 375 556 Santa Cruz de Tenerife May 2019;
+#X text 81 130 4) RGB;
+#X text 81 110 3) Brightness;
 #X restore 378 299 pd \$2-help;
 #X obj 105 152 bng 15 250 50 0 empty empty RESET_PHASES 17 7 0 10 -258113
 -1 -1;
@@ -240,6 +236,7 @@ objects and the [vs-ilda-gui].;
 #X obj 286 253 r \$2/solid;
 #X obj 286 273 r \$2/source;
 #X obj 286 295 r \$2/offon;
+#X obj 27 405 switch~;
 #X connect 2 0 36 0;
 #X connect 4 0 2 0;
 #X connect 5 0 36 1;
@@ -278,6 +275,7 @@ objects and the [vs-ilda-gui].;
 #X connect 45 0 57 3;
 #X connect 46 0 57 4;
 #X connect 47 0 57 5;
+#X connect 54 0 78 0;
 #X connect 56 0 42 0;
 #X connect 56 1 43 0;
 #X connect 56 2 44 0;

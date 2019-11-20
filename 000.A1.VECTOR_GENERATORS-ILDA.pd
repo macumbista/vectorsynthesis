@@ -1,19 +1,11 @@
-#N canvas 297 23 983 733 10;
-#X obj 555 422 expr~ $v1 && $v2;
+#N canvas 11 23 1046 727 10;
 #X obj 24 423 vs-seeme;
-#X obj 39 254 vs-operator-gui \$0 \$0-operator-one;
-#A saved 100 0 0 1 0 100 0 1 1 0 0;
-#X obj 353 252 vs-operator-gui \$0 \$0-operator-two;
-#A saved 500 0 0 1 0 50 90 1 1 0 0;
 #X text 623 591 Derek Holzer;
 #X text 623 640 macumbista@gmail.com;
 #X text 623 615 Helsinki May 2019;
 #X text 24 694 CAUTION: make sure to rename "\$0-<objectname>-one"
 to "\$0-<objectname>-two" when making multiple copies!;
-#X obj 39 154 vs-phasor-gui \$0 \$0-phasor-two;
-#A saved 220 0 0 0;
-#X text 549 446 (Blank brightness only when both inputs are "0");
-#X obj 271 512 cnv 15 320 165 empty empty Connect_here_to_test 20 12
+#X obj 271 512 cnv 15 320 150 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 619 513 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -21,11 +13,19 @@ to "\$0-<objectname>-two" when making multiple copies!;
 ;
 #X text 633 517 CLICK THE;
 #X text 637 553 FOR HELP;
+#X obj 280 665 switch~;
+#X obj 280 549 vs-ilda-throw-gui \$0 \$0-laserone;
+#A saved 500 25 1 0 1 4 1;
+#X obj 555 422 expr~ $v1 && $v2;
+#X obj 39 254 vs-operator-gui \$0 \$0-operator-one;
+#A saved 100 0 0 1 0 100 0 1 1 0 0;
+#X obj 353 252 vs-operator-gui \$0 \$0-operator-two;
+#A saved 500 0 0 1 0 50 90 1 1 0 0;
+#X obj 39 154 vs-phasor-gui \$0 \$0-phasor-two;
+#A saved 220 0 0 0;
+#X text 549 446 (Blank brightness only when both inputs are "0");
 #X obj 24 42 vs-phasor-gui \$0 \$0-phasor-one;
 #A saved 50 0 1 0;
-#X obj 280 532 vs-audiodac-gui \$0 \$0-dac-vectorgen;
-#A saved 75 1 5 6 1 1 25 0 0 0 1 2;
-#X obj 280 681 switch~;
 #X obj 503 44 vs-operator-gui \$0 \$0-operator-three;
 #A saved 1 0 0 1 0 50 0 2 1 0 0;
 #X text 505 21 This OPERATOR modulates the size of the one below it
@@ -37,15 +37,15 @@ to "\$0-<objectname>-two" when making multiple copies!;
 their left inlets when they are in EXT mode;
 #X text 22 10 This PHASOR is the master oscillator for the two OPERATORS
 "wirelessly" when they are in MASTER mode;
-#X connect 0 0 16 2;
-#X connect 2 0 1 1;
-#X connect 2 0 16 0;
-#X connect 2 1 0 0;
-#X connect 3 0 1 2;
-#X connect 3 0 16 1;
-#X connect 3 1 0 1;
-#X connect 8 0 2 0;
-#X connect 8 0 3 0;
-#X connect 15 0 1 0;
-#X connect 16 0 17 0;
-#X connect 18 0 3 2;
+#X connect 11 0 10 0;
+#X connect 12 0 11 2;
+#X connect 13 0 0 1;
+#X connect 13 0 11 0;
+#X connect 13 1 12 0;
+#X connect 14 0 0 2;
+#X connect 14 0 11 1;
+#X connect 14 1 12 1;
+#X connect 15 0 13 0;
+#X connect 15 0 14 0;
+#X connect 17 0 0 0;
+#X connect 18 0 14 2;

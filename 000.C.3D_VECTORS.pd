@@ -2,13 +2,13 @@
 #X obj 57 7 vs-3D-data-gui \$0 \$0-3d-data-one;
 #A saved 25 0 0 0 1 50 180 0;
 #X obj 56 137 vs-3D-wav-gui \$0 \$0-3d-wav-one;
-#A saved 50 0 0 0 1 25 100 0;
+#A saved 50 0 0 0 1 25 100 0 0;
 #X text 59 635 Derek Holzer;
 #X text 59 684 macumbista@gmail.com;
 #X text 59 659 Helsinki May 2019;
-#X obj 701 369 cnv 15 320 360 empty empty Connect_here_to_test 20 12
+#X obj 701 349 cnv 15 320 370 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
-#X obj 710 396 vs-rotate-gui \$0 \$0-rotate-one;
+#X obj 710 376 vs-rotate-gui \$0 \$0-rotate-one;
 #A saved 120 45 180 0 0 0 1 10 0 0;
 #X obj 373 7 vs-cube-gui \$0 \$0-cube-one;
 #A saved 50 0 0 0 1 25 100 1 0;
@@ -26,9 +26,9 @@
 #A saved 50 0 0 0 1 25 100 1 0;
 #X obj 373 607 vs-hand-gui \$0 \$0-hand-one;
 #A saved 50 0 0 0 1 25 100 0 0;
-#X obj 710 597 vs-audiodac-gui \$0 \$0-dac-3dvectors;
-#A saved 75 1 5 6 0 1 100 0 0;
-#X obj 710 526 vs-projector-gui \$0 \$0-project-one;
+#X obj 710 577 vs-audiodac-gui \$0 \$0-dac-3dvectors;
+#A saved 75 1 5 6 0 1 25 0 0 0 1 2;
+#X obj 710 506 vs-projector-gui \$0 \$0-project-one;
 #A saved 100 0 0 85;
 #X obj 21 268 cnv 15 340 350 empty empty empty 20 12 0 14 -4034 -66577
 0;
