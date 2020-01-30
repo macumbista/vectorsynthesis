@@ -10,21 +10,15 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
-Tutorials, announcements, and testing here: [Vector Synthesis group] (https://www.facebook.com/groups/vectorsynthesis/)
+Tutorials, announcements, and testing here: https://www.facebook.com/groups/vectorsynthesis/
 
-	
-
-Demo videos here:
-
-	[https://vimeo.com/macumbista] (https://vimeo.com/macumbista)
+Demo videos here: https://vimeo.com/macumbista
 
  If this library has been useful, please consider making a donation towards the development:
  
  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPHWJSJWH92GG&source=url)
  
- Or consider ordering a copy of the Vector Synthesis book:
- 
- 	[http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html] (http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html)
+ Or consider ordering a copy of the Vector Synthesis book: http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
  
 
 *REQUIREMENTS*
