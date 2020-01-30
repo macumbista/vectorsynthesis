@@ -42,19 +42,35 @@ https://vimeo.com/macumbista
 	
 ——HARDWARE
 	
-	RECOMMENDED SETUP
+	AUDIO INTERFACE
 	
 	DC-coupled audio interface 
 	Minimum 3 output channels (horizontal, vertical, brightness)
 	5 output channels recommended if seperate stereo audio channels are desired
 	High sampling rate also recommended (192 kHz if possible)
+	Balanced outputs recommended for ILDA laser display control
+	Tested with MOTU UltraLite mk3 USB2 audio interface (Ten DC coupled, balanced outputs)
 	
-	Oscilloscope with X/Y/Z inputs (all DC-coupled)
+	DISPLAYS
+	
+	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled)
+	
 	—or—
-	Vectrex game console modified for X/Y/Z input (all DC-coupled)
+	
+	Vectrex game console modified for X/Y/Z input (all DC-coupled) according to these instructions:
+
+http://users.sussex.ac.uk/~ad207/adweb/assets/vectrexminijackinputmod2014.pdf
+	
 	—or—
-	Vector monitor with X/Y/Z inputs (all DC-coupled)
+	
+	ILDA laser display with the following adapter from your minimum 5 channel, DC coupled 
+	audio interface with balanced outputs (recommended: MOTU UltraLite) and the following 
+	DIY adapter box: 
+
+https://github.com/ffd8/dac_ilda 
+	
 	—or—
+	
 	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
 
 https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
