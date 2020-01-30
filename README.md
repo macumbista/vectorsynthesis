@@ -48,6 +48,9 @@ https://puredata.info/downloads/pure-data
 ——AUDIO INTERFACE
 	
 	DC-coupled audio interface 
+
+https://www.sweetwater.com/sweetcare/articles/which-audio-interfaces-are-dc-coupled/#dc-coupled-interfaces
+	
 	Minimum 3 output channels (horizontal, vertical, brightness)
 	5 output channels recommended if seperate stereo audio channels are desired
 	6 balanced audio outputs recommended for ILDA laser control 
