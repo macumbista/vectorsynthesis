@@ -10,15 +10,25 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
-Tutorials, announcements, and testing here: https://www.facebook.com/groups/vectorsynthesis/
+Tutorials, announcements, and testing here: 
 
-Demo videos here: https://vimeo.com/macumbista
+https://www.facebook.com/groups/vectorsynthesis/
+
+Demo videos here: 
+
+https://vimeo.com/macumbista
 
  If this library has been useful, please consider making a donation towards the development:
  
  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPHWJSJWH92GG&source=url)
  
- Or consider ordering a copy of the Vector Synthesis book: http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
+ Or consider ordering a copy of the Vector Synthesis book: 
+ 
+ http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
+ 
+ You can also take a workshop from me, my workshops are annouced on the Facebook group above or on my website: 
+ 
+ http://macumbista.net 
  
 
 *REQUIREMENTS*
@@ -32,7 +42,7 @@ Demo videos here: https://vimeo.com/macumbista
 	
 ——HARDWARE
 	
-	RECOMMENDED
+	RECOMMENDED SETUP
 	
 	DC-coupled audio interface 
 	Minimum 3 output channels (horizontal, vertical, brightness)
@@ -46,19 +56,23 @@ Demo videos here: https://vimeo.com/macumbista
 	Vector monitor with X/Y/Z inputs (all DC-coupled)
 	—or—
 	Oscilloscope software with X/Y/Z inputs such as Hansi Raber's "Oscilloscope!" app
-	https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
+
+https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
+	
 	(Hold SHIFT key when selecting input for third channel brightness control)
-	plus audio loopback application such as SoundFlower or Virtual Audio Cable
+	plus audio loopback application such as SoundFlower or Virtual Audio Cable. 
+	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL-WIN.pdf or SOFTWARE-OSCILLOSCOPE-TUTORIAL.pdf
+	for further details on setup.
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
 	
-	MINIMUM
+	MINIMAL SETUP
 	
-	You can try using this library with only a two channel soundcard and a more common X/Y oscilloscope. You will not have control over the brightness, and I have found that built-in laptop audio outputs in particular introduce a lot of visual noise into the oscilloscope image.
+	You can try using this library with a two channel, AC-coupled, 44.1 or 48 kHz soundcard, and a more common X/Y oscilloscope. You will not have control over the brightness, your image will always try to center itself in the screeen, you will likely have a lot of aliasing artifacts, and I have found that built-in laptop audio outputs in particular introduce a lot of visual noise into the oscilloscope image.
 	
 	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope image here:
 	
-	https://www.youtube.com/watch?v=piZPIMYfq0c
+https://www.youtube.com/watch?v=piZPIMYfq0c
 
 
 
