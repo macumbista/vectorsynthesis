@@ -12,7 +12,7 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 Tutorials, announcements, and testing here:
 
-	[https://www.facebook.com/groups/vectorsynthesis/](https://www.facebook.com/groups/vectorsynthesis/)
+	[Vector Synthesis group](https://www.facebook.com/groups/vectorsynthesis/)
 
 Demo videos here:
 
