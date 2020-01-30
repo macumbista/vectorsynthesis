@@ -91,9 +91,9 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	noise into the oscilloscope image.
 	
 	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
-	image in this video on Jerobeam Fenderson's YoutUbe channel:
+	image in this video on Jerobeam Fenderson's YouTube channel:
 	
-[![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "")
+[![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "Oscilloscope Music Tutorial 2: Setup (Compression, DC-coupling, Sampling Rate, Aliasing by Jerobeam Fenderson)")
 
 
 
