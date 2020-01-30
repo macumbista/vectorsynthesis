@@ -35,7 +35,7 @@ https://vimeo.com/macumbista
 
 ——SOFTWARE
 	
-	Pure Data "Vanilla", version 0.49 or newer. 
+	Pure Data "Vanilla", version 0.49 or newer: 
 
 https://puredata.info/downloads/pure-data
 
@@ -125,7 +125,7 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	Audio Interface Output 8 : Audio Right (Vertical * Brightness)
 
 	Higher sampling rate = higher resolution/fewer errors in the vector shapes
-	Tested at 44.1K, 96K, 192K
+	Tested at 44.1kHz, 48kHz, 96kHz, 192kHz
 
 
 *USING NON-RECOMMENDED HARDWARE*
