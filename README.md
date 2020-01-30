@@ -12,11 +12,11 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 Tutorials, announcements, and testing here:
 
-	https://www.facebook.com/groups/vectorsynthesis/
+	[https://www.facebook.com/groups/vectorsynthesis/](https://www.facebook.com/groups/vectorsynthesis/)
 
 Demo videos here:
 
-	https://vimeo.com/macumbista
+	[https://vimeo.com/macumbista](https://vimeo.com/macumbista)
 
  If this library has been useful, please consider making a donation towards the development:
  
@@ -24,14 +24,14 @@ Demo videos here:
  
  Or consider ordering a copy of the Vector Synthesis book:
  
- 	http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
+ 	[http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html](http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html)
  
 
 *REQUIREMENTS*
 
 ——SOFTWARE
 	
-	Pure Data, version 0.49 or newer. 
+	Pure Data "Vanilla", version 0.49 or newer. 
 	Gem 0.93.3 (OPTIONAL, used in scan processor only. Installed via deken, Pd’s externals manager)
 	
 	NOTE: Pd-Extended is too old for some features of this library.
