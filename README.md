@@ -84,11 +84,16 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	
 	MINIMAL SETUP
 	
-	You can try using this library with a two channel, AC-coupled, 44.1 or 48 kHz soundcard, and a more common X/Y oscilloscope. You will not have control over the brightness, your image will always try to center itself in the screeen, you will likely have a lot of aliasing artifacts, and I have found that built-in laptop audio outputs in particular introduce a lot of visual noise into the oscilloscope image.
+	You can try using this library with a two channel, AC-coupled, 44.1 or 48 kHz soundcard, and a 
+	more common X/Y oscilloscope. You will not have control over the brightness, your image will 
+	always try to center itself in the screen, you will likely have a lot of aliasing artifacts, 
+	and I have found that built-in laptop audio outputs in particular introduce a lot of visual 
+	noise into the oscilloscope image.
 	
-	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope image here:
+	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
+	image here:
 	
-https://www.youtube.com/watch?v=piZPIMYfq0c
+[![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "")
 
 
 
