@@ -14,6 +14,8 @@ Open your SVG file in a text editor, select all the text found there and copy it
 
 https://mygeodata.cloud/converter/svg-to-wkt
 
+(This site allows a limited number of conversions, so if you intend to use it often I recommend visiting it via a Tor browser which will anonymize your use.)
+
 You will have a CSV (comma separated values) file with WKT inside. Open the file and look for strings within “ “ (quote marks), for example:
 
 

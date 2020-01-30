@@ -1,0 +1,202 @@
+#N canvas -92 23 954 642 10;
+#X obj 332 188 vs-presets-gui \$0;
+#X obj 214 485 expr~ $v1 && $v2;
+#X obj 14 191 vs-operator-gui \$0 \$0-operator-one;
+#A saved 55 0 2 1 0 52.5591 90 1 1 0 0;
+#X obj 12 340 vs-operator-gui \$0 \$0-operator-two;
+#A saved 100 0 2 1 0 25 0 1 1 0 0;
+#X obj 14 12 vs-phasor-gui \$0 \$0-phasor-one;
+#A saved 100 0 1 0;
+#X obj 14 82 vs-phasor-gui \$0 \$0-phasor-two;
+#A saved 29.1352 0 0 0;
+#X obj 337 13 cnv 15 360 170 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 537 231 cnv 15 380 235 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text 772 543 Derek Holzer;
+#X text 772 592 macumbista@gmail.com;
+#X text 772 567 Helsinki May 2019;
+#X text 537 235 [vs-presets-gui] is a preset loading and saving system.
+;
+#X text 567 441 as well as start and stop playback of the scenes.;
+#X text 347 128 Try storing different settings of waveform and harmonic
+;
+#X text 347 149 using [vs-presets-gui] below and then recalling them.
+;
+#X text 553 258 * Make sure to use \$0 as the creation argument!;
+#X text 553 280 * You need only one in each master patch you use.;
+#X text 554 351 * You can "save" your presets to a textfile and "load"
+them.;
+#X text 554 421 * SCHEDULER can be used to arrange presets in order
+\,;
+#X text 554 377 * TRANSITIONS can be used to edit crossfades between
+;
+#X text 569 396 presets.;
+#X text 359 61 * Both operators are synced to the master.;
+#X text 359 82 * Phasor-two modulates the phase of operator-two.;
+#X text 359 103 * This causes an illusion that the circle is spinning.
+;
+#X text 359 41 * Phasor-one is the master oscillator.;
+#X text 345 18 This patch on the left draws a circle using sine waves.
+;
+#X text 554 304 * The green arrows move between and recall presets.
+;
+#X text 554 328 * The red "store" button stores the info for each preset.
+;
+#X obj 423 509 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#N canvas 220 23 811 718 wirelesssending 1;
+#X obj 244 187 t b f;
+#X obj 246 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3300 1;
+#X obj 243 112 mtof;
+#X text 273 146 Set SMOOTH to ON;
+#X text 273 162 in target abstraction;
+#X text 41 17 FROM SAVED PRESETS/MIDI NOTES;
+#X text 241 17 FROM CONTINUOUS MIDI INPUT;
+#X text 68 249 Edit name of [send] object to include target abstraction/parameter
+;
+#X floatatom 328 70 5 0 0 0 - - -;
+#X floatatom 308 115 7 0 0 0 - - -;
+#X obj 414 187 t b f;
+#X obj 416 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7900 1;
+#X obj 413 112 mtof;
+#X obj 413 54 ctlin 1 0;
+#X text 443 146 Set SMOOTH to ON;
+#X text 443 162 in target abstraction;
+#X floatatom 484 60 5 0 0 0 - - -;
+#X floatatom 478 115 7 0 0 0 - - -;
+#X obj 414 214 s \$0-phasor-two/frequency;
+#X obj 469 563 t b f;
+#X obj 471 468 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7000 1;
+#X text 498 522 Set SMOOTH to ON;
+#X text 498 538 in target abstraction;
+#X floatatom 539 436 5 0 0 0 - - -;
+#X floatatom 533 491 7 0 0 0 - - -;
+#X obj 469 590 s \$0-operator-one/scale;
+#X obj 468 488 / 1.27;
+#X obj 468 430 ctlin 2 0;
+#X obj 522 310 vs-rescale, f 27;
+#X floatatom 561 290 5 0 0 0 - - -;
+#X floatatom 601 290 5 0 0 0 - - -;
+#X floatatom 641 290 5 0 0 0 - - -;
+#X floatatom 681 290 5 0 0 0 - - -;
+#X floatatom 522 274 5 0 0 0 - - -;
+#X floatatom 522 338 5 0 0 0 - - -;
+#X obj 525 249 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 276 339 3 0 0 0 - - -;
+#X obj 231 287 notein;
+#X obj 231 313 stripnote;
+#X floatatom 231 338 3 0 0 0 - - -;
+#X floatatom 370 460 3 0 0 0 - - -;
+#X floatatom 340 459 3 0 0 0 - - -;
+#X obj 340 434 ctlin;
+#X obj 340 481 bng 20 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 243 54 ctlin 1 0;
+#X obj 244 214 s \$0-operator-one/frequency;
+#X obj 231 366 select 53 54 55 56 57;
+#X obj 60 177 t b f;
+#X obj 62 82 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12000 1;
+#X obj 59 102 mtof;
+#X msg 59 43 22;
+#X msg 95 43 44;
+#X msg 132 43 120;
+#X text 89 136 Set SMOOTH to OFF;
+#X text 89 152 in target abstraction;
+#X obj 60 204 s \$0-operator-one/frequency;
+#X floatatom 28 148 5 0 0 0 - - -;
+#X floatatom 302 590 5 0 0 0 - - -;
+#X obj 270 543 vs-rescale 0 127 25 75, f 27;
+#X obj 178 318 send;
+#X floatatom 27 428 8 0 0 0 - - -;
+#X obj 27 512 s \$0-phasor-one/frequency;
+#X obj 26 377 ctlin 0;
+#X floatatom 68 402 5 0 0 0 - - -;
+#X obj 26 401 mtof;
+#X obj 112 402 vs-rescale 0 127 -100 100, f 27;
+#X floatatom 119 425 8 0 0 0 - - -;
+#X obj 122 448 int;
+#X floatatom 122 475 5 0 0 0 - - -;
+#X obj 226 463 notein;
+#X obj 587 86 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2200 1;
+#X obj 584 106 mtof;
+#X msg 584 47 22;
+#X msg 620 47 44;
+#X msg 656 49 120;
+#X obj 27 478 t b f;
+#X connect 0 0 45 0;
+#X connect 0 1 45 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 9 0;
+#X connect 10 0 18 0;
+#X connect 10 1 18 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 12 0 17 0;
+#X connect 13 0 16 0;
+#X connect 13 0 11 0;
+#X connect 19 0 25 0;
+#X connect 19 1 25 0;
+#X connect 20 0 26 0;
+#X connect 20 0 58 0;
+#X connect 26 0 24 0;
+#X connect 27 0 20 0;
+#X connect 27 0 23 0;
+#X connect 28 0 34 0;
+#X connect 29 0 28 1;
+#X connect 30 0 28 2;
+#X connect 31 0 28 3;
+#X connect 32 0 28 4;
+#X connect 33 0 28 0;
+#X connect 35 0 33 0;
+#X connect 37 0 38 0;
+#X connect 37 1 38 1;
+#X connect 38 0 39 0;
+#X connect 38 1 36 0;
+#X connect 39 0 46 0;
+#X connect 41 0 43 0;
+#X connect 42 0 41 0;
+#X connect 42 1 40 0;
+#X connect 44 0 8 0;
+#X connect 47 0 55 0;
+#X connect 47 1 55 0;
+#X connect 48 0 49 0;
+#X connect 49 0 47 0;
+#X connect 49 0 56 0;
+#X connect 50 0 48 0;
+#X connect 51 0 48 0;
+#X connect 52 0 48 0;
+#X connect 58 0 57 0;
+#X connect 58 0 19 0;
+#X connect 60 0 75 0;
+#X connect 62 0 64 0;
+#X connect 62 0 63 0;
+#X connect 62 0 65 0;
+#X connect 64 0 60 0;
+#X connect 65 0 66 0;
+#X connect 66 0 67 0;
+#X connect 67 0 68 0;
+#X connect 70 0 71 0;
+#X connect 71 0 10 0;
+#X connect 72 0 70 0;
+#X connect 73 0 70 0;
+#X connect 74 0 70 0;
+#X connect 75 0 61 0;
+#X connect 75 1 61 0;
+#X restore 465 540 pd wirelesssending;
+#X text 431 515 Open for MIDI implementation;
+#X obj 21 527 vs-ilda-throw-gui \$0 \$0-laserone;
+#A saved 100 10 1 0 1 1 1;
+#X connect 1 0 31 2;
+#X connect 2 0 31 0;
+#X connect 2 1 1 0;
+#X connect 3 0 31 1;
+#X connect 3 1 1 1;
+#X connect 5 0 3 1;

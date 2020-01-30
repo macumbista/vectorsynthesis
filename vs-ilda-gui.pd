@@ -3,44 +3,44 @@
 -66577 0;
 #X obj 34 422 vs-ilda, f 55;
 #X obj 106 143 nbx 5 14 -100 100 0 0 \$2/scalex \$2/scalex Scale_X
-0 -8 0 10 -4034 -1 -1 100 256;
+0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 107 174 nbx 5 14 -100 100 0 0 \$2/scaley \$2/scaley Scale_Y
-0 -8 0 10 -4034 -1 -1 100 256;
+0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 177 143 nbx 5 14 -100 100 0 0 \$2/offsetx \$2/offsetx Offset_X
 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 179 174 nbx 5 14 -100 100 0 0 \$2/offsety \$2/offsety Offset_Y
-0 -8 0 10 -4034 -1 -1 0 256;
+0 -8 0 10 -4034 -1 -1 -2 256;
 #X obj 249 143 nbx 5 14 -100 100 0 0 \$2/clipx \$2/clipx Clip_X 0 -8
-0 10 -4034 -1 -1 60 256;
+0 10 -4034 -1 -1 50 256;
 #X obj 249 173 nbx 5 14 -100 100 0 0 2/clipy 2/clipy Clip_Y 0 -8 0
-10 -4034 -1 -1 60 256;
+10 -4034 -1 -1 20 256;
 #X obj 321 143 nbx 5 14 -360 360 0 0 \$2/xrot \$2/xrot Rot_X 0 -8 0
 10 -4034 -1 -1 0 256;
 #X obj 321 173 nbx 5 14 -360 360 0 0 \$2/yrot \$2/yrot Rot_Y 0 -8 0
 10 -4034 -1 -1 0 256;
 #X obj 321 205 nbx 5 14 -360 360 0 0 \$2/zrot \$2/zrot Rot_Z 0 -8 0
-10 -4034 -1 -1 0 256;
+10 -4034 -1 -1 1 256;
 #X obj 110 326 hsl 128 15 0 127 0 0 \$2/cutoff \$2/cutoff Cutoff_Frq
--2 -6 0 8 -4034 -1 -1 12700 1;
+-2 -6 0 8 -4034 -1 -1 11900 1;
 #X obj 239 367 mtof;
 #X obj 107 205 nbx 5 14 0 160 0 0 \$2/audiovol \$2/audiovol Vol.dB
-0 -8 0 10 -4034 -1 -1 86.6142 256;
+0 -8 0 10 -4034 -1 -1 100 256;
 #X obj 247 326 nbx 8 14 -1e+37 1e+37 0 0 empty empty Hz 0 -8 0 10 -228856
--1 -1 12543.9 256;
+-1 -1 7902.13 256;
 #X text 639 649 Derek Holzer;
 #X text 639 687 macumbista@gmail.com;
 #X obj 107 259 nbx 5 14 0 100 0 0 \$2/greenmin \$2/greenmin GREENmin
-60 8 0 10 -4034 -1 -1 1 256;
+60 8 0 10 -4034 -1 -1 0 256;
 #X obj 107 290 nbx 5 14 0 100 0 0 \$2/bluemin \$2/bluemin BLUEmin 60
-8 0 10 -4032 -1 -1 3 256;
+8 0 10 -4032 -1 -1 0 256;
 #X obj 107 230 nbx 5 14 0 100 0 0 \$2/redmin \$2/redmin REDmin 60 8
-0 10 -250961 -1 -1 3 256;
+0 10 -250961 -1 -1 0 256;
 #X obj 223 235 hsl 128 15 0.01 1 1 0 \$2/redcurve \$2/redcurve Red_Curve
--2 -6 0 8 -254346 -1 -1 7900 0;
+-2 -6 0 8 -254346 -1 -1 7400 0;
 #X obj 223 263 hsl 128 15 0.01 1 1 0 \$2/greencurve \$2/greencurve
-Green_Curve -2 -6 0 8 -4034 -1 -1 8900 0;
+Green_Curve -2 -6 0 8 -4034 -1 -1 7900 0;
 #X obj 223 291 hsl 128 15 0.01 1 1 0 \$2/bluecurve \$2/bluecurve Blue_Curve
--2 -6 0 8 -4032 -1 -1 7700 0;
+-2 -6 0 8 -4032 -1 -1 8600 0;
 #X floatatom 357 235 5 0 0 0 - - -;
 #X floatatom 358 263 5 0 0 0 - - -;
 #X floatatom 358 291 5 0 0 0 - - -;
@@ -171,7 +171,7 @@ objects and the [vs-ilda-gui].;
 #X obj 447 494 outlet~ x;
 #X obj 508 494 outlet~ y;
 #X obj 339 325 nbx 5 14 0 100 0 0 \$2/bright \$2/bright Bright 0 -8
-0 10 -4034 -1 -1 97.6378 256;
+0 10 -4034 -1 -1 100 256;
 #X obj 212 630 kollabs/ds_reg \$1 \$2/bright;
 #X obj 409 531 outlet switch;
 #X obj 578 209 t b b b b b b b b b b b b b b b b b b b;
@@ -183,8 +183,10 @@ objects and the [vs-ilda-gui].;
 #X obj 421 107 r \$2/greencurve;
 #X obj 422 135 r \$2/bluecurve;
 #X obj 423 169 r \$2/cutoff;
+#X obj 571 494 outlet~ b;
 #X connect 1 0 71 0;
 #X connect 1 1 72 0;
+#X connect 1 2 85 0;
 #X connect 2 0 1 1;
 #X connect 2 0 29 1;
 #X connect 3 0 1 2;
