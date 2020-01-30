@@ -10,9 +10,9 @@ The technique is based on the well-known principle of Lissajous figures, which a
 
 There is a wealth of such experiments from the 1950s onward by major figure such as Mary Ellen Bute, John Whitney, Larry Cuba, Manfred Mohr, Nam June Paik, Ben Laposky, Bill Etra, and Steina & Woody Vasulka, which were all highly inspiration to the development of this library.
 
-Tutorials, announcements, and testing here:
+Tutorials, announcements, and testing here: [Vector Synthesis group] (https://www.facebook.com/groups/vectorsynthesis/)
 
-	[Vector Synthesis group] (https://www.facebook.com/groups/vectorsynthesis/)
+	
 
 Demo videos here:
 
