@@ -22,11 +22,11 @@ https://vimeo.com/macumbista
  
  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPHWJSJWH92GG&source=url)
  
- Or consider ordering a copy of the Vector Synthesis book: 
+ Or you can support my research by ordering a copy of the Vector Synthesis book: 
  
  http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
  
- You can also take a workshop from me, my workshops are annouced on the Facebook group above or on my website: 
+ You can also take a workshop from me. My workshops are annouced on the Facebook group above or on my website: 
  
  http://macumbista.net 
  
@@ -36,13 +36,16 @@ https://vimeo.com/macumbista
 ——SOFTWARE
 	
 	Pure Data "Vanilla", version 0.49 or newer. 
-	Gem 0.93.3 (OPTIONAL, used in scan processor only. Installed via deken, Pd’s externals manager)
+
+https://puredata.info/downloads/pure-data
+
+	Gem 0.93.3 (OPTIONAL, used in scan processor only). 
+	Gem is installed via deken, Pd’s externals manager (Menu bar: Help-->Find Externals)
 	
-	NOTE: Pd-Extended is too old for some features of this library.
+	NOTE: Pd-Extended is too old for some features of this library. Do not rely on it.
+	Purr-Data is also not explicitely supported.
 	
-——HARDWARE
-	
-	AUDIO INTERFACE
+——AUDIO INTERFACE
 	
 	DC-coupled audio interface 
 	Minimum 3 output channels (horizontal, vertical, brightness)
@@ -51,7 +54,7 @@ https://vimeo.com/macumbista
 	Balanced outputs recommended for ILDA laser display control
 	Tested with MOTU UltraLite mk3 USB2 audio interface (Ten DC coupled, balanced outputs)
 	
-	DISPLAYS
+——DISPLAYS
 	
 	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled)
 	
@@ -82,20 +85,6 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
 	
-	MINIMAL SETUP
-	
-	You can try using this library with a two channel, AC-coupled, 44.1 or 48 kHz soundcard, and a 
-	more common X/Y oscilloscope. You will not have control over the brightness, your image will 
-	always try to center itself in the screen, you will likely have a lot of aliasing artifacts, 
-	and I have found that built-in laptop audio outputs in particular introduce a lot of visual 
-	noise into the oscilloscope image.
-	
-	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
-	image in this video on Jerobeam Fenderson's YouTube channel:
-	
-[![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "Oscilloscope Music Tutorial 2: Setup (Compression, DC-coupling, Sampling Rate, Aliasing by Jerobeam Fenderson)")
-
-
 
 *GENERAL NOTES*
 
@@ -106,114 +95,59 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 		000.C.3D_VECTORS.pd
 		000.D.VECTOR_MODIFIERS.pd
 		000.G.VECTOR_MULTIPLEXING.pd
+		000.H.ILDA_OUTPUT.pd
 		000.I.PRESET_SYSTEM.pd
 		
-	The files with "gui" in their name are a designed to be patched together much like a modular synth.
-	The files with "help" in their name are also very good examples to start with to learn more code. 
-	The files without "help" in their name are the abstractions themselves, without any controls.
-	The files with ".txt" extension are backup data for the various 3D shapes.
+	The files with "gui" in their name are designed to be patched together much like a modular synth.
+	The files with "ilda" in their name are designed to be used with the 000.H.ILDA_OUTPUT.pd patch.
+	The files with "help" in their name are good examples to start with to learn more code. 
+	The files without "gui" or "help" in their name are the abstractions themselves, without any controls.
+	The files with a ".txt" extension are backup data for the various 3D shapes.
+	
+	
+	For control of an oscilloscope, the following channels are used (where Audio Left and Right can be reassigned):
 
 	Audio Interface Output 1 : Horizontal
 	Audio Interface Output 2 : Vertical
 	Audio Interface Output 3 : Brightness
-	Audio Interface Output 4 : Audio Left (Horizontal * Brightness, w/ multiplexing system patches)
-	Audio Interface Output 5 : Audio Right (Vertical * Brightness, w/ multiplexing system patches)
+	Audio Interface Output 4 : Audio Left (Horizontal * Brightness)
+	Audio Interface Output 5 : Audio Right (Vertical * Brightness)
+	
+	For ILDA laser control, the channel assignement looks like this (where Audio Left and Right can be reassigned):
+	
+	Audio Interface Output 1 : Horizontal
+	Audio Interface Output 2 : Vertical
+	Audio Interface Output 3 : Brightness (normally not used, kept for compatibility)
+	Audio Interface Output 4 : Red
+	Audio Interface Output 5 : Green
+	Audio Interface Output 6 : Blue
+	Audio Interface Output 7 : Audio Left (Horizontal * Brightness)
+	Audio Interface Output 8 : Audio Right (Vertical * Brightness)
 
 	Higher sampling rate = higher resolution/fewer errors in the vector shapes
 	Tested at 44.1K, 96K, 192K
 
-	Stereo output is also usable, however there will be no brightness control.
+
+*USING NON-RECOMMENDED HARDWARE*
+
+	A stereo audio output is also usable, as well as a more common X/Y oscilloscope display,
+	however there will be no brightness control.
 	
-	An AC-coupled soundcard or display will show noticeable distortions in the shape
-	and screen location of the vector shapes (they will always appear in the center).
+	Normal laptop headphone audio outputs generate a lot of noise which is visible in the image.
+	
+	An AC-coupled soundcard or display will show noticeable distortions in the shape, 
+	and the vector shapes will always appear in the center of the screen.
 
 	DC-coupling is also necessary for brightness control.
 
-	Brightness control is essential for multiplexing, scan processing, and a
-	number of other interesting visual effects, however you can still use this 
+	Brightness control is essential for multiplexing, scan processing of videos and photos, 
+	and a number of other interesting visual effects, however you can still use this 
 	library for many things without it.
-
-
-
-
-
-*LIST OF OBJECTS*
-
-—-NATIVE PD OBJECTS of NOTE
-
-	[phasor~] : sawtooth ramp generator which goes from value 0 to value 1
-	[wrap~] : remainder of a division operation, used here to generate phase-locked harmonics of [phasor~].
-		Adding an offset before [wrap~] changes the phase, and inserting a multiplication before [wrap~]
-		changes the harmonic, since the object "wraps" any incoming signal over 1 back to 
-		phase = 0 degrees.
-	[cos~] : transforms the signal from [phasor~] to a cosine wave. Adding an offset before [cos~] 
-		changes the phase, and inserting a multiplication before [cos~] changes the harmonic, since the 
-		objects "wraps" any incoming signal over 1 back to phase = 0 degrees.
-
-—-FUNCTION GENERATORS
-
-	[V-operator]: function generator with variable waveshaping, scaling, phase, and uni- and bi-polar outputs
 	
-——2D SHAPE GENERATORS
-
-	[VS-basic-lissajous] : create a simple Lissajous figure
-	[VS-sine-circle] : create a circle
-	[VS-triangle] : create a triangle
-	[VS-diamond] : create a diamond/square
-	[VS-poly] : create an n-sided polygon
-	[VS-raster] : create a horizontal, vertical, or grid raster
-	[VS-object_2d] : read X and Y points from a textfile and draw them
-	[VS-syntheshape] : complex oscilloscope art generator based on Mitchell Waite's 1974 "Syntheshape"
-
-—-VECTOR TRANSFORMATIONS
-
-	[VS-scale] : scale (resize) a 2D or 3D vector shape
-	[VS-translate] : translate (move) a 2D or 3D vector shape
-	[VS-rotate] : rotate a 2D or 3D vector shape
-	[VS-projector] : project 3D shapes into 2D vector space with perspective and shadow
-	[VS-morph] : morph between two 2D vector shapes
-	[VS-decimate] : reduce the number of points used to draw a vector shape, with or without smoothing
+	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
+	image in this video on Jerobeam Fenderson's YouTube channel:
 	
-—-3D SHAPE GENERATORS
-	
-	[VS-sphere] : create a 3D sphere of triangular faces
-	[VS-pyramid] : create a 3D pyramid with square base
-	[VS-cube] : create a 3D cube
-	[VS-tetrahedron] : create a 3D tetrahedron
-	[VS-octahedron] : create a 3D octahedron
-	[VS-dodecahedron] : create a 3D dodecahedron
-	[VS-icosahedron] : create a 3D icosahedron
-	[VS-hand] : create a 3D hand shape
-
-—-UTILITIES
-
-	[VS-seeme] : plot three signals (X, Y, and brightness, for example) onto visual arrays
-	[VS-tabreadlin~] : read a table with linear interpolation (for reading 3D objects)
-	[VS-waveselect] : preset waveshapes for [VS-operator]
-	[VS-gamma] : apply gamma correction to the brightness signal
-	[VS-invert-unipolar] : invert a signal with a (0 - 1) range
-	[VS-invert-bipolar] : invert a signal with a (-1 - 1) range
-	[VS-blanking] : control the brightness of an object in relation to the phase of its signal
-	[VS-tri2ramp] : transform an input triangle wave (from an analog synth for example) to a ramp
-	[VS-gemhead-master] : simple controls for Gem portion of scan processing patches
-	[VS-sig2float] : method for reading an audio signal as a samplerate stream of floats
-
-
-
-—-MULTIPLEXING (see V-multiplex-help.pd for details)
-
-	[VS-masterclock] : sets multiplexing frequency and number of multiplexed channels
-	[VS-output] : collects multiplexed channels and sends them to the audio interface
-	[VS-multiplex] : assigns a vector shape to one multiplexing channel
-	[VS-brightness-crossfade] : crossfades the brightness of two multiplexed channels
-
-—-SCAN PROCESSING (requires GEM external library!)
-
-	[VS-scanprocessor] : scan a camera input, image, or video with a raster or other vectors
-
-—-ILDA LASER DISPLAY OUTPUT
-
-	[VS-ilda] : output to an ILDA laser display projector
+[![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "Oscilloscope Music Tutorial 2: Setup (Compression, DC-coupling, Sampling Rate, Aliasing by Jerobeam Fenderson)")
 
 
 *ACKNOWLEDGEMENTS*
@@ -245,7 +179,8 @@ I would like to thank the following people and institutions for their support an
 	Marco Donnarumma
 	Robert Henke
 	Chris King
-	and finally the Video Circuits online community, without whom I never would have started down this crazy road
+	and finally the Video Circuits online community, without whom I never would have started down 
+	this crazy road
 
 
 Derek Holzer
