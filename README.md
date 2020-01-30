@@ -47,7 +47,7 @@ https://puredata.info/downloads/pure-data
 	
 ——AUDIO INTERFACE
 	
-	DC-coupled audio interface 
+	DC-coupled audio interface: 
 
 https://www.sweetwater.com/sweetcare/articles/which-audio-interfaces-are-dc-coupled/#dc-coupled-interfaces
 	
