@@ -50,9 +50,9 @@ https://puredata.info/downloads/pure-data
 	DC-coupled audio interface 
 	Minimum 3 output channels (horizontal, vertical, brightness)
 	5 output channels recommended if seperate stereo audio channels are desired
-	6 balanced audio outputs recommended for ILDA laser control (8 w/ seperate stereo audio)
+	6 balanced audio outputs recommended for ILDA laser control 
+	8 balanced audio outputs recommended for ILDA plus seperate stereo audio
 	High sampling rate also recommended (192 kHz if possible)
-	Balanced outputs recommended for ILDA laser display control
 	Tested with MOTU UltraLite mk3 USB2 audio interface (Ten DC coupled, balanced outputs)
 	
 ——DISPLAYS
