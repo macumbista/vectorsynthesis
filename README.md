@@ -12,11 +12,11 @@ There is a wealth of such experiments from the 1950s onward by major figure such
 
 Tutorials, announcements, and testing here:
 
-	[Vector Synthesis group](https://www.facebook.com/groups/vectorsynthesis/)
+	[Vector Synthesis group] (https://www.facebook.com/groups/vectorsynthesis/)
 
 Demo videos here:
 
-	[https://vimeo.com/macumbista](https://vimeo.com/macumbista)
+	[https://vimeo.com/macumbista] (https://vimeo.com/macumbista)
 
  If this library has been useful, please consider making a donation towards the development:
  
@@ -24,7 +24,7 @@ Demo videos here:
  
  Or consider ordering a copy of the Vector Synthesis book:
  
- 	[http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html](http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html)
+ 	[http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html] (http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html)
  
 
 *REQUIREMENTS*
