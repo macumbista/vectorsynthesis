@@ -57,7 +57,9 @@ https://puredata.info/downloads/pure-data
 	
 ——DISPLAYS
 	
-	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled)
+	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled):
+
+http://vectorvgapro.com/XY_Displays.html
 	
 	—or—
 	
