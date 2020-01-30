@@ -96,16 +96,23 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 
 	Start with the first files in the library, they are the tutorials:
 	
-		000.A.VECTOR_GENERATORS.pd
-		000.B.2D_VECTORS.pd
-		000.C.3D_VECTORS.pd
-		000.D.VECTOR_MODIFIERS.pd
-		000.G.VECTOR_MULTIPLEXING.pd
-		000.H.ILDA_OUTPUT.pd
-		000.I.PRESET_SYSTEM.pd
+	000.A.VECTOR_GENERATORS.pd
+	000.A1.VECTOR_GENERATORS-ILDA.pd
+	000.B.2D_VECTORS.pd
+	000.B1.2D_VECTORS-ILDA.pd
+	000.C.3D_VECTORS.pd
+	000.C1.3D_VECTORS-ILDA.pd
+	000.D.VECTOR_MODIFIERS.pd
+	000.D1.VECTOR_MODIFIERS-ILDA.pd
+	000.G.VECTOR_MULTIPLEXING.pd
+	000.G1.VECTOR_MULTIPLEXING-ILDA.pd
+	000.H.ILDA_OUTPUT.pd
+	000.I.PRESET_SYSTEM.pd
+	000.I1.PRESET_SYSTEM-ILDA.pd
+	
+	All the ILDA patches require 000.H.ILDA_OUTPUT.pd to be open and an ILDA laser to be connected. 
 		
 	The files with "gui" in their name are designed to be patched together much like a modular synth.
-	The files with "ilda" in their name are designed to be used with the 000.H.ILDA_OUTPUT.pd patch.
 	The files with "help" in their name are good examples to start with to learn more code. 
 	The files without "gui" or "help" in their name are the abstractions themselves, without any controls.
 	The files with a ".txt" extension are backup data for the various 3D shapes.
