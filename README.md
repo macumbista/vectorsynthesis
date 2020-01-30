@@ -2,7 +2,7 @@
 
 ::::::::::VECTOR SYNTHESIS LIBRARY ::::::::::
 
-The Vector Synthesis library allows the creation and manipulation of 2D and 3D vector shapes, Lissajous figures, and scan processed image and video inputs using audio signals sent directly to oscilloscopes, hacked CRT monitors, Vectrex game consoles, ILDA laser displays, or oscilloscope emulation softwares using the Pure Data programming environment. 
+The Vector Synthesis library allows the creation and manipulation of 2D and 3D vector shapes, Lissajous figures, and scan processed image and video inputs using audio signals sent directly to oscilloscopes, Vectrex game consoles, ILDA laser displays, or oscilloscope emulation softwares using the Pure Data programming environment. 
 
 Audio waveforms control the vertical and horizontal movements as well as the brightness of a single beam of light, tracing shapes, points and curves with a direct relationship between sound and image.
 
@@ -22,6 +22,10 @@ Demo videos here:
  
  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPHWJSJWH92GG&source=url)
  
+ Or consider ordering a copy of the Vector Synthesis book:
+ 
+ 	http://www.lulu.com/shop/derek-holzer/vector-synthesis-a-media-archaeological-investigation-into-sound-modulated-light/paperback/product-24379956.html
+ 
 
 *REQUIREMENTS*
 
@@ -33,8 +37,13 @@ Demo videos here:
 	NOTE: Pd-Extended is too old for some features of this library.
 	
 ——HARDWARE
-
-	DC-coupled audio interface with minimum 3 output channels (5 recommended)
+	
+	RECOMMENDED
+	
+	DC-coupled audio interface 
+	Minimum 3 output channels (horizontal, vertical, brightness)
+	5 output channels recommended if seperate stereo audio channels are desired
+	High sampling rate also recommended (192 kHz if possible)
 	
 	Oscilloscope with X/Y/Z inputs (all DC-coupled)
 	—or—
@@ -47,20 +56,29 @@ Demo videos here:
 	(Hold SHIFT key when selecting input for third channel brightness control)
 	plus audio loopback application such as SoundFlower or Virtual Audio Cable
 	
-	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
+	
+	MINIMUM
+	
+	You can try using this library with only a two channel soundcard and a more common X/Y oscilloscope. You will not have control over the brightness, and I have found that built-in laptop audio outputs in particular introduce a lot of visual noise into the oscilloscope image.
+	
+	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope image here:
+	
+	https://www.youtube.com/watch?v=piZPIMYfq0c
 
 
 
 *GENERAL NOTES*
 
 	Start with the first files in the library, they are the tutorials:
+	
 		000.A.VECTOR_GENERATORS.pd
 		000.B.2D_VECTORS.pd
 		000.C.3D_VECTORS.pd
 		000.D.VECTOR_MODIFIERS.pd
 		000.G.VECTOR_MULTIPLEXING.pd
 		000.I.PRESET_SYSTEM.pd
+		
 	The files with "gui" in their name are a designed to be patched together much like a modular synth.
 	The files with "help" in their name are also very good examples to start with to learn more code. 
 	The files without "help" in their name are the abstractions themselves, without any controls.
