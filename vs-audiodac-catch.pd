@@ -1,0 +1,10 @@
+#N canvas 0 23 450 300 12;
+#X obj 72 66 catch~ X;
+#X obj 145 66 catch~ Y;
+#X obj 219 66 catch~ B;
+#X obj 72 136 outlet~ X;
+#X obj 145 136 outlet~ Y;
+#X obj 219 136 outlet~ B;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;

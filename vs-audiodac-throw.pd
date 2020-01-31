@@ -1,0 +1,13 @@
+#N canvas 18 246 757 528 10;
+#X text 469 355 Derek Holzer;
+#X text 469 393 macumbista@gmail.com;
+#X obj 42 69 inlet~ X;
+#X obj 42 179 throw~ X;
+#X obj 102 69 inlet~ Y;
+#X obj 102 179 throw~ Y;
+#X obj 162 69 inlet~ B;
+#X obj 162 179 throw~ B;
+#X text 469 374 Helsinki JAN 2020;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
