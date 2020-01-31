@@ -86,8 +86,8 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	
 	(Hold SHIFT key when selecting input for third channel brightness control)
 	plus audio loopback application such as SoundFlower or Virtual Audio Cable. 
-	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL-WIN.pdf or SOFTWARE-OSCILLOSCOPE-TUTORIAL.pdf
-	for further details on setup.
+	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL.pdf for MacOS and 
+	SOFTWARE-OSCILLOSCOPE-TUTORIAL-WIN.pdf for Windows for further details on setup.
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
 	
