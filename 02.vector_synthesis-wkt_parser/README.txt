@@ -16,14 +16,16 @@ https://mygeodata.cloud/converter/svg-to-wkt
 
 (This site allows a limited number of conversions, so if you intend to use it often I recommend visiting it via a Tor browser which will anonymize your use.)
 
-You will have a CSV (comma separated values) file with WKT inside. Open the file and look for strings within “ “ (quote marks), for example:
+You will have a CSV (comma separated values) file with WKT inside. Open the file and look for the coordinate lists, for example:
 
 
 POLYGON ((101.119367 5.827172,87.753843 20.859209,102.413776 35.505808,72.61227 33.075881,52.112446 45.376343,47.05522 28.836075,19.722122 21.797664,46.392965 14.005137,50.005269 -2.652438,71.558681 9.06149,101.119367 5.827172))
 
-Copy paste each string into it’s own textfile and save with the file extension .wkt
+Copy paste each only the pairs of numeric values from each string into it’s own textfile and save with the file extension .wkt 
 
-The online converter will break complex forms into a number of polygons. Each will have to be used separately to be drawn accurately. 
+Do not copy any text or other non-numeric characters into the WKT file, or the python script will not parse them correctly (either it will crash without result, or give you a file full of “nan” values.)
+
+The online converter will break complex forms into a number of polygons. Each will have to be parsed separately to be drawn accurately. 
 
 STEP TWO-POINT-FIVE: ADVANCED FIGURES
 
