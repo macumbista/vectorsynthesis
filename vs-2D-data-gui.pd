@@ -91,7 +91,7 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 109 194 bng 15 250 50 0 empty empty LOAD_2D_DATA_TABLES 20 8
 0 10 -4034 -1 -1;
 #X obj 261 194 hradio 15 1 0 2 \$2/interpolation \$2/interpolation
-On.Off 0 -8 0 10 -4034 -1 -1 0;
+Off.On 0 -8 0 10 -4034 -1 -1 0;
 #X obj 377 506 kollabs/ds_reg \$1 \$2/interpolation;
 #X text 297 193 INTERPOLATION;
 #X obj 99 504 vs-2D-data;
