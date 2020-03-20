@@ -1,6 +1,6 @@
 
 
-#::::::::::VECTOR SYNTHESIS LIBRARY ::::::::::#
+*::::::::::VECTOR SYNTHESIS LIBRARY ::::::::::*
 
 [![](https://github.com/macumbista/vectorsynthesis/blob/master/divisions_still.png)](https://vimeo.com/344599871 "Vector Synthesis: Divisions of a Circle by Macumbista on Vimeo")
 
