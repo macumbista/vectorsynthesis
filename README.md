@@ -216,13 +216,10 @@ I would like to thank the following people and institutions for their support an
 	this crazy road
 
 
-Derek Holzer
-
-UPDATED Helsinki March 2020
-
-http://macumbista.net
-
-macumbista AT THE DOMAIN gmail DOT com
+	Derek Holzer
+	UPDATED Helsinki March 2020
+	http://macumbista.net
+	macumbista AT THE DOMAIN gmail DOT com
 
 
 
