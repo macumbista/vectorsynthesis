@@ -4,7 +4,7 @@
 
 [![](https://github.com/macumbista/vectorsynthesis/blob/master/divisions_still.png)](https://vimeo.com/344599871 "Vector Synthesis: Divisions of a Circle by Macumbista on Vimeo")
 
-*Click through for ""Vector Synthesis: Divisions of a Circle" by Macumbista on Vimeo*
+*Click through image for ""Vector Synthesis: Divisions of a Circle" by Macumbista on Vimeo*
 
 The Vector Synthesis library allows the creation and manipulation of 2D and 3D vector shapes, Lissajous figures, and scan processed image and video inputs using audio signals sent directly to oscilloscopes, Vectrex game consoles, ILDA laser displays, or oscilloscope emulation softwares using the Pure Data programming environment. 
 
