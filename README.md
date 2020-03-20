@@ -73,6 +73,12 @@ http://vectorvgapro.com/XY_Displays.html
 	Vectrex game console modified for X/Y/Z input (all DC-coupled) according to these instructions:
 
 http://users.sussex.ac.uk/~ad207/adweb/assets/vectrexminijackinputmod2014.pdf
+
+	I also recommend modifying the Vectrex to disable the so-called "spot killer", which is a safety feature designed to prevent burning a spot in the phosphor of the Cathode Ray Tube of you Vectrex. Unfortunately, this spot killer is quite conservative and tends ot shut down your image if the frequency and/or amplitude of the XY signals are too small. Disabling the spot killer is simply a matter of bridging two pins of a transistor on the CRT driver board, as shown in the following image:
+
+https://github.com/macumbista/vectorsynthesis/blob/master/spot%20killer%20mod.JPG
+
+	Instead of the solder bridge shown, I recommend using a switch rated at at least 110V. In such case, *enable* the spot killer when powering up and powering down the Vectrex as well as for normal game play, and *disable* the spot killer when using the Vectrex for audio-driven graphics. NOTE: no matter how careful you are, there is still a good chance you will make a small mark in the phosphor. You have been warned.
 	
 	—or—
 	
