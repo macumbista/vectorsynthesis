@@ -84,10 +84,12 @@ http://users.sussex.ac.uk/~ad207/adweb/assets/vectrexminijackinputmod2014.pdf
 https://github.com/macumbista/vectorsynthesis/blob/master/spot%20killer%20mod.JPG
 
 	Instead of the solder bridge shown, I recommend using a switch rated at at least 110V. 
-	In such case, *enable* the spot killer when powering up and powering down the Vectrex 
-	as well as for normal game play, and *disable* the spot killer when using the Vectrex 
-	for audio-driven graphics. NOTE: no matter how careful you are, there is still a good 
-	chance you will make a small mark in the phosphor. You have been warned.
+	In such case, *enable* the spot killer (switch open) when powering up and powering down 
+	the Vectrex as well as for normal game play, and *disable* (switch closed) the spot killer 
+	when using the Vectrex for audio-driven graphics. 
+	
+	NOTE: no matter how careful you are, there is still a good chance you will make a small 
+	mark in the phosphor. You have been warned.
 	
 	—or—
 	
