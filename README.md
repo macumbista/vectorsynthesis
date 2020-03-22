@@ -168,6 +168,7 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	however there will be no brightness control.
 	
 	Normal laptop headphone audio outputs generate a lot of noise which is visible in the image.
+	One interesting note is that all Apple iPhone and iPad headphone outputs are DC coupled.
 	
 	An AC-coupled soundcard or display will show noticeable distortions in the shape, 
 	and the vector shapes will always appear in the center of the screen.
@@ -200,6 +201,7 @@ I would like to thank the following people and institutions for their support an
 	Tapio “Tassu” Takala/Aalto University Department of Computer Science (Helsinki FI)
 	Joseph Hyde/Seeing Sound/Bath Spa University (Bath UK)
 	Jeff Chippewa & Nicolas Bernier/Canadian Electroacoustic Community (Montreal CA)
+	Carsten Stabenow & Gesine Pagels
 	Andy Farnell
 	Ivan Marušić Klif
 	Dave Jones
