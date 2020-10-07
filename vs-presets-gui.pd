@@ -12,7 +12,7 @@
 #X obj 113 131 kollabs/ds_gui \$1;
 #X obj 115 340 s \$1-reset-phase;
 #X obj 300 318 kollabs/ds_logic \$1;
-#N canvas 6 23 386 387 \$1-scheduler 1;
+#N canvas 6 23 386 387 \$1-scheduler 0;
 #X obj 11 10 cnv 15 340 350 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 19 19 kollabs/ds_scheduler_gui \$1;
