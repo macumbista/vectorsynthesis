@@ -89,7 +89,8 @@ them.;
 TXT;
 #X text 564 478 file matches the one in the number box at the bottom
 of;
-#X text 564 495 this abstraction.;
+#X text 564 495 this abstraction when reopening the presets later.
+;
 #X connect 1 0 2 2;
 #X connect 2 0 32 0;
 #X connect 3 0 2 0;
