@@ -1,11 +1,11 @@
 #N canvas 301 23 552 460 10;
 #X obj 101 115 cnv 15 180 220 empty empty empty 20 12 0 14 -233017
 -66577 0;
-#X obj 115 262 bng 15 250 50 0 empty empty OPEN_TRANSITIONS 17 7 0
+#X obj 115 260 bng 15 250 50 0 empty empty OPEN_TRANSITIONS 17 7 0
 10 -4034 -1 -1;
-#X obj 115 282 bng 15 250 50 0 empty empty OPEN_SCHEDULER 17 7 0 10
+#X obj 115 279 bng 15 250 50 0 empty empty OPEN_SCHEDULER 17 7 0 10
 -4034 -1 -1;
-#X obj 115 302 bng 15 250 50 0 empty empty RESET_PHASES 17 7 0 10 -258113
+#X obj 115 298 bng 15 250 50 0 empty empty RESET_PHASES 17 7 0 10 -258113
 -1 -1;
 #X msg 299 252 vis 1;
 #X msg 300 185 vis 1;
@@ -26,9 +26,15 @@
 #X obj 18 113 kollabs/ds_transition \$1;
 #X restore 299 229 pd \$1-transition;
 #X obj 300 207 s pd-\$1-transition;
+#X obj 300 366 f \$0;
+#X obj 300 344 loadbang;
+#X obj 223 317 nbx 5 15 0 1e+37 0 0 empty empty dollar_zero_= -85 8
+0 10 -261169 -1 -1 5437 256;
 #X connect 1 0 5 0;
 #X connect 2 0 4 0;
 #X connect 3 0 7 0;
 #X connect 4 0 10 0;
 #X connect 5 0 12 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
 #X coords 0 -1 1 1 182 236 1 100 100;
