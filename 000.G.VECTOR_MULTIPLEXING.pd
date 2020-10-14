@@ -1,6 +1,6 @@
 #N canvas 50 26 1196 708 10;
-#X obj 11 505 vs-multiplex \$0 1;
-#X obj 331 517 vs-multiplex \$0 2;
+#X obj 7 517 vs-multiplex \$0 1;
+#X obj 317 517 vs-multiplex \$0 2;
 #X text 1014 612 Derek Holzer;
 #X text 1014 661 macumbista@gmail.com;
 #X text 1014 636 Helsinki May 2019;
@@ -27,21 +27,21 @@ your patch.;
 #X text 53 621 Create one [vs-audiodac-gui \$0 <unique-name>] for your
 patch.;
 #X obj 627 372 vs-audiodac-gui \$0 dac-one;
-#A saved 85 1 5 6 1 1 100 0 0 0 1 2;
+#A saved 85 1 5 6 0 1 50 0 0 0 1 2;
 #X obj 629 200 vs-multiplex-gui \$0 multiplex-one;
 #A saved 25 2 1 1;
 #X obj 317 201 vs-icosahedron-gui \$0 \$0-ico-one;
-#A saved 50 0 2 0 2 30 0 1 0;
+#A saved 25 0 2 0 2 40 0 1 0;
 #X obj 7 200 vs-cube-gui \$0 \$0-cube-one;
-#A saved 50 0 2 0 2 30 0 1 0;
+#A saved 25 0 2 0 2 25 0 1 0;
 #X obj 7 306 vs-rotate-gui \$0 \$0-rotate-one;
-#A saved 0 45 120 0 0 0 1 42 0 0;
+#A saved 0 45 120 0 0 0 1 10 8 0;
 #X obj 317 432 vs-translate-gui \$0 \$0-translate-two;
-#A saved -65 0 0;
-#X obj 11 431 vs-translate-gui \$0 \$0-translate-one;
-#A saved 25 0 0;
+#A saved -50 0 0;
+#X obj 7 431 vs-translate-gui \$0 \$0-translate-one;
+#A saved 50 0 0;
 #X obj 317 306 vs-rotate-gui \$0 \$0-rotate-two;
-#A saved 0 0 0 0 0 0 1 8 -8 0;
+#A saved 0 0 0 0 0 0 1 10 -8 0;
 #X obj 627 519 switch~;
 #X obj 612 175 expr~ ($v1 * -1)+1;
 #X obj 302 32 vs-operator-gui \$0 \$0-xfader;
@@ -54,6 +54,8 @@ left of the screen and an icosahedron to the right of the screen. If
 birghtness control is enabled in the Oscilloscope app \, or if you
 have brightness control availabe on your hardware display \, then the
 two shapes will cross fade in brightness.;
+#X text 136 9 This operator crossfades the brightness of the two shapes.
+;
 #X connect 23 0 31 0;
 #X connect 24 0 23 0;
 #X connect 24 1 23 1;

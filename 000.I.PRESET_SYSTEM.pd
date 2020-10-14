@@ -1,51 +1,51 @@
-#N canvas 130 23 954 705 10;
-#X obj 340 230 vs-presets-gui \$0;
-#X obj 214 485 expr~ $v1 && $v2;
-#X obj 20 523 vs-audiodac-gui \$0 dac-one;
+#N canvas 216 79 954 705 10;
+#X obj 358 411 vs-presets-gui \$0;
+#X obj 307 249 expr~ $v1 && $v2;
+#X obj 13 308 vs-audiodac-gui \$0 dac-one;
 #A saved 75 1 5 6 1 1 25 0 0 0 1 2;
-#X obj 14 191 vs-operator-gui \$0 \$0-operator-one;
-#A saved 200 0 2 1 0 100 0 1 1 0 0;
-#X obj 12 340 vs-operator-gui \$0 \$0-operator-two;
-#A saved 100 0 0 1 0 100 0 0 1 5 0;
+#X obj 12 83 vs-operator-gui \$0 \$0-operator-one;
+#A saved 100 0 2 1 0 100 0 1 1 0 0;
+#X obj 340 83 vs-operator-gui \$0 \$0-operator-two;
+#A saved 100 0 2 1 0 100 90 1 1 0 0;
 #X obj 14 12 vs-phasor-gui \$0 \$0-phasor-one;
 #A saved 500 0 1 0;
-#X obj 14 82 vs-phasor-gui \$0 \$0-phasor-two;
+#X obj 339 12 vs-phasor-gui \$0 \$0-phasor-two;
 #A saved 0 50 0 0;
-#X obj 337 13 cnv 15 360 170 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 563 217 cnv 15 360 170 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 537 231 cnv 15 380 280 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 561 402 cnv 15 380 280 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X text 772 543 Derek Holzer;
-#X text 772 592 macumbista@gmail.com;
-#X text 772 567 Helsinki May 2019;
-#X text 537 235 [vs-presets-gui] is a preset loading and saving system.
+#X text 73 613 Derek Holzer;
+#X text 73 662 macumbista@gmail.com;
+#X text 73 637 Helsinki May 2019;
+#X text 561 406 [vs-presets-gui] is a preset loading and saving system.
 ;
-#X text 567 441 as well as start and stop playback of the scenes.;
-#X text 347 128 Try storing different settings of waveform and harmonic
+#X text 591 612 as well as start and stop playback of the scenes.;
+#X text 573 332 Try storing different settings of waveform and harmonic
 ;
-#X text 347 149 using [vs-presets-gui] below and then recalling them.
+#X text 573 353 using [vs-presets-gui] below and then recalling them.
 ;
-#X text 553 258 * Make sure to use \$0 as the creation argument!;
-#X text 553 280 * You need only one in each master patch you use.;
-#X text 554 351 * You can "save" your presets to a textfile and "load"
+#X text 577 429 * Make sure to use \$0 as the creation argument!;
+#X text 577 451 * You need only one in each master patch you use.;
+#X text 578 522 * You can "save" your presets to a textfile and "load"
 them.;
-#X text 554 421 * SCHEDULER can be used to arrange presets in order
+#X text 578 592 * SCHEDULER can be used to arrange presets in order
 \,;
-#X text 554 377 * TRANSITIONS can be used to edit crossfades between
+#X text 578 548 * TRANSITIONS can be used to edit crossfades between
 ;
-#X text 569 396 presets.;
-#X text 359 61 * Both operators are synced to the master.;
-#X text 359 82 * Phasor-two modulates the phase of operator-two.;
-#X text 359 103 * This causes an illusion that the circle is spinning.
+#X text 593 567 presets.;
+#X text 585 265 * Both operators are synced to the master.;
+#X text 585 286 * Phasor-two modulates the phase of operator-two.;
+#X text 585 307 * This causes an illusion that the circle is spinning.
 ;
-#X text 359 41 * Phasor-one is the master oscillator.;
-#X text 345 18 This patch on the left draws a circle using sine waves.
+#X text 585 245 * Phasor-one is the master oscillator.;
+#X text 571 222 This patch on the left draws a circle using sine waves.
 ;
-#X text 554 304 * The green arrows move between and recall presets.
+#X text 578 475 * The green arrows move between and recall presets.
 ;
-#X text 554 328 * The red "store" button stores the info for each preset.
+#X text 578 499 * The red "store" button stores the info for each preset.
 ;
-#X obj 423 579 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 19 536 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
 0;
 #N canvas 561 66 450 300 wirelesssending 0;
 #X obj 44 214 s \$0-phasor-one/frequency;
@@ -82,14 +82,14 @@ them.;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
-#X restore 465 610 pd wirelesssending;
-#X text 431 585 Open for MIDI implementation;
-#X obj 20 675 switch~;
-#X text 554 462 * Be sure that the \$0 unique identifier in the saved
+#X restore 61 567 pd wirelesssending;
+#X text 27 542 Open for MIDI implementation;
+#X obj 13 462 switch~;
+#X text 578 633 * Be sure that the \$0 unique identifier in the saved
 TXT;
-#X text 564 478 file matches the one in the number box at the bottom
+#X text 588 649 file matches the one in the number box at the bottom
 of;
-#X text 564 495 this abstraction when reopening the presets later.
+#X text 588 666 this abstraction when reopening the presets later.
 ;
 #X connect 1 0 2 2;
 #X connect 2 0 32 0;

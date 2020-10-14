@@ -1,4 +1,4 @@
-#N canvas 521 58 1150 817 10;
+#N canvas 595 62 1150 817 10;
 #X obj 349 271 vs-lissajous-gui \$0 \$0-lissajous-one;
 #A saved 50 0 0 171 1 100 100 2 0;
 #X obj 349 7 vs-circle-gui \$0 \$0-circle-one;
@@ -19,7 +19,7 @@
 #X obj 340 368 cnv 15 320 150 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 684 45 vs-operator-gui \$0 \$0-operator-one;
-#A saved 24 0 0 1 0 53 0 0 0 1 0;
+#A saved 1 0 0 8 0 100 0 5 1 0 0;
 #X text 687 193 Try connecting the left outlet of [vs-operator-gui]
 to the different inlets of the 2D vector shapes.;
 #X text 112 562 CAUTION: make sure to rename "\$0-<objectname>-one"
@@ -48,14 +48,12 @@ to "\$0-<objectname>-two" when making multiple copies!;
 ;
 #X text 702 494 for details on their inlets.;
 #X obj 347 403 vs-ilda-throw-gui \$0 \$0-laserone;
-#A saved 50 0 1 0 1 0 1;
+#A saved 50 0 1 0 1 0 0;
 #X obj 347 523 switch~;
 #X obj 19 6 vs-poly-gui \$0 \$0-poly-one;
 #A saved 25 0 0 0 1 48 100 3 1 0 0;
-#X obj 559 365 sig~ 1;
-#X connect 1 0 33 0;
-#X connect 1 1 33 1;
+#X connect 0 0 33 0;
+#X connect 0 1 33 1;
+#X connect 0 2 33 2;
+#X connect 11 0 0 1;
 #X connect 33 0 34 0;
-#X connect 35 0 33 0;
-#X connect 35 1 33 1;
-#X connect 36 0 33 2;

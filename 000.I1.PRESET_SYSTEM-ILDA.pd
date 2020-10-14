@@ -1,54 +1,36 @@
-#N canvas -92 23 954 642 10;
-#X obj 332 188 vs-presets-gui \$0;
-#X obj 214 485 expr~ $v1 && $v2;
-#X obj 14 191 vs-operator-gui \$0 \$0-operator-one;
+#N canvas 724 236 954 683 10;
+#X obj 346 420 vs-presets-gui \$0;
+#X obj 307 228 expr~ $v1 && $v2;
+#X obj 12 80 vs-operator-gui \$0 \$0-operator-one;
 #A saved 55 0 2 1 0 52.5591 90 1 1 0 0;
-#X obj 12 340 vs-operator-gui \$0 \$0-operator-two;
+#X obj 342 83 vs-operator-gui \$0 \$0-operator-two;
 #A saved 100 0 2 1 0 25 0 1 1 0 0;
 #X obj 14 12 vs-phasor-gui \$0 \$0-phasor-one;
 #A saved 100 0 1 0;
-#X obj 14 82 vs-phasor-gui \$0 \$0-phasor-two;
+#X obj 340 12 vs-phasor-gui \$0 \$0-phasor-two;
 #A saved 29.1352 0 0 0;
-#X obj 337 13 cnv 15 360 170 empty empty empty 20 12 0 14 -4034 -66577
+#X obj 554 215 cnv 15 360 170 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 537 231 cnv 15 380 235 empty empty empty 20 12 0 14 -4034 -66577
+#X text 63 485 Derek Holzer;
+#X text 63 534 macumbista@gmail.com;
+#X text 63 509 Helsinki May 2019;
+#X text 564 330 Try storing different settings of waveform and harmonic
+;
+#X text 564 351 using [vs-presets-gui] below and then recalling them.
+;
+#X text 576 263 * Both operators are synced to the master.;
+#X text 576 284 * Phasor-two modulates the phase of operator-two.;
+#X text 576 305 * This causes an illusion that the circle is spinning.
+;
+#X text 576 243 * Phasor-one is the master oscillator.;
+#X text 562 220 This patch on the left draws a circle using sine waves.
+;
+#X obj 13 402 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X text 772 543 Derek Holzer;
-#X text 772 592 macumbista@gmail.com;
-#X text 772 567 Helsinki May 2019;
-#X text 537 235 [vs-presets-gui] is a preset loading and saving system.
-;
-#X text 567 441 as well as start and stop playback of the scenes.;
-#X text 347 128 Try storing different settings of waveform and harmonic
-;
-#X text 347 149 using [vs-presets-gui] below and then recalling them.
-;
-#X text 553 258 * Make sure to use \$0 as the creation argument!;
-#X text 553 280 * You need only one in each master patch you use.;
-#X text 554 351 * You can "save" your presets to a textfile and "load"
-them.;
-#X text 554 421 * SCHEDULER can be used to arrange presets in order
-\,;
-#X text 554 377 * TRANSITIONS can be used to edit crossfades between
-;
-#X text 569 396 presets.;
-#X text 359 61 * Both operators are synced to the master.;
-#X text 359 82 * Phasor-two modulates the phase of operator-two.;
-#X text 359 103 * This causes an illusion that the circle is spinning.
-;
-#X text 359 41 * Phasor-one is the master oscillator.;
-#X text 345 18 This patch on the left draws a circle using sine waves.
-;
-#X text 554 304 * The green arrows move between and recall presets.
-;
-#X text 554 328 * The red "store" button stores the info for each preset.
-;
-#X obj 423 509 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
-0;
-#N canvas 220 23 811 718 wirelesssending 1;
+#N canvas 220 23 811 718 wirelesssending 0;
 #X obj 244 187 t b f;
 #X obj 246 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3300 1;
+-1 -1 0 1;
 #X obj 243 112 mtof;
 #X text 273 146 Set SMOOTH to ON;
 #X text 273 162 in target abstraction;
@@ -60,7 +42,7 @@ them.;
 #X floatatom 308 115 7 0 0 0 - - -;
 #X obj 414 187 t b f;
 #X obj 416 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7900 1;
+-1 -1 0 1;
 #X obj 413 112 mtof;
 #X obj 413 54 ctlin 1 0;
 #X text 443 146 Set SMOOTH to ON;
@@ -70,7 +52,7 @@ them.;
 #X obj 414 214 s \$0-phasor-two/frequency;
 #X obj 469 563 t b f;
 #X obj 471 468 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7000 1;
+-1 -1 0 1;
 #X text 498 522 Set SMOOTH to ON;
 #X text 498 538 in target abstraction;
 #X floatatom 539 436 5 0 0 0 - - -;
@@ -101,7 +83,7 @@ them.;
 #X obj 231 366 select 53 54 55 56 57;
 #X obj 60 177 t b f;
 #X obj 62 82 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12000 1;
+-1 -1 0 1;
 #X obj 59 102 mtof;
 #X msg 59 43 22;
 #X msg 95 43 44;
@@ -124,7 +106,7 @@ them.;
 #X floatatom 122 475 5 0 0 0 - - -;
 #X obj 226 463 notein;
 #X obj 587 86 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2200 1;
+-1 -1 0 1;
 #X obj 584 106 mtof;
 #X msg 584 47 22;
 #X msg 620 47 44;
@@ -190,13 +172,39 @@ them.;
 #X connect 74 0 70 0;
 #X connect 75 0 61 0;
 #X connect 75 1 61 0;
-#X restore 465 540 pd wirelesssending;
-#X text 431 515 Open for MIDI implementation;
-#X obj 21 527 vs-ilda-throw-gui \$0 \$0-laserone;
+#X restore 55 433 pd wirelesssending;
+#X text 21 408 Open for MIDI implementation;
+#X obj 12 253 vs-ilda-throw-gui \$0 \$0-laserone;
 #A saved 100 10 1 0 1 1 1;
-#X connect 1 0 31 2;
-#X connect 2 0 31 0;
+#X obj 12 362 switch~;
+#X obj 553 392 cnv 15 380 280 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text 553 396 [vs-presets-gui] is a preset loading and saving system.
+;
+#X text 583 602 as well as start and stop playback of the scenes.;
+#X text 569 419 * Make sure to use \$0 as the creation argument!;
+#X text 569 441 * You need only one in each master patch you use.;
+#X text 570 512 * You can "save" your presets to a textfile and "load"
+them.;
+#X text 570 582 * SCHEDULER can be used to arrange presets in order
+\,;
+#X text 570 538 * TRANSITIONS can be used to edit crossfades between
+;
+#X text 585 557 presets.;
+#X text 570 465 * The green arrows move between and recall presets.
+;
+#X text 570 489 * The red "store" button stores the info for each preset.
+;
+#X text 570 623 * Be sure that the \$0 unique identifier in the saved
+TXT;
+#X text 580 639 file matches the one in the number box at the bottom
+of;
+#X text 580 656 this abstraction when reopening the presets later.
+;
+#X connect 1 0 20 2;
+#X connect 2 0 20 0;
 #X connect 2 1 1 0;
-#X connect 3 0 31 1;
+#X connect 3 0 20 1;
 #X connect 3 1 1 1;
 #X connect 5 0 3 1;
+#X connect 20 0 21 0;

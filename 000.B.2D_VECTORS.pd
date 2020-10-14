@@ -1,4 +1,4 @@
-#N canvas 47 135 1056 639 10;
+#N canvas 88 265 1056 639 10;
 #X obj 349 271 vs-lissajous-gui \$0 \$0-lissajous-one;
 #A saved 50 0 0 0 1 100 100 2 0;
 #X obj 349 7 vs-circle-gui \$0 \$0-circle-one;
