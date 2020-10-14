@@ -1,10 +1,10 @@
-#N canvas 90 23 624 697 10;
+#N canvas 90 23 969 906 10;
 #X obj 101 118 cnv 15 300 40 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 379 561 Derek Holzer;
 #X text 379 610 macumbista@gmail.com;
 #X obj 108 133 nbx 5 14 0 100 0 0 \$2/morph \$2/morph morph 0 -8 0
-10 -4034 -1 -1 0 256;
+10 -4034 -1 -1 100 256;
 #X obj 126 457 / 100;
 #X text 379 585 Helsinki May 2019;
 #X obj 83 272 *~ -1;
@@ -14,7 +14,7 @@
 #X obj 83 387 +~ 1;
 #X obj 82 244 phasor~;
 #X obj 180 133 nbx 5 14 0 100 0 0 \$2/frequency \$2/frequency frequency
-0 -8 0 10 -257985 -1 -1 1 256;
+0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 253 133 nbx 5 14 0 100 0 0 \$2/frequency-100 \$2/frequency-100
 freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 141 175 / 100;
@@ -79,8 +79,8 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 289 474 kollabs/ds_reg \$1 \$2/frequency;
 #X obj 289 494 kollabs/ds_reg \$1 \$2/frequency-100;
 #X obj 289 514 kollabs/ds_reg \$1 \$2/internal;
-#X obj 126 477 pack 0 50;
-#X obj 126 505 line~;
+#X obj 126 497 pack 0 50;
+#X obj 126 525 line~;
 #X obj 145 77 loadbang;
 #X obj 329 132 hradio 15 1 0 2 \$2/internal \$2/internal Int.Ext -5
 -8 0 10 -257985 -1 -1 1;
@@ -106,13 +106,10 @@ freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X text 67 172 7) Z axis signal (second shape);
 #X text 67 208 9) Morphing signal (0-1);
 #X text 67 190 8) Bright signal (second shape);
-#X text 35 429 The morph can be controlled simply via a DC signal between
-0 and 1 A value of "0" gives only the left set of inputs \, a value
-of "1" gives on the right set of inputs.;
-#X text 32 477 Or it may be automated using the unipolar output of
+#X text 32 517 Or it may be automated using the unipolar output of
 the [vs-operator-gui] abstraction. In this case \, the manual morph
 should be set to 0;
-#X text 32 527 To crossfade visually between two vector shapes without
+#X text 32 567 To crossfade visually between two vector shapes without
 morphing \, multiplexing is required.;
 #X text 34 350 [vs-morph-gui] applies a linear crossfade to the signals
 which make up two 2D or 3D vector shapes (X \, Y \, Z \, and Brightness).
@@ -120,12 +117,18 @@ Reducing the level of a vector shape's signal reduces its size \, therefore
 this patch effectively "morphs" between two vector shapes. A difference
 in drawing frequencies will create interesting effects \, as seen here.
 ;
+#X text 39 429 In the "morph" gui control \, 100 is completely the
+left side inlets \, 0 is completely the right side inlets.;
+#X text 35 469 The morph can be controlled simply via a DC signal between
+0 and 1 A value of "1" gives only the left set of inputs \, a value
+of "0" gives on the right set of inputs.;
 #X restore 409 182 pd \$2-help;
 #X obj 27 550 vs-morph, f 17;
 #X obj 134 301 r \$2/internal;
+#X obj 126 476 expr ($f1 * -1) + 1;
 #X connect 3 0 4 0;
 #X connect 3 0 32 1;
-#X connect 4 0 43 0;
+#X connect 4 0 53 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
@@ -179,4 +182,5 @@ in drawing frequencies will create interesting effects \, as seen here.
 #X connect 51 3 22 0;
 #X connect 52 0 38 1;
 #X connect 52 0 17 2;
+#X connect 53 0 43 0;
 #X coords 0 -1 1 1 302 60 1 100 100;

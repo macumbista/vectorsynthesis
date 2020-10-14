@@ -30,13 +30,13 @@
 #X obj 1002 264 vs-circle-gui \$0 \$0-circle-four;
 #A saved 25 13 0 0 25 50 100 0;
 #X obj 47 352 vs-morph-gui \$0 \$0-morph-one;
-#A saved 0 0 0 1;
+#A saved 100 0 0 1;
 #X obj 377 352 vs-morph-gui \$0 \$0-morph-two;
-#A saved 0 0 0 1;
+#A saved 100 0 0 1;
 #X obj 692 353 vs-morph-gui \$0 \$0-morph-three;
-#A saved 0 0 0 1;
+#A saved 100 0 0 1;
 #X obj 1002 353 vs-morph-gui \$0 \$0-morph-four;
-#A saved 0 0 0 1;
+#A saved 100 0 0 1;
 #X obj 474 35 tgl 15 0 empty empty on/off 17 7 0 10 -258113 -1 -1 1
 1;
 #N canvas 0 23 495 494 quadrature 0;
