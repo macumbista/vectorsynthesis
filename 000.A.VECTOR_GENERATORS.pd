@@ -7,8 +7,7 @@
 #A saved 500 0 0 1 0 50 90 1 1 0 0;
 #X text 623 591 Derek Holzer;
 #X text 623 640 macumbista@gmail.com;
-#X text 623 615 Helsinki May 2019;
-#X text 24 694 CAUTION: make sure to rename "\$0-<objectname>-one"
+#X text 640 675 CAUTION: make sure to rename "\$0-<objectname>-one"
 to "\$0-<objectname>-two" when making multiple copies!;
 #X obj 39 154 vs-phasor-gui \$0 \$0-phasor-two;
 #A saved 220 0 0 0;
@@ -37,15 +36,16 @@ to "\$0-<objectname>-two" when making multiple copies!;
 their left inlets when they are in EXT mode;
 #X text 22 10 This PHASOR is the master oscillator for the two OPERATORS
 "wirelessly" when they are in MASTER mode;
-#X connect 0 0 16 2;
+#X text 623 615 Stockholm OCT 2020;
+#X connect 0 0 15 2;
 #X connect 2 0 1 1;
-#X connect 2 0 16 0;
+#X connect 2 0 15 0;
 #X connect 2 1 0 0;
 #X connect 3 0 1 2;
-#X connect 3 0 16 1;
+#X connect 3 0 15 1;
 #X connect 3 1 0 1;
-#X connect 8 0 2 0;
-#X connect 8 0 3 0;
-#X connect 15 0 1 0;
-#X connect 16 0 17 0;
-#X connect 18 0 3 2;
+#X connect 7 0 2 0;
+#X connect 7 0 3 0;
+#X connect 14 0 1 0;
+#X connect 15 0 16 0;
+#X connect 17 0 3 2;
