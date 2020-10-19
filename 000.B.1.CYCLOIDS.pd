@@ -1,4 +1,4 @@
-#N canvas 72 67 1214 650 10;
+#N canvas 0 23 1792 1012 10;
 #X obj 47 262 vs-circle-gui \$0 \$0-circle-one;
 #A saved 25 5 0 0 5 50 100 0;
 #X text 937 517 Derek Holzer;
@@ -6,7 +6,7 @@
 #X obj 37 455 cnv 15 320 165 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 46 475 vs-audiodac-gui \$0 \$0-dac-2dvectors;
-#A saved 75 1 5 6 1 1 20 0 0 0 1 2;
+#A saved 75 1 3 4 1 1 8 0 0 0 1 2 100;
 #X obj 47 120 vs-operator-gui \$0 \$0-operator-one;
 #A saved 25 25 0 10 0 20 0 1 1 0 0;
 #X obj 46 620 switch~;
@@ -30,13 +30,13 @@
 #X obj 1002 264 vs-circle-gui \$0 \$0-circle-four;
 #A saved 25 13 0 0 25 50 100 0;
 #X obj 47 352 vs-morph-gui \$0 \$0-morph-one;
-#A saved 100 0 0 1;
+#A saved 0 0 0 1;
 #X obj 377 352 vs-morph-gui \$0 \$0-morph-two;
-#A saved 100 0 0 1;
+#A saved 0 0 0 1;
 #X obj 692 353 vs-morph-gui \$0 \$0-morph-three;
-#A saved 100 0 0 1;
+#A saved 0 0 0 1;
 #X obj 1002 353 vs-morph-gui \$0 \$0-morph-four;
-#A saved 100 0 0 1;
+#A saved 0 0 0 1;
 #X obj 474 35 tgl 15 0 empty empty on/off 17 7 0 10 -258113 -1 -1 1
 1;
 #N canvas 0 23 495 494 quadrature 0;
@@ -99,6 +99,7 @@ of the circles.;
 shape stop spinning and stabilize.;
 #X text 507 461 This patch shows how to generate harmonic cycloid shapes
 using only circles. Foure circles are summed together at the DAC.;
+#X obj 193 420 sig~ 1;
 #X connect 0 0 17 0;
 #X connect 0 1 17 1;
 #X connect 0 2 17 3;
@@ -119,18 +120,15 @@ using only circles. Foure circles are summed together at the DAC.;
 #X connect 16 2 20 3;
 #X connect 17 0 4 0;
 #X connect 17 1 4 1;
-#X connect 17 3 4 2;
 #X connect 18 0 4 0;
 #X connect 18 1 4 1;
-#X connect 18 3 4 2;
 #X connect 19 0 4 0;
 #X connect 19 1 4 1;
-#X connect 19 3 4 2;
 #X connect 20 0 4 0;
 #X connect 20 1 4 1;
-#X connect 20 3 4 2;
 #X connect 21 0 22 1;
 #X connect 22 0 17 8;
 #X connect 22 1 18 8;
 #X connect 22 2 19 8;
 #X connect 22 3 20 8;
+#X connect 27 0 4 2;
