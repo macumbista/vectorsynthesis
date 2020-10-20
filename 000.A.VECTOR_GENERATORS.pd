@@ -1,4 +1,4 @@
-#N canvas 297 23 983 733 10;
+#N canvas 289 -1056 983 733 10;
 #X obj 555 422 expr~ $v1 && $v2;
 #X obj 24 423 vs-seeme;
 #X obj 39 254 vs-operator-gui \$0 \$0-operator-one;
@@ -23,7 +23,7 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X obj 24 42 vs-phasor-gui \$0 \$0-phasor-one;
 #A saved 50 0 1 0;
 #X obj 280 532 vs-audiodac-gui \$0 \$0-dac-vectorgen;
-#A saved 75 1 5 6 1 1 25 0 0 0 1 2;
+#A saved 75 1 5 6 1 1 25 0 0 0 1 2 100;
 #X obj 280 681 switch~;
 #X obj 503 44 vs-operator-gui \$0 \$0-operator-three;
 #A saved 1 0 0 1 0 50 0 2 1 0 0;
