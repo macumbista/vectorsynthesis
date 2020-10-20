@@ -1,14 +1,11 @@
-#N canvas 401 116 1057 701 10;
+#N canvas 640 -1143 1118 800 10;
 #X obj 22 173 cnv 15 420 160 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 557 13 This patch aims to emulate the famous Rutt-Etra scan
 processor by plotting digital video or images into audio signals sent
 to an X/Y analog monitor with brightness control \, and draws inspiration
 from a similar MaxMSP patch by Ivan Marusic Klif.;
-#X text 788 534 Derek Holzer;
-#X text 789 590 macumbista@gmail.com;
 #X obj 28 19 vs-gemhead-master;
-#X text 787 562 September 2018 Helsinki;
 #X obj 42 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hblank 60 8 0 10
 -4034 -1 -1 25 256;
 #X obj 147 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vblank 60 8 0
@@ -24,9 +21,9 @@ from a similar MaxMSP patch by Ivan Marusic Klif.;
 #X obj 42 218 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hpos 60 8 0 10
 -4034 -1 -1 0 256;
 #X obj 253 218 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zdeflect 60 8
-0 10 -4034 -1 -1 12 256;
+0 10 -4034 -1 -1 3 256;
 #X obj 253 198 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zoom 60 8 0 10
--4034 -1 -1 0 256;
+-4034 -1 -1 -50 256;
 #X obj 275 262 vradio 20 1 1 2 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
 #X text 303 266 internal raster;
@@ -190,48 +187,6 @@ from a similar MaxMSP patch by Ivan Marusic Klif.;
 60 8 0 10 -4034 -1 -1 0.5 256;
 #X obj 366 87 nbx 5 14 -1e+37 1e+37 0 1 empty empty size_mod_freq 60
 8 0 10 -4034 -1 -1 132 256;
-#X obj 22 345 cnv 15 420 160 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 23 517 cnv 15 420 160 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 28 645 dac~ 1 2 3;
-#X obj 259 368 nbx 5 14 -1e+37 1e+37 0 1 empty empty Xrotation 0 -8
-0 10 -4034 -1 -1 0 256;
-#X obj 259 407 sig~;
-#X obj 320 369 nbx 5 14 -1e+37 1e+37 0 1 empty empty Yrotation 0 -8
-0 10 -4034 -1 -1 0 256;
-#X obj 320 409 sig~;
-#X obj 380 369 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zrotation 0 -8
-0 10 -4034 -1 -1 0 256;
-#X obj 380 409 sig~;
-#X obj 259 386 / 360;
-#X obj 320 387 / 360;
-#X obj 380 388 / 360;
-#X obj 368 621 sig~;
-#X obj 368 600 / 100;
-#X obj 368 580 nbx 5 14 -1e+37 1e+37 0 1 empty empty shadow 0 -8 0
-10 -4034 -1 -1 100 256;
-#X obj 249 592 sig~;
-#X obj 249 551 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_angle_X 0
--8 0 10 -4034 -1 -1 0 256;
-#X obj 308 566 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_angle_Y 0
--8 0 10 -4034 -1 -1 0 256;
-#X obj 249 571 / 360;
-#X obj 308 586 / 360;
-#X obj 189 577 sig~;
-#X obj 189 536 nbx 5 14 -1e+37 1e+37 0 1 empty empty view_distance
-0 -8 0 10 -4034 -1 -1 100 256;
-#X obj 189 556 / 100;
-#X obj 308 606 sig~;
-#X obj 187 621 nbx 5 14 -1e+37 1e+37 0 1 empty empty Scale 0 -8 0 10
--4034 -1 -1 0.3 256;
-#X obj 187 639 sig~;
-#X obj 28 612 vs-scale, f 22;
-#X obj 28 581 vs-projector, f 16;
-#X obj 28 463 vs-rotate, f 28;
-#X obj 309 482 switch~;
-#X obj 309 462 tgl 15 0 empty empty SWITCH_PATCH_ON/OFF 17 7 0 10 -258113
--1 -1 0 1;
 #X text 555 92 Results are very dependent on your sampling rate. Optimum
 samping rate is 192K.;
 #N canvas 0 22 560 391 SOFTWARE 0;
@@ -247,106 +202,105 @@ samping rate is 192K.;
 ;
 #X text 36 119 * DC coupled soundcard @ 192K sampling rate for best
 results;
-#X restore 558 315 pd SOFTWARE HARDWARE REQUIREMENTS README;
+#X restore 558 275 pd SOFTWARE HARDWARE REQUIREMENTS README;
 #X text 555 137 Use the internal raster for horizonal \, vertical \,
 or grid lines. Other shapes can be used to drive the [scanprocessor]
 abstraction. Try the spiral XY source in the upper right \, for example.
 ;
-#X text 561 345 INPUTS;
-#X text 587 372 1) Gemlist;
-#X text 587 388 2) Vertical Frequency;
-#X text 587 402 3) Horizontal Lines;
-#X text 587 433 5) Vertical Size;
-#X text 587 449 6) Zoom (summed w/ Hsize \, Vsize);
-#X text 587 463 7) Horizontal Position;
-#X text 587 479 8) Vertical Position;
-#X text 787 372 9) Z Axis Deflection;
-#X text 787 388 10) Horizontal Blanking;
-#X text 787 402 11) Vertical Blanking;
-#X text 787 418 12) Brightness;
-#X text 787 433 13) External Vertical Signal;
-#X text 787 449 14) External Horizontal Signal;
-#X text 787 479 16) Internal/External Source (int: 0 \, 1);
-#X text 787 463 15) Raster Mode (int: 0 \, 1 \, 2);
-#X text 561 517 OUTPUTS;
-#X text 587 544 1) X signal;
-#X text 587 560 2) Y signal;
-#X text 587 574 3) Z signal;
-#X text 587 590 4) Brightness signal;
 #X obj 28 316 vs-scanprocessor, f 36;
-#X text 555 204 Hsize \, Vsize \, and Zoom can all be used to zoom
+#X text 555 194 Hsize \, Vsize \, and Zoom can all be used to zoom
 into an image \, even down to single pixels. Hpos and Vpos can be used
 to scroll around inside a zoomed image. Zdeflect adds the brightness
 signal to the Z axis for the classic "Vasulka effect" when projected
 in 3D space with [vs-projector]. All numeric parameters can be controlled
 with audio signals.;
-#X text 587 418 4) Horizontal Size;
-#X connect 4 0 85 0;
-#X connect 6 0 20 8;
-#X connect 7 0 20 9;
-#X connect 8 0 20 10;
-#X connect 9 0 20 3;
-#X connect 10 0 20 2;
-#X connect 11 0 20 6;
-#X connect 12 0 20 5;
-#X connect 13 0 20 7;
-#X connect 14 0 20 4;
-#X connect 15 0 85 15;
-#X connect 18 0 20 0;
-#X connect 19 0 20 1;
-#X connect 20 0 85 1;
-#X connect 20 1 85 2;
-#X connect 20 2 85 3;
-#X connect 20 3 85 4;
-#X connect 20 4 85 5;
-#X connect 20 5 85 6;
-#X connect 20 6 85 7;
-#X connect 20 7 85 8;
-#X connect 20 8 85 9;
-#X connect 20 9 85 10;
-#X connect 20 10 85 11;
-#X connect 21 0 85 14;
-#X connect 26 0 85 12;
-#X connect 26 1 85 13;
-#X connect 27 0 26 0;
-#X connect 28 0 26 2;
-#X connect 29 0 26 1;
+#N canvas 689 576 600 413 INPUTS 0;
+#X text 289 227 Derek Holzer;
+#X text 290 283 macumbista@gmail.com;
+#X text 288 255 September 2018 Helsinki;
+#X text 62 38 INPUTS;
+#X text 88 65 1) Gemlist;
+#X text 88 81 2) Vertical Frequency;
+#X text 88 95 3) Horizontal Lines;
+#X text 88 126 5) Vertical Size;
+#X text 88 142 6) Zoom (summed w/ Hsize \, Vsize);
+#X text 88 156 7) Horizontal Position;
+#X text 88 172 8) Vertical Position;
+#X text 288 65 9) Z Axis Deflection;
+#X text 288 81 10) Horizontal Blanking;
+#X text 288 95 11) Vertical Blanking;
+#X text 288 111 12) Brightness;
+#X text 288 126 13) External Vertical Signal;
+#X text 288 142 14) External Horizontal Signal;
+#X text 288 172 16) Internal/External Source (int: 0 \, 1);
+#X text 288 156 15) Raster Mode (int: 0 \, 1 \, 2);
+#X text 62 210 OUTPUTS;
+#X text 88 237 1) X signal;
+#X text 88 253 2) Y signal;
+#X text 88 267 3) Z signal;
+#X text 88 283 4) Brightness signal;
+#X text 88 111 4) Horizontal Size;
+#X restore 814 275 pd INPUTS OUTPUTS HELP;
+#X obj 556 300 vs-operator-gui \$0 \$0-op-X;
+#A saved 25 0 0 1 0 0 0 1 1 0 0;
+#X obj 557 439 vs-operator-gui \$0 \$0-op-Y;
+#A saved 25 0 0 1 0 0 0 1 1 0 0;
+#X obj 557 578 vs-operator-gui \$0 \$0-op-Z;
+#A saved 25 0 0 1 0 0 0 1 1 0 0;
+#X obj 28 555 vs-audiodac-gui \$0 \$0-dac-one;
+#A saved 75 1 5 6 1 1 50 0 0 0 1 2 100;
+#X obj 28 711 switch~;
+#X obj 28 481 vs-projector-gui \$0 \$0-proj;
+#A saved 80 0 0 80;
+#X obj 28 343 vs-rotate-gui \$0 \$0-rot-one, f 28;
+#A saved 0 0 0 0 0 0 1 0 0 0;
+#X text 558 716 These operators warp the 3D image in the X \, Y \,
+and Z dimensions. The number of harmonics determine the number of "ripples"
+\, the scale determines the dpeth of the ripples \, phase changes the
+location of the ripples \, and the wave shape determines the shape
+of the ripples.;
+#X connect 2 0 30 0;
+#X connect 3 0 17 8;
+#X connect 4 0 17 9;
+#X connect 5 0 17 10;
+#X connect 6 0 17 3;
+#X connect 7 0 17 2;
+#X connect 8 0 17 6;
+#X connect 9 0 17 5;
+#X connect 10 0 17 7;
+#X connect 11 0 17 4;
+#X connect 12 0 30 15;
+#X connect 15 0 17 0;
+#X connect 16 0 17 1;
+#X connect 17 0 30 1;
+#X connect 17 1 30 2;
+#X connect 17 2 30 3;
+#X connect 17 3 30 4;
+#X connect 17 4 30 5;
+#X connect 17 5 30 6;
+#X connect 17 6 30 7;
+#X connect 17 7 30 8;
+#X connect 17 8 30 9;
+#X connect 17 9 30 10;
+#X connect 17 10 30 11;
+#X connect 18 0 30 14;
+#X connect 23 0 30 12;
+#X connect 23 1 30 13;
+#X connect 24 0 23 0;
+#X connect 25 0 23 2;
+#X connect 26 0 23 1;
+#X connect 30 0 39 0;
+#X connect 30 1 39 1;
+#X connect 30 2 39 2;
+#X connect 30 3 39 3;
 #X connect 33 0 39 0;
-#X connect 34 0 58 4;
-#X connect 35 0 40 0;
-#X connect 36 0 58 5;
-#X connect 37 0 41 0;
-#X connect 38 0 58 6;
-#X connect 39 0 34 0;
-#X connect 40 0 36 0;
-#X connect 41 0 38 0;
-#X connect 42 0 57 7;
-#X connect 43 0 42 0;
-#X connect 44 0 43 0;
-#X connect 45 0 57 5;
-#X connect 46 0 48 0;
-#X connect 47 0 49 0;
-#X connect 48 0 45 0;
-#X connect 49 0 53 0;
-#X connect 50 0 57 4;
-#X connect 51 0 52 0;
-#X connect 52 0 50 0;
-#X connect 53 0 57 6;
-#X connect 54 0 55 0;
-#X connect 55 0 56 4;
-#X connect 55 0 56 5;
-#X connect 56 0 32 0;
-#X connect 56 1 32 1;
-#X connect 56 3 32 2;
-#X connect 57 0 56 0;
-#X connect 57 1 56 1;
-#X connect 57 2 56 3;
-#X connect 58 0 57 0;
-#X connect 58 1 57 1;
-#X connect 58 2 57 2;
-#X connect 58 3 57 3;
-#X connect 60 0 59 0;
-#X connect 85 0 58 0;
-#X connect 85 1 58 1;
-#X connect 85 2 58 2;
-#X connect 85 3 58 3;
+#X connect 34 0 39 1;
+#X connect 35 0 39 2;
+#X connect 36 0 37 0;
+#X connect 38 0 36 0;
+#X connect 38 1 36 1;
+#X connect 38 2 36 2;
+#X connect 39 0 38 0;
+#X connect 39 1 38 1;
+#X connect 39 2 38 2;
+#X connect 39 3 38 3;
