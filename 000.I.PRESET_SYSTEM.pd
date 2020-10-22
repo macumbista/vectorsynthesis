@@ -1,5 +1,4 @@
-#N canvas 216 79 954 705 10;
-#X obj 358 411 vs-presets-gui \$0;
+#N canvas 498 -1033 954 705 10;
 #X obj 307 249 expr~ $v1 && $v2;
 #X obj 13 308 vs-audiodac-gui \$0 dac-one;
 #A saved 75 1 5 6 1 1 25 0 0 0 1 2 100;
@@ -47,29 +46,48 @@ them.;
 ;
 #X obj 19 536 cnv 15 200 60 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#N canvas 561 66 450 300 wirelesssending 0;
-#X obj 44 214 s \$0-phasor-one/frequency;
-#X obj 44 187 t b f;
-#X obj 46 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#N canvas 561 66 730 680 wirelesssending 0;
+#X obj 44 304 s \$0-phasor-one/frequency;
+#X obj 44 277 t b f;
+#X obj 46 81 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 43 112 mtof;
 #X msg 43 53 22;
 #X msg 79 53 44;
 #X msg 116 53 120;
-#X obj 244 214 s \$0-phasor-one/frequency;
-#X obj 244 187 t b f;
-#X obj 246 92 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 244 304 s \$0-phasor-one/frequency;
+#X obj 244 277 t b f;
+#X obj 246 79 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 243 112 mtof;
 #X obj 243 54 ctlin 1 0;
-#X text 73 146 Set SMOOTH to OFF;
-#X text 273 146 Set SMOOTH to ON;
-#X text 73 162 in target abstraction;
-#X text 273 162 in target abstraction;
+#X text 73 150 Set SMOOTH to OFF;
+#X text 273 150 Set SMOOTH to ON;
+#X text 73 166 in target abstraction;
+#X text 273 166 in target abstraction;
 #X text 41 17 FROM SAVED PRESETS/MIDI NOTES;
 #X text 241 17 FROM CONTINUOUS MIDI INPUT;
-#X text 83 250 Edit name of [send] object to include target abstraction/parameter
+#X text 83 340 Edit name of [send] object to include target abstraction/parameter
 ;
+#X obj 42 560 t b f;
+#X text 277 111 [mtof] scales the incoming MIDI message of 0-127 to
+a frequency in Hz;
+#X obj 44 482 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 42 516 vs-rescale 0 127 -100 100;
+#X obj 42 587 s \$0-dac-one/horz;
+#X obj 41 447 ctlin 2 0;
+#X obj 213 561 t b f;
+#X obj 215 483 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 213 517 vs-rescale 0 127 -100 100;
+#X obj 212 448 ctlin 2 0;
+#X floatatom 261 561 5 0 0 0 - - -;
+#X floatatom 91 561 5 0 0 0 - - -;
+#X obj 213 588 s \$0-dac-one/vert;
+#X text 379 502 [vs-recale] scales the input value from the first range
+in the creation arguments (0 to 127 in this example) to the second
+range in the creation arguments (-100 to 100 in this example).;
 #X connect 1 0 0 0;
 #X connect 1 1 0 0;
 #X connect 2 0 3 0;
@@ -82,6 +100,18 @@ them.;
 #X connect 9 0 10 0;
 #X connect 10 0 8 0;
 #X connect 11 0 9 0;
+#X connect 19 0 23 0;
+#X connect 19 1 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 19 0;
+#X connect 22 0 30 0;
+#X connect 24 0 21 0;
+#X connect 25 0 31 0;
+#X connect 25 1 31 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 27 0 29 0;
+#X connect 28 0 26 0;
 #X restore 61 567 pd wirelesssending;
 #X text 27 542 Open for MIDI implementation;
 #X obj 13 462 switch~;
@@ -91,12 +121,13 @@ TXT;
 of;
 #X text 588 666 this abstraction when reopening the presets later.
 ;
-#X connect 1 0 2 2;
-#X connect 2 0 32 0;
-#X connect 3 0 2 0;
-#X connect 3 0 2 3;
-#X connect 3 1 1 0;
-#X connect 4 0 2 1;
-#X connect 4 0 2 4;
-#X connect 4 1 1 1;
-#X connect 6 0 4 1;
+#X obj 358 411 vs-presets-gui \$0;
+#X connect 0 0 1 2;
+#X connect 1 0 31 0;
+#X connect 2 0 1 0;
+#X connect 2 0 1 3;
+#X connect 2 1 0 0;
+#X connect 3 0 1 1;
+#X connect 3 0 1 4;
+#X connect 3 1 0 1;
+#X connect 5 0 3 1;
