@@ -1,4 +1,4 @@
-#N canvas 0 23 1792 1012 10;
+#N canvas 542 -1397 1792 1012 10;
 #X obj 47 262 vs-circle-gui \$0 \$0-circle-one;
 #A saved 25 5 0 0 5 50 100 0;
 #X text 937 517 Derek Holzer;
@@ -23,8 +23,8 @@
 #A saved 25 6 0 4 0 20 0 1 1 0 0;
 #X obj 492 457 cnv 15 350 165 empty empty empty 20 12 0 14 -4034 -66577
 0;
-#X obj 375 37 nbx 5 14 -1e+37 1e+37 0 0 empty empty freq/100 0 -8 0
-10 -4034 -1 -1 0 256;
+#X obj 375 37 nbx 5 14 -1e+37 1e+37 0 1 empty empty freq/100 0 -8 0
+10 -4034 -1 -1 10 256;
 #X obj 1002 121 vs-operator-gui \$0 \$0-operator-four;
 #A saved 25 3 0 2 0 20 0 1 1 0 0;
 #X obj 1002 264 vs-circle-gui \$0 \$0-circle-four;

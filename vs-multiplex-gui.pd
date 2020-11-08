@@ -4,7 +4,7 @@
 #X obj 107 132 nbx 5 14 0 1e+37 0 0 \$2/switch_freq \$2/switch_freq
 switch_freq 0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 185 132 nbx 5 14 1 1e+37 0 0 \$2/num_channels \$2/num_channels
-num_channels 0 -8 0 10 -4034 -1 -1 2 256;
+num_channels 0 -8 0 10 -4034 -1 -1 5 256;
 #X text 728 466 Derek Holzer;
 #X text 728 515 macumbista@gmail.com;
 #X text 120 431 Horizontal;
