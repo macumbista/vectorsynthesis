@@ -1,4 +1,4 @@
-#N canvas 213 23 1046 1008 12;
+#N canvas -69 26 1046 1008 12;
 #X obj 21 210 vs-circle-gui \$0 \$0-circle-one;
 #A saved 25 0 2 0 50 0 100 0;
 #X obj 697 633 vs-audiodac-gui \$0 \$0-dac-2dvectors;
@@ -68,7 +68,7 @@
 #X connect 5 2 16 3;
 #X connect 8 0 1 0;
 #X connect 8 1 1 1;
-#X connect 8 3 1 2;
+#X connect 8 2 1 2;
 #X connect 8 4 1 3;
 #X connect 8 5 1 4;
 #X connect 9 0 6 2;
