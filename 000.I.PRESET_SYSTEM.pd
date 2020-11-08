@@ -1,4 +1,4 @@
-#N canvas 498 -1033 954 705 10;
+#N canvas 498 23 954 705 10;
 #X obj 307 249 expr~ $v1 && $v2;
 #X obj 13 308 vs-audiodac-gui \$0 dac-one;
 #A saved 75 1 5 6 1 1 25 0 0 0 1 2 100;
@@ -122,6 +122,8 @@ of;
 #X text 588 666 this abstraction when reopening the presets later.
 ;
 #X obj 358 411 vs-presets-gui \$0;
+#X obj 358 382 nbx 5 14 -1e+37 1e+37 0 0 empty empty Current_Scene_Number
+0 -8 0 10 -4034 -1 -1 0 256;
 #X connect 0 0 1 2;
 #X connect 1 0 31 0;
 #X connect 2 0 1 0;
@@ -131,3 +133,4 @@ of;
 #X connect 3 0 1 4;
 #X connect 3 1 0 1;
 #X connect 5 0 3 1;
+#X connect 36 0 35 0;
