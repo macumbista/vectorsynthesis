@@ -179,8 +179,14 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	and a number of other interesting visual effects, however you can still use this 
 	library for many things without it.
 	
-	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
-	image in this video on Jerobeam Fenderson's YouTube channel:
+	DC COUPLING and SAMPLING RATE both affect the oscilloscope image. 
+	
+	Without DC COUPLING, your image will always try to stay centered on the screen.
+	If the shape you are drawing is irregularly sized, this can cause a lot of unwanted motion.
+	
+	And the lower your SAMPLING RATE is (44.1 or 48 kHz instead of 96 or 192 kHz), the more
+	difficult it will be to draw shapes with sharp corners. You will see rounded corners and 
+	often overshoots due to aliasing errors at these lower sampling rates.
 	
 [![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "Oscilloscope Music Tutorial 2: Setup (Compression, DC-coupling, Sampling Rate, Aliasing by Jerobeam Fenderson)")
 
