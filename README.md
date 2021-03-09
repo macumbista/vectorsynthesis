@@ -66,7 +66,7 @@ https://www.sweetwater.com/sweetcare/articles/which-audio-interfaces-are-dc-coup
 	
 	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled):
 
-http://vectorvgapro.com/XY_Displays.html
+https://web.archive.org/web/20190825120849/http://vectorvgapro.com/XY_Displays.html
 	
 	—or—
 	
