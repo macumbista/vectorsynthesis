@@ -106,8 +106,8 @@ https://github.com/ffd8/dac_ilda
 https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	
 	(Hold SHIFT key when selecting input for third channel brightness control)
-	plus audio loopback application such as SoundFlower or Virtual Audio Cable. 
-	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL.pdf for MacOS and 
+	plus audio loopback application such as SoundFlower, BlackHole or Virtual Audio Cable. 
+	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL-MAC.pdf for MacOS and 
 	SOFTWARE-OSCILLOSCOPE-TUTORIAL-WIN.pdf for Windows for further details on setup.
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
@@ -225,7 +225,7 @@ I would like to thank the following people and institutions for their support an
 
 
 	Derek Holzer
-	UPDATED Helsinki March 2020
+	UPDATED Stockholm March 2021
 	http://macumbista.net
 	macumbista AT THE DOMAIN gmail DOT com
 
