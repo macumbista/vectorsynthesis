@@ -1,27 +1,27 @@
 #N canvas 88 265 1056 639 10;
 #X obj 349 271 vs-lissajous-gui \$0 \$0-lissajous-one;
-#A saved 50 0 0 0 1 100 100 2 0;
+#A saved 50 0 0 0 1 25 100 2 0;
 #X obj 349 7 vs-circle-gui \$0 \$0-circle-one;
-#A saved 50 0 0 0 1 100 100 0;
+#A saved 50 0 0 0 1 25 100 0;
 #X obj 349 93 vs-triangle-gui \$0 \$0-triangle-one;
-#A saved 50 0 0 0 1 100 100 0;
+#A saved 50 0 0 0 1 25 100 0;
 #X obj 349 183 vs-diamond-gui \$0 \$0-diamond-one;
-#A saved 50 0 0 0 1 100 100 0;
+#A saved 50 0 0 0 1 25 100 0;
 #X text 534 536 Derek Holzer;
 #X text 534 585 macumbista@gmail.com;
 #X text 534 560 Helsinki May 2019;
 #X obj 19 6 vs-poly-gui \$0 \$0-poly-one;
-#A saved 50 0 0 0 1 100 100 3 1 0 0;
+#A saved 50 0 0 0 1 25 100 3 1 0 0;
 #X obj 19 268 vs-2D-data-gui \$0 \$0-2d-data-one;
-#A saved 50 0 0 0 1 100 100 0 0;
+#A saved 50 0 0 0 1 25 100 0 0;
 #X obj 19 398 vs-2D-wav-gui \$0 \$0-2d-data-wav;
-#A saved 50 0 0 0 1 100 100 0 0;
+#A saved 50 0 0 0 1 25 100 0 0;
 #X obj 19 115 vs-raster-gui \$0 \$0-raster-one;
-#A saved 25 25 100 0 0 0 0 0 2 100;
+#A saved 25 25 100 0 0 0 0 0 2 25;
 #X obj 340 368 cnv 15 320 165 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 349 388 vs-audiodac-gui \$0 \$0-dac-2dvectors;
-#A saved 75 1 5 6 1 1 25 0 0 0 1 2 100;
+#A saved 75 1 5 6 1 1 100 0 0 0 1 2 100;
 #X obj 684 45 vs-operator-gui \$0 \$0-operator-one;
 #A saved 1 0 0 8 0 100 0 5 1 0 0;
 #X text 687 193 Try connecting the left outlet of [vs-operator-gui]

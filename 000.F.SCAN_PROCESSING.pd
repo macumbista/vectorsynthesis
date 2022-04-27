@@ -1,192 +1,9 @@
-#N canvas 0 23 1067 909 10;
-#X obj 22 173 cnv 15 420 160 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#N canvas 88 25 1115 918 10;
 #X text 557 13 This patch aims to emulate the famous Rutt-Etra scan
 processor by plotting digital video or images into audio signals sent
 to an X/Y analog monitor with brightness control \, and draws inspiration
 from a similar MaxMSP patch by Ivan Marusic Klif.;
 #X obj 28 19 vs-gemhead-master;
-#X obj 42 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hblank 60 8 0 10
--4034 -1 -1 25 256;
-#X obj 147 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vblank 60 8 0
-10 -4034 -1 -1 25 256;
-#X obj 253 238 nbx 5 14 -1e+37 1e+37 0 1 empty empty Brightness 60
-8 0 10 -4034 -1 -1 500 256;
-#X obj 147 198 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vsize 60 8 0 10
--4034 -1 -1 100 256;
-#X obj 42 198 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hsize 60 8 0 10
--4034 -1 -1 100 256;
-#X obj 147 218 nbx 5 14 -1e+37 1e+37 0 1 empty empty Vpos 60 8 0 10
--4034 -1 -1 0 256;
-#X obj 42 218 nbx 5 14 -1e+37 1e+37 0 1 empty empty Hpos 60 8 0 10
--4034 -1 -1 0 256;
-#X obj 253 218 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zdeflect 60 8
-0 10 -4034 -1 -1 3 256;
-#X obj 253 198 nbx 5 14 -1e+37 1e+37 0 1 empty empty Zoom 60 8 0 10
--4034 -1 -1 -50 256;
-#X obj 275 262 vradio 20 1 1 2 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X text 303 266 internal raster;
-#X text 303 283 external source;
-#X obj 42 177 nbx 5 14 0 1e+37 0 1 empty empty Vertical_frequency 60
-8 0 10 -4034 -1 -1 25 256;
-#X obj 253 177 nbx 5 14 0 1e+37 0 1 empty empty Horizontal_lines 60
-8 0 10 -4034 -1 -1 80 256;
-#N canvas 165 36 994 218 control 0;
-#X obj 213 30 inlet;
-#X obj 213 56 / 100;
-#X obj 213 105 line~;
-#X obj 213 81 pack 0 20;
-#X obj 213 131 outlet~;
-#X obj 283 30 inlet;
-#X obj 283 56 / 100;
-#X obj 283 105 line~;
-#X obj 283 81 pack 0 20;
-#X obj 283 131 outlet~;
-#X obj 353 30 inlet;
-#X obj 353 56 / 100;
-#X obj 353 105 line~;
-#X obj 353 81 pack 0 20;
-#X obj 353 131 outlet~;
-#X obj 423 30 inlet;
-#X obj 423 56 / 100;
-#X obj 423 105 line~;
-#X obj 423 81 pack 0 20;
-#X obj 423 131 outlet~;
-#X obj 493 30 inlet;
-#X obj 493 56 / 100;
-#X obj 493 105 line~;
-#X obj 493 81 pack 0 20;
-#X obj 493 131 outlet~;
-#X obj 563 30 inlet;
-#X obj 563 56 / 100;
-#X obj 563 105 line~;
-#X obj 563 81 pack 0 20;
-#X obj 563 131 outlet~;
-#X obj 633 30 inlet;
-#X obj 633 56 / 100;
-#X obj 633 105 line~;
-#X obj 633 81 pack 0 20;
-#X obj 633 131 outlet~;
-#X obj 703 30 inlet;
-#X obj 703 56 / 100;
-#X obj 703 105 line~;
-#X obj 703 81 pack 0 20;
-#X obj 703 131 outlet~;
-#X obj 773 30 inlet;
-#X obj 773 56 / 100;
-#X obj 773 105 line~;
-#X obj 773 81 pack 0 20;
-#X obj 773 131 outlet~;
-#X obj 83 30 inlet;
-#X obj 83 105 line~;
-#X obj 83 81 pack 0 20;
-#X obj 83 131 outlet~;
-#X obj 153 30 inlet;
-#X obj 153 105 line~;
-#X obj 153 81 pack 0 20;
-#X obj 153 131 outlet~, f 35;
-#X connect 0 0 1 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 0;
-#X connect 5 0 6 0;
-#X connect 6 0 8 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 0;
-#X connect 10 0 11 0;
-#X connect 11 0 13 0;
-#X connect 12 0 14 0;
-#X connect 13 0 12 0;
-#X connect 15 0 16 0;
-#X connect 16 0 18 0;
-#X connect 17 0 19 0;
-#X connect 18 0 17 0;
-#X connect 20 0 21 0;
-#X connect 21 0 23 0;
-#X connect 22 0 24 0;
-#X connect 23 0 22 0;
-#X connect 25 0 26 0;
-#X connect 26 0 28 0;
-#X connect 27 0 29 0;
-#X connect 28 0 27 0;
-#X connect 30 0 31 0;
-#X connect 31 0 33 0;
-#X connect 32 0 34 0;
-#X connect 33 0 32 0;
-#X connect 35 0 36 0;
-#X connect 36 0 38 0;
-#X connect 37 0 39 0;
-#X connect 38 0 37 0;
-#X connect 40 0 41 0;
-#X connect 41 0 43 0;
-#X connect 42 0 44 0;
-#X connect 43 0 42 0;
-#X connect 45 0 47 0;
-#X connect 46 0 48 0;
-#X connect 47 0 46 0;
-#X connect 49 0 51 0;
-#X connect 50 0 52 0;
-#X connect 51 0 50 0;
-#X restore 42 280 pd control scaling;
-#X obj 377 192 vradio 20 1 1 3 empty empty empty 0 -8 0 10 -262144
--1 -1 0;
-#X text 406 215 VERT;
-#X text 406 196 HORZ;
-#X text 405 235 GRID;
-#X obj 338 41 cnv 15 200 120 empty empty EXTERNAL_XY_SOURCE 20 12 0
-14 -233017 -66577 0;
-#N canvas 0 22 537 469 spiral 0;
-#X obj 67 177 phasor~;
-#X obj 67 48 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_frequency 60
-8 0 10 -4034 -1 -1 2019 256;
-#X obj 129 134 sig~;
-#X obj 129 91 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase 60 8 0 10
--4034 -1 -1 90 256;
-#X obj 89 112 sig~;
-#X obj 89 88 / 100;
-#X obj 89 67 nbx 5 14 -1e+37 1e+37 0 1 empty empty harmonic 60 8 0
-10 -4034 -1 -1 100 256;
-#X obj 129 112 / 360;
-#X obj 67 228 VS-sine-circle;
-#X obj 67 271 outlet~ H;
-#X obj 137 271 outlet~ V;
-#X obj 127 177 phasor~;
-#X obj 229 124 nbx 5 14 -1e+37 1e+37 0 1 empty empty modulation_frequency
-60 8 0 10 -4034 -1 -1 132 256;
-#X obj 67 22 inlet BaseFreq;
-#X text 268 219 Derek Holzer;
-#X text 269 275 macumbista@gmail.com;
-#X text 267 247 September 2018 Helsinki;
-#X obj 184 177 phasor~;
-#X obj 229 22 inlet SizModFreq;
-#X obj 349 22 inlet PhaseModFreq;
-#X obj 349 92 nbx 5 14 -1e+37 1e+37 0 1 empty empty modulation_frequency
-60 8 0 10 -4034 -1 -1 0.5 256;
-#X connect 0 0 8 0;
-#X connect 1 0 0 0;
-#X connect 2 0 8 2;
-#X connect 3 0 7 0;
-#X connect 4 0 8 1;
-#X connect 5 0 4 0;
-#X connect 6 0 5 0;
-#X connect 7 0 2 0;
-#X connect 8 0 9 0;
-#X connect 8 1 10 0;
-#X connect 11 0 8 3;
-#X connect 12 0 11 0;
-#X connect 13 0 1 0;
-#X connect 17 0 8 2;
-#X connect 18 0 12 0;
-#X connect 19 0 20 0;
-#X connect 20 0 17 0;
-#X restore 341 126 pd spiral;
-#X obj 341 67 nbx 5 14 -1e+37 1e+37 0 1 empty empty base_freq 60 8
-0 10 -4034 -1 -1 2019 256;
-#X obj 392 105 nbx 5 14 -1e+37 1e+37 0 1 empty empty phase_mod_freq
-60 8 0 10 -4034 -1 -1 0.5 256;
-#X obj 366 87 nbx 5 14 -1e+37 1e+37 0 1 empty empty size_mod_freq 60
-8 0 10 -4034 -1 -1 132 256;
 #X text 555 92 Results are very dependent on your sampling rate. Optimum
 samping rate is 192K.;
 #N canvas 0 22 560 391 SOFTWARE 0;
@@ -203,17 +20,6 @@ samping rate is 192K.;
 #X text 36 119 * DC coupled soundcard @ 192K sampling rate for best
 results;
 #X restore 558 275 pd SOFTWARE HARDWARE REQUIREMENTS README;
-#X text 555 137 Use the internal raster for horizonal \, vertical \,
-or grid lines. Other shapes can be used to drive the [scanprocessor]
-abstraction. Try the spiral XY source in the upper right \, for example.
-;
-#X obj 28 316 vs-scanprocessor, f 36;
-#X text 555 194 Hsize \, Vsize \, and Zoom can all be used to zoom
-into an image \, even down to single pixels. Hpos and Vpos can be used
-to scroll around inside a zoomed image. Zdeflect adds the brightness
-signal to the Z axis for the classic "Vasulka effect" when projected
-in 3D space with [vs-projector]. All numeric parameters can be controlled
-with audio signals.;
 #N canvas 689 576 600 413 INPUTS 0;
 #X text 289 227 Derek Holzer;
 #X text 290 283 macumbista@gmail.com;
@@ -241,69 +47,70 @@ with audio signals.;
 #X text 88 283 4) Brightness signal;
 #X text 88 111 4) Horizontal Size;
 #X restore 814 275 pd INPUTS OUTPUTS HELP;
-#X obj 556 300 vs-operator-gui \$0 \$0-op-X;
-#A saved 25 0 0 1 0 0 0 1 1 0 0;
-#X obj 557 439 vs-operator-gui \$0 \$0-op-Y;
-#A saved 25 0 0 1 0 0 0 1 1 0 0;
-#X obj 557 578 vs-operator-gui \$0 \$0-op-Z;
-#A saved 25 0 0 1 0 0 0 1 1 0 0;
-#X obj 28 555 vs-audiodac-gui \$0 \$0-dac-one;
-#A saved 75 1 5 6 1 1 50 0 0 0 1 2 100;
-#X obj 28 711 switch~;
-#X obj 28 481 vs-projector-gui \$0 \$0-proj;
+#X obj 402 306 vs-operator-gui \$0 \$0-op-X;
+#A saved 25 0 1 3 0 0 0 1 1 0 0;
+#X obj 402 441 vs-operator-gui \$0 \$0-op-Y;
+#A saved 25 0 1 3 0 0 0 1 1 0 0;
+#X obj 403 577 vs-operator-gui \$0 \$0-op-Z;
+#A saved 25 0 0 3 0 0 0 1 1 0 0;
+#X obj 28 695 vs-audiodac-gui \$0 \$0-dac-one;
+#A saved 75 1 5 6 1 1 100 0 0 0 1 2 100;
+#X obj 28 851 switch~;
+#X obj 28 621 vs-projector-gui \$0 \$0-proj;
 #A saved 80 0 0 80;
-#X obj 28 343 vs-rotate-gui \$0 \$0-rot-one, f 28;
+#X obj 28 403 vs-rotate-gui \$0 \$0-rot-one, f 28;
 #A saved 0 0 0 0 0 0 1 0 0 0;
-#X text 558 716 These operators warp the 3D image in the X \, Y \,
+#X text 876 744 Derek Holzer;
+#X text 876 793 macumbista@gmail.com;
+#X obj 28 185 vs-scanprocessor-gui;
+#A saved 25 120 1 4 100 50 -50 3 5 10 300 0 0;
+#X text 555 194 Hsize \, Vsize \, and Zoom can all be used to zoom
+into an image \, even down to single pixels. Hpos and Vpos can be used
+to scroll around inside a zoomed image. Zdeflect adds the brightness
+signal to the Z axis for the classic "Vasulka effect" when projected
+in 3D space with [vs-projector-gui].;
+#X text 555 137 Use the internal raster for horizonal \, vertical \,
+or grid lines. Other shapes can be used to drive the [scanprocessor]
+abstraction.;
+#X text 876 768 Stockholm APR 2022;
+#X obj 28 541 vs-scale-gui \$0 \$0-scale;
+#A saved 50 50 50;
+#X obj 731 309 vs-phasor-gui \$0 \$0-mod-1;
+#A saved 0 9 0 0;
+#X obj 734 441 vs-phasor-gui \$0 \$0-mod-2;
+#A saved 0 7 0 0;
+#X obj 732 576 vs-phasor-gui \$0 \$0-mod-3;
+#A saved 0 5 0 0;
+#X text 393 719 These operators warp the 3D image in the X \, Y \,
 and Z dimensions. The number of harmonics determine the number of "ripples"
 \, the scale determines the dpeth of the ripples \, phase changes the
 location of the ripples \, and the wave shape determines the shape
-of the ripples.;
-#X text 732 786 Derek Holzer;
-#X text 732 835 macumbista@gmail.com;
-#X text 732 810 Stockholm NOV 2020;
-#X connect 2 0 30 0;
-#X connect 3 0 17 8;
-#X connect 4 0 17 9;
-#X connect 5 0 17 10;
-#X connect 6 0 17 3;
-#X connect 7 0 17 2;
-#X connect 8 0 17 6;
-#X connect 9 0 17 5;
-#X connect 10 0 17 7;
-#X connect 11 0 17 4;
-#X connect 12 0 30 15;
-#X connect 15 0 17 0;
-#X connect 16 0 17 1;
-#X connect 17 0 30 1;
-#X connect 17 1 30 2;
-#X connect 17 2 30 3;
-#X connect 17 3 30 4;
-#X connect 17 4 30 5;
-#X connect 17 5 30 6;
-#X connect 17 6 30 7;
-#X connect 17 7 30 8;
-#X connect 17 8 30 9;
-#X connect 17 9 30 10;
-#X connect 17 10 30 11;
-#X connect 18 0 30 14;
-#X connect 23 0 30 12;
-#X connect 23 1 30 13;
-#X connect 24 0 23 0;
-#X connect 25 0 23 2;
-#X connect 26 0 23 1;
-#X connect 30 0 39 0;
-#X connect 30 1 39 1;
-#X connect 30 2 39 2;
-#X connect 30 3 39 3;
-#X connect 33 0 39 0;
-#X connect 34 0 39 1;
-#X connect 35 0 39 2;
-#X connect 36 0 37 0;
-#X connect 38 0 36 0;
-#X connect 38 1 36 1;
-#X connect 38 2 36 2;
-#X connect 39 0 38 0;
-#X connect 39 1 38 1;
-#X connect 39 2 38 2;
-#X connect 39 3 38 3;
+of the ripples. TURN UP SCALE TO SEE THEM AT WORK.;
+#X text 730 649 These phasors modulate the phase of the operators \,
+creating a slow moving \, animated rippling effect.;
+#X connect 1 0 14 0;
+#X connect 5 0 11 0;
+#X connect 6 0 11 1;
+#X connect 7 0 11 2;
+#X connect 8 0 9 0;
+#X connect 10 0 8 0;
+#X connect 10 1 8 1;
+#X connect 10 2 8 2;
+#X connect 11 0 18 0;
+#X connect 11 1 18 1;
+#X connect 11 2 18 2;
+#X connect 11 3 18 3;
+#X connect 14 0 11 0;
+#X connect 14 0 6 0;
+#X connect 14 0 7 0;
+#X connect 14 1 11 1;
+#X connect 14 1 5 0;
+#X connect 14 2 11 2;
+#X connect 14 3 11 3;
+#X connect 18 0 10 0;
+#X connect 18 1 10 1;
+#X connect 18 2 10 2;
+#X connect 18 3 10 3;
+#X connect 19 0 5 1;
+#X connect 20 0 6 1;
+#X connect 21 0 7 1;

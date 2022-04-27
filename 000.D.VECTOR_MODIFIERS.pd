@@ -1,6 +1,6 @@
 #N canvas 0 28 1132 712 10;
-#X text 887 576 Derek Holzer;
-#X text 887 625 macumbista@gmail.com;
+#X text 922 644 Derek Holzer;
+#X text 922 693 macumbista@gmail.com;
 #X obj 60 337 vs-translate-gui \$0 \$0-translate-one;
 #A saved 0 0 0;
 #X obj 60 124 vs-scale-gui \$0 \$0-scale-one;
@@ -18,7 +18,7 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X obj 51 492 cnv 15 320 170 empty empty Connect_here_to_test 20 12
 0 14 -191407 -66577 0;
 #X obj 60 517 vs-audiodac-gui \$0 \$0-dac-3dvectors;
-#A saved 75 1 5 6 1 1 25 0 0 0 1 2 100;
+#A saved 75 1 5 6 1 1 100 0 0 0 1 2 100;
 #X obj 60 14 vs-icosahedron-gui \$0 \$0-ico-one;
 #A saved 50 0 0 0 1 25 100 1 0;
 #X obj 388 216 vs-operator-gui \$0 \$0-operator-one;
@@ -57,8 +57,9 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X text 594 356 [vs-operator-gui] \,;
 #X text 393 374 or of [vs-ext-input] if you have an external signal
 \,;
-#X text 887 600 Santa Cruz de Tenerife May 2019;
+#X text 922 668 Santa Cruz de Tenerife May 2019;
 #X obj 60 670 switch~;
+#X obj 700 471 vs-seeme;
 #X connect 2 0 7 0;
 #X connect 2 1 7 1;
 #X connect 2 2 7 2;
@@ -81,3 +82,4 @@ to "\$0-<objectname>-two" when making multiple copies!;
 #X connect 11 3 3 3;
 #X connect 12 0 2 5;
 #X connect 38 0 11 1;
+#X connect 38 0 43 0;
