@@ -66,7 +66,7 @@ https://www.sweetwater.com/sweetcare/articles/which-audio-interfaces-are-dc-coup
 	
 	Oscilloscope or vector monitor (not vectorscope!) with X/Y/Z inputs (all DC-coupled):
 
-http://vectorvgapro.com/XY_Displays.html
+https://web.archive.org/web/20190825120849/http://vectorvgapro.com/XY_Displays.html
 	
 	—or—
 	
@@ -106,8 +106,8 @@ https://github.com/ffd8/dac_ilda
 https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	
 	(Hold SHIFT key when selecting input for third channel brightness control)
-	plus audio loopback application such as SoundFlower or Virtual Audio Cable. 
-	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL.pdf for MacOS and 
+	plus audio loopback application such as SoundFlower, BlackHole or Virtual Audio Cable. 
+	Please see SOFTWARE-OSCILLOSCOPE-TUTORIAL-MAC.pdf for MacOS and 
 	SOFTWARE-OSCILLOSCOPE-TUTORIAL-WIN.pdf for Windows for further details on setup.
 	
 	NOTE: the Z axis should control the brightness of the beam, not 3D depth
@@ -179,8 +179,14 @@ https://github.com/kritzikratzi/Oscilloscope/releases/tag/1.0.9
 	and a number of other interesting visual effects, however you can still use this 
 	library for many things without it.
 	
-	You can find an excellent overview of how DC COUPLING and SAMPLING RATE affect the oscilloscope 
-	image in this video on Jerobeam Fenderson's YouTube channel:
+	DC COUPLING and SAMPLING RATE both affect the oscilloscope image. 
+	
+	Without DC COUPLING, your image will always try to stay centered on the screen.
+	If the shape you are drawing is irregularly sized, this can cause a lot of unwanted motion.
+	
+	And the lower your SAMPLING RATE is (44.1 or 48 kHz instead of 96 or 192 kHz), the more
+	difficult it will be to draw shapes with sharp corners. You will see rounded corners and 
+	often overshoots due to aliasing errors at these lower sampling rates.
 	
 [![](http://img.youtube.com/vi/piZPIMYfq0c/0.jpg)](http://www.youtube.com/watch?v=piZPIMYfq0c "Oscilloscope Music Tutorial 2: Setup (Compression, DC-coupling, Sampling Rate, Aliasing by Jerobeam Fenderson)")
 
@@ -219,7 +225,7 @@ I would like to thank the following people and institutions for their support an
 
 
 	Derek Holzer
-	UPDATED Helsinki March 2020
+	UPDATED Stockholm March 2021
 	http://macumbista.net
 	macumbista AT THE DOMAIN gmail DOT com
 
