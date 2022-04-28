@@ -1,4 +1,4 @@
-#N canvas 88 25 1115 918 10;
+#N canvas 615 94 1115 918 10;
 #X text 557 13 This patch aims to emulate the famous Rutt-Etra scan
 processor by plotting digital video or images into audio signals sent
 to an X/Y analog monitor with brightness control \, and draws inspiration
@@ -62,8 +62,6 @@ results;
 #A saved 0 0 0 0 0 0 1 0 0 0;
 #X text 876 744 Derek Holzer;
 #X text 876 793 macumbista@gmail.com;
-#X obj 28 185 vs-scanprocessor-gui;
-#A saved 25 120 1 4 100 50 -50 3 5 10 300 0 0;
 #X text 555 194 Hsize \, Vsize \, and Zoom can all be used to zoom
 into an image \, even down to single pixels. Hpos and Vpos can be used
 to scroll around inside a zoomed image. Zdeflect adds the brightness
@@ -88,7 +86,9 @@ location of the ripples \, and the wave shape determines the shape
 of the ripples. TURN UP SCALE TO SEE THEM AT WORK.;
 #X text 730 649 These phasors modulate the phase of the operators \,
 creating a slow moving \, animated rippling effect.;
-#X connect 1 0 14 0;
+#X obj 28 185 vs-scanprocessor-gui \$0 \$0-sp-1;
+#A saved 25 120 1 4 100 50 -50 3 5 10 300 0 0;
+#X connect 1 0 23 0;
 #X connect 5 0 11 0;
 #X connect 6 0 11 1;
 #X connect 7 0 11 2;
@@ -96,21 +96,21 @@ creating a slow moving \, animated rippling effect.;
 #X connect 10 0 8 0;
 #X connect 10 1 8 1;
 #X connect 10 2 8 2;
-#X connect 11 0 18 0;
-#X connect 11 1 18 1;
-#X connect 11 2 18 2;
-#X connect 11 3 18 3;
-#X connect 14 0 11 0;
-#X connect 14 0 6 0;
-#X connect 14 0 7 0;
-#X connect 14 1 11 1;
-#X connect 14 1 5 0;
-#X connect 14 2 11 2;
-#X connect 14 3 11 3;
-#X connect 18 0 10 0;
-#X connect 18 1 10 1;
-#X connect 18 2 10 2;
-#X connect 18 3 10 3;
-#X connect 19 0 5 1;
-#X connect 20 0 6 1;
-#X connect 21 0 7 1;
+#X connect 11 0 17 0;
+#X connect 11 1 17 1;
+#X connect 11 2 17 2;
+#X connect 11 3 17 3;
+#X connect 17 0 10 0;
+#X connect 17 1 10 1;
+#X connect 17 2 10 2;
+#X connect 17 3 10 3;
+#X connect 18 0 5 1;
+#X connect 19 0 6 1;
+#X connect 20 0 7 1;
+#X connect 23 0 11 0;
+#X connect 23 0 6 0;
+#X connect 23 0 7 0;
+#X connect 23 1 11 1;
+#X connect 23 1 5 0;
+#X connect 23 2 11 2;
+#X connect 23 3 11 3;
