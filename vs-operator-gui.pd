@@ -22,15 +22,15 @@
 #X obj 113 197 hradio 20 1 0 6 \$2/shape \$2/shape saw.sin.tri.sqr.stp.rnd
 -8 -10 0 10 -4034 -1 -1 1;
 #X obj 113 164 nbx 5 14 -1e+37 1e+37 0 0 \$2/harmonic \$2/harmonic
-harmonic 0 -8 0 10 -4034 -1 -1 1 256;
+harmonic 0 -8 0 10 -4034 -1 -1 40 256;
 #X obj 113 132 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency \$2/frequency
-frequency 0 -8 0 10 -257985 -1 -1 100 256;
+frequency 0 -8 0 10 -257985 -1 -1 25 256;
 #X obj 175 132 nbx 5 14 -1e+37 1e+37 0 0 \$2/frequency-100 \$2/frequency-100
 freq/100 0 -8 0 10 -257985 -1 -1 0 256;
 #X obj 183 164 nbx 5 14 -1e+37 1e+37 0 0 \$2/offset \$2/offset offset
 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 253 164 nbx 5 14 -1e+37 1e+37 0 0 \$2/scale \$2/scale scale
-0 -8 0 10 -4034 -1 -1 100 256;
+0 -8 0 10 -4034 -1 -1 5 256;
 #X obj 322 165 nbx 5 14 -1e+37 1e+37 0 0 \$2/phase \$2/phase phase
 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 235 132 bng 15 250 50 0 empty empty Reset -6 -8 0 10 -258113
@@ -127,7 +127,7 @@ blanking 0 -8 0 10 -4034 -1 -1 0 256;
 #X obj 473 418 kollabs/ds_reg \$1 \$2/shape;
 #X obj 367 82 r \$1-reset-phase;
 #X obj 323 132 hradio 15 1 0 3 \$2/internal \$2/internal Int.Ext.Master
--12 -8 0 10 -257985 -1 -1 0;
+-12 -8 0 10 -257985 -1 -1 2;
 #X obj 538 10 savestate;
 #X obj 589 81 f;
 #X obj 612 101 f;

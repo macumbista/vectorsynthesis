@@ -1,10 +1,10 @@
-#N canvas 148 166 1132 576 10;
+#N canvas 879 23 1132 576 10;
 #X obj 101 118 cnv 15 300 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 107 132 nbx 5 14 0 1e+37 0 0 \$2/switch_freq \$2/switch_freq
 switch_freq 0 -8 0 10 -4034 -1 -1 25 256;
 #X obj 185 132 nbx 5 14 1 1e+37 0 0 \$2/num_channels \$2/num_channels
-num_channels 0 -8 0 10 -4034 -1 -1 5 256;
+num_channels 0 -8 0 10 -4034 -1 -1 2 256;
 #X text 728 466 Derek Holzer;
 #X text 728 515 macumbista@gmail.com;
 #X text 120 431 Horizontal;
@@ -72,6 +72,38 @@ to use the switching frequency clock as their master oscillator.;
 -5 -8 0 10 -257985 -1 -1 1;
 #X text 356 132 ON;
 #X obj 340 209 r \$2/master;
+#X obj 376 134 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X obj 504 62 s pd-\$2-help;
+#X msg 504 40 vis 1;
+#N canvas 727 368 488 627 \$2-help 0;
+#X obj 33 11 cnv 15 300 300 empty empty HELP:vs-multiplex-gui 20 12
+0 14 -4034 -66577 0;
+#X text 64 66 1) X axis signal;
+#X text 64 86 2) Y axis signal;
+#X text 64 105 3) Brightness signal;
+#X text 64 126 4) Audio Left;
+#X text 64 144 5) Audio Right;
+#X text 41 47 INLETS (in vs-multiplex object);
+#X text 40 169 OUTPUT CHANNELS;
+#X text 59 187 1) X axis signal;
+#X text 59 207 2) Y axis signal;
+#X text 59 226 3) Brightness signal;
+#X text 59 245 4) RGB (used for ILDA);
+#X text 59 265 5) Audio Left;
+#X text 59 285 6) Audio Right;
+#X text 44 343 USAGE:;
+#X text 59 370 Create one [vs-multiplex-gui \$0 <unique-name>] for
+your patch.;
+#X text 59 400 Create one [vs-audiodac-gui \$0 <unique-name>] for your
+patch.;
+#X text 58 430 Create one [vs-multiplex \$0 (channel number)] for each
+shape;
+#X text 58 444 you want to multiplex.;
+#X text 307 512 Derek Holzer;
+#X text 307 561 macumbista@gmail.com;
+#X text 307 535 Stockholm MAY 2022;
+#X restore 504 92 pd \$2-help;
 #X connect 1 0 32 1;
 #X connect 1 0 38 0;
 #X connect 2 0 33 1;
@@ -109,4 +141,6 @@ to use the switching frequency clock as their master oscillator.;
 #X connect 52 0 53 0;
 #X connect 55 0 41 1;
 #X connect 55 0 51 1;
+#X connect 56 0 58 0;
+#X connect 58 0 57 0;
 #X coords 0 -1 1 1 302 80 1 100 100;

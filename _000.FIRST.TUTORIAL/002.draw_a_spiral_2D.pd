@@ -1,0 +1,42 @@
+#N canvas 202 127 983 733 10;
+#X declare -path ../;
+#X obj 562 445 vs-seeme;
+#X obj 39 224 vs-operator-gui \$0 \$0-operator-one;
+#A saved 1000 0 0 1 0 10 0 1 1 0 0;
+#X obj 353 222 vs-operator-gui \$0 \$0-operator-two;
+#A saved 1000 0 0 1 0 10 90 1 1 0 0;
+#X text 363 543 Derek Holzer;
+#X text 363 592 macumbista@gmail.com;
+#X text 203 650 CAUTION: make sure to rename "\$0-<objectname>-one"
+to "\$0-<objectname>-two" when making multiple copies!;
+#X obj 29 459 cnv 15 320 165 empty empty Connect_here_to_test 20 12
+0 14 -191407 -66577 0;
+#X obj 359 465 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 395 487 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X text 373 469 CLICK THE;
+#X text 377 505 FOR HELP;
+#X obj 38 479 vs-audiodac-gui \$0 \$0-dac-vectorgen;
+#A saved 75 0 5 6 1 1 100 0 0 0 1 2 100;
+#X obj 38 628 switch~;
+#X obj 648 60 vs-operator-gui \$0 \$0-operator-three;
+#A saved 100 0 0 1 0 0 0 0 0 1 0;
+#X text 363 566 Stockholm MAY 2022;
+#X text 575 19 This OPERATOR modulates the size of the ones below it
+if you turn up the SCALE \, resulting in a spiral.;
+#X text 202 145 These two operators make the horizontal and vertical
+movements of a circle;
+#X obj 209 686 declare -path ../;
+#X text 152 190 X axis (width);
+#X text 432 190 Y axis (height);
+#X text 512 78 Amplitude modulation;
+#X connect 1 0 11 0;
+#X connect 1 0 0 0;
+#X connect 2 0 11 1;
+#X connect 2 0 0 1;
+#X connect 11 0 12 0;
+#X connect 13 0 2 2;
+#X connect 13 0 1 2;
+#X connect 13 0 0 2;
+#X connect 13 1 11 2;

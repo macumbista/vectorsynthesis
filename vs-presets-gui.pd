@@ -28,11 +28,39 @@
 #X obj 300 207 s pd-\$1-transition;
 #X obj 300 344 loadbang;
 #X obj 223 317 nbx 5 15 0 1e+37 0 0 empty empty dollar_zero_= -85 8
-0 10 -261169 -1 -1 29272 256;
+0 10 -261169 -1 -1 55258 256;
 #X obj 300 366 f \$1;
 #X obj 351 111 s /ds/\$1/scene/current;
 #X obj 351 88 t b f;
 #X obj 351 66 inlet;
+#X msg 430 209 vis 1;
+#X obj 237 280 bng 15 250 50 0 empty empty ? 17 7 0 10 -4032 -1 -1
+;
+#X obj 430 238 s pd-\$2-help;
+#N canvas 491 103 451 323 \$2-help 0;
+#X obj 21 12 cnv 15 380 280 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X text 21 16 [vs-presets-gui] is a preset loading and saving system.
+;
+#X text 51 222 as well as start and stop playback of the scenes.;
+#X text 37 39 * Make sure to use \$0 as the creation argument!;
+#X text 37 61 * You need only one in each master patch you use.;
+#X text 38 132 * You can "save" your presets to a textfile and "load"
+them.;
+#X text 38 202 * SCHEDULER can be used to arrange presets in order
+\,;
+#X text 38 158 * TRANSITIONS can be used to edit crossfades between
+;
+#X text 53 177 presets.;
+#X text 38 85 * The green arrows move between and recall presets.;
+#X text 38 109 * The red "store" button stores the info for each preset.
+;
+#X text 38 243 * Be sure that the \$0 unique identifier in the saved
+TXT;
+#X text 48 259 file matches the one in the number box at the bottom
+of;
+#X text 48 276 this abstraction when reopening the presets later.;
+#X restore 430 259 pd \$2-help;
 #X connect 1 0 5 0;
 #X connect 2 0 4 0;
 #X connect 3 0 7 0;
@@ -43,4 +71,6 @@
 #X connect 17 0 16 0;
 #X connect 17 1 16 0;
 #X connect 18 0 17 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
 #X coords 0 -1 1 1 182 236 1 100 100;
