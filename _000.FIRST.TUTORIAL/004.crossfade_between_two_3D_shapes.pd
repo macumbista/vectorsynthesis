@@ -25,7 +25,7 @@
 #A saved 0 0 0 0 0 0 1 7 4 117;
 #X obj 359 631 vs-seeme;
 #X obj 690 205 vs-icosahedron-gui \$0 \$0-ico-01;
-#A saved 440 0 0 0 1 25 100 0 0;
+#A saved 25 0 0 0 1 25 100 0 0;
 #X obj 39 534 vs-morph-gui \$0 \$0-xfade-01;
 #A saved 100 0 0 1;
 #X obj 690 316 vs-rotate-gui \$0 \$0-rot-2;
